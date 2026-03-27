@@ -45,228 +45,434 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0f1117;
-      --surface: #181b24;
-      --card: #1e2230;
-      --border: #2a2e3d;
-      --accent: #6c63ff;
-      --accent2: #38bdf8;
-      --accent3: #f472b6;
-      --text: #e2e4ea;
-      --text-muted: #8b8fa3;
-      --text-bright: #ffffff;
-      --radius: 12px;
-      --max-w: 1180px;
+      --bg: #111113;
+      --surface: #18181b;
+      --card: #1f1f23;
+      --border: #2a2a2e;
+      --border-hover: #3a3a3e;
+      --gold: #c9a05c;
+      --gold-dim: rgba(201,160,92,.15);
+      --link: #8aaccc;
+      --link-hover: #b8d4ec;
+      --tag-framework: #7c9dd4;
+      --tag-framework-bg: rgba(124,157,212,.12);
+      --tag-sdk: #b08cd4;
+      --tag-sdk-bg: rgba(176,140,212,.12);
+      --tag-library: #6dba9a;
+      --tag-library-bg: rgba(109,186,154,.12);
+      --tag-inference: #d4a45c;
+      --tag-inference-bg: rgba(212,164,92,.12);
+      --tag-training: #cc7a8a;
+      --tag-training-bg: rgba(204,122,138,.12);
+      --tag-assistant: #a98ad4;
+      --tag-assistant-bg: rgba(169,138,212,.12);
+      --text: #c8c8cc;
+      --text-secondary: #87878c;
+      --text-bright: #eaeaed;
+      --max-w: 960px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--accent2); text-decoration: none; transition: color .2s; }
-    a:hover { color: var(--accent3); }
-    /* Inline text links (inside paragraphs, descriptions) should be underlined */
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); }
     p a, .person-info p a { text-decoration: underline; text-underline-offset: 2px; }
+
+    code {
+      font-size: .85em;
+      background: var(--card);
+      padding: .1em .35em;
+      border-radius: 3px;
+      color: var(--text-bright);
+    }
 
     /* ---- NAV ---- */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(15,17,23,.85);
-      backdrop-filter: blur(12px);
+      background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
       max-width: var(--max-w); margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      padding: .75rem 1.5rem;
+      padding: .625rem 1.5rem;
     }
     .nav-logo {
-      font-size: 1.25rem; font-weight: 800; color: var(--text-bright); letter-spacing: -.02em;
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      font-size: 1.125rem; font-weight: 800; color: var(--text-bright);
+      letter-spacing: -.01em;
     }
-    .nav-logo .ai { color: var(--accent); }
-    .nav-logo .jvm { color: var(--accent2); }
-    .nav-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
-    .nav-links a { color: var(--text-muted); font-size: .875rem; font-weight: 500; }
-    .nav-links a:hover { color: var(--text-bright); }
-    .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 1.25rem; }
+    .nav-links a { color: var(--text-secondary); font-size: .8125rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--text-bright); text-decoration: none; }
+    .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.25rem; cursor: pointer; }
 
     /* ---- HERO ---- */
+    .hero-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-wave {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: .45;
+      pointer-events: none;
+    }
+    .hero-wave canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
     .hero {
-      text-align: center;
-      padding: 5rem 1.5rem 4rem;
-      background: radial-gradient(ellipse at 50% 0%, rgba(108,99,255,.15) 0%, transparent 60%);
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 5rem 1.5rem 2.5rem;
+      position: relative;
+      z-index: 1;
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 800;
       color: var(--text-bright);
-      letter-spacing: -.03em;
+      letter-spacing: -.02em;
+      line-height: 1.15;
       margin-bottom: .75rem;
     }
-    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero p { max-width: 640px; margin: 0 auto; color: var(--text-muted); font-size: 1.15rem; }
+    .hero p {
+      color: var(--text-secondary);
+      font-size: .9375rem;
+      max-width: 36rem;
+      line-height: 1.7;
+    }
 
     /* ---- SECTIONS ---- */
-    section { padding: 4rem 1.5rem; }
+    section { padding: 2.5rem 1.5rem 3rem; }
     .container { max-width: var(--max-w); margin: 0 auto; }
-    .section-title {
-      font-size: 1.75rem; font-weight: 700; color: var(--text-bright);
-      margin-bottom: .5rem; letter-spacing: -.02em;
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: .75rem;
+      padding-bottom: .625rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
     }
-    .section-subtitle { color: var(--text-muted); margin-bottom: 2rem; max-width: 640px; }
-    .section-divider { border: none; border-top: 1px solid var(--border); max-width: var(--max-w); margin: 0 auto; }
+    .section-title {
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      font-size: 1.375rem; font-weight: 700; color: var(--text-bright);
+      letter-spacing: -.01em;
+    }
+    .section-count {
+      font-size: .75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .section-subtitle {
+      color: var(--text-secondary); font-size: .8125rem;
+      margin-top: -.75rem; margin-bottom: 1.5rem;
+    }
+
+    /* ---- TAG ---- */
+    .tag {
+      display: inline-block;
+      font-size: .625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      padding: .15rem .45rem;
+      border-radius: 3px;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    .tag-framework { background: var(--tag-framework-bg); color: var(--tag-framework); }
+    .tag-sdk { background: var(--tag-sdk-bg); color: var(--tag-sdk); }
+    .tag-library { background: var(--tag-library-bg); color: var(--tag-library); }
+    .tag-inference { background: var(--tag-inference-bg); color: var(--tag-inference); }
+    .tag-training { background: var(--tag-training-bg); color: var(--tag-training); }
+    .tag-assistant { background: var(--tag-assistant-bg); color: var(--tag-assistant); }
+    .tag-mcp { background: rgba(204,122,138,.12); color: #cc7a8a; }
+    .tag-skills { background: var(--tag-library-bg); color: var(--tag-library); }
 
     /* ---- CARD GRID ---- */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
     }
     .card {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: border-color .2s, transform .2s;
+      padding: 1.25rem 1.375rem;
+      transition: background .15s;
     }
-    .card:hover { border-color: var(--accent); }
-    /* Clickable card: entire card is an <a> tag */
+    .card:hover { background: #242429; }
     a.card { display: block; color: inherit; text-decoration: none; cursor: pointer; }
-    a.card:hover { color: inherit; transform: translateY(-2px); }
+    a.card:hover { color: inherit; }
     a.card h3 { color: var(--text-bright); }
-    a.card p { color: var(--text-muted); }
-    /* Card title links */
-    .card h3 a { color: var(--text-bright); text-decoration: none; }
+    a.card p { color: var(--text-secondary); }
+    .card h3 {
+      font-size: .9375rem; font-weight: 600; color: var(--text-bright);
+      margin-bottom: .25rem; line-height: 1.3;
+    }
+    .card h3 a { color: var(--text-bright); }
     .card h3 a:hover { text-decoration: underline; color: var(--text-bright); }
-    .card-badge {
-      display: inline-block;
-      font-size: .7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      padding: .2rem .55rem;
-      border-radius: 6px;
-      margin-bottom: .75rem;
+    .card .tag { margin-bottom: .5rem; }
+    .card p {
+      font-size: .8125rem; color: var(--text-secondary); line-height: 1.55;
+      margin-bottom: .5rem;
     }
-    .badge-framework { background: rgba(108,99,255,.2); color: #a5a0ff; }
-    .badge-inference { background: rgba(56,189,248,.2); color: #7dd3fc; }
-    .badge-assistant { background: rgba(244,114,182,.2); color: #f9a8d4; }
-    .badge-resource { background: rgba(52,211,153,.2); color: #6ee7b7; }
-    .badge-video { background: rgba(251,191,36,.2); color: #fcd34d; }
-    .card h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-bright); margin-bottom: .4rem; }
-    .card p { font-size: .9rem; color: var(--text-muted); margin-bottom: .75rem; }
-    .card-links { display: flex; gap: .75rem; flex-wrap: wrap; }
-    .card-links a { font-size: .8rem; font-weight: 500; }
+    .card-links { display: flex; gap: .625rem; flex-wrap: wrap; }
+    .card-links a { font-size: .75rem; font-weight: 500; color: var(--link); }
+    .card-links a:hover { text-decoration: underline; }
 
-    /* ---- LINK ICONS ---- */
-    .icon { font-size: 0; }
-    .icon::before {
-      content: '';
-      display: inline-block;
-      width: 16px; height: 16px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: .7;
-      transition: opacity .2s;
+    /* Full-width card spanning both columns */
+    .card-full { grid-column: 1 / -1; }
+
+    /* ---- NEWS ---- */
+    .news-list { list-style: none; }
+    .news-item {
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .875rem;
+      line-height: 1.5;
     }
-    .icon:hover::before { opacity: 1; }
-    .icon-github::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3'/%3E%3C/svg%3E"); }
-    .icon-x::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/%3E%3C/svg%3E"); }
-    .icon-linkedin::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/%3E%3C/svg%3E"); }
-    .icon-bluesky::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8'/%3E%3C/svg%3E"); }
-    .icon-youtube::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E"); }
-    .icon-web::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b8fa3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z'/%3E%3C/svg%3E"); }
+    .news-item:last-child { border-bottom: none; }
+    .news-item a {
+      color: var(--text-bright);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: var(--border-hover);
+    }
+    .news-item a:hover { text-decoration-color: var(--gold); color: var(--gold); }
+    .news-item span { color: var(--text-secondary); }
 
     /* ---- PEOPLE ---- */
     .people-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-    .person {
-      display: flex; align-items: center; gap: 1rem;
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      transition: border-color .2s;
-    }
-    .person:hover { border-color: var(--accent2); }
-    .person-avatar {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.25rem; font-weight: 700; color: #fff; flex-shrink: 0;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       overflow: hidden;
     }
+    .person {
+      display: flex; align-items: flex-start; gap: .75rem;
+      background: var(--card);
+      padding: 1rem 1.25rem;
+      transition: background .15s;
+    }
+    .person:hover { background: #242429; }
+    .person-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      overflow: hidden; flex-shrink: 0;
+      background: var(--border);
+    }
     .person-avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .person-info h4 { font-size: .95rem; font-weight: 600; color: var(--text-bright); }
+    .person-info h4 { font-size: .8125rem; font-weight: 600; color: var(--text-bright); line-height: 1.3; }
     .badge-champion {
       display: inline-block;
-      font-size: .55rem;
-      font-weight: 700;
+      font-size: .5625rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .04em;
-      padding: .1rem .4rem;
-      border-radius: 4px;
-      background: rgba(250,204,21,.2);
-      color: #fde047;
-      white-space: nowrap;
-      margin-top: .2rem;
+      letter-spacing: .03em;
+      padding: .0625rem .3rem;
+      border-radius: 2px;
+      background: var(--gold-dim);
+      color: var(--gold);
+      margin-left: .25rem;
+      vertical-align: middle;
     }
-    .person-info p { font-size: .8rem; color: var(--text-muted); }
-    .person-info .person-links { margin-top: .25rem; display: flex; gap: .5rem; flex-wrap: wrap; }
-    .person-info .person-links a { font-size: .78rem; }
+    .person-info p { font-size: .75rem; color: var(--text-secondary); line-height: 1.4; }
+    .person-links {
+      margin-top: .25rem;
+      display: flex; gap: .375rem; flex-wrap: wrap;
+    }
+    .person-links a {
+      color: var(--text-secondary);
+      display: inline-flex;
+      transition: color .15s;
+    }
+    .person-links a:hover { color: var(--text-bright); text-decoration: none; }
+    .person-links svg { width: 14px; height: 14px; fill: currentColor; }
 
     /* ---- RESOURCES ---- */
-    .resource-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.25rem;
+    .resource-list { list-style: none; }
+    .resource-item {
+      padding: .625rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: .5rem;
+      flex-wrap: wrap;
+      font-size: .875rem;
     }
-
-    /* ---- NEWS TICKER ---- */
-    .news-bar {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 2rem;
+    .resource-item:last-child { border-bottom: none; }
+    .resource-item a {
+      font-weight: 500;
+      color: var(--text-bright);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: var(--border-hover);
     }
-    .news-bar h3 { font-size: 1rem; font-weight: 600; color: var(--accent3); margin-bottom: .75rem; }
-    .news-bar ul { list-style: none; }
-    .news-bar li { padding: .35rem 0; font-size: .9rem; color: var(--text-muted); }
-    .news-bar li::before { content: "\2022"; color: var(--accent3); margin-right: .5rem; }
-    .news-bar li a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
-    .news-bar li a:hover { color: var(--accent3); }
+    .resource-item a:hover { text-decoration-color: var(--gold); color: var(--gold); }
+    .resource-item .desc {
+      font-size: .8125rem;
+      color: var(--text-secondary);
+    }
 
     /* ---- FOOTER ---- */
     footer {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 2rem 1.5rem;
       border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: .85rem;
+      color: var(--text-secondary);
+      font-size: .8125rem;
+    }
+    footer a { color: var(--text); text-decoration: underline; }
+
+    /* ---- GRAIN TEXTURE ---- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* ---- HERO SHIMMER ---- */
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(
+        90deg,
+        var(--gold) 0%,
+        #e8d5a8 25%,
+        var(--gold) 50%,
+        #e8d5a8 75%,
+        var(--gold) 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 6s linear infinite;
+    }
+
+    /* ---- SCROLL REVEAL ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- SEARCH BAR ---- */
+    .search-bar {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: .625rem 1rem .625rem 2.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-bright);
+      font-family: inherit;
+      font-size: .8125rem;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .search-bar input::placeholder { color: var(--text-secondary); }
+    .search-bar input:focus { border-color: var(--gold); }
+    .search-bar svg {
+      position: absolute;
+      left: .75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px; height: 14px;
+      stroke: var(--text-secondary);
+      fill: none;
+      pointer-events: none;
+    }
+
+    /* ---- FILTER CHIPS ---- */
+    .filter-chips {
+      display: flex;
+      gap: .375rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .chip {
+      font-size: .6875rem;
+      font-weight: 600;
+      padding: .25rem .625rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all .15s;
+      font-family: inherit;
+    }
+    .chip:hover { border-color: var(--border-hover); color: var(--text-bright); }
+    .chip.active {
+      background: var(--gold-dim);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ---- NO RESULTS ---- */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      font-size: .875rem;
+      display: none;
     }
 
     /* ---- RESPONSIVE ---- */
-    @media (max-width: 768px) {
-      .nav-links { display: none; flex-direction: column; width: 100%; gap: .5rem; padding-top: .75rem; }
+    @media (max-width: 640px) {
+      .nav-links { display: none; flex-direction: column; width: 100%; gap: .375rem; padding-top: .5rem; }
       .nav-links.open { display: flex; }
       .nav-inner { flex-wrap: wrap; }
       .mobile-toggle { display: block; }
-      .hero { padding: 3rem 1.5rem 2.5rem; }
-      section { padding: 2.5rem 1rem; }
-      .card-grid, .people-grid, .resource-list { grid-template-columns: 1fr; }
+      .hero { padding: 3rem 1.25rem 1.5rem; }
+      section { padding: 1.5rem 1.25rem 2rem; }
+      .card-grid { grid-template-columns: 1fr; }
+      .people-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -275,13 +481,13 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo"><span class="ai">AI</span>4<span class="jvm">JVM</span></div>
+    <div class="nav-logo"><span>AI</span>4JVM</div>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
     <div class="nav-links">
       <a href="#news">News</a>
-      <a href="#frameworks">Agent Frameworks &amp; Libraries</a>
-      <a href="#assistants">Code Assistants</a>
-      <a href="#inference">Inference &amp; Training</a>
+      <a href="#frameworks">Frameworks</a>
+      <a href="#assistants">Assistants</a>
+      <a href="#inference">Inference</a>
       <a href="#people">People</a>
       <a href="#resources">Resources</a>
     </div>
@@ -289,299 +495,315 @@
 </nav>
 
 <!-- HERO -->
-<header class="hero">
-  <h1>Java meets <span>Artificial Intelligence</span></h1>
-  <p>Your curated guide to the Java AI ecosystem &mdash; agent frameworks, inference engines, code assistants, key people, and the best learning resources.</p>
-</header>
+<div class="hero-wrap">
+  <div class="hero-wave"><canvas id="scream-wave"></canvas></div>
+  <header class="hero">
+    <h1>Java meets <em>Artificial Intelligence</em></h1>
+    <p>Your curated guide to the Java AI ecosystem &mdash; agent frameworks, inference engines, code assistants, key people, and the best learning resources.</p>
+  </header>
+</div>
 
 <main>
 
 <!-- NEWS -->
 <section id="news">
   <div class="container">
-    <div class="news-bar">
-      <h3>Latest Headlines</h3>
-      <ul>
-        <li><a href="https://spring.io/blog/2026/03/26/spring-ai-2-0-0-M4-and-1-1-4-and-1-0-5-available">Spring AI 2.0.0-M4, 1.1.4, and 1.0.5 Available</a> &mdash; JSpecify null-safety completion, new features, and maintenance releases with bug fixes</li>
-        <li><a href="https://blog.jetbrains.com/kotlin/2026/03/introducing-tracy-the-ai-observability-library-for-kotlin/">Introducing Tracy: The AI Observability Library for Kotlin</a> &mdash; production-grade AI observability for Kotlin apps, debug failures and track LLM usage with OpenTelemetry</li>
-        <li><a href="https://www.tmdevlab.com/mcp-server-performance-benchmark.html">Multi-Language MCP Server Performance Benchmark</a> &mdash; comparative analysis across Go, Java, Python, and TypeScript</li>
-        <li><a href="https://thenewstack.io/2026-java-ai-apps/">2026 Java AI Apps</a> &mdash; building AI applications with Java in 2026</li>
-        <li><a href="https://medium.com/embabel/agent-memory-is-not-a-greenfield-problem-ground-it-in-your-existing-data-9272cabe1561">Agent Memory Is Not a Greenfield Problem</a> &mdash; ground it in your existing data</li>
-        <li><a href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">Production LangChain4j at Devoxx Belgium</a> &mdash; advanced RAG, agentic workflows, and production tips</li>
-      </ul>
+    <div class="section-header">
+      <h2 class="section-title">News</h2>
     </div>
+    <ul class="news-list">
+      <li class="news-item"><a href="https://spring.io/blog/2026/03/26/spring-ai-2-0-0-M4-and-1-1-4-and-1-0-5-available">Spring AI 2.0.0-M4, 1.1.4, and 1.0.5 Available</a> <span>&mdash; JSpecify null-safety completion, new features, and maintenance releases</span></li>
+      <li class="news-item"><a href="https://blog.jetbrains.com/kotlin/2026/03/introducing-tracy-the-ai-observability-library-for-kotlin/">Introducing Tracy: The AI Observability Library for Kotlin</a> <span>&mdash; production-grade AI observability with OpenTelemetry</span></li>
+      <li class="news-item"><a href="https://www.tmdevlab.com/mcp-server-performance-benchmark.html">Multi-Language MCP Server Performance Benchmark</a> <span>&mdash; comparative analysis across Go, Java, Python, and TypeScript</span></li>
+      <li class="news-item"><a href="https://thenewstack.io/2026-java-ai-apps/">2026 Java AI Apps</a> <span>&mdash; building AI applications with Java in 2026</span></li>
+      <li class="news-item"><a href="https://medium.com/embabel/agent-memory-is-not-a-greenfield-problem-ground-it-in-your-existing-data-9272cabe1561">Agent Memory Is Not a Greenfield Problem</a> <span>&mdash; ground it in your existing data</span></li>
+      <li class="news-item"><a href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">Production LangChain4j at Devoxx Belgium</a> <span>&mdash; advanced RAG, agentic workflows, and production tips</span></li>
+    </ul>
   </div>
 </section>
 
-<hr class="section-divider">
-
-<!-- AGENT FRAMEWORKS -->
+<!-- AGENT FRAMEWORKS & LIBRARIES -->
 <section id="frameworks">
   <div class="container">
-    <h2 class="section-title">Agent Frameworks &amp; Libraries</h2>
-    <div class="card-grid">
+    <div class="section-header">
+      <h2 class="section-title">Agent Frameworks &amp; Libraries</h2>
+      <span class="section-count">15 entries</span>
+    </div>
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="fw-search" placeholder="Filter frameworks, SDKs, libraries..." autocomplete="off">
+    </div>
+    <div class="filter-chips" id="fw-chips">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="framework">Framework</button>
+      <button class="chip" data-filter="sdk">SDK</button>
+      <button class="chip" data-filter="library">Library</button>
+    </div>
+    <div class="card-grid" id="fw-grid">
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://spring.io/projects/spring-ai/">Spring AI</a></h3>
         <p>The Spring ecosystem's official AI framework. Portable abstractions across 20+ model providers, tool calling, RAG, chat memory, vector stores, and MCP support. Built by the Spring team at Broadcom.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://spring.io/projects/spring-ai/" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/spring-projects/spring-ai" title="GitHub"></a>
-          <a class="icon icon-web" href="https://spring.io/ai/" title="Overview"></a>
+          <a href="https://spring.io/projects/spring-ai/">Docs</a>
+          <a href="https://github.com/spring-projects/spring-ai">GitHub</a>
+          <a href="https://spring.io/ai/">Overview</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://docs.langchain4j.dev/">LangChain4j</a></h3>
         <p>The most popular Java LLM library. Unified API across 20+ LLM providers and 30+ embedding stores. Three levels of abstraction from low-level prompts to high-level AI Services. Supports RAG, tool calling, MCP, and agents.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://docs.langchain4j.dev/" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/langchain4j/langchain4j" title="GitHub"></a>
+          <a href="https://docs.langchain4j.dev/">Docs</a>
+          <a href="https://github.com/langchain4j/langchain4j">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://github.com/embabel/embabel-agent">Embabel</a></h3>
         <p>Created by Rod Johnson (Spring Framework creator). JVM agent framework using Goal-Oriented Action Planning (GOAP) for dynamic replanning. Strongly typed, Spring-integrated, MCP support. Written in Kotlin with full Java interop.</p>
         <div class="card-links">
-          <a class="icon icon-github" href="https://github.com/embabel/embabel-agent" title="GitHub"></a>
-          <a class="icon icon-web" href="https://medium.com/@springrod/embabel-a-new-agent-platform-for-the-jvm-1c83402e0014" title="Blog"></a>
+          <a href="https://github.com/embabel/embabel-agent">GitHub</a>
+          <a href="https://medium.com/@springrod/embabel-a-new-agent-platform-for-the-jvm-1c83402e0014">Blog</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://google.github.io/adk-docs/get-started/java/">Google ADK for Java</a></h3>
-        <p>Google's Agent Development Kit &mdash; code-first Java toolkit for building, evaluating, and deploying AI agents. Supports Gemini natively plus third-party models via LangChain4j integration. A2A protocol for agent-to-agent communication.</p>
+        <p>Google's Agent Development Kit &mdash; code-first Java toolkit for building, evaluating, and deploying AI agents. Supports Gemini natively plus third-party models via LangChain4j. A2A protocol for agent-to-agent communication.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://google.github.io/adk-docs/get-started/java/" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/google/adk-java" title="GitHub"></a>
-          <a class="icon icon-web" href="https://codelabs.developers.google.com/adk-java-getting-started" title="Codelab"></a>
+          <a href="https://google.github.io/adk-docs/get-started/java/">Docs</a>
+          <a href="https://github.com/google/adk-java">GitHub</a>
+          <a href="https://codelabs.developers.google.com/adk-java-getting-started">Codelab</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://docs.quarkiverse.io/quarkus-langchain4j/dev/index.html">Quarkus LangChain4j</a></h3>
         <p>Enterprise-grade Quarkus extension for LangChain4j. Native compilation with GraalVM, built-in observability (metrics, tracing, auditing), and Dev UI tooling. Maintained by Red Hat &amp; IBM.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://docs.quarkiverse.io/quarkus-langchain4j/dev/index.html" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/quarkiverse/quarkus-langchain4j" title="GitHub"></a>
+          <a href="https://docs.quarkiverse.io/quarkus-langchain4j/dev/index.html">Docs</a>
+          <a href="https://github.com/quarkiverse/quarkus-langchain4j">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://github.com/langchain4j/langchain4j-cdi">LangChain4j CDI</a></h3>
-        <p>CDI extension for LangChain4j (part of the LangChain4j project) that brings AI services to Jakarta EE and MicroProfile applications. Inject AI services as CDI beans with <code>@RegisterAIService</code>, configure via MicroProfile Config, and add resilience with Fault Tolerance. Supports Quarkus, Helidon, WildFly, Payara, GlassFish, Liberty, and any CDI-capable runtime.</p>
+        <p>CDI extension for LangChain4j that brings AI services to Jakarta EE and MicroProfile applications. Inject AI services as CDI beans with <code>@RegisterAIService</code>. Supports Quarkus, Helidon, WildFly, Payara, GlassFish, Liberty, and any CDI-capable runtime.</p>
         <div class="card-links">
-          <a class="icon icon-github" href="https://github.com/langchain4j/langchain4j-cdi" title="GitHub"></a>
+          <a href="https://github.com/langchain4j/langchain4j-cdi">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://langgraph4j.github.io/langgraph4j/">LangGraph4j</a></h3>
         <p>Build stateful, multi-agent applications with cyclical graphs. Inspired by Python's LangGraph, works with both LangChain4j and Spring AI. Persistent checkpoints, deep agent architectures, and a Studio web UI.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://langgraph4j.github.io/langgraph4j/" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/langgraph4j/langgraph4j" title="GitHub"></a>
+          <a href="https://langgraph4j.github.io/langgraph4j/">Docs</a>
+          <a href="https://github.com/langgraph4j/langgraph4j">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://www.jetbrains.com/koog/">Koog (JetBrains)</a></h3>
         <p>Kotlin-native agent framework from JetBrains. Type-safe DSL, multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://www.jetbrains.com/koog/" title="Website"></a>
-          <a class="icon icon-github" href="https://github.com/JetBrains/koog" title="GitHub"></a>
-          <a class="icon icon-web" href="https://docs.koog.ai/" title="Docs"></a>
+          <a href="https://www.jetbrains.com/koog/">Website</a>
+          <a href="https://github.com/JetBrains/koog">GitHub</a>
+          <a href="https://docs.koog.ai/">Docs</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Framework</span>
+        <span class="tag tag-framework">Framework</span>
         <h3><a href="https://github.com/microsoft/semantic-kernel-java">Semantic Kernel (Java)</a></h3>
         <p>Microsoft's AI orchestration SDK with Java support. Merged with AutoGen into a unified Microsoft Agent Framework with deep Azure integration. Supports prompt chaining, planning, and memory.</p>
         <div class="card-links">
-          <a class="icon icon-github" href="https://github.com/microsoft/semantic-kernel-java" title="GitHub"></a>
+          <a href="https://github.com/microsoft/semantic-kernel-java">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-inference">SDK</span>
+        <span class="tag tag-sdk">SDK</span>
         <h3><a href="https://modelcontextprotocol.io/sdk/java/mcp-overview">MCP Java SDK</a></h3>
         <p>The official Java SDK for Model Context Protocol servers and clients. Co-maintained by the Spring AI team and Anthropic. Sync/async, STDIO/SSE/Streamable HTTP transports, OAuth support.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://modelcontextprotocol.io/sdk/java/mcp-overview" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/modelcontextprotocol/java-sdk" title="GitHub"></a>
+          <a href="https://modelcontextprotocol.io/sdk/java/mcp-overview">Docs</a>
+          <a href="https://github.com/modelcontextprotocol/java-sdk">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-inference">SDK</span>
+        <span class="tag tag-sdk">SDK</span>
         <h3><a href="https://github.com/anthropics/anthropic-sdk-java">Anthropic Java SDK</a></h3>
         <p>Official Java SDK for the Claude Messages API. Streaming, retries, structured outputs, extended thinking, code execution, and files API. Build Java apps powered by Claude.</p>
         <div class="card-links">
-          <a class="icon icon-github" href="https://github.com/anthropics/anthropic-sdk-java" title="GitHub"></a>
+          <a href="https://github.com/anthropics/anthropic-sdk-java">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-inference">SDK</span>
+        <span class="tag tag-sdk">SDK</span>
         <h3><a href="https://github.github.com/copilot-sdk-java/">GitHub Copilot SDK for Java</a></h3>
-        <p>Official Java SDK for embedding the GitHub Copilot agentic engine directly into Java applications. Uses the same agentic harness that powers the Copilot CLI &mdash; exposes planning, tool calling, file editing, and MCP integration via a simple Java API. Currently in technical preview.</p>
+        <p>Official Java SDK for embedding the GitHub Copilot agentic engine directly into Java applications. Exposes planning, tool calling, file editing, and MCP integration via a simple Java API. Currently in technical preview.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://github.github.com/copilot-sdk-java/" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/github/copilot-sdk-java" title="GitHub"></a>
+          <a href="https://github.github.com/copilot-sdk-java/">Docs</a>
+          <a href="https://github.com/github/copilot-sdk-java">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-inference">Library</span>
+        <span class="tag tag-library">Library</span>
         <h3><a href="https://jetbrains.github.io/tracy/latest">Tracy (JetBrains)</a></h3>
-        <p>AI tracing library for Kotlin and Java. Captures structured traces from LLM interactions &mdash; messages, cost, token usage, and execution time. Implements OpenTelemetry Generative AI Semantic Conventions with exports to Langfuse, Weights &amp; Biases, and more.</p>
+        <p>AI tracing library for Kotlin and Java. Captures structured traces from LLM interactions &mdash; messages, cost, token usage, and execution time. Implements OpenTelemetry Generative AI Semantic Conventions.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://jetbrains.github.io/tracy/latest" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/JetBrains/tracy" title="GitHub"></a>
+          <a href="https://jetbrains.github.io/tracy/latest">Docs</a>
+          <a href="https://github.com/JetBrains/tracy">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-inference">Library</span>
+        <span class="tag tag-library">Library</span>
         <h3><a href="https://docling-project.github.io/docling-java/current">Docling Java</a></h3>
-        <p>Docling Java is the official Java client and tooling for Docling &mdash; a suite that converts messy documents into structured data and simplifies downstream document and AI processing by detecting tables, formulas, reading order, OCR, and much more.</p>
+        <p>Official Java client and tooling for Docling &mdash; converts messy documents into structured data. Detects tables, formulas, reading order, OCR, and simplifies downstream AI processing.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://docling-project.github.io/docling-java/current" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/docling-project/docling-java" title="GitHub"></a>
+          <a href="https://docling-project.github.io/docling-java/current">Docs</a>
+          <a href="https://github.com/docling-project/docling-java">GitHub</a>
         </div>
       </div>
 
-      <div class="card">
-        <span class="card-badge badge-inference">Library</span>
-        <h3>OmniHai</h3>
+      <div class="card card-full">
+        <span class="tag tag-library">Library</span>
+        <h3><a href="https://omnihai.org">OmniHai</a></h3>
         <p>Unified Java AI utility library for Jakarta EE and MicroProfile. Single API across 10+ providers with zero external runtime dependencies &mdash; just java.net.http.HttpClient. Chat, streaming, structured outputs, web search, translation, moderation, image/audio generation, and more in a ~210 KB JAR.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://omnihai.org" title="Website"></a>
-          <a class="icon icon-github" href="https://github.com/omnifaces/omnihai" title="GitHub"></a>
-          <a class="icon icon-web" href="https://javadoc.io/doc/org.omnifaces/omnihai" title="Javadoc"></a>
+          <a href="https://omnihai.org">Website</a>
+          <a href="https://github.com/omnifaces/omnihai">GitHub</a>
+          <a href="https://javadoc.io/doc/org.omnifaces/omnihai">Javadoc</a>
         </div>
       </div>
+
+      <div class="no-results" id="fw-no-results">No matches found.</div>
 
     </div>
   </div>
 </section>
 
-<hr class="section-divider">
-
-<!-- CODE ASSISTANTS & JAVA DEV TOOLS -->
+<!-- CODE ASSISTANTS -->
 <section id="assistants">
   <div class="container">
-    <h2 class="section-title">Java with Code Assistants</h2>
-    <p class="section-subtitle">Technologies that supercharge Java development when paired with AI code assistants &mdash; from MCP servers that give agents live Javadoc access, to reusable skill packages and IDE integrations.</p>
+    <div class="section-header">
+      <h2 class="section-title">Java with Code Assistants</h2>
+    </div>
+    <p class="section-subtitle">MCP servers, skill registries, and IDE integrations that bridge AI assistants and the Java ecosystem.</p>
     <div class="card-grid">
 
       <div class="card">
-        <span class="card-badge badge-assistant">MCP Server</span>
+        <span class="tag tag-mcp">MCP Server</span>
         <h3><a href="https://www.javadocs.dev/">Javadocs.dev MCP Server</a></h3>
         <p>Gives AI assistants live access to Java, Kotlin, and Scala library documentation from Maven Central. Six tools including latest-version lookup, Javadoc symbol browsing, and source file retrieval. Connect any MCP client via Streamable HTTP.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://www.javadocs.dev/" title="Website"></a>
+          <a href="https://www.javadocs.dev/">Website</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-assistant">Assistant</span>
+        <span class="tag tag-assistant">Assistant</span>
         <h3><a href="https://www.jetbrains.com/ai/">JetBrains AI</a></h3>
-        <p>AI-powered coding assistance built into IntelliJ IDEA and all JetBrains IDEs. Context-aware code completion, next-edit suggestions, and an agent-mode chat for refactoring, test generation, and complex tasks. Deep understanding of Java, Kotlin, and Scala project conventions. Supports cloud LLMs (Gemini, OpenAI, Anthropic) plus bring-your-own-key.</p>
+        <p>AI-powered coding assistance built into IntelliJ IDEA and all JetBrains IDEs. Context-aware code completion, next-edit suggestions, and an agent-mode chat for refactoring, test generation, and complex tasks. Supports cloud LLMs plus bring-your-own-key.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://www.jetbrains.com/ai/" title="Website"></a>
-          <a class="icon icon-web" href="https://www.jetbrains.com/help/idea/ai-assistant.html" title="Docs"></a>
+          <a href="https://www.jetbrains.com/ai/">Website</a>
+          <a href="https://www.jetbrains.com/help/idea/ai-assistant.html">Docs</a>
         </div>
       </div>
 
-      <div class="card">
-        <span class="card-badge badge-framework">Skills</span>
+      <div class="card card-full">
+        <span class="tag tag-skills">Skills</span>
         <h3><a href="https://www.skillsjars.com/">SkillsJars</a></h3>
         <p>A packaging format and registry for distributing reusable AI agent skills as Maven/Gradle JARs. Skills are Markdown files (<code>SKILL.md</code>) under <code>META-INF/skills/</code> that teach AI agents domain-specific patterns. Discover and load skills on demand in Claude Code, Kiro, and Spring AI apps.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://www.skillsjars.com/" title="Website"></a>
+          <a href="https://www.skillsjars.com/">Website</a>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-
-<hr class="section-divider">
 
 <!-- INFERENCE & TRAINING -->
 <section id="inference">
   <div class="container">
-    <h2 class="section-title">Inference &amp; Training</h2>
+    <div class="section-header">
+      <h2 class="section-title">Inference &amp; Training</h2>
+    </div>
     <p class="section-subtitle">Run models, train classifiers, and do ML inference directly on the JVM &mdash; no Python required.</p>
     <div class="card-grid">
 
       <div class="card">
-        <span class="card-badge badge-inference">Inference</span>
+        <span class="tag tag-inference">Inference</span>
         <h3><a href="https://github.com/tjake/Jlama">Jlama</a></h3>
         <p>Modern LLM inference engine written in pure Java. Runs Llama, Gemma, Mistral, and more locally on CPU. Uses Java's Vector API (Project Panama) for SIMD-accelerated matrix math. Supports GGUF and SafeTensors formats, quantized models, and distributed inference.</p>
         <div class="card-links">
-          <a class="icon icon-github" href="https://github.com/tjake/Jlama" title="GitHub"></a>
-          <a class="icon icon-web" href="https://www.baeldung.com/java-jlama-llm" title="Tutorial"></a>
+          <a href="https://github.com/tjake/Jlama">GitHub</a>
+          <a href="https://www.baeldung.com/java-jlama-llm">Tutorial</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-inference">Inference</span>
+        <span class="tag tag-inference">Inference</span>
         <h3><a href="https://github.com/deepjavalibrary/djl">Deep Java Library (DJL)</a></h3>
         <p>AWS's high-level, engine-agnostic deep learning framework. Supports PyTorch, TensorFlow, and MXNet backends. Used in production at Netflix and Amazon for real-time inference. DJLServing provides high-performance model serving.</p>
         <div class="card-links">
-          <a class="icon icon-github" href="https://github.com/deepjavalibrary/djl" title="GitHub"></a>
-          <a class="icon icon-web" href="https://www.infoq.com/articles/java-machine-learning-djl/" title="InfoQ"></a>
+          <a href="https://github.com/deepjavalibrary/djl">GitHub</a>
+          <a href="https://www.infoq.com/articles/java-machine-learning-djl/">InfoQ</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-inference">Inference</span>
+        <span class="tag tag-inference">Inference</span>
         <h3><a href="https://onnxruntime.ai/docs/get-started/with-java.html">ONNX Runtime Java</a></h3>
         <p>Run transformer and classical ML models directly on the JVM. Hardware acceleration via CUDA, ROCm, DirectML, and more. Enables deploying scikit-learn, PyTorch, and HuggingFace models in Java without Python or REST wrappers.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://onnxruntime.ai/docs/get-started/with-java.html" title="Docs"></a>
-          <a class="icon icon-web" href="https://www.infoq.com/articles/onnx-ai-inference-with-java/" title="InfoQ Guide"></a>
+          <a href="https://onnxruntime.ai/docs/get-started/with-java.html">Docs</a>
+          <a href="https://www.infoq.com/articles/onnx-ai-inference-with-java/">InfoQ Guide</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Training</span>
+        <span class="tag tag-training">Training</span>
         <h3><a href="https://tribuo.org/">Tribuo</a></h3>
         <p>Oracle Labs' ML library for classification, regression, clustering, and anomaly detection. Strong typing, provenance tracking for reproducibility, and integrations with XGBoost, ONNX Runtime, TensorFlow, and LibSVM.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://tribuo.org/" title="Website"></a>
-          <a class="icon icon-github" href="https://github.com/oracle/tribuo" title="GitHub"></a>
+          <a href="https://tribuo.org/">Website</a>
+          <a href="https://github.com/oracle/tribuo">GitHub</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-inference">Inference</span>
+        <span class="tag tag-inference">Inference</span>
         <h3><a href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/">GPULlama3.java</a></h3>
         <p>First Java-native Llama 3 implementation with automatic GPU acceleration via TornadoVM. No CUDA or native code needed &mdash; GPU-accelerated LLM inference in pure Java. From the University of Manchester's Beehive Lab.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/" title="InfoQ"></a>
+          <a href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/">InfoQ</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge badge-framework">Training</span>
+        <span class="tag tag-training">Training</span>
         <h3><a href="https://www.tensorflow.org/jvm">TensorFlow Java</a></h3>
         <p>Official Java bindings for TensorFlow. Train and deploy TF models entirely in Java. Used by Tribuo under the hood. Suitable for teams that want to stay within the JVM ecosystem while using TensorFlow's model formats.</p>
         <div class="card-links">
-          <a class="icon icon-web" href="https://www.tensorflow.org/jvm" title="Docs"></a>
-          <a class="icon icon-github" href="https://github.com/tensorflow/java" title="GitHub"></a>
+          <a href="https://www.tensorflow.org/jvm">Docs</a>
+          <a href="https://github.com/tensorflow/java">GitHub</a>
         </div>
       </div>
 
@@ -589,27 +811,26 @@
   </div>
 </section>
 
-<hr class="section-divider">
-
 <!-- PEOPLE -->
 <section id="people">
   <div class="container">
-    <h2 class="section-title">People to Follow</h2>
-    <p class="section-subtitle">Key voices at the intersection of Java and AI.</p>
+    <div class="section-header">
+      <h2 class="section-title">People to Follow</h2>
+      <span class="section-count">Key voices at the intersection of Java and AI</span>
+    </div>
     <div class="people-grid">
 
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/129743?v=4" alt="Bruno Borges"></div>
         <div class="person-info">
-          <h4>Bruno Borges</h4>
-          <span class="badge-champion">Java Champion</span>
-          <p>Principal Program Manager &mdash; Microsoft Java Engineering Group</p>
+          <h4>Bruno Borges <span class="badge-champion">Java Champion</span></h4>
+          <p>Principal PM &mdash; Microsoft Java Engineering Group</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/brunoborges" title="@brunoborges"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/brunoborges.bsky.social" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/brunoborges" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://ca.linkedin.com/in/brunocborges" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://blog.brunoborges.info/" title="Blog"></a>
+            <a href="https://twitter.com/brunoborges" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/brunoborges.bsky.social" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/brunoborges" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://ca.linkedin.com/in/brunocborges" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://blog.brunoborges.info/" title="Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -617,14 +838,13 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/363447?v=4" alt="Eric Deandrea"></div>
         <div class="person-info">
-          <h4>Eric Deandrea</h4>
-          <span class="badge-champion">Java Champion</span>
-          <p><a href="https://docling-project.github.io/docling-java/current">Docling Java</a> project lead, contributor to LangChain4j, Sr. Principal Software Engineer at IBM</p>
+          <h4>Eric Deandrea <span class="badge-champion">Java Champion</span></h4>
+          <p><a href="https://docling-project.github.io/docling-java/current">Docling Java</a> lead, LangChain4j contributor, Sr. Principal SE at IBM</p>
           <div class="person-links">
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/ericdeandrea.dev" title="Bluesky"></a>
-            <a class="icon icon-x" href="https://x.com/edeandrea" title="@edeandrea"></a>
-            <a class="icon icon-github" href="https://github.com/edeandrea" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/edeandrea/" title="LinkedIn"></a>
+            <a href="https://bsky.app/profile/ericdeandrea.dev" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://x.com/edeandrea" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/edeandrea" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/edeandrea/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -632,15 +852,14 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1358554?v=4" alt="Markus Eisele"></div>
         <div class="person-info">
-          <h4>Markus Eisele</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Markus Eisele <span class="badge-champion">Java Champion</span></h4>
           <p>Developer Advocate &mdash; IBM Research, JavaLand founder</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/myfear" title="@myfear"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/myfear.com" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/myfear" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/markuseisele/" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://blog.eisele.net/" title="Blog"></a>
+            <a href="https://twitter.com/myfear" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/myfear.com" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/myfear" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/markuseisele/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://blog.eisele.net/" title="Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -648,15 +867,14 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/193434?v=4" alt="Frank Greco"></div>
         <div class="person-info">
-          <h4>Frank Greco</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Frank Greco <span class="badge-champion">Java Champion</span></h4>
           <p>NYJavaSIG founder, AI 4 Java educator, JSR 381 co-author</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/frankgreco" title="@frankgreco"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/frankgreco.bsky.social" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/fgreco55" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/frankdgreco/" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://ai4java.com" title="Website"></a>
+            <a href="https://twitter.com/frankgreco" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/frankgreco.bsky.social" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/fgreco55" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/frankdgreco/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://ai4java.com" title="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -664,13 +882,12 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/372781?v=4" alt="Mario Fusco"></div>
         <div class="person-info">
-          <h4>Mario Fusco</h4>
-          <span class="badge-champion">Java Champion</span>
-          <p>LangChain4j core team, Sr. Principal Software Engineer at IBM</p>
+          <h4>Mario Fusco <span class="badge-champion">Java Champion</span></h4>
+          <p>LangChain4j core team, Sr. Principal SE at IBM</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://x.com/mariofusco" title="@mariofusco"></a>
-            <a class="icon icon-github" href="https://github.com/mariofusco" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/mario-fusco-3467213/" title="LinkedIn"></a>
+            <a href="https://x.com/mariofusco" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/mariofusco" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/mario-fusco-3467213/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -678,14 +895,13 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1916583?v=4" alt="Rod Johnson"></div>
         <div class="person-info">
-          <h4>Rod Johnson</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Rod Johnson <span class="badge-champion">Java Champion</span></h4>
           <p>Creator of Spring Framework, CEO of Embabel</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/springrod" title="@springrod"></a>
-            <a class="icon icon-github" href="https://github.com/johnsonr" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/johnsonroda/" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://medium.com/@springrod" title="Blog"></a>
+            <a href="https://twitter.com/springrod" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/johnsonr" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/johnsonroda/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://medium.com/@springrod" title="Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -693,15 +909,14 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/47907?v=4" alt="Guillaume Laforge"></div>
         <div class="person-info">
-          <h4>Guillaume Laforge</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Guillaume Laforge <span class="badge-champion">Java Champion</span></h4>
           <p>Google Developer Advocate &mdash; Java, Groovy, AI</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/glaforge" title="@glaforge"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/glaforge.bsky.social" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/glaforge" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/glaforge/" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://glaforge.dev/" title="Blog"></a>
+            <a href="https://twitter.com/glaforge" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/glaforge.bsky.social" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/glaforge" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/glaforge/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://glaforge.dev/" title="Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -712,9 +927,9 @@
           <h4>Dmytro Liubarskyi</h4>
           <p>Creator of LangChain4j, Principal Architect &mdash; IBM</p>
           <div class="person-links">
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/dmythro.bsky.social" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/dliubarskyi" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/dmytro-liubarskyi/" title="LinkedIn"></a>
+            <a href="https://bsky.app/profile/dmythro.bsky.social" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/dliubarskyi" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/dmytro-liubarskyi/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -722,15 +937,14 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/54473?v=4" alt="Josh Long"></div>
         <div class="person-info">
-          <h4>Josh Long</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Josh Long <span class="badge-champion">Java Champion</span></h4>
           <p>Spring Developer Advocate, Spring AI talks</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/starbuxman" title="@starbuxman"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/starbuxman.joshlong.com" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/joshlong" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/joshlong/" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://spring.io/authors/joshlong/" title="Spring Blog"></a>
+            <a href="https://twitter.com/starbuxman" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/starbuxman.joshlong.com" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/joshlong" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/joshlong/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://spring.io/authors/joshlong/" title="Spring Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -741,9 +955,9 @@
           <h4>T. Jake Luciani</h4>
           <p>Creator of Jlama &mdash; Java LLM inference</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/tjake" title="@tjake"></a>
-            <a class="icon icon-github" href="https://github.com/tjake" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/tjake/" title="LinkedIn"></a>
+            <a href="https://twitter.com/tjake" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/tjake" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/tjake/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -754,9 +968,9 @@
           <h4>Mark Pollack</h4>
           <p>Spring AI project lead</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/markpollack" title="@markpollack"></a>
-            <a class="icon icon-github" href="https://github.com/markpollack" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/marklpollack/" title="LinkedIn"></a>
+            <a href="https://twitter.com/markpollack" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/markpollack" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/marklpollack/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -767,9 +981,9 @@
           <h4>Lize Raes</h4>
           <p>LangChain4j core team, Developer Advocate at Oracle</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/LizeRaes" title="@LizeRaes"></a>
-            <a class="icon icon-github" href="https://github.com/LizeRaes" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/lize-raes-a8a34110/" title="LinkedIn"></a>
+            <a href="https://twitter.com/LizeRaes" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/LizeRaes" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/lize-raes-a8a34110/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -777,14 +991,13 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/14850786?v=4" alt="Jennifer Reif"></div>
         <div class="person-info">
-          <h4>Jennifer Reif</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Jennifer Reif <span class="badge-champion">Java Champion</span></h4>
           <p>Developer Advocate at Neo4j</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/JMHReif" title="@JMHReif"></a>
-            <a class="icon icon-github" href="https://github.com/JMHReif" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/jmhreif/" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://jmhreif.com" title="Website"></a>
+            <a href="https://twitter.com/JMHReif" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/JMHReif" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/jmhreif/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://jmhreif.com" title="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -792,13 +1005,12 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/426039?v=4" alt="Oleg Šelajev"></div>
         <div class="person-info">
-          <h4>Oleg Šelajev</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Oleg Šelajev <span class="badge-champion">Java Champion</span></h4>
           <p>Developer Relations Lead for AI &mdash; Docker</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/shelajev" title="@shelajev"></a>
-            <a class="icon icon-github" href="https://github.com/shelajev" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/shelajev/" title="LinkedIn"></a>
+            <a href="https://twitter.com/shelajev" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/shelajev" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/shelajev/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -809,9 +1021,9 @@
           <h4>Bartosz Sorrentino</h4>
           <p>LangGraph4j creator, Principal Software Architect</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/bsorrentinoJ" title="@bsorrentinoJ"></a>
-            <a class="icon icon-github" href="https://github.com/bsorrentino" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/bartolomeosorrentino/" title="LinkedIn"></a>
+            <a href="https://twitter.com/bsorrentinoJ" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/bsorrentino" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/bartolomeosorrentino/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -822,10 +1034,10 @@
           <h4>Christian Tzolov</h4>
           <p>Spring AI lead, MCP Java SDK founder, Spring team at Broadcom</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/christzolov" title="@christzolov"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/tzolov.bsky.social" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/tzolov" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/tzolov/" title="LinkedIn"></a>
+            <a href="https://twitter.com/christzolov" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/tzolov.bsky.social" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/tzolov" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/tzolov/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -833,15 +1045,14 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/349507?v=4" alt="Dan Vega"></div>
         <div class="person-info">
-          <h4>Dan Vega</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Dan Vega <span class="badge-champion">Java Champion</span></h4>
           <p>Spring Developer Advocate, YouTube educator</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/therealdanvega" title="@therealdanvega"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/danvega.dev" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/danvega" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/danvega/" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://www.danvega.dev/" title="Blog"></a>
+            <a href="https://twitter.com/therealdanvega" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/danvega.dev" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/danvega" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/danvega/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.danvega.dev/" title="Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -852,10 +1063,10 @@
           <h4>Dmitry Vinnik</h4>
           <p>Engineering Manager (AI/ML) at Meta</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/DmitryVinnik" title="@DmitryVinnik"></a>
-            <a class="icon icon-github" href="https://github.com/dmitryvinn" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/dmitry-vinnik/" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://dvinnik.dev/" title="Blog"></a>
+            <a href="https://twitter.com/DmitryVinnik" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com/dmitryvinn" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/dmitry-vinnik/" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://dvinnik.dev/" title="Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -863,14 +1074,13 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/167926?v=4" alt="Craig Walls"></div>
         <div class="person-info">
-          <h4>Craig Walls</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>Craig Walls <span class="badge-champion">Java Champion</span></h4>
           <p>Author of <em>Spring AI in Action</em></p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/habuma" title="@habuma"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/habuma.com" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/habuma" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/habuma" title="LinkedIn"></a>
+            <a href="https://twitter.com/habuma" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/habuma.com" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/habuma" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/habuma" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
       </div>
@@ -878,15 +1088,14 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/65043?v=4" alt="James Ward"></div>
         <div class="person-info">
-          <h4>James Ward</h4>
-          <span class="badge-champion">Java Champion</span>
+          <h4>James Ward <span class="badge-champion">Java Champion</span></h4>
           <p>Developer Advocate &mdash; Java, Kotlin, Cloud, AI</p>
           <div class="person-links">
-            <a class="icon icon-x" href="https://twitter.com/_jamesward" title="@_JamesWard"></a>
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/jamesward.com" title="Bluesky"></a>
-            <a class="icon icon-github" href="https://github.com/jamesward" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/jamesward" title="LinkedIn"></a>
-            <a class="icon icon-web" href="https://jamesward.com" title="Blog"></a>
+            <a href="https://twitter.com/_jamesward" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://bsky.app/profile/jamesward.com" title="Bluesky"><svg viewBox="0 0 24 24"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8"/></svg></a>
+            <a href="https://github.com/jamesward" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3"/></svg></a>
+            <a href="https://www.linkedin.com/in/jamesward" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://jamesward.com" title="Blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
           </div>
         </div>
       </div>
@@ -895,81 +1104,25 @@
   </div>
 </section>
 
-<hr class="section-divider">
-
 <!-- RESOURCES -->
 <section id="resources">
   <div class="container">
-    <h2 class="section-title">Recent &amp; Noteworthy Content, Communities, and Resources</h2>
-    <div class="resource-list">
-
-      <a class="card" href="https://javaconferences.org/">
-        <span class="card-badge badge-resource">Community</span>
-        <h3>Java Conferences Tracker</h3>
-        <p>Community-maintained calendar of all Java conferences worldwide</p>
-      </a>
-
-      <a class="card" href="https://redmonk.com/jgovernor/java-relevance-in-the-ai-era-agent-frameworks-emerge/">
-        <span class="card-badge badge-assistant">Blog</span>
-        <h3>Java Relevance in the AI Era</h3>
-        <p>RedMonk analysis of Java's position as agent frameworks emerge</p>
-      </a>
-
-      <a class="card" href="https://github.com/spring-ai-community/awesome-spring-ai">
-        <span class="card-badge badge-inference">Resource</span>
-        <h3>Awesome Spring AI</h3>
-        <p>Curated list of Spring AI resources, tools, and tutorials</p>
-      </a>
-
-      <a class="card" href="https://www.manning.com/books/spring-ai-in-action">
-        <span class="card-badge badge-framework">Book</span>
-        <h3>Spring AI in Action (Manning)</h3>
-        <p>Book by Craig Walls &mdash; comprehensive guide to building AI apps with Spring</p>
-      </a>
-
-      <a class="card" href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">
-        <span class="card-badge badge-inference">Resource</span>
-        <h3>Production LangChain4j &mdash; Inside.java</h3>
-        <p>Advanced RAG, agentic workflows, and production tips from Devoxx Belgium</p>
-      </a>
-
-      <a class="card" href="https://codelabs.developers.google.com/adk-java-getting-started">
-        <span class="card-badge badge-inference">Resource</span>
-        <h3>Google ADK Java Codelab</h3>
-        <p>Hands-on: build AI agents in Java with Google's ADK</p>
-      </a>
-
-      <a class="card" href="https://www.youtube.com/@DevoxxForever">
-        <span class="card-badge badge-video">Resource</span>
-        <h3>Devoxx YouTube</h3>
-        <p>Thousands of conference talks on Java, AI, cloud, and architecture</p>
-      </a>
-
-      <a class="card" href="https://youtube.com/@coffeesoftware">
-        <span class="card-badge badge-video">Videos</span>
-        <h3>Coffee + Software</h3>
-        <p>Spring ecosystem, AI integration, and Java community</p>
-      </a>
-
-      <a class="card" href="https://foojay.io/today/foojay-podcast-86/">
-        <span class="card-badge badge-inference">Resource</span>
-        <h3>Foojay Podcast: Java AI Revolution</h3>
-        <p>Agents, MCP, graph databases &mdash; developers navigate the AI revolution</p>
-      </a>
-
-      <a class="card" href="https://catalog.workshops.aws/java-spring-ai-agents/en-US">
-        <span class="card-badge badge-resource">Workshop</span>
-        <h3>Building Java AI Agents with Spring AI (AWS)</h3>
-        <p>Hands-on AWS workshop for building intelligent AI agents with Spring AI and AWS services, including deployment to EKS</p>
-      </a>
-
-      <a class="card" href="https://www.youtube.com/watch?v=my2bQtHBUeY">
-        <span class="card-badge badge-video">Livestream</span>
-        <h3>AI &amp; Java on Serverless Office Hours</h3>
-        <p>James Ward and Julian Wood explore building AI-powered Java apps &mdash; MCP integration, agent architectures with AgentCore, GraalVM optimization for AI workloads, and secure auth patterns for AI services on serverless</p>
-      </a>
-
+    <div class="section-header">
+      <h2 class="section-title">Content, Communities &amp; Resources</h2>
     </div>
+    <ul class="resource-list">
+      <li class="resource-item"><span class="tag tag-library">Community</span> <a href="https://javaconferences.org/">Java Conferences Tracker</a> <span class="desc">&mdash; community-maintained calendar of all Java conferences worldwide</span></li>
+      <li class="resource-item"><span class="tag tag-assistant">Blog</span> <a href="https://redmonk.com/jgovernor/java-relevance-in-the-ai-era-agent-frameworks-emerge/">Java Relevance in the AI Era</a> <span class="desc">&mdash; RedMonk analysis of Java's position as agent frameworks emerge</span></li>
+      <li class="resource-item"><span class="tag tag-sdk">Resource</span> <a href="https://github.com/spring-ai-community/awesome-spring-ai">Awesome Spring AI</a> <span class="desc">&mdash; curated list of Spring AI resources, tools, and tutorials</span></li>
+      <li class="resource-item"><span class="tag tag-training">Book</span> <a href="https://www.manning.com/books/spring-ai-in-action">Spring AI in Action (Manning)</a> <span class="desc">&mdash; by Craig Walls, comprehensive guide to building AI apps with Spring</span></li>
+      <li class="resource-item"><span class="tag tag-sdk">Resource</span> <a href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">Production LangChain4j &mdash; Inside.java</a> <span class="desc">&mdash; advanced RAG, agentic workflows, and production tips from Devoxx Belgium</span></li>
+      <li class="resource-item"><span class="tag tag-sdk">Resource</span> <a href="https://codelabs.developers.google.com/adk-java-getting-started">Google ADK Java Codelab</a> <span class="desc">&mdash; hands-on: build AI agents in Java with Google's ADK</span></li>
+      <li class="resource-item"><span class="tag tag-inference">Video</span> <a href="https://www.youtube.com/@DevoxxForever">Devoxx YouTube</a> <span class="desc">&mdash; thousands of conference talks on Java, AI, cloud, and architecture</span></li>
+      <li class="resource-item"><span class="tag tag-inference">Video</span> <a href="https://youtube.com/@coffeesoftware">Coffee + Software</a> <span class="desc">&mdash; Spring ecosystem, AI integration, and Java community</span></li>
+      <li class="resource-item"><span class="tag tag-sdk">Podcast</span> <a href="https://foojay.io/today/foojay-podcast-86/">Foojay Podcast: Java AI Revolution</a> <span class="desc">&mdash; agents, MCP, graph databases &mdash; developers navigate the AI revolution</span></li>
+      <li class="resource-item"><span class="tag tag-framework">Workshop</span> <a href="https://catalog.workshops.aws/java-spring-ai-agents/en-US">Building Java AI Agents with Spring AI (AWS)</a> <span class="desc">&mdash; hands-on workshop including deployment to EKS</span></li>
+      <li class="resource-item"><span class="tag tag-inference">Livestream</span> <a href="https://www.youtube.com/watch?v=my2bQtHBUeY">AI &amp; Java on Serverless Office Hours</a> <span class="desc">&mdash; MCP integration, agent architectures, GraalVM optimization</span></li>
+    </ul>
   </div>
 </section>
 
@@ -979,6 +1132,241 @@
 <footer>
   <p>AI4JVM &mdash; Curating the Java AI ecosystem. Contributions welcome on <a href="https://github.com/jamesward/ai4jvm">GitHub</a>.</p>
 </footer>
+
+<script>
+/* ---- Scream Wave (WebGL shader background) ---- */
+(function() {
+  var canvas = document.getElementById('scream-wave');
+  if (!canvas) return;
+  var gl = canvas.getContext('webgl', { alpha: false, antialias: false, preserveDrawingBuffer: false });
+  if (!gl) return;
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var vertSrc = 'attribute vec2 a_pos; void main() { gl_Position = vec4(a_pos, 0.0, 1.0); }';
+
+  var fragSrc = [
+    'precision highp float;',
+    'uniform float u_time;',
+    'uniform vec2 u_res;',
+    '#define PI 3.14159265359',
+    '#define CYCLE 7.0',
+    'float hash(float n) { return fract(sin(n) * 43758.5453123); }',
+    'float hash2(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }',
+    'float noise(float x) { float i = floor(x); float f = fract(x); f = f*f*(3.0-2.0*f); return mix(hash(i), hash(i+1.0), f); }',
+    'float noise2d(vec2 p) { vec2 i = floor(p); vec2 f = fract(p); f = f*f*(3.0-2.0*f); float a = hash2(i); float b = hash2(i+vec2(1.0,0.0)); float c = hash2(i+vec2(0.0,1.0)); float d = hash2(i+vec2(1.0,1.0)); return mix(mix(a,b,f.x), mix(c,d,f.x), f.y); }',
+    'float emotionCurve(float t) {',
+    '  float phase = fract(t / CYCLE);',
+    '  float calm = smoothstep(0.0, 0.06, phase) * (1.0 - smoothstep(0.14, 0.25, phase));',
+    '  float calmVal = 0.08 + 0.04 * sin(phase * PI * 20.0);',
+    '  float buildStart = 0.214; float buildEnd = 0.5;',
+    '  float build = smoothstep(buildStart - 0.03, buildStart + 0.04, phase) * (1.0 - smoothstep(buildEnd - 0.04, buildEnd + 0.02, phase));',
+    '  float buildProgress = clamp((phase - buildStart) / (buildEnd - buildStart), 0.0, 1.0);',
+    '  buildProgress = buildProgress * buildProgress * (3.0 - 2.0 * buildProgress);',
+    '  float buildVal = 0.1 + buildProgress * buildProgress * 0.85;',
+    '  float screamStart = 0.5; float screamEnd = 0.714;',
+    '  float scream = smoothstep(screamStart - 0.03, screamStart + 0.03, phase) * (1.0 - smoothstep(screamEnd - 0.04, screamEnd + 0.01, phase));',
+    '  float screamProgress = clamp((phase - screamStart) / (screamEnd - screamStart), 0.0, 1.0);',
+    '  float screamVal = 0.95 + 0.05 * sin(screamProgress * PI);',
+    '  float collapseStart = 0.714;',
+    '  float collapse = smoothstep(collapseStart - 0.04, collapseStart + 0.03, phase);',
+    '  float collapseProgress = clamp((phase - collapseStart) / (1.0 - collapseStart), 0.0, 1.0);',
+    '  float collapseFlash = exp(-collapseProgress * 20.0) * 0.25;',
+    '  float flutter = sin(collapseProgress * 40.0) * exp(-collapseProgress * 5.0) * 0.08;',
+    '  float collapseVal = (0.95 + collapseFlash) * exp(-collapseProgress * 4.5) + flutter;',
+    '  collapseVal = max(collapseVal, 0.0);',
+    '  return calmVal * calm + buildVal * build + screamVal * scream + collapseVal * collapse;',
+    '}',
+    'float waveform(float x, float t, float emotion, float speed) {',
+    '  float baseFreq = 3.0; float timeOsc = t * speed;',
+    '  float wave = sin(x * baseFreq * PI * 2.0 + timeOsc * 4.0);',
+    '  wave += sin(x * baseFreq * 2.0 * PI * 2.0 + timeOsc * 3.0 + 0.8) * 0.12;',
+    '  float harmonics = emotion * emotion;',
+    '  wave += sin(x * baseFreq * 2.0 * PI * 2.0 + timeOsc * 6.0 + 0.5) * harmonics * 0.5;',
+    '  wave += sin(x * baseFreq * 3.0 * PI * 2.0 + timeOsc * 8.0 + 1.2) * harmonics * harmonics * 0.35;',
+    '  wave += sin(x * baseFreq * 5.0 * PI * 2.0 + timeOsc * 12.0 + 2.1) * harmonics * harmonics * 0.2;',
+    '  wave += sin(x * baseFreq * 7.0 * PI * 2.0 - timeOsc * 5.0 + 3.7) * pow(harmonics, 3.0) * 0.15;',
+    '  float noiseAmt = smoothstep(0.7, 1.0, emotion);',
+    '  wave += (noise(x * 40.0 + timeOsc * 15.0) - 0.5) * 2.0 * noiseAmt * 0.6;',
+    '  wave += (noise(x * 80.0 - timeOsc * 20.0) - 0.5) * 2.0 * noiseAmt * noiseAmt * 0.3;',
+    '  float amplitude = 0.05 + emotion * 0.45;',
+    '  wave *= amplitude;',
+    '  float clipThreshold = mix(0.5, 0.12, smoothstep(0.8, 1.0, emotion));',
+    '  wave = clamp(wave, -clipThreshold, clipThreshold);',
+    '  return wave;',
+    '}',
+    'void main() {',
+    '  vec2 uv = gl_FragCoord.xy / u_res; float t = u_time;',
+    '  float emotion = emotionCurve(t); emotion = clamp(emotion, 0.0, 1.0);',
+    '  vec3 bg = mix(vec3(0.067, 0.067, 0.075), vec3(0.09, 0.04, 0.04), emotion);',
+    '  float centerDist = length(uv - vec2(0.5, 0.5));',
+    '  float bgGlow = exp(-centerDist * centerDist * 3.0);',
+    '  vec3 bgGlowColor = mix(vec3(0.05, 0.02, 0.08), vec3(0.12, 0.02, 0.02), emotion);',
+    '  bg += bgGlowColor * bgGlow * (0.3 + emotion * 0.5);',
+    '  float screenNoise = 0.0;',
+    '  float noiseIntensity = smoothstep(0.6, 1.0, emotion);',
+    '  if (noiseIntensity > 0.0) { screenNoise = (noise2d(gl_FragCoord.xy * 0.8 + t * 100.0) - 0.5) * noiseIntensity * 0.15; }',
+    '  float chromatic = smoothstep(0.5, 1.0, emotion) * 0.025;',
+    '  float jitter = smoothstep(0.85, 1.0, emotion) * (noise(t * 30.0) - 0.5) * 0.015;',
+    '  float waveX = uv.x; float yCenter = uv.y - 0.5 + jitter; float speed = 0.8;',
+    '  float waveR = waveform(waveX - chromatic, t, emotion, speed);',
+    '  float distR = abs(yCenter - waveR);',
+    '  float waveG = waveform(waveX, t, emotion, speed);',
+    '  float distG = abs(yCenter - waveG);',
+    '  float waveB = waveform(waveX + chromatic, t, emotion, speed);',
+    '  float distB = abs(yCenter - waveB);',
+    '  float lineThickness = 0.003 + emotion * 0.004;',
+    '  float glowRadius = 0.022 + emotion * 0.038;',
+    '  float bloomRadius = 0.08 + emotion * 0.14;',
+    '  vec3 calmColor = vec3(0.79, 0.63, 0.36);',
+    '  vec3 buildColor = vec3(0.95, 0.55, 0.2);',
+    '  vec3 screamCoreColor = vec3(1.0, 0.95, 0.85);',
+    '  vec3 screamGlowColor = vec3(1.0, 0.45, 0.15);',
+    '  float buildPhase = smoothstep(0.1, 0.6, emotion);',
+    '  float screamPhase = smoothstep(0.7, 0.95, emotion);',
+    '  vec3 coreColor = mix(calmColor, buildColor, buildPhase);',
+    '  coreColor = mix(coreColor, screamCoreColor, screamPhase);',
+    '  vec3 glowColor = mix(calmColor * 0.6, buildColor * 0.7, buildPhase);',
+    '  glowColor = mix(glowColor, screamGlowColor, screamPhase);',
+    '  float splitAmount = smoothstep(0.4, 0.9, emotion);',
+    '  float unifiedCore = smoothstep(lineThickness, 0.0, distG);',
+    '  float unifiedGlow = exp(-distG * distG / (glowRadius * glowRadius));',
+    '  float unifiedBloom = exp(-distG * distG / (bloomRadius * bloomRadius));',
+    '  float coreBright = 2.0 + smoothstep(0.8, 1.0, emotion) * 1.5;',
+    '  vec3 unifiedCol = coreColor * unifiedCore * coreBright + glowColor * unifiedGlow * 0.9 + glowColor * 0.35 * unifiedBloom;',
+    '  vec3 splitCol = vec3(0.0);',
+    '  splitCol.r = coreColor.r * smoothstep(lineThickness, 0.0, distR) * coreBright + glowColor.r * exp(-distR*distR/(glowRadius*glowRadius)) * 0.9 + glowColor.r * 0.35 * exp(-distR*distR/(bloomRadius*bloomRadius));',
+    '  splitCol.g = coreColor.g * smoothstep(lineThickness, 0.0, distG) * coreBright + glowColor.g * exp(-distG*distG/(glowRadius*glowRadius)) * 0.9 + glowColor.g * 0.35 * exp(-distG*distG/(bloomRadius*bloomRadius));',
+    '  splitCol.b = coreColor.b * smoothstep(lineThickness, 0.0, distB) * coreBright + glowColor.b * exp(-distB*distB/(glowRadius*glowRadius)) * 0.9 + glowColor.b * 0.35 * exp(-distB*distB/(bloomRadius*bloomRadius));',
+    '  vec3 col = bg + mix(unifiedCol, splitCol, splitAmount);',
+    '  float reflUvY = 1.0 - uv.y; float reflYCenter = reflUvY - 0.5 + jitter;',
+    '  float reflDistG = abs(reflYCenter - waveG);',
+    '  float belowCenter = uv.y - 0.5;',
+    '  float reflFade = step(0.0, belowCenter) * (1.0 - smoothstep(0.0, 0.35, belowCenter)) * 0.2;',
+    '  col += (glowColor * exp(-reflDistG*reflDistG/(glowRadius*glowRadius*3.0)) * 0.45 + glowColor * exp(-reflDistG*reflDistG/(bloomRadius*bloomRadius*2.5)) * 0.12) * reflFade;',
+    '  float scanline = smoothstep(0.8, 1.0, emotion) * 0.08;',
+    '  col *= 1.0 - scanline * (sin(gl_FragCoord.y * 1.5) * 0.5 + 0.5);',
+    '  col += vec3(screenNoise);',
+    '  vec2 vigUV = uv - 0.5; col *= 0.5 + (1.0 - dot(vigUV, vigUV) * 1.8) * 0.5;',
+    '  col *= 1.0 + smoothstep(0.85, 1.0, emotion) * sin(t * 25.0) * 0.15;',
+    '  col = col / (1.0 + col * 0.4); col = pow(col, vec3(0.95)); col = max(col, vec3(0.0));',
+    '  gl_FragColor = vec4(col, 1.0);',
+    '}'
+  ].join('\n');
+
+  function compile(type, src) {
+    var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) console.error(gl.getShaderInfoLog(s));
+    return s;
+  }
+  var prog = gl.createProgram();
+  gl.attachShader(prog, compile(gl.VERTEX_SHADER, vertSrc));
+  gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, fragSrc));
+  gl.linkProgram(prog); gl.useProgram(prog);
+  var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  var aPos = gl.getAttribLocation(prog, 'a_pos');
+  gl.enableVertexAttribArray(aPos); gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+  var uTime = gl.getUniformLocation(prog, 'u_time');
+  var uRes = gl.getUniformLocation(prog, 'u_res');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var running = true;
+
+  function resize() {
+    var w = Math.round(canvas.clientWidth * dpr);
+    var h = Math.round(canvas.clientHeight * dpr);
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w; canvas.height = h;
+      gl.viewport(0, 0, w, h); gl.uniform2f(uRes, w, h);
+    }
+  }
+  function render(now) {
+    if (!running) return;
+    resize();
+    gl.uniform1f(uTime, prefersReduced ? 0.0 : now * 0.001);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    requestAnimationFrame(render);
+  }
+  window.addEventListener('resize', function() { resize(); });
+  resize();
+  requestAnimationFrame(render);
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) { running = false; } else { running = true; requestAnimationFrame(render); }
+  });
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { if (!running) { running = true; requestAnimationFrame(render); } }
+      else { running = false; }
+    });
+  }, { threshold: 0.1 });
+  obs.observe(canvas);
+})();
+</script>
+
+<script>
+(function() {
+  /* ---- Scroll Reveal ---- */
+  var revealEls = document.querySelectorAll('.card, .person, .news-item, .resource-item, .section-header, .hero h1, .hero p');
+  revealEls.forEach(function(el) { el.classList.add('reveal'); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  /* ---- Stagger cards within grids ---- */
+  document.querySelectorAll('.card-grid, .people-grid').forEach(function(grid) {
+    var items = grid.querySelectorAll('.reveal');
+    items.forEach(function(item, i) {
+      item.style.transitionDelay = (i * 0.04) + 's';
+    });
+  });
+
+  /* ---- Framework Search + Filter ---- */
+  var grid = document.getElementById('fw-grid');
+  if (!grid) return;
+  var cards = Array.from(grid.querySelectorAll('.card'));
+  var search = document.getElementById('fw-search');
+  var chips = document.getElementById('fw-chips');
+  var noResults = document.getElementById('fw-no-results');
+  var activeFilter = 'all';
+
+  function getCardType(card) {
+    var tag = card.querySelector('.tag');
+    if (!tag) return '';
+    return tag.textContent.trim().toLowerCase();
+  }
+
+  function filterCards() {
+    var query = search.value.toLowerCase().trim();
+    var visible = 0;
+    cards.forEach(function(card) {
+      var type = getCardType(card);
+      var text = card.textContent.toLowerCase();
+      var matchesFilter = activeFilter === 'all' || type === activeFilter;
+      var matchesSearch = !query || text.indexOf(query) !== -1;
+      var show = matchesFilter && matchesSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  search.addEventListener('input', filterCards);
+
+  chips.addEventListener('click', function(e) {
+    var chip = e.target.closest('.chip');
+    if (!chip) return;
+    chips.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
+    chip.classList.add('active');
+    activeFilter = chip.dataset.filter;
+    filterCards();
+  });
+})();
+</script>
 
 </body>
 </html>

@@ -4,19 +4,32 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 
 ## Site Structure
 
-- Single `index.html` file (HTML + inline CSS, no build step)
+- Single `index.html` file (HTML + inline CSS + inline JS, no build step)
 - Dark theme with card-based layout
-- Sticky nav, hero section, then content sections separated by dividers
+- Sticky nav, hero section with WebGL background, then content sections
 - Responsive: cards collapse to single column on mobile
 - Preserve the ordering in this spec
 
 ## Visual Design
 
-- Dark background (`#0f1117`), card surfaces (`#1e2230`), accent purple (`#6c63ff`), accent blue (`#38bdf8`), accent pink (`#f472b6`)
-- Cards have hover effects (border highlight, slight lift)
-- Badge types: `badge-framework` (purple), `badge-inference` (blue), `badge-assistant` (pink), `badge-resource` (green)
-- Where possible use icons for links - for blog or other use a world / www icon. don't use text labels.
-- In a given section, use different colors for different badge types.
+- Warm dark theme: near-black `#111113` (neutral, not blue-tinted), card surface `#1f1f23`, warm gold accent `#c9a05c`
+- Typography: Inter for body, IBM Plex Sans for headings — techy but clean, fits the dev community
+- Card grids use 1px-gap "spreadsheet" layout (border as gap between cells) for a tighter, more structured feel
+- Tags use muted, distinct colors per type: framework (steel blue), SDK (lavender), library (sage), inference (amber), training (rose), assistant (violet)
+- Links are a dusty blue `#8aaccc`, not electric. News links and resource links turn gold on hover
+- Hero is left-aligned, not centered. "Artificial Intelligence" in gold with animated shimmer
+- Hero background: full-width WebGL "scream-wave" shader (from `scream-wave.html`) rendered on a canvas behind hero text at 45% opacity. Recolored to warm gold palette (calm=gold, build=amber, scream=white-gold). Auto-pauses when out of viewport or tab is hidden. Respects `prefers-reduced-motion`. Wrapped in `.hero-wrap` (full-width) containing `.hero-wave` (absolute canvas) and `.hero` (max-width content)
+- People grid uses the same 1px-gap layout as cards; inline SVG social icons
+- Resources section is a flat link list with type tags and em-dash descriptions
+- Where possible use text labels for card links (Docs, GitHub, Website) — clearer than icon-only
+- Java Champion badge uses gold-on-dark-gold styling to match the accent palette
+
+### Interactivity
+- **Scroll reveal:** Cards, people, news items, and resource items fade+slide in as they enter the viewport (Intersection Observer). Grid items stagger with 40ms delay between siblings.
+- **Search:** A search input above the frameworks grid filters cards by text content in real time.
+- **Tag filter chips:** Clickable chips (All / Framework / SDK / Library) above the frameworks grid toggle card visibility by type. Active chip uses gold accent styling.
+- **Background grain:** A subtle SVG noise texture overlays the page at low opacity for tactile depth.
+- **Hero shimmer:** The gold "Artificial Intelligence" text has a slow animated gradient sweep.
 
 ### Link Affordance
 - **Clickable cards:** If a card has a single primary destination (e.g. resource cards with one link), make the entire card an `<a>` tag so clicking anywhere on the card navigates. Keep secondary icon links overlaid on top.
@@ -27,8 +40,10 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 
 ## Hero
 
-- Title: "Java meets **Artificial Intelligence**" (gradient text on "Artificial Intelligence")
+- Full-width wrapper (`.hero-wrap`) with WebGL scream-wave canvas background
+- Title: "Java meets **Artificial Intelligence**" — "Artificial Intelligence" in `<em>` with gold shimmer animation
 - Subtitle: "Your curated guide to the Java AI ecosystem — agent frameworks, inference engines, code assistants, key people, and the best learning resources."
+- The scream-wave shader cycles through calm → build → scream → collapse phases on a 7-second loop, recolored to match the site's warm gold/amber palette
 
 ---
 
