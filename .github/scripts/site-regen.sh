@@ -22,6 +22,7 @@ $SPEC
 
 Return ONLY the complete updated index.html."
 export MAX_TOKENS=100000
+export MODEL=openai/gpt-4.1
 
 # Call GitHub Models with tool-calling support (fetch_webpage tool)
 NEW_HTML=$(python3 "$SCRIPT_DIR/llm_with_tools.py")
