@@ -34,7 +34,7 @@ export SYSTEM_PROMPT="You are a web developer maintaining the AI4JVM website (a 
 
 Before generating the HTML, use the fetch_webpage tool to verify that URLs for any NEW items in SPEC.md are reachable and that the linked pages match the descriptions. If a link is broken or the page content doesn't match the description, add an HTML comment next to that link noting the issue (e.g. <!-- LINK CHECK: 404 -->).
 
-Return ONLY the complete updated index.html file — no explanation, no markdown code fences."
+Return ONLY the complete updated index.html file starting with <!DOCTYPE html>. Do NOT include any explanation, reasoning, thinking, commentary, or markdown code fences — just the raw HTML."
 export USER_PROMPT="Current index.html:
 
 $CURRENT_HTML
@@ -63,6 +63,9 @@ fi
 
 # Strip markdown code fences if the model wrapped the output in them
 NEW_HTML=$(echo "$NEW_HTML" | sed '/^```.*$/d')
+
+# Strip any reasoning/thinking text before the actual HTML
+NEW_HTML=$(echo "$NEW_HTML" | sed -n '/<!DOCTYPE html>/,$p')
 
 # Store the regenerated content as a git blob object
 NEW_BLOB=$(printf '%s\n' "$NEW_HTML" | git hash-object -w --stdin)
