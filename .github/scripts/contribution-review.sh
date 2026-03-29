@@ -19,29 +19,20 @@ PROMPT_TEMPLATE=$(cat "$SCRIPT_DIR/contribution-review-prompt.md")
 SYSTEM_PROMPT="${PROMPT_TEMPLATE/\{\{CONTRIBUTING_MD\}\}/$CONTRIBUTING}"
 USER_PROMPT=$(printf 'Please review this SPEC.md diff:\n\n```diff\n%s\n```' "$DIFF")
 
-PAYLOAD=$(jq -n \
-  --arg system "$SYSTEM_PROMPT" \
-  --arg user "$USER_PROMPT" \
-  '{
-    "model": "openai/gpt-4o",
-    "messages": [
-      {"role": "system", "content": $system},
-      {"role": "user", "content": $user}
-    ],
-    "max_tokens": 4096
-  }')
+export SYSTEM_PROMPT
+export USER_PROMPT
 
-# Call GitHub Models
-RESPONSE=$(curl -sf "https://models.github.ai/inference/chat/completions" \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $GITHUB_TOKEN" \
-  -d "$PAYLOAD")
+# Call Claude with tool-calling support (fetch_webpage tool)
+LLM_STDERR=$(mktemp)
+if ! REVIEW=$(python3 "$SCRIPT_DIR/llm_with_tools.py" 2>"$LLM_STDERR"); then
+  ERR=$(cat "$LLM_STDERR")
+  gh pr comment "$PR_NUMBER" --repo "$REPO" \
+    --body "$(printf '❌ Review failed:\n\n```\n%s\n```' "$ERR")"
+  exit 1
+fi
 
-REVIEW=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
-
-if [ -z "$REVIEW" ] || [ "$REVIEW" = "null" ]; then
+if [ -z "$REVIEW" ]; then
   echo "Error: No review content in response"
-  echo "$RESPONSE" | jq .
   exit 1
 fi
 

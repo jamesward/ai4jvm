@@ -7,7 +7,6 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  models: read
 
 jobs:
   review:
@@ -43,6 +42,7 @@ jobs:
       - name: Run contribution review
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BASE_REF: ${{ steps.pr.outputs.base_ref }}
           HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
           PR_NUMBER: ${{ github.event.issue.number }}

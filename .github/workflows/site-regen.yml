@@ -1,0 +1,85 @@
+name: Site Regen
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  unauthorized:
+    # Notify when /regen is used on a PR by someone without write access
+    if: >
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '/regen') &&
+      github.event.comment.author_association != 'OWNER' &&
+      github.event.comment.author_association != 'MEMBER' &&
+      github.event.comment.author_association != 'COLLABORATOR'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify unauthorized user
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+          COMMENTER: ${{ github.event.comment.user.login }}
+        run: |
+          gh pr comment "$PR_NUMBER" --repo "$REPO" \
+            --body "Sorry @$COMMENTER, the \`/regen\` command requires write access to this repository."
+
+  regen:
+    # Only run when a maintainer comments "/regen" on a PR
+    if: >
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '/regen') &&
+      (
+        github.event.comment.author_association == 'OWNER' ||
+        github.event.comment.author_association == 'MEMBER' ||
+        github.event.comment.author_association == 'COLLABORATOR'
+      )
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get PR details
+        id: pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_JSON=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }})
+          echo "head_sha=$(echo "$PR_JSON" | jq -r '.head.sha')" >> "$GITHUB_OUTPUT"
+          echo "head_ref=$(echo "$PR_JSON" | jq -r '.head.ref')" >> "$GITHUB_OUTPUT"
+          echo "base_ref=$(echo "$PR_JSON" | jq -r '.base.ref')" >> "$GITHUB_OUTPUT"
+          echo "head_repo=$(echo "$PR_JSON" | jq -r '.head.repo.full_name')" >> "$GITHUB_OUTPUT"
+          echo "maintainer_can_modify=$(echo "$PR_JSON" | jq -r '.maintainer_can_modify')" >> "$GITHUB_OUTPUT"
+          HEAD_REPO=$(echo "$PR_JSON" | jq -r '.head.repo.full_name')
+          BASE_REPO=$(echo "$PR_JSON" | jq -r '.base.repo.full_name')
+          if [ "$HEAD_REPO" != "$BASE_REPO" ]; then
+            echo "is_fork=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_fork=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout base (trusted code)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.pr.outputs.base_ref }}
+          fetch-depth: 0
+
+      - name: Fetch PR head
+        run: git fetch origin ${{ steps.pr.outputs.head_sha }}
+
+      - name: Run site regen
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAINTAINER_PAT: ${{ secrets.MAINTAINER_PAT }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+          HEAD_REF: ${{ steps.pr.outputs.head_ref }}
+          HEAD_REPO: ${{ steps.pr.outputs.head_repo }}
+          BASE_REF: ${{ steps.pr.outputs.base_ref }}
+          MAINTAINER_CAN_MODIFY: ${{ steps.pr.outputs.maintainer_can_modify }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+          IS_FORK: ${{ steps.pr.outputs.is_fork }}
+        run: bash .github/scripts/site-regen.sh

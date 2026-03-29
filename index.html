@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-YF4ZE4J3N5');
   </script>
   <meta charset="UTF-8">
@@ -15,7 +14,6 @@
   <title>AI4JVM — Java AI Ecosystem Guide: Agent Frameworks, Inference Engines &amp; Tools</title>
   <meta name="description" content="Your curated guide to the Java AI ecosystem — Spring AI, LangChain4j, Jlama, and more. Agent frameworks, inference engines, code assistants, learning resources, and people to follow.">
   <link rel="canonical" href="https://ai4jvm.com/">
-
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AI4JVM — Java AI Ecosystem Guide">
@@ -23,12 +21,10 @@
   <meta property="og:url" content="https://ai4jvm.com/">
   <meta property="og:site_name" content="AI4JVM">
   <meta property="og:locale" content="en_US">
-
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AI4JVM — Java AI Ecosystem Guide">
   <meta name="twitter:description" content="Your curated guide to the Java AI ecosystem — agent frameworks, inference engines, code assistants, key people, and the best learning resources.">
-
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -44,7 +40,6 @@
     }
   }
   </script>
-
   <style>
     :root {
       --bg: #0f1117;
@@ -60,11 +55,8 @@
       --radius: 12px;
       --max-w: 1180px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background: var(--bg);
@@ -72,13 +64,9 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
     a { color: var(--accent2); text-decoration: none; transition: color .2s; }
     a:hover { color: var(--accent3); }
-    /* Inline text links (inside paragraphs, descriptions) should be underlined */
     p a, .person-info p a { text-decoration: underline; text-underline-offset: 2px; }
-
-    /* ---- NAV ---- */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(15,17,23,.85);
@@ -99,8 +87,6 @@
     .nav-links a { color: var(--text-muted); font-size: .875rem; font-weight: 500; }
     .nav-links a:hover { color: var(--text-bright); }
     .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
-
-    /* ---- HERO ---- */
     .hero {
       text-align: center;
       padding: 5rem 1.5rem 4rem;
@@ -115,8 +101,6 @@
     }
     .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .hero p { max-width: 640px; margin: 0 auto; color: var(--text-muted); font-size: 1.15rem; }
-
-    /* ---- SECTIONS ---- */
     section { padding: 4rem 1.5rem; }
     .container { max-width: var(--max-w); margin: 0 auto; }
     .section-title {
@@ -125,8 +109,6 @@
     }
     .section-subtitle { color: var(--text-muted); margin-bottom: 2rem; max-width: 640px; }
     .section-divider { border: none; border-top: 1px solid var(--border); max-width: var(--max-w); margin: 0 auto; }
-
-    /* ---- CARD GRID ---- */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -161,18 +143,10 @@
     .badge-assistant { background: rgba(244,114,182,.2); color: #f9a8d4; }
     .badge-resource { background: rgba(52,211,153,.2); color: #6ee7b7; }
     .badge-video { background: rgba(251,191,36,.2); color: #fcd34d; }
-    .badge-community { background: rgba(52,211,153,.2); color: #6ee7b7; }
-    .badge-blog { background: rgba(244,114,182,.2); color: #f9a8d4; }
-    .badge-book { background: rgba(108,99,255,.2); color: #a5a0ff; }
-    .badge-workshop { background: rgba(52,211,153,.2); color: #6ee7b7; }
-    .badge-livestream { background: rgba(244,114,182,.2); color: #f9a8d4; }
-    .badge-person { background: rgba(251,191,36,.2); color: #fcd34d; }
     .card h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-bright); margin-bottom: .4rem; }
     .card p { font-size: .9rem; color: var(--text-muted); margin-bottom: .75rem; }
     .card-links { display: flex; gap: .75rem; flex-wrap: wrap; }
     .card-links a { font-size: .8rem; font-weight: 500; }
-
-    /* ---- LINK ICONS ---- */
     .icon { font-size: 0; }
     .icon::before {
       content: '';
@@ -191,8 +165,6 @@
     .icon-bluesky::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8'/%3E%3C/svg%3E"); }
     .icon-youtube::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E"); }
     .icon-web::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b8fa3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z'/%3E%3C/svg%3E"); }
-
-    /* ---- PEOPLE ---- */
     .people-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -230,15 +202,11 @@
     .person-info p { font-size: .8rem; color: var(--text-muted); }
     .person-info .person-links { margin-top: .25rem; display: flex; gap: .5rem; flex-wrap: wrap; }
     .person-info .person-links a { font-size: .78rem; }
-
-    /* ---- RESOURCES ---- */
     .resource-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 1.25rem;
     }
-
-    /* ---- NEWS TICKER ---- */
     .news-bar {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -252,8 +220,6 @@
     .news-bar li::before { content: "\2022"; color: var(--accent3); margin-right: .5rem; }
     .news-bar li a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
     .news-bar li a:hover { color: var(--accent3); }
-
-    /* ---- FOOTER ---- */
     footer {
       text-align: center;
       padding: 2.5rem 1.5rem;
@@ -261,8 +227,6 @@
       color: var(--text-muted);
       font-size: .85rem;
     }
-
-    /* ---- RESPONSIVE ---- */
     @media (max-width: 768px) {
       .nav-links { display: none; flex-direction: column; width: 100%; gap: .5rem; padding-top: .75rem; }
       .nav-links.open { display: flex; }
@@ -275,7 +239,6 @@
   </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -291,15 +254,12 @@
     </div>
   </div>
 </nav>
-
 <!-- HERO -->
 <header class="hero">
   <h1>Java meets <span>Artificial Intelligence</span></h1>
   <p>Your curated guide to the Java AI ecosystem &mdash; agent frameworks, inference engines, code assistants, key people, and the best learning resources.</p>
 </header>
-
 <main>
-
 <!-- NEWS -->
 <section id="news">
   <div class="container">
@@ -316,9 +276,7 @@
     </div>
   </div>
 </section>
-
 <hr class="section-divider">
-
 <!-- AGENT FRAMEWORKS -->
 <section id="frameworks">
   <div class="container">
@@ -488,9 +446,7 @@
     </div>
   </div>
 </section>
-
 <hr class="section-divider">
-
 <!-- CODE ASSISTANTS & JAVA DEV TOOLS -->
 <section id="assistants">
   <div class="container">
@@ -498,14 +454,11 @@
     <p class="section-subtitle">Technologies that supercharge Java development when paired with AI code assistants &mdash; from MCP servers that give agents live Javadoc access, to reusable skill packages and IDE integrations.</p>
     <div class="card-grid">
 
-      <div class="card">
+      <a class="card" href="https://www.javadocs.dev/">
         <span class="card-badge badge-assistant">MCP Server</span>
-        <h3><a href="https://www.javadocs.dev/">Javadocs.dev MCP Server</a></h3>
+        <h3>Javadocs.dev MCP Server</h3>
         <p>Gives AI assistants live access to Java, Kotlin, and Scala library documentation from Maven Central. Six tools including latest-version lookup, Javadoc symbol browsing, and source file retrieval. Connect any MCP client via Streamable HTTP.</p>
-        <div class="card-links">
-          <a class="icon icon-web" href="https://www.javadocs.dev/" title="Website"></a>
-        </div>
-      </div>
+      </a>
 
       <div class="card">
         <span class="card-badge badge-assistant">Assistant</span>
@@ -517,14 +470,11 @@
         </div>
       </div>
 
-      <div class="card">
+      <a class="card" href="https://www.skillsjars.com/">
         <span class="card-badge badge-framework">Skills</span>
-        <h3><a href="https://www.skillsjars.com/">SkillsJars</a></h3>
+        <h3>SkillsJars</h3>
         <p>A packaging format and registry for distributing reusable AI agent skills as Maven/Gradle JARs. Skills are Markdown files (<code>SKILL.md</code>) under <code>META-INF/skills/</code> that teach AI agents domain-specific patterns. Discover and load skills on demand in Claude Code, Kiro, and Spring AI apps.</p>
-        <div class="card-links">
-          <a class="icon icon-web" href="https://www.skillsjars.com/" title="Website"></a>
-        </div>
-      </div>
+      </a>
 
       <div class="card">
         <span class="card-badge badge-framework">Skills</span>
@@ -539,9 +489,7 @@
     </div>
   </div>
 </section>
-
 <hr class="section-divider">
-
 <!-- INFERENCE & TRAINING -->
 <section id="inference">
   <div class="container">
@@ -589,14 +537,11 @@
         </div>
       </div>
 
-      <div class="card">
+      <a class="card" href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/">
         <span class="card-badge badge-inference">Inference</span>
-        <h3><a href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/">GPULlama3.java</a></h3>
+        <h3>GPULlama3.java</h3>
         <p>Java-native LLM inference with automatic GPU acceleration via TornadoVM. Supports Llama 3, Mistral, Qwen, Phi-3, and IBM Granite models in GGUF format. TornadoVM translates Java bytecode to GPU kernels (OpenCL, PTX, SPIR-V). From the University of Manchester's Beehive Lab.</p>
-        <div class="card-links">
-          <a class="icon icon-web" href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/" title="InfoQ"></a>
-        </div>
-      </div>
+      </a>
 
       <div class="card">
         <span class="card-badge badge-framework">Training</span>
@@ -611,9 +556,7 @@
     </div>
   </div>
 </section>
-
 <hr class="section-divider">
-
 <!-- PEOPLE -->
 <section id="people">
   <div class="container">
@@ -636,22 +579,7 @@
           </div>
         </div>
       </div>
-      
-      <div class="person">
-        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/363447?v=4" alt="Eric Deandrea"></div>
-        <div class="person-info">
-          <h4>Eric Deandrea</h4>
-          <span class="badge-champion">Java Champion</span>
-          <p><a href="https://docling-project.github.io/docling-java/current">Docling Java</a> project lead, contributor to LangChain4j, Sr. Principal Software Engineer at IBM</p>
-          <div class="person-links">
-            <a class="icon icon-bluesky" href="https://bsky.app/profile/ericdeandrea.dev" title="Bluesky"></a>
-            <a class="icon icon-x" href="https://x.com/edeandrea" title="@edeandrea"></a>
-            <a class="icon icon-github" href="https://github.com/edeandrea" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/edeandrea/" title="LinkedIn"></a>
-          </div>
-        </div>
-      </div> 
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1358554?v=4" alt="Markus Eisele"></div>
         <div class="person-info">
@@ -667,7 +595,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/193434?v=4" alt="Frank Greco"></div>
         <div class="person-info">
@@ -683,21 +611,7 @@
           </div>
         </div>
       </div>
-      
-      <div class="person">
-        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/372781?v=4" alt="Mario Fusco"></div>
-        <div class="person-info">
-          <h4>Mario Fusco</h4>
-          <span class="badge-champion">Java Champion</span>
-          <p>LangChain4j core team, Sr. Principal Software Engineer at IBM</p>
-          <div class="person-links">
-            <a class="icon icon-x" href="https://x.com/mariofusco" title="@mariofusco"></a>
-            <a class="icon icon-github" href="https://github.com/mariofusco" title="GitHub"></a>
-            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/mario-fusco-3467213/" title="LinkedIn"></a>
-          </div>
-        </div>
-      </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1916583?v=4" alt="Rod Johnson"></div>
         <div class="person-info">
@@ -712,7 +626,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/47907?v=4" alt="Guillaume Laforge"></div>
         <div class="person-info">
@@ -728,7 +642,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/3154404?v=4" alt="Dmytro Liubarskyi"></div>
         <div class="person-info">
@@ -741,7 +655,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/54473?v=4" alt="Josh Long"></div>
         <div class="person-info">
@@ -757,7 +671,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/44456?v=4" alt="T. Jake Luciani"></div>
         <div class="person-info">
@@ -770,7 +684,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/247466?v=4" alt="Mark Pollack"></div>
         <div class="person-info">
@@ -783,7 +697,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/49833622?v=4" alt="Lize Raes"></div>
         <div class="person-info">
@@ -796,7 +710,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/14850786?v=4" alt="Jennifer Reif"></div>
         <div class="person-info">
@@ -811,7 +725,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/426039?v=4" alt="Oleg Šelajev"></div>
         <div class="person-info">
@@ -825,7 +739,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/301596?v=4" alt="Bartosz Sorrentino"></div>
         <div class="person-info">
@@ -838,7 +752,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1351573?v=4" alt="Christian Tzolov"></div>
         <div class="person-info">
@@ -852,7 +766,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/349507?v=4" alt="Dan Vega"></div>
         <div class="person-info">
@@ -868,7 +782,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/12485205?v=4" alt="Dmitry Vinnik"></div>
         <div class="person-info">
@@ -882,7 +796,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/167926?v=4" alt="Craig Walls"></div>
         <div class="person-info">
@@ -897,7 +811,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/65043?v=4" alt="James Ward"></div>
         <div class="person-info">
@@ -913,13 +827,40 @@
           </div>
         </div>
       </div>
-      
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/372781?v=4" alt="Mario Fusco"></div>
+        <div class="person-info">
+          <h4>Mario Fusco</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>LangChain4j core team, Sr. Principal Software Engineer at IBM</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://x.com/mariofusco" title="@mariofusco"></a>
+            <a class="icon icon-github" href="https://github.com/mariofusco" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/mario-fusco-3467213/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/363447?v=4" alt="Eric Deandrea"></div>
+        <div class="person-info">
+          <h4>Eric Deandrea</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p><a href="https://docling-project.github.io/docling-java/current">Docling Java</a> project lead, contributor to LangChain4j, Sr. Principal Software Engineer at IBM</p>
+          <div class="person-links">
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/ericdeandrea.dev" title="Bluesky"></a>
+            <a class="icon icon-x" href="https://x.com/edeandrea" title="@edeandrea"></a>
+            <a class="icon icon-github" href="https://github.com/edeandrea" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/edeandrea/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
 <hr class="section-divider">
-
 <!-- RESOURCES -->
 <section id="resources">
   <div class="container">
@@ -927,37 +868,37 @@
     <div class="resource-list">
 
       <a class="card" href="https://javaconferences.org/">
-        <span class="card-badge badge-community">Community</span>
+        <span class="card-badge badge-resource">Community</span>
         <h3>Java Conferences Tracker</h3>
         <p>Community-maintained calendar of all Java conferences worldwide</p>
       </a>
 
       <a class="card" href="https://redmonk.com/jgovernor/java-relevance-in-the-ai-era-agent-frameworks-emerge/">
-        <span class="card-badge badge-blog">Blog</span>
+        <span class="card-badge badge-assistant">Blog</span>
         <h3>Java Relevance in the AI Era</h3>
         <p>RedMonk analysis of Java's position as agent frameworks emerge</p>
       </a>
 
       <a class="card" href="https://github.com/spring-ai-community/awesome-spring-ai">
-        <span class="card-badge badge-resource">Resource</span>
+        <span class="card-badge badge-inference">Resource</span>
         <h3>Awesome Spring AI</h3>
         <p>Curated list of Spring AI resources, tools, and tutorials</p>
       </a>
 
       <a class="card" href="https://www.manning.com/books/spring-ai-in-action">
-        <span class="card-badge badge-book">Book</span>
+        <span class="card-badge badge-framework">Book</span>
         <h3>Spring AI in Action (Manning)</h3>
         <p>Book by Craig Walls &mdash; comprehensive guide to building AI apps with Spring</p>
       </a>
 
       <a class="card" href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">
-        <span class="card-badge badge-resource">Resource</span>
+        <span class="card-badge badge-inference">Resource</span>
         <h3>Production LangChain4j &mdash; Inside.java</h3>
         <p>Advanced RAG, agentic workflows, and production tips from Devoxx Belgium</p>
       </a>
 
       <a class="card" href="https://codelabs.developers.google.com/adk-java-getting-started">
-        <span class="card-badge badge-resource">Resource</span>
+        <span class="card-badge badge-inference">Resource</span>
         <h3>Google ADK Java Codelab</h3>
         <p>Hands-on: build AI agents in Java with Google's ADK</p>
       </a>
@@ -975,19 +916,19 @@
       </a>
 
       <a class="card" href="https://foojay.io/today/foojay-podcast-86/">
-        <span class="card-badge badge-resource">Resource</span>
+        <span class="card-badge badge-inference">Resource</span>
         <h3>Foojay Podcast: Java AI Revolution</h3>
         <p>Agents, MCP, graph databases &mdash; developers navigate the AI revolution</p>
       </a>
 
       <a class="card" href="https://catalog.workshops.aws/java-spring-ai-agents/en-US">
-        <span class="card-badge badge-workshop">Workshop</span>
+        <span class="card-badge badge-resource">Workshop</span>
         <h3>Building Java AI Agents with Spring AI (AWS)</h3>
         <p>Hands-on AWS workshop for building intelligent AI agents with Spring AI and AWS services, including deployment to EKS</p>
       </a>
 
       <a class="card" href="https://www.youtube.com/watch?v=my2bQtHBUeY">
-        <span class="card-badge badge-livestream">Livestream</span>
+        <span class="card-badge badge-video">Livestream</span>
         <h3>AI &amp; Java on Serverless Office Hours</h3>
         <p>James Ward and Julian Wood explore building AI-powered Java apps &mdash; MCP integration, agent architectures with AgentCore, GraalVM optimization for AI workloads, and secure auth patterns for AI services on serverless</p>
       </a>
@@ -995,13 +936,9 @@
     </div>
   </div>
 </section>
-
 </main>
-
-<!-- FOOTER -->
 <footer>
   <p>AI4JVM &mdash; Curating the Java AI ecosystem. Contributions welcome on <a href="https://github.com/jamesward/ai4jvm">GitHub</a>.</p>
 </footer>
-
 </body>
 </html>
