@@ -49,6 +49,11 @@
       --accent: #6c63ff;
       --accent2: #38bdf8;
       --accent3: #f472b6;
+      --accent-g: #6ee7b7;
+      --accent-y: #fcd34d;
+      --accent-resource: #6ee7b7;
+      --accent-video: #fcd34d;
+      --accent-workshop: #f59e42;
       --text: #e2e4ea;
       --text-muted: #8b8fa3;
       --text-bright: #ffffff;
@@ -143,6 +148,13 @@
     .badge-assistant { background: rgba(244,114,182,.2); color: #f9a8d4; }
     .badge-resource { background: rgba(52,211,153,.2); color: #6ee7b7; }
     .badge-video { background: rgba(251,191,36,.2); color: #fcd34d; }
+    .badge-community { background: rgba(52,211,153,.2); color: #6ee7b7; }
+    .badge-workshop { background: rgba(245,158,66,.2); color: #f59e42; }
+    .badge-livestream { background: rgba(244,114,182,.2); color: #f472b6; }
+    .badge-blog { background: rgba(108,99,255,.2); color: #a5a0ff; }
+    .badge-book { background: rgba(108,99,255,.2); color: #a5a0ff; }
+    .badge-person { background: rgba(56,189,248,.2); color: #7dd3fc; }
+    .badge-skills { background: rgba(108,99,255,.2); color: #a5a0ff; }
     .card h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-bright); margin-bottom: .4rem; }
     .card p { font-size: .9rem; color: var(--text-muted); margin-bottom: .75rem; }
     .card-links { display: flex; gap: .75rem; flex-wrap: wrap; }
@@ -482,13 +494,13 @@
       </div>
 
       <a class="card" href="https://www.skillsjars.com/">
-        <span class="card-badge badge-framework">Skills</span>
+        <span class="card-badge badge-skills">Skills</span>
         <h3>SkillsJars</h3>
         <p>A packaging format and registry for distributing reusable AI agent skills as Maven/Gradle JARs. Skills are Markdown files (<code>SKILL.md</code>) under <code>META-INF/skills/</code> that teach AI agents domain-specific patterns. Discover and load skills on demand in Claude Code, Kiro, and Spring AI apps.</p>
       </a>
 
       <div class="card">
-        <span class="card-badge badge-framework">Skills</span>
+        <span class="card-badge badge-skills">Skills</span>
         <h3><a href="https://jvmskills.com">jvm-skills</a></h3>
         <p>Curated directory of AI coding skills from JVM ecosystem engineers. Opinionated best-practice guides that AI tools (Claude Code, Cursor, Copilot) use as context — covering Spring Boot, jOOQ, Testcontainers, Docker, and more. Only lists skills that teach AI something it wouldn't know on its own.</p>
         <div class="card-links">
@@ -879,37 +891,37 @@
     <div class="resource-list">
 
       <a class="card" href="https://javaconferences.org/">
-        <span class="card-badge badge-resource">Community</span>
+        <span class="card-badge badge-community">Community</span>
         <h3>Java Conferences Tracker</h3>
         <p>Community-maintained calendar of all Java conferences worldwide</p>
       </a>
 
       <a class="card" href="https://redmonk.com/jgovernor/java-relevance-in-the-ai-era-agent-frameworks-emerge/">
-        <span class="card-badge badge-assistant">Blog</span>
+        <span class="card-badge badge-blog">Blog</span>
         <h3>Java Relevance in the AI Era</h3>
         <p>RedMonk analysis of Java's position as agent frameworks emerge</p>
       </a>
 
       <a class="card" href="https://github.com/spring-ai-community/awesome-spring-ai">
-        <span class="card-badge badge-inference">Resource</span>
+        <span class="card-badge badge-resource">Resource</span>
         <h3>Awesome Spring AI</h3>
         <p>Curated list of Spring AI resources, tools, and tutorials</p>
       </a>
 
       <a class="card" href="https://www.manning.com/books/spring-ai-in-action">
-        <span class="card-badge badge-framework">Book</span>
+        <span class="card-badge badge-book">Book</span>
         <h3>Spring AI in Action (Manning)</h3>
         <p>Book by Craig Walls &mdash; comprehensive guide to building AI apps with Spring</p>
       </a>
 
       <a class="card" href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">
-        <span class="card-badge badge-inference">Resource</span>
+        <span class="card-badge badge-resource">Resource</span>
         <h3>Production LangChain4j &mdash; Inside.java</h3>
         <p>Advanced RAG, agentic workflows, and production tips from Devoxx Belgium</p>
       </a>
 
       <a class="card" href="https://codelabs.developers.google.com/adk-java-getting-started">
-        <span class="card-badge badge-inference">Resource</span>
+        <span class="card-badge badge-resource">Resource</span>
         <h3>Google ADK Java Codelab</h3>
         <p>Hands-on: build AI agents in Java with Google's ADK</p>
       </a>
@@ -927,19 +939,19 @@
       </a>
 
       <a class="card" href="https://foojay.io/today/foojay-podcast-86/">
-        <span class="card-badge badge-inference">Resource</span>
+        <span class="card-badge badge-resource">Resource</span>
         <h3>Foojay Podcast: Java AI Revolution</h3>
         <p>Agents, MCP, graph databases &mdash; developers navigate the AI revolution</p>
       </a>
 
       <a class="card" href="https://catalog.workshops.aws/java-spring-ai-agents/en-US">
-        <span class="card-badge badge-resource">Workshop</span>
+        <span class="card-badge badge-workshop">Workshop</span>
         <h3>Building Java AI Agents with Spring AI (AWS)</h3>
         <p>Hands-on AWS workshop for building intelligent AI agents with Spring AI and AWS services, including deployment to EKS</p>
       </a>
 
       <a class="card" href="https://www.youtube.com/watch?v=my2bQtHBUeY">
-        <span class="card-badge badge-video">Livestream</span>
+        <span class="card-badge badge-livestream">Livestream</span>
         <h3>AI &amp; Java on Serverless Office Hours</h3>
         <p>James Ward and Julian Wood explore building AI-powered Java apps &mdash; MCP integration, agent architectures with AgentCore, GraalVM optimization for AI workloads, and secure auth patterns for AI services on serverless</p>
       </a>
