@@ -39,6 +39,9 @@ jobs:
       - name: Fetch PR head
         run: git fetch origin ${{ steps.pr.outputs.head_sha }}
 
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: Run contribution review
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

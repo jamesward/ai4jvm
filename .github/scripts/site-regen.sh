@@ -30,12 +30,18 @@ else
 fi
 
 # Build prompts for the LLM
-export SYSTEM_PROMPT="You are a web developer maintaining the AI4JVM website (a single-page HTML + inline CSS site, no build step). Your task is to update index.html so it exactly matches the provided SPEC.md. Preserve existing structure, styles, and inline CSS unless the spec requires changes. IMPORTANT: Do NOT delete or modify any HTML comments in the file — preserve all comments exactly as they are.
+SYSTEM_PROMPT="You are a web developer maintaining the AI4JVM website (a single-page HTML + inline CSS site, no build step). Your task is to update index.html so it exactly matches the provided SPEC.md. Preserve existing structure, styles, and inline CSS unless the spec requires changes. IMPORTANT: Do NOT delete or modify any HTML comments in the file — preserve all comments exactly as they are.
 
-Before generating the HTML, use the fetch_webpage tool to verify that URLs for any NEW items in SPEC.md are reachable and that the linked pages match the descriptions. If a link is broken or the page content doesn't match the description, add an HTML comment next to that link noting the issue (e.g. <!-- LINK CHECK: 404 -->).
+Before generating the HTML, use the WebFetch tool to verify that URLs for any NEW items in SPEC.md are reachable and that the linked pages match the descriptions. If a link is broken or the page content doesn't match the description, add an HTML comment next to that link noting the issue (e.g. <!-- LINK CHECK: 404 -->).
 
 Return ONLY the complete updated index.html file starting with <!DOCTYPE html>. Do NOT include any explanation, reasoning, thinking, commentary, or markdown code fences — just the raw HTML."
-export USER_PROMPT="Current index.html:
+
+SYSTEM_FILE=$(mktemp)
+printf '%s' "$SYSTEM_PROMPT" > "$SYSTEM_FILE"
+
+USER_FILE=$(mktemp)
+cat > "$USER_FILE" <<USEREOF
+Current index.html:
 
 $CURRENT_HTML
 
@@ -43,12 +49,18 @@ Update the above to match this SPEC.md:
 
 $SPEC
 
-Return ONLY the complete updated index.html."
-export MAX_TOKENS=32000
+Return ONLY the complete updated index.html.
+USEREOF
 
-# Call Claude with tool-calling support (fetch_webpage tool)
+# Call Claude Code CLI with web tools
 LLM_STDERR=$(mktemp)
-if ! NEW_HTML=$(python3 "$SCRIPT_DIR/llm_with_tools.py" 2>"$LLM_STDERR"); then
+if ! NEW_HTML=$(claude -p "$(cat "$USER_FILE")" \
+  --system-prompt-file "$SYSTEM_FILE" \
+  --allowedTools "WebFetch,WebSearch" \
+  --model claude-opus-4-6 \
+  --max-turns 10 \
+  --output-format text \
+  2>"$LLM_STDERR"); then
   ERR=$(cat "$LLM_STDERR")
   gh pr comment "$PR_NUMBER" --repo "$REPO" \
     --body "$(printf '❌ Site regeneration failed:\n\n```\n%s\n```' "$ERR")"
@@ -100,21 +112,43 @@ if [ "${IS_FORK:-false}" = "true" ]; then
   REGEN_BRANCH="regen/pr-$PR_NUMBER"
   BASE_OWNER="${REPO%%/*}"
 
-  if [ -n "${MAINTAINER_PAT:-}" ] && [ "${MAINTAINER_CAN_MODIFY:-false}" = "true" ]; then
-    # Strategy 1: Push directly to the fork branch using the PAT
+  if [ -n "${MAINTAINER_PAT:-}" ]; then
+    # Strategy 1: Push directly to the fork branch using the PAT.
+    # Build a fork-safe commit: start from the fork's tree (HEAD_SHA) and only
+    # replace index.html. This avoids pushing .github/ workflow changes from
+    # the base repo, which GitHub would block for security.
+    FORK_TREE=$(git ls-tree "$HEAD_SHA" | \
+      awk -v blob="$NEW_BLOB" '/\tindex\.html$/{printf "100644 blob %s\tindex.html\n", blob; next} {print}' | \
+      git mktree)
+    FORK_COMMIT=$(git commit-tree "$FORK_TREE" -p "$HEAD_SHA" \
+      -m "regen: update index.html from SPEC.md")
+
     FORK_URL="https://x-access-token:${MAINTAINER_PAT}@github.com/${HEAD_REPO}.git"
-    if git push "$FORK_URL" "$NEW_COMMIT:refs/heads/$HEAD_REF" 2>/dev/null; then
+    PUSH_ERR=$(mktemp)
+    if git push --force "$FORK_URL" "$FORK_COMMIT:refs/heads/$HEAD_REF" 2>"$PUSH_ERR"; then
       gh pr comment "$PR_NUMBER" --repo "$REPO" \
         --body "✅ Site regenerated and pushed to this PR branch."
       exit 0
+    else
+      echo "Strategy 1 (push to fork) failed: $(cat "$PUSH_ERR")" >&2
     fi
   fi
 
   # Push the regen commit to a branch in the base repo for all fork fallbacks
   git push origin "$NEW_COMMIT:refs/heads/$REGEN_BRANCH" --force
 
+  # Strategy 2/3 may fail if a PR already exists from a previous /regen.
+  # Since the regen branch is always force-pushed, the existing PR is already
+  # up-to-date. Just notify and exit.
+
   if [ -n "${MAINTAINER_PAT:-}" ]; then
-    # Strategy 2: Open a PR on the contributor's fork
+    # Strategy 2: Open a PR on the contributor's fork (or reuse existing)
+    EXISTING_PR=$(GH_TOKEN="$MAINTAINER_PAT" gh api "repos/${HEAD_REPO}/pulls?head=${BASE_OWNER}:${REGEN_BRANCH}&base=${HEAD_REF}&state=open" 2>/dev/null | jq -r '.[0].html_url // empty')
+    if [ -n "$EXISTING_PR" ]; then
+      gh pr comment "$PR_NUMBER" --repo "$REPO" \
+        --body "✅ Site regenerated! The PR on your fork has been updated with the latest \`index.html\`: ${EXISTING_PR}"
+      exit 0
+    fi
     GH_TOKEN="$MAINTAINER_PAT" gh api "repos/${HEAD_REPO}/pulls" \
       -f title="regen: update index.html from SPEC.md" \
       -f head="${BASE_OWNER}:${REGEN_BRANCH}" \
@@ -128,7 +162,13 @@ if [ "${IS_FORK:-false}" = "true" ]; then
     }
   fi
 
-  # Strategy 3: Fallback — new PR to main in the base repo
+  # Strategy 3: Fallback — new PR to main in the base repo (or reuse existing)
+  EXISTING_PR=$(gh pr list --repo "$REPO" --head "$REGEN_BRANCH" --base main --state open --json url --jq '.[0].url' 2>/dev/null)
+  if [ -n "$EXISTING_PR" ]; then
+    gh pr comment "$PR_NUMBER" --repo "$REPO" \
+      --body "✅ Site regenerated! The existing PR has been updated: ${EXISTING_PR}"
+    exit 0
+  fi
   PR_URL=$(gh pr create --repo "$REPO" \
     --head "$REGEN_BRANCH" \
     --base main \
