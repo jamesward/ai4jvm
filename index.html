@@ -57,6 +57,11 @@
       --text: #e2e4ea;
       --text-muted: #8b8fa3;
       --text-bright: #ffffff;
+      --resource: #6ee7b7;
+      --community: #6ee7b7;
+      --video: #fcd34d;
+      --blog: #f472b6;
+      --workshop: #38bdf8;
       --radius: 12px;
       --max-w: 1180px;
     }
@@ -138,14 +143,13 @@
       border-radius: var(--radius);
       padding: 1.5rem;
       transition: border-color .2s, transform .2s;
+      position: relative;
     }
     .card:hover { border-color: var(--accent); }
-    /* Clickable card: entire card is an <a> tag */
     a.card { display: block; color: inherit; text-decoration: none; cursor: pointer; }
-    a.card:hover { color: inherit; transform: translateY(-2px); }
+    a.card:hover { color: inherit; transform: translateY(-2px); border-color: var(--accent); }
     a.card h3 { color: var(--text-bright); }
     a.card p { color: var(--text-muted); }
-    /* Card title links */
     .card h3 a { color: var(--text-bright); text-decoration: none; }
     .card h3 a:hover { text-decoration: underline; color: var(--text-bright); }
     .card-badge {
@@ -163,6 +167,11 @@
     .badge-assistant { background: rgba(244,114,182,.2); color: #f9a8d4; }
     .badge-resource { background: rgba(52,211,153,.2); color: #6ee7b7; }
     .badge-video { background: rgba(251,191,36,.2); color: #fcd34d; }
+    .badge-community { background: rgba(52,211,153,.2); color: #6ee7b7; }
+    .badge-blog { background: rgba(244,114,182,.15); color: #f472b6; }
+    .badge-book { background: rgba(108,99,255,.1); color: #6c63ff; }
+    .badge-workshop { background: rgba(56,189,248,.12); color: #38bdf8; }
+    .badge-livestream { background: rgba(244,114,182,.15); color: #f472b6; }
     .card h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-bright); margin-bottom: .4rem; }
     .card p { font-size: .9rem; color: var(--text-muted); margin-bottom: .75rem; }
     .card-links { display: flex; gap: .75rem; flex-wrap: wrap; }
@@ -222,6 +231,7 @@
       color: #fde047;
       white-space: nowrap;
       margin-top: .2rem;
+      margin-bottom: .2rem;
     }
     .person-info p { font-size: .8rem; color: var(--text-muted); }
     .person-info .person-links { margin-top: .25rem; display: flex; gap: .5rem; flex-wrap: wrap; }
@@ -409,6 +419,17 @@
         <p>Microsoft's AI orchestration SDK with first-class Java support. Provides prompt chaining, planning, memory, and agent framework abstractions with deep Azure integration.</p>
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/microsoft/semantic-kernel-java" title="GitHub"></a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://docs.jamjet.dev">JamJet</a></h3>
+        <p>Production-grade agent runtime with native Java SDK. Rust core (Tokio) for performance, graph-based durable workflow orchestration with event-sourced state, automatic crash recovery, audit trails, and first-class human-in-the-loop. Native MCP client/server and A2A protocol support. Java SDK uses records, virtual threads, and fluent builder API. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://docs.jamjet.dev" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/jamjet-labs/jamjet" title="GitHub"></a>
+          <a class="icon icon-github" href="https://github.com/jamjet-labs/jamjet/tree/main/sdk/java/examples" title="Examples"></a>
         </div>
       </div>
 
@@ -914,43 +935,43 @@
     <div class="resource-list">
 
       <a class="card" href="https://javaconferences.org/">
-        <span class="card-badge badge-resource">Community</span>
+        <span class="card-badge badge-community">Community</span>
         <h3>Java Conferences Tracker</h3>
         <p>Community-maintained calendar of all Java conferences worldwide</p>
       </a>
 
       <a class="card" href="https://redmonk.com/jgovernor/java-relevance-in-the-ai-era-agent-frameworks-emerge/">
-        <span class="card-badge badge-assistant">Blog</span>
+        <span class="card-badge badge-blog">Blog</span>
         <h3>Java Relevance in the AI Era</h3>
         <p>RedMonk analysis of Java's position as agent frameworks emerge</p>
       </a>
 
       <a class="card" href="https://github.com/spring-ai-community/awesome-spring-ai">
-        <span class="card-badge badge-inference">Resource</span>
+        <span class="card-badge badge-resource">Resource</span>
         <h3>Awesome Spring AI</h3>
         <p>Curated list of Spring AI resources, tools, and tutorials</p>
       </a>
 
       <a class="card" href="https://www.manning.com/books/spring-ai-in-action">
-        <span class="card-badge badge-framework">Book</span>
+        <span class="card-badge badge-book">Book</span>
         <h3>Spring AI in Action (Manning)</h3>
         <p>Book by Craig Walls &mdash; comprehensive guide to building AI apps with Spring</p>
       </a>
 
       <a class="card" href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">
-        <span class="card-badge badge-inference">Resource</span>
+        <span class="card-badge badge-resource">Resource</span>
         <h3>Production LangChain4j &mdash; Inside.java</h3>
         <p>Advanced RAG, agentic workflows, and production tips from Devoxx Belgium</p>
       </a>
 
       <a class="card" href="https://codelabs.developers.google.com/adk-java-getting-started">
-        <span class="card-badge badge-inference">Resource</span>
+        <span class="card-badge badge-resource">Resource</span>
         <h3>Google ADK Java Codelab</h3>
         <p>Hands-on: build AI agents in Java with Google's ADK</p>
       </a>
 
       <a class="card" href="https://www.youtube.com/@DevoxxForever">
-        <span class="card-badge badge-video">Resource</span>
+        <span class="card-badge badge-video">Videos</span>
         <h3>Devoxx YouTube</h3>
         <p>Thousands of conference talks on Java, AI, cloud, and architecture</p>
       </a>
@@ -962,19 +983,19 @@
       </a>
 
       <a class="card" href="https://foojay.io/today/foojay-podcast-86/">
-        <span class="card-badge badge-inference">Resource</span>
+        <span class="card-badge badge-resource">Resource</span>
         <h3>Foojay Podcast: Java AI Revolution</h3>
         <p>Agents, MCP, graph databases &mdash; developers navigate the AI revolution</p>
       </a>
 
       <a class="card" href="https://catalog.workshops.aws/java-spring-ai-agents/en-US">
-        <span class="card-badge badge-resource">Workshop</span>
+        <span class="card-badge badge-workshop">Workshop</span>
         <h3>Building Java AI Agents with Spring AI (AWS)</h3>
         <p>Hands-on AWS workshop for building intelligent AI agents with Spring AI and AWS services, including deployment to EKS</p>
       </a>
 
       <a class="card" href="https://www.youtube.com/watch?v=my2bQtHBUeY">
-        <span class="card-badge badge-video">Livestream</span>
+        <span class="card-badge badge-livestream">Livestream</span>
         <h3>AI &amp; Java on Serverless Office Hours</h3>
         <p>James Ward and Julian Wood explore building AI-powered Java apps &mdash; MCP integration, agent architectures with AgentCore, GraalVM optimization for AI workloads, and secure auth patterns for AI services on serverless</p>
       </a>
