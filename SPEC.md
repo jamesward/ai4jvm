@@ -74,8 +74,8 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### Akka
 - **Badge:** Framework
-- **Description:** Agentic AI platform built on the actor model. Goal-directed agents with durable memory, multi-agent orchestration, MCP tool support, and streaming. Resilient and elastic — built for enterprise scale on the JVM with Java and Scala APIs. From the Akka team (formerly Lightbend).
-- **Links:** [Docs](https://doc.akka.io) · [GitHub](https://github.com/akka/akka-sdk)
+- **Description:** Actor-based agentic AI platform for building stateful, resilient agents on the JVM. Event-sourced memory, durable multi-agent workflows, MCP tool calling, and automatic clustering with multi-region support. Java-first SDK from Akka, Inc. (formerly Lightbend).
+- **Links:** [Docs](https://doc.akka.io/) · [GitHub](https://github.com/akka/akka-sdk) · [Website](https://akka.io/)
 
 ### Quarkus LangChain4j
 - **Badge:** Framework
