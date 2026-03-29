@@ -72,11 +72,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Google's Agent Development Kit — code-first Java toolkit for building, evaluating, and deploying AI agents. Supports Gemini natively plus third-party models via LangChain4j integration. A2A protocol for agent-to-agent communication.
 - **Links:** [Docs](https://google.github.io/adk-docs/get-started/java/) · [GitHub](https://github.com/google/adk-java) · [Codelab](https://codelabs.developers.google.com/adk-java-getting-started)
 
-### Akka
-- **Badge:** Framework
-- **Description:** Actor-based agentic AI platform for building stateful, resilient agents on the JVM. Event-sourced memory, durable multi-agent workflows, MCP tool calling, and automatic clustering with multi-region support. Java-first SDK from Akka, Inc. (formerly Lightbend).
-- **Links:** [Docs](https://doc.akka.io/) · [GitHub](https://github.com/akka/akka-sdk) · [Website](https://akka.io/)
-
 ### Quarkus LangChain4j
 - **Badge:** Framework
 - **Description:** Enterprise-grade Quarkus extension for LangChain4j. Native compilation with GraalVM, built-in observability (metrics, tracing, auditing), and Dev UI tooling. Maintained by Red Hat & IBM.
@@ -111,6 +106,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Framework
 - **Description:** Microsoft's AI orchestration SDK with first-class Java support. Provides prompt chaining, planning, memory, and agent framework abstractions with deep Azure integration.
 - **Links:** [GitHub](https://github.com/microsoft/semantic-kernel-java)
+
+### JamJet
+- **Badge:** Framework
+- **Description:** Production-grade agent runtime with native Java SDK. Rust core (Tokio) for performance, graph-based durable workflow orchestration with event-sourced state, automatic crash recovery, audit trails, and first-class human-in-the-loop. Native MCP client/server and A2A protocol support. Java SDK uses records, virtual threads, and fluent builder API. Apache 2.0.
+- **Links:** [Docs](https://docs.jamjet.dev) · [GitHub](https://github.com/jamjet-labs/jamjet) · [Examples](https://github.com/jamjet-labs/jamjet/tree/main/sdk/java/examples)
 
 ### MCP Java SDK
 - **Badge:** SDK

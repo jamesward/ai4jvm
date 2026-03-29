@@ -1,1 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF4ZE4J3N5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YF4ZE4J3N5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI4JVM — Java AI Ecosystem Guide: Agent Frameworks, Inference Engines &amp; Tools</title>
+  <meta name="description" content="Your curated guide to the Java AI ecosystem — Spring AI, LangChain4j, Jlama, and more. Agent frameworks, inference engines, code assistants, learning resources, and people to follow.">
+  <link rel="canonical" href="https://ai4jvm.com/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI4JVM — Java AI Ecosystem Guide">
+  <meta property="og:description" content="Your curated guide to the Java AI ecosystem — agent frameworks, inference engines, code assistants, key people, and the best learning resources.">
+  <meta property="og:url" content="https://ai4jvm.com/">
+  <meta property="og:site_name" content="AI4JVM">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI4JVM — Java AI Ecosystem Guide">
+  <meta name="twitter:description" content="Your curated guide to the Java AI ecosystem — agent frameworks, inference engines, code assistants, key people, and the best learning resources.">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AI4JVM",
+    "url": "https://ai4jvm.com/",
+    "description": "Your curated guide to the Java AI ecosystem — agent frameworks, inference engines, code assistants, key people, and the best learning resources.",
+    "publisher": {
+      "@type": "Person",
+      "name": "James Ward",
+      "url": "https://jamesward.com"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #181b24;
+      --card: #1e2230;
+      --border: #2a2e3d;
+      --accent: #6c63ff;
+      --accent2: #38bdf8;
+      --accent3: #f472b6;
+      --text: #e2e4ea;
+      --text-muted: #8b8fa3;
+      --text-bright: #ffffff;
+      --radius: 12px;
+      --max-w: 1180px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent2); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--accent3); }
+    p a, .person-info p a { text-decoration: underline; text-underline-offset: 2px; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,17,23,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .75rem 1.5rem;
+    }
+    .nav-logo {
+      font-size: 1.25rem; font-weight: 800; color: var(--text-bright); letter-spacing: -.02em;
+    }
+    .nav-logo .ai { color: var(--accent); }
+    .nav-logo .jvm { color: var(--accent2); }
+    .nav-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .nav-links a { color: var(--text-muted); font-size: .875rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--text-bright); }
+    .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      background: radial-gradient(ellipse at 50% 0%, rgba(108,99,255,.15) 0%, transparent 60%);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--text-bright);
+      letter-spacing: -.03em;
+      margin-bottom: .75rem;
+    }
+    .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { max-width: 640px; margin: 0 auto; color: var(--text-muted); font-size: 1.15rem; }
+    section { padding: 4rem 1.5rem; }
+    .container { max-width: var(--max-w); margin: 0 auto; }
+    .section-title {
+      font-size: 1.75rem; font-weight: 700; color: var(--text-bright);
+      margin-bottom: .5rem; letter-spacing: -.02em;
+    }
+    .section-subtitle { color: var(--text-muted); margin-bottom: 2rem; max-width: 640px; }
+    .section-divider { border: none; border-top: 1px solid var(--border); max-width: var(--max-w); margin: 0 auto; }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--accent); }
+    a.card { display: block; color: inherit; text-decoration: none; cursor: pointer; }
+    a.card:hover { color: inherit; transform: translateY(-2px); }
+    a.card h3 { color: var(--text-bright); }
+    a.card p { color: var(--text-muted); }
+    .card h3 a { color: var(--text-bright); text-decoration: none; }
+    .card h3 a:hover { text-decoration: underline; color: var(--text-bright); }
+    .card-badge {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      padding: .2rem .55rem;
+      border-radius: 6px;
+      margin-bottom: .75rem;
+    }
+    .badge-framework { background: rgba(108,99,255,.2); color: #a5a0ff; }
+    .badge-inference { background: rgba(56,189,248,.2); color: #7dd3fc; }
+    .badge-assistant { background: rgba(244,114,182,.2); color: #f9a8d4; }
+    .badge-resource { background: rgba(52,211,153,.2); color: #6ee7b7; }
+    .badge-video { background: rgba(251,191,36,.2); color: #fcd34d; }
+    .card h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-bright); margin-bottom: .4rem; }
+    .card p { font-size: .9rem; color: var(--text-muted); margin-bottom: .75rem; }
+    .card-links { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .card-links a { font-size: .8rem; font-weight: 500; }
+    .icon { font-size: 0; }
+    .icon::before {
+      content: '';
+      display: inline-block;
+      width: 16px; height: 16px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: .7;
+      transition: opacity .2s;
+    }
+    .icon:hover::before { opacity: 1; }
+    .icon-github::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M12 .3a12 12 0 00-3.8 23.38c.6.12.82-.26.82-.58L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.2.7.82.58A12 12 0 0012 .3'/%3E%3C/svg%3E"); }
+    .icon-x::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/%3E%3C/svg%3E"); }
+    .icon-linkedin::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/%3E%3C/svg%3E"); }
+    .icon-bluesky::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.497 6.212 3.252-3.953.672-8.34 3.1-4.596 8.501 4.073 4.902 6.25-1.494 7.76-4.715C11.24 20.508 12.622 22 15.76 22c3.138 0 4.215-4.498 5.76-4.715 1.51 3.221 3.687 9.617 7.76 4.715 3.744-5.4-.643-7.829-4.596-8.501 2.612.245 5.427-.625 6.212-3.252.246-.83.624-5.789.624-6.479 0-.688-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C23.046 4.747 20.087 8.686 19 10.8'/%3E%3C/svg%3E"); }
+    .icon-youtube::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238b8fa3'%3E%3Cpath d='M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E"); }
+    .icon-web::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b8fa3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z'/%3E%3C/svg%3E"); }
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .person {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      transition: border-color .2s;
+    }
+    .person:hover { border-color: var(--accent2); }
+    .person-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 700; color: #fff; flex-shrink: 0;
+      overflow: hidden;
+    }
+    .person-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .person-info h4 { font-size: .95rem; font-weight: 600; color: var(--text-bright); }
+    .badge-champion {
+      display: inline-block;
+      font-size: .55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      padding: .1rem .4rem;
+      border-radius: 4px;
+      background: rgba(250,204,21,.2);
+      color: #fde047;
+      white-space: nowrap;
+      margin-top: .2rem;
+    }
+    .person-info p { font-size: .8rem; color: var(--text-muted); }
+    .person-info .person-links { margin-top: .25rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+    .person-info .person-links a { font-size: .78rem; }
+    .resource-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.25rem;
+    }
+    .news-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .news-bar h3 { font-size: 1rem; font-weight: 600; color: var(--accent3); margin-bottom: .75rem; }
+    .news-bar ul { list-style: none; }
+    .news-bar li { padding: .35rem 0; font-size: .9rem; color: var(--text-muted); }
+    .news-bar li::before { content: "\2022"; color: var(--accent3); margin-right: .5rem; }
+    .news-bar li a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
+    .news-bar li a:hover { color: var(--accent3); }
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: .85rem;
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; width: 100%; gap: .5rem; padding-top: .75rem; }
+      .nav-links.open { display: flex; }
+      .nav-inner { flex-wrap: wrap; }
+      .mobile-toggle { display: block; }
+      .hero { padding: 3rem 1.5rem 2.5rem; }
+      section { padding: 2.5rem 1rem; }
+      .card-grid, .people-grid, .resource-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><span class="ai">AI</span>4<span class="jvm">JVM</span></div>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="#news">News</a>
+      <a href="#frameworks">Agent Frameworks &amp; Libraries</a>
+      <a href="#assistants">Code Assistants</a>
+      <a href="#inference">Inference &amp; Training</a>
+      <a href="#people">People</a>
+      <a href="#resources">Resources</a>
+    </div>
+  </div>
+</nav>
+<!-- HERO -->
+<header class="hero">
+  <h1>Java meets <span>Artificial Intelligence</span></h1>
+  <p>Your curated guide to the Java AI ecosystem &mdash; agent frameworks, inference engines, code assistants, key people, and the best learning resources.</p>
+</header>
+<main>
+<!-- NEWS -->
+<section id="news">
+  <div class="container">
+    <div class="news-bar">
+      <h3>Latest Headlines</h3>
+      <ul>
+        <li><a href="https://spring.io/blog/2026/03/26/spring-ai-2-0-0-M4-and-1-1-4-and-1-0-5-available">Spring AI 2.0.0-M4, 1.1.4, and 1.0.5 Available</a> &mdash; JSpecify null-safety completion, new features, and maintenance releases with bug fixes</li>
+        <li><a href="https://blog.jetbrains.com/kotlin/2026/03/introducing-tracy-the-ai-observability-library-for-kotlin/">Introducing Tracy: The AI Observability Library for Kotlin</a> &mdash; production-grade AI observability for Kotlin apps, debug failures and track LLM usage with OpenTelemetry</li>
+        <li><a href="https://www.tmdevlab.com/mcp-server-performance-benchmark.html">Multi-Language MCP Server Performance Benchmark</a> &mdash; comparative analysis across Go, Java, Python, and TypeScript</li>
+        <li><a href="https://thenewstack.io/2026-java-ai-apps/">2026 Java AI Apps</a> &mdash; building AI applications with Java in 2026</li>
+        <li><a href="https://medium.com/embabel/agent-memory-is-not-a-greenfield-problem-ground-it-in-your-existing-data-9272cabe1561">Agent Memory Is Not a Greenfield Problem</a> &mdash; ground it in your existing data</li>
+        <li><a href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">Production LangChain4j at Devoxx Belgium</a> &mdash; advanced RAG, agentic workflows, and production tips</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+<!-- AGENT FRAMEWORKS -->
+<section id="frameworks">
+  <div class="container">
+    <h2 class="section-title">Agent Frameworks &amp; Libraries</h2>
+    <div class="card-grid">
 
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://spring.io/projects/spring-ai/">Spring AI</a></h3>
+        <p>The Spring ecosystem's official AI framework. Portable abstractions across 20+ model providers, tool calling, RAG, chat memory, vector stores, and MCP support. Built by the Spring team at Broadcom.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://spring.io/projects/spring-ai/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/spring-projects/spring-ai" title="GitHub"></a>
+          <a class="icon icon-web" href="https://spring.io/ai/" title="Overview"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://docs.langchain4j.dev/">LangChain4j</a></h3>
+        <p>The most popular Java LLM library. Unified API across 20+ LLM providers and 20+ embedding stores. Three levels of abstraction from low-level prompts to high-level AI Services. Supports RAG, tool calling, MCP, and agents.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://docs.langchain4j.dev/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/langchain4j/langchain4j" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/embabel/embabel-agent">Embabel</a></h3>
+        <p>Created by Rod Johnson (Spring Framework creator). JVM agent framework using Goal-Oriented Action Planning (GOAP) for dynamic replanning. Strongly typed, Spring-integrated, MCP support. Written in Kotlin with full Java interop.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/embabel/embabel-agent" title="GitHub"></a>
+          <a class="icon icon-web" href="https://medium.com/@springrod/embabel-a-new-agent-platform-for-the-jvm-1c83402e0014" title="Blog"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://google.github.io/adk-docs/get-started/java/">Google ADK for Java</a></h3>
+        <p>Google's Agent Development Kit &mdash; code-first Java toolkit for building, evaluating, and deploying AI agents. Supports Gemini natively plus third-party models via LangChain4j integration. A2A protocol for agent-to-agent communication.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://google.github.io/adk-docs/get-started/java/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/google/adk-java" title="GitHub"></a>
+          <a class="icon icon-web" href="https://codelabs.developers.google.com/adk-java-getting-started" title="Codelab"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://doc.akka.io/">Akka</a></h3>
+        <p>Actor-based agentic AI platform for building stateful, resilient agents on the JVM. Event-sourced memory, durable multi-agent workflows, MCP tool calling, and automatic clustering with multi-region support. Java-first SDK from Akka, Inc. (formerly Lightbend).</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://doc.akka.io/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/akka/akka-sdk" title="GitHub"></a>
+          <a class="icon icon-web" href="https://akka.io/" title="Website"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://docs.quarkiverse.io/quarkus-langchain4j/dev/index.html">Quarkus LangChain4j</a></h3>
+        <p>Enterprise-grade Quarkus extension for LangChain4j. Native compilation with GraalVM, built-in observability (metrics, tracing, auditing), and Dev UI tooling. Maintained by Red Hat &amp; IBM.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://docs.quarkiverse.io/quarkus-langchain4j/dev/index.html" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/quarkiverse/quarkus-langchain4j" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://helidon.io/docs/v4/se/ai/langchain4j/langchain4j">Helidon LangChain4j</a></h3>
+        <p>Oracle's Helidon framework integration with LangChain4j. Declarative AI Services via Helidon Inject, build-time code generation for GraalVM native images, streaming chat over Java Streams, guardrails, built-in metrics, and agentic support (workflows and dynamic agents). Runs on virtual threads.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://helidon.io/docs/v4/se/ai/langchain4j/langchain4j" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/langchain4j" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://helidon.io/docs/v4/se/ai/mcp">Helidon MCP</a></h3>
+        <p>Helidon's Model Context Protocol server and client implementation. Declarative and imperative APIs for building MCP servers with tools, resources, and prompts. Streamable HTTP and SSE transports, virtual threads, build-time processing. From Oracle's Helidon team.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://helidon.io/docs/v4/se/ai/mcp" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/helidon-io/helidon-mcp" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/langchain4j/langchain4j-cdi">LangChain4j CDI</a></h3>
+        <p>CDI extension for LangChain4j (part of the LangChain4j project) that brings AI services to Jakarta EE and MicroProfile applications. Inject AI services as CDI beans with <code>@RegisterAIService</code>, configure via MicroProfile Config, and add resilience with Fault Tolerance. Supports Quarkus, Helidon, WildFly, Payara, GlassFish, Liberty, and any CDI-capable runtime.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/langchain4j/langchain4j-cdi" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://langgraph4j.github.io/langgraph4j/">LangGraph4j</a></h3>
+        <p>Build stateful, multi-agent applications with cyclical graphs. Inspired by Python's LangGraph, works with both LangChain4j and Spring AI. Persistent checkpoints, deep agent architectures, and a Studio web UI.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://langgraph4j.github.io/langgraph4j/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/langgraph4j/langgraph4j" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://www.jetbrains.com/koog/">Koog (JetBrains)</a></h3>
+        <p>Kotlin-native agent framework from JetBrains. Type-safe DSL, multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://www.jetbrains.com/koog/" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/JetBrains/koog" title="GitHub"></a>
+          <a class="icon icon-web" href="https://docs.koog.ai/" title="Docs"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/microsoft/semantic-kernel-java">Semantic Kernel (Java)</a></h3>
+        <p>Microsoft's AI orchestration SDK with first-class Java support. Provides prompt chaining, planning, memory, and agent framework abstractions with deep Azure integration.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/microsoft/semantic-kernel-java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://docs.jamjet.dev">JamJet</a></h3>
+        <p>Production-grade agent runtime with native Java SDK. Rust core (Tokio) for performance, graph-based durable workflow orchestration with event-sourced state, automatic crash recovery, audit trails, and first-class human-in-the-loop. Native MCP client/server and A2A protocol support. Java SDK uses records, virtual threads, and fluent builder API. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://docs.jamjet.dev" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/jamjet-labs/jamjet" title="GitHub"></a>
+          <a class="icon icon-web" href="https://github.com/jamjet-labs/jamjet/tree/main/sdk/java/examples" title="Examples"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">SDK</span>
+        <h3><a href="https://modelcontextprotocol.io/sdk/java/mcp-overview">MCP Java SDK</a></h3>
+        <p>The official Java SDK for Model Context Protocol servers and clients. Maintained by the Spring AI team. Sync/async, STDIO/SSE/Streamable HTTP transports, OAuth support via Spring integration.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://modelcontextprotocol.io/sdk/java/mcp-overview" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/modelcontextprotocol/java-sdk" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">SDK</span>
+        <h3><a href="https://github.com/anthropics/anthropic-sdk-java">Anthropic Java SDK</a></h3>
+        <p>Official Java SDK for the Claude Messages API. Streaming, retries, structured outputs, extended thinking, code execution, and files API. Build Java apps powered by Claude.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/anthropics/anthropic-sdk-java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">SDK</span>
+        <h3><a href="https://github.github.com/copilot-sdk-java/">GitHub Copilot SDK for Java</a></h3>
+        <p>Official Java SDK for embedding the GitHub Copilot agentic engine directly into Java applications. Uses the same agentic harness that powers the Copilot CLI &mdash; exposes planning, tool calling, file editing, and MCP integration via a simple Java API. Currently in technical preview.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://github.github.com/copilot-sdk-java/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/github/copilot-sdk-java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://jetbrains.github.io/tracy/latest">Tracy (JetBrains)</a></h3>
+        <p>AI tracing library for Kotlin and Java. Captures structured traces from LLM interactions &mdash; messages, cost, token usage, and execution time. Implements OpenTelemetry Generative AI Semantic Conventions with exports to Langfuse, Weights &amp; Biases, and more.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://jetbrains.github.io/tracy/latest" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/JetBrains/tracy" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://docling-project.github.io/docling-java/current">Docling Java</a></h3>
+        <p>Official Java client for Docling Serve &mdash; invoke document conversion, table detection, formula recognition, reading order analysis, OCR, and more from Java via the Docling Serve backend.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://docling-project.github.io/docling-java/current" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/docling-project/docling-java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3>OmniHai</h3>
+        <p>Unified Java AI utility library for Jakarta EE and MicroProfile. Single API across 10 providers with zero external runtime dependencies &mdash; just java.net.http.HttpClient. Chat, streaming, structured outputs, web search, translation, and moderation in a lightweight JAR.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://omnihai.org" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/omnifaces/omnihai" title="GitHub"></a>
+          <a class="icon icon-web" href="https://javadoc.io/doc/org.omnifaces/omnihai" title="Javadoc"></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+<!-- CODE ASSISTANTS & JAVA DEV TOOLS -->
+<section id="assistants">
+  <div class="container">
+    <h2 class="section-title">Java with Code Assistants</h2>
+    <p class="section-subtitle">Technologies that supercharge Java development when paired with AI code assistants &mdash; from MCP servers that give agents live Javadoc access, to reusable skill packages and IDE integrations.</p>
+    <div class="card-grid">
+
+      <a class="card" href="https://www.javadocs.dev/">
+        <span class="card-badge badge-assistant">MCP Server</span>
+        <h3>Javadocs.dev MCP Server</h3>
+        <p>Gives AI assistants live access to Java, Kotlin, and Scala library documentation from Maven Central. Six tools including latest-version lookup, Javadoc symbol browsing, and source file retrieval. Connect any MCP client via Streamable HTTP.</p>
+      </a>
+
+      <div class="card">
+        <span class="card-badge badge-assistant">Assistant</span>
+        <h3><a href="https://www.jetbrains.com/ai/">JetBrains AI</a></h3>
+        <p>AI-powered coding assistance built into IntelliJ IDEA and all JetBrains IDEs. Context-aware code completion, next-edit suggestions, and an agent-mode chat for refactoring, test generation, and complex tasks. Deep understanding of Java, Kotlin, and Scala project conventions. Supports cloud LLMs (Gemini, OpenAI, Anthropic) plus bring-your-own-key.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://www.jetbrains.com/ai/" title="Website"></a>
+          <a class="icon icon-web" href="https://www.jetbrains.com/help/idea/ai-assistant.html" title="Docs"></a>
+        </div>
+      </div>
+
+      <a class="card" href="https://www.skillsjars.com/">
+        <span class="card-badge badge-framework">Skills</span>
+        <h3>SkillsJars</h3>
+        <p>A packaging format and registry for distributing reusable AI agent skills as Maven/Gradle JARs. Skills are Markdown files (<code>SKILL.md</code>) under <code>META-INF/skills/</code> that teach AI agents domain-specific patterns. Discover and load skills on demand in Claude Code, Kiro, and Spring AI apps.</p>
+      </a>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Skills</span>
+        <h3><a href="https://jvmskills.com">jvm-skills</a></h3>
+        <p>Curated directory of AI coding skills from JVM ecosystem engineers. Opinionated best-practice guides that AI tools (Claude Code, Cursor, Copilot) use as context — covering Spring Boot, jOOQ, Testcontainers, Docker, and more. Only lists skills that teach AI something it wouldn't know on its own.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://jvmskills.com" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/jvm-skills/jvm-skills" title="GitHub"></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+<!-- INFERENCE & TRAINING -->
+<section id="inference">
+  <div class="container">
+    <h2 class="section-title">Inference &amp; Training</h2>
+    <p class="section-subtitle">Run models, train classifiers, and do ML inference directly on the JVM &mdash; no Python required.</p>
+    <div class="card-grid">
+
+      <div class="card">
+        <span class="card-badge badge-inference">Inference</span>
+        <h3><a href="https://github.com/tjake/Jlama">Jlama</a></h3>
+        <p>Modern LLM inference engine written in pure Java. Runs Llama, Gemma, Mistral, and more locally on CPU. Uses Java's Vector API (Project Panama) for SIMD-accelerated matrix math. Supports SafeTensors format, quantized models, and distributed inference.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/tjake/Jlama" title="GitHub"></a>
+          <a class="icon icon-web" href="https://www.baeldung.com/java-jlama-llm" title="Tutorial"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Inference</span>
+        <h3><a href="https://github.com/deepjavalibrary/djl">Deep Java Library (DJL)</a></h3>
+        <p>AWS's high-level, engine-agnostic deep learning framework. Supports PyTorch, TensorFlow, ONNX Runtime, and XGBoost backends. DJLServing provides high-performance model serving.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/deepjavalibrary/djl" title="GitHub"></a>
+          <a class="icon icon-web" href="https://www.infoq.com/articles/java-machine-learning-djl/" title="InfoQ"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Inference</span>
+        <h3><a href="https://onnxruntime.ai/docs/get-started/with-java.html">ONNX Runtime Java</a></h3>
+        <p>Run transformer and classical ML models directly on the JVM. Hardware acceleration via CUDA, DirectML, CoreML, and more. Enables deploying scikit-learn, PyTorch, and HuggingFace models as ONNX in Java without Python at inference time.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://onnxruntime.ai/docs/get-started/with-java.html" title="Docs"></a>
+          <a class="icon icon-web" href="https://www.infoq.com/articles/onnx-ai-inference-with-java/" title="InfoQ Guide"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Training</span>
+        <h3><a href="https://tribuo.org/">Tribuo</a></h3>
+        <p>Oracle Labs' ML library for classification, regression, clustering, and anomaly detection. Strong typing, provenance tracking for reproducibility, and integrations with XGBoost, ONNX Runtime, TensorFlow, and LibSVM.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://tribuo.org/" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/oracle/tribuo" title="GitHub"></a>
+        </div>
+      </div>
+
+      <a class="card" href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/">
+        <span class="card-badge badge-inference">Inference</span>
+        <h3>GPULlama3.java</h3>
+        <p>Java-native LLM inference with automatic GPU acceleration via TornadoVM. Supports Llama 3, Mistral, Qwen, Phi-3, and IBM Granite models in GGUF format. TornadoVM translates Java bytecode to GPU kernels (OpenCL, PTX, SPIR-V). From the University of Manchester's Beehive Lab.</p>
+      </a>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Training</span>
+        <h3><a href="https://www.tensorflow.org/jvm">TensorFlow Java</a></h3>
+        <p>Java bindings for TensorFlow, maintained by the TensorFlow JVM SIG. Train and deploy TF models entirely in Java. Available as an optional Tribuo integration. Suitable for teams that want to stay within the JVM ecosystem while using TensorFlow's model formats.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://www.tensorflow.org/jvm" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/tensorflow/java" title="GitHub"></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+<!-- PEOPLE -->
+<section id="people">
+  <div class="container">
+    <h2 class="section-title">People to Follow</h2>
+    <p class="section-subtitle">Key voices at the intersection of Java and AI.</p>
+    <div class="people-grid">
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/129743?v=4" alt="Bruno Borges"></div>
+        <div class="person-info">
+          <h4>Bruno Borges</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Principal Program Manager &mdash; Microsoft Java Engineering Group</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/brunoborges" title="@brunoborges"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/brunoborges.bsky.social" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/brunoborges" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://ca.linkedin.com/in/brunocborges" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://blog.brunoborges.info/" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1358554?v=4" alt="Markus Eisele"></div>
+        <div class="person-info">
+          <h4>Markus Eisele</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Developer Advocate &mdash; IBM Research, JavaLand founder</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/myfear" title="@myfear"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/myfear.com" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/myfear" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/markuseisele/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://blog.eisele.net/" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/193434?v=4" alt="Frank Greco"></div>
+        <div class="person-info">
+          <h4>Frank Greco</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>NYJavaSIG founder, AI 4 Java educator, JSR 381 co-author</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/frankgreco" title="@frankgreco"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/frankgreco.bsky.social" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/fgreco55" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/frankdgreco/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://ai4java.com" title="Website"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1916583?v=4" alt="Rod Johnson"></div>
+        <div class="person-info">
+          <h4>Rod Johnson</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Creator of Spring Framework, CEO of Embabel</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/springrod" title="@springrod"></a>
+            <a class="icon icon-github" href="https://github.com/johnsonr" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/johnsonroda/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://medium.com/@springrod" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/47907?v=4" alt="Guillaume Laforge"></div>
+        <div class="person-info">
+          <h4>Guillaume Laforge</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Google Developer Advocate &mdash; Java, Groovy, AI</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/glaforge" title="@glaforge"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/glaforge.bsky.social" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/glaforge" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/glaforge/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://glaforge.dev/" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/3154404?v=4" alt="Dmytro Liubarskyi"></div>
+        <div class="person-info">
+          <h4>Dmytro Liubarskyi</h4>
+          <p>Creator of LangChain4j, Principal Architect &mdash; IBM</p>
+          <div class="person-links">
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/dmythro.bsky.social" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/dliubarskyi" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/dmytro-liubarskyi/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/54473?v=4" alt="Josh Long"></div>
+        <div class="person-info">
+          <h4>Josh Long</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Spring Developer Advocate at Broadcom</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/starbuxman" title="@starbuxman"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/starbuxman.joshlong.com" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/joshlong" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/joshlong/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://spring.io/authors/joshlong/" title="Spring Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/44456?v=4" alt="T. Jake Luciani"></div>
+        <div class="person-info">
+          <h4>T. Jake Luciani</h4>
+          <p>Creator of Jlama &mdash; Java LLM inference</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/tjake" title="@tjake"></a>
+            <a class="icon icon-github" href="https://github.com/tjake" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/tjake/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/247466?v=4" alt="Mark Pollack"></div>
+        <div class="person-info">
+          <h4>Mark Pollack</h4>
+          <p>Spring AI project lead</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/markpollack" title="@markpollack"></a>
+            <a class="icon icon-github" href="https://github.com/markpollack" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/marklpollack/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/49833622?v=4" alt="Lize Raes"></div>
+        <div class="person-info">
+          <h4>Lize Raes</h4>
+          <p>LangChain4j core team, Developer Advocate at Oracle</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/LizeRaes" title="@LizeRaes"></a>
+            <a class="icon icon-github" href="https://github.com/LizeRaes" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/lize-raes-a8a34110/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/14850786?v=4" alt="Jennifer Reif"></div>
+        <div class="person-info">
+          <h4>Jennifer Reif</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Developer Advocate at Neo4j</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/JMHReif" title="@JMHReif"></a>
+            <a class="icon icon-github" href="https://github.com/JMHReif" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/jmhreif/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://jmhreif.com" title="Website"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/426039?v=4" alt="Oleg Šelajev"></div>
+        <div class="person-info">
+          <h4>Oleg Šelajev</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Developer Relations Lead for AI &mdash; Docker</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/shelajev" title="@shelajev"></a>
+            <a class="icon icon-github" href="https://github.com/shelajev" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/shelajev/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/301596?v=4" alt="Bartosz Sorrentino"></div>
+        <div class="person-info">
+          <h4>Bartosz Sorrentino</h4>
+          <p>LangGraph4j creator, Principal Software Architect</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/bsorrentinoJ" title="@bsorrentinoJ"></a>
+            <a class="icon icon-github" href="https://github.com/bsorrentino" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/bartolomeosorrentino/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1351573?v=4" alt="Christian Tzolov"></div>
+        <div class="person-info">
+          <h4>Christian Tzolov</h4>
+          <p>Spring AI lead, MCP Java SDK founder, Spring team at Broadcom</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/christzolov" title="@christzolov"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/tzolov.bsky.social" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/tzolov" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/tzolov/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/349507?v=4" alt="Dan Vega"></div>
+        <div class="person-info">
+          <h4>Dan Vega</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Spring Developer Advocate, YouTube educator</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/therealdanvega" title="@therealdanvega"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/danvega.dev" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/danvega" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/danvega/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://www.danvega.dev/" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/12485205?v=4" alt="Dmitry Vinnik"></div>
+        <div class="person-info">
+          <h4>Dmitry Vinnik</h4>
+          <p>Lead Developer Advocate at Meta</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/DmitryVinnik" title="@DmitryVinnik"></a>
+            <a class="icon icon-github" href="https://github.com/dmitryvinn" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/dmitry-vinnik/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://dvinnik.dev/" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/167926?v=4" alt="Craig Walls"></div>
+        <div class="person-info">
+          <h4>Craig Walls</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Author of <em>Spring AI in Action</em></p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/habuma" title="@habuma"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/habuma.com" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/habuma" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/habuma" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/65043?v=4" alt="James Ward"></div>
+        <div class="person-info">
+          <h4>James Ward</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Developer Advocate &mdash; Java, Kotlin, Cloud, AI</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/_jamesward" title="@_JamesWard"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/jamesward.com" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/jamesward" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/jamesward" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://jamesward.com" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/372781?v=4" alt="Mario Fusco"></div>
+        <div class="person-info">
+          <h4>Mario Fusco</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>LangChain4j core team, Sr. Principal Software Engineer at IBM</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://x.com/mariofusco" title="@mariofusco"></a>
+            <a class="icon icon-github" href="https://github.com/mariofusco" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/mario-fusco-3467213/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/363447?v=4" alt="Eric Deandrea"></div>
+        <div class="person-info">
+          <h4>Eric Deandrea</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p><a href="https://docling-project.github.io/docling-java/current">Docling Java</a> project lead, contributor to LangChain4j, Sr. Principal Software Engineer at IBM</p>
+          <div class="person-links">
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/ericdeandrea.dev" title="Bluesky"></a>
+            <a class="icon icon-x" href="https://x.com/edeandrea" title="@edeandrea"></a>
+            <a class="icon icon-github" href="https://github.com/edeandrea" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/edeandrea/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+<!-- RESOURCES -->
+<section id="resources">
+  <div class="container">
+    <h2 class="section-title">Recent &amp; Noteworthy Content, Communities, and Resources</h2>
+    <div class="resource-list">
+
+      <a class="card" href="https://javaconferences.org/">
+        <span class="card-badge badge-resource">Community</span>
+        <h3>Java Conferences Tracker</h3>
+        <p>Community-maintained calendar of all Java conferences worldwide</p>
+      </a>
+
+      <a class="card" href="https://redmonk.com/jgovernor/java-relevance-in-the-ai-era-agent-frameworks-emerge/">
+        <span class="card-badge badge-assistant">Blog</span>
+        <h3>Java Relevance in the AI Era</h3>
+        <p>RedMonk analysis of Java's position as agent frameworks emerge</p>
+      </a>
+
+      <a class="card" href="https://github.com/spring-ai-community/awesome-spring-ai">
+        <span class="card-badge badge-inference">Resource</span>
+        <h3>Awesome Spring AI</h3>
+        <p>Curated list of Spring AI resources, tools, and tutorials</p>
+      </a>
+
+      <a class="card" href="https://www.manning.com/books/spring-ai-in-action">
+        <span class="card-badge badge-framework">Book</span>
+        <h3>Spring AI in Action (Manning)</h3>
+        <p>Book by Craig Walls &mdash; comprehensive guide to building AI apps with Spring</p>
+      </a>
+
+      <a class="card" href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">
+        <span class="card-badge badge-inference">Resource</span>
+        <h3>Production LangChain4j &mdash; Inside.java</h3>
+        <p>Advanced RAG, agentic workflows, and production tips from Devoxx Belgium</p>
+      </a>
+
+      <a class="card" href="https://codelabs.developers.google.com/adk-java-getting-started">
+        <span class="card-badge badge-inference">Resource</span>
+        <h3>Google ADK Java Codelab</h3>
+        <p>Hands-on: build AI agents in Java with Google's ADK</p>
+      </a>
+
+      <a class="card" href="https://www.youtube.com/@DevoxxForever">
+        <span class="card-badge badge-video">Videos</span>
+        <h3>Devoxx YouTube</h3>
+        <p>Thousands of conference talks on Java, AI, cloud, and architecture</p>
+      </a>
+
+      <a class="card" href="https://youtube.com/@coffeesoftware">
+        <span class="card-badge badge-video">Videos</span>
+        <h3>Coffee + Software</h3>
+        <p>Spring ecosystem, AI integration, and Java community</p>
+      </a>
+
+      <a class="card" href="https://foojay.io/today/foojay-podcast-86/">
+        <span class="card-badge badge-inference">Resource</span>
+        <h3>Foojay Podcast: Java AI Revolution</h3>
+        <p>Agents, MCP, graph databases &mdash; developers navigate the AI revolution</p>
+      </a>
+
+      <a class="card" href="https://catalog.workshops.aws/java-spring-ai-agents/en-US">
+        <span class="card-badge badge-resource">Workshop</span>
+        <h3>Building Java AI Agents with Spring AI (AWS)</h3>
+        <p>Hands-on AWS workshop for building intelligent AI agents with Spring AI and AWS services, including deployment to EKS</p>
+      </a>
+
+      <a class="card" href="https://www.youtube.com/watch?v=my2bQtHBUeY">
+        <span class="card-badge badge-video">Livestream</span>
+        <h3>AI &amp; Java on Serverless Office Hours</h3>
+        <p>James Ward and Julian Wood explore building AI-powered Java apps &mdash; MCP integration, agent architectures with AgentCore, GraalVM optimization for AI workloads, and secure auth patterns for AI services on serverless</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <p>AI4JVM &mdash; Curating the Java AI ecosystem. Contributions welcome on <a href="https://github.com/jamesward/ai4jvm">GitHub</a>.</p>
+</footer>
+</body>
+</html>
