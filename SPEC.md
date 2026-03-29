@@ -72,6 +72,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Google's Agent Development Kit — code-first Java toolkit for building, evaluating, and deploying AI agents. Supports Gemini natively plus third-party models via LangChain4j integration. A2A protocol for agent-to-agent communication.
 - **Links:** [Docs](https://google.github.io/adk-docs/get-started/java/) · [GitHub](https://github.com/google/adk-java) · [Codelab](https://codelabs.developers.google.com/adk-java-getting-started)
 
+### Akka
+- **Badge:** Framework
+- **Description:** Agentic AI platform built on the actor model. Goal-directed agents with durable memory, multi-agent orchestration, MCP tool support, and streaming. Resilient and elastic — built for enterprise scale on the JVM with Java and Scala APIs. From the Akka team (formerly Lightbend).
+- **Links:** [Docs](https://doc.akka.io) · [GitHub](https://github.com/akka/akka-sdk)
+
 ### Quarkus LangChain4j
 - **Badge:** Framework
 - **Description:** Enterprise-grade Quarkus extension for LangChain4j. Native compilation with GraalVM, built-in observability (metrics, tracing, auditing), and Dev UI tooling. Maintained by Red Hat & IBM.
