@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
-LLM inference with tool calling via GitHub Models API.
+LLM inference with tool calling via Anthropic Claude API.
 
 Reads the following environment variables:
-  GITHUB_TOKEN   (required) GitHub token used for API auth
-  SYSTEM_PROMPT  (required) System prompt passed to the model
-  USER_PROMPT    (required) User message passed to the model
-  MODEL          (optional) Model identifier (default: openai/gpt-5)
-  MAX_TOKENS     (optional) Max tokens for the final answer (default: 16384)
+  ANTHROPIC_API_KEY (required) Anthropic API key for authentication
+  SYSTEM_PROMPT     (required) System prompt passed to the model
+  USER_PROMPT       (required) User message passed to the model
+  MODEL             (optional) Model identifier (default: claude-opus-4-6)
+  MAX_TOKENS        (optional) Max tokens for the final answer (default: 16384)
 
 Prints the final model response to stdout and exits non-zero on error.
 
 Supported tools:
-  fetch_webpage(url) – fetches a URL and returns stripped text content
-  web_search(query) – searches the web via DuckDuckGo and returns results
+  fetch_webpage(url) - fetches a URL and returns stripped text content
+  web_search(query) - searches the web via DuckDuckGo and returns results
 """
 
 import json
@@ -24,7 +24,7 @@ import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
 
-API_URL = "https://models.github.ai/inference/chat/completions"
+API_URL = "https://api.anthropic.com/v1/messages"
 
 # How many bytes to read from a fetched page before stripping HTML/truncating.
 # Large enough to capture most useful content while avoiding huge payloads.
@@ -38,7 +38,7 @@ _MAX_TOOL_ITERATIONS = 10
 
 
 # ---------------------------------------------------------------------------
-# HTML → plain-text helper
+# HTML -> plain-text helper
 # ---------------------------------------------------------------------------
 
 class _HTMLTextExtractor(HTMLParser):
@@ -113,46 +113,40 @@ def web_search(query: str) -> str:
 
 TOOLS = [
     {
-        "type": "function",
-        "function": {
-            "name": "fetch_webpage",
-            "description": (
-                "Fetch and return the text content of a webpage. "
-                "Use this to verify that URLs are reachable, confirm that a "
-                "project exists, or gather current information about a library "
-                "or tool."
-            ),
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "url": {
-                        "type": "string",
-                        "description": "The full URL to fetch (e.g. https://example.com)",
-                    }
-                },
-                "required": ["url"],
+        "name": "fetch_webpage",
+        "description": (
+            "Fetch and return the text content of a webpage. "
+            "Use this to verify that URLs are reachable, confirm that a "
+            "project exists, or gather current information about a library "
+            "or tool."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "The full URL to fetch (e.g. https://example.com)",
+                }
             },
+            "required": ["url"],
         },
     },
     {
-        "type": "function",
-        "function": {
-            "name": "web_search",
-            "description": (
-                "Search the web for information. Returns a list of search "
-                "results with titles, URLs, and snippets. Use this to find "
-                "information about libraries, projects, or technologies."
-            ),
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "query": {
-                        "type": "string",
-                        "description": "The search query",
-                    }
-                },
-                "required": ["query"],
+        "name": "web_search",
+        "description": (
+            "Search the web for information. Returns a list of search "
+            "results with titles, URLs, and snippets. Use this to find "
+            "information about libraries, projects, or technologies."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query",
+                }
             },
+            "required": ["query"],
         },
     },
 ]
@@ -167,25 +161,28 @@ _TOOL_HANDLERS = {
 # API helper
 # ---------------------------------------------------------------------------
 
-def _api_call(messages: list, github_token: str, model: str,
+def _api_call(messages: list, system: str, api_key: str, model: str,
               max_tokens: int, use_tools: bool) -> dict:
     payload: dict = {
         "model": model,
-        "messages": messages,
         "max_tokens": max_tokens,
+        "system": system,
+        "messages": messages,
     }
     if use_tools:
         payload["tools"] = TOOLS
-        payload["tool_choice"] = "auto"
 
     req = urllib.request.Request(
         API_URL,
         data=json.dumps(payload).encode(),
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {github_token}",
+            "x-api-key": api_key,
+            "anthropic-version": "2023-06-01",
         },
     )
+    print(f"Using endpoint: {API_URL}", file=sys.stderr)
+    print(f"Model: {model}", file=sys.stderr)
     try:
         with urllib.request.urlopen(req) as resp:
             return json.loads(resp.read())
@@ -200,42 +197,49 @@ def _api_call(messages: list, github_token: str, model: str,
 # ---------------------------------------------------------------------------
 
 def run() -> str:
-    github_token = os.environ.get("MAINTAINER_PAT") or os.environ["GITHUB_TOKEN"]
+    api_key = os.environ["ANTHROPIC_API_KEY"]
     system_prompt = os.environ["SYSTEM_PROMPT"]
     user_prompt = os.environ["USER_PROMPT"]
-    model = os.environ.get("MODEL", "openai/gpt-5")
+    model = os.environ.get("MODEL", "claude-opus-4-6")
     max_tokens = int(os.environ.get("MAX_TOKENS", "16384"))
 
     messages: list[dict] = [
-        {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
 
-    for _ in range(_MAX_TOOL_ITERATIONS):  # guard against infinite tool-call loops
-        response = _api_call(messages, github_token, model, max_tokens,
-                             use_tools=True)
-        choice = response["choices"][0]
-        msg = choice["message"]
+    for _ in range(_MAX_TOOL_ITERATIONS):
+        response = _api_call(messages, system_prompt, api_key, model,
+                             max_tokens, use_tools=True)
 
-        tool_calls = msg.get("tool_calls") or []
-        if not tool_calls:
-            return msg.get("content") or ""
+        stop_reason = response.get("stop_reason", "")
+        content = response.get("content", [])
 
-        # Keep the assistant message (with tool_calls) in history
-        messages.append(msg)
+        # Check if there are any tool_use blocks
+        tool_uses = [b for b in content if b.get("type") == "tool_use"]
+        if not tool_uses:
+            # Extract text from text blocks
+            text_parts = [b["text"] for b in content if b.get("type") == "text"]
+            return "\n".join(text_parts)
 
-        # Execute each requested tool and append the results
-        for tc in tool_calls:
-            fn_name = tc["function"]["name"]
-            fn_args = json.loads(tc["function"]["arguments"])
+        # Append the assistant message with all content blocks
+        messages.append({"role": "assistant", "content": content})
+
+        # Execute each tool and build tool_result blocks
+        tool_results = []
+        for tc in tool_uses:
+            fn_name = tc["name"]
+            fn_args = tc["input"]
+            tool_id = tc["id"]
             print(f"Tool call: {fn_name}({fn_args})", file=sys.stderr)
             handler = _TOOL_HANDLERS.get(fn_name)
             result = handler(fn_args) if handler else f"Unknown tool: {fn_name}"
-            messages.append({
-                "role": "tool",
-                "tool_call_id": tc["id"],
+            tool_results.append({
+                "type": "tool_result",
+                "tool_use_id": tool_id,
                 "content": result,
             })
+
+        messages.append({"role": "user", "content": tool_results})
 
     return f"Error: tool-call loop exceeded {_MAX_TOOL_ITERATIONS} iterations"
 

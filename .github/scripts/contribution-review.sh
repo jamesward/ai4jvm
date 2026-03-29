@@ -22,7 +22,7 @@ USER_PROMPT=$(printf 'Please review this SPEC.md diff:\n\n```diff\n%s\n```' "$DI
 export SYSTEM_PROMPT
 export USER_PROMPT
 
-# Call GitHub Models with tool-calling support (fetch_webpage tool)
+# Call Claude with tool-calling support (fetch_webpage tool)
 LLM_STDERR=$(mktemp)
 if ! REVIEW=$(python3 "$SCRIPT_DIR/llm_with_tools.py" 2>"$LLM_STDERR"); then
   ERR=$(cat "$LLM_STDERR")
