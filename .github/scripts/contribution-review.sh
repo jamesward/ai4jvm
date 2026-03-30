@@ -13,31 +13,54 @@ if [ -z "$DIFF" ]; then
   exit 0
 fi
 
-# Build the full prompt — inject CONTRIBUTING.md and diff into the prompt template
+# Write the diff to a file the agent can read
+DIFF_FILE=$(mktemp "$REPO_ROOT/spec-diff-XXXXXX.patch")
+printf '%s' "$DIFF" > "$DIFF_FILE"
+
+# Build the system prompt — inject live CONTRIBUTING.md into the prompt template
 CONTRIBUTING=$(cat "$REPO_ROOT/CONTRIBUTING.md")
 PROMPT_TEMPLATE=$(cat "$SCRIPT_DIR/contribution-review-prompt.md")
 SYSTEM_PROMPT="${PROMPT_TEMPLATE/\{\{CONTRIBUTING_MD\}\}/$CONTRIBUTING}"
 
-PROMPT="${SYSTEM_PROMPT}
-
----
-
-## SPEC.md Diff to Review
-
-\`\`\`diff
-${DIFF}
-\`\`\`
-
-Review this diff according to the contribution guidelines above."
-
+# Write the review to a file instead of capturing stdout
 REVIEW_FILE=$(mktemp "$REPO_ROOT/review-XXXXXX.md")
 
-if ! kiro-cli-chat chat --no-interactive "$PROMPT" 2>/dev/null > "$REVIEW_FILE"; then
+# Create a temporary kiro agent config
+AGENT_DIR="$REPO_ROOT/.kiro/agents"
+mkdir -p "$AGENT_DIR"
+AGENT_NAME="contribution-reviewer"
+AGENT_FILE="$AGENT_DIR/${AGENT_NAME}.json"
+
+# Escape the system prompt for JSON
+SYSTEM_PROMPT_JSON=$(printf '%s' "$SYSTEM_PROMPT" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')
+
+cat > "$AGENT_FILE" <<AGENTEOF
+{
+  "name": "$AGENT_NAME",
+  "prompt": $SYSTEM_PROMPT_JSON,
+  "model": "claude-opus-4-6",
+  "tools": ["read", "write", "edit", "web_fetch", "web_search"],
+  "allowedTools": ["read", "write", "edit", "web_fetch", "web_search"]
+}
+AGENTEOF
+
+PROMPT="Read the SPEC.md diff in $(basename "$DIFF_FILE") and review it according to the contribution guidelines.
+
+Write your review to $(basename "$REVIEW_FILE"). Use the web_fetch tool to verify every URL in the contribution. Do not modify any other files."
+
+LLM_STDERR=$(mktemp)
+if ! kiro-cli chat --no-interactive --trust-all-tools \
+  --agent "$AGENT_NAME" \
+  "$PROMPT" \
+  2>"$LLM_STDERR"; then
+  ERR=$(tail -c 3000 "$LLM_STDERR")
   gh pr comment "$PR_NUMBER" --repo "$REPO" \
-    --body "❌ Review failed: kiro-cli-chat returned an error."
-  rm -f "$REVIEW_FILE"
+    --body "$(printf '❌ Review failed:\n\n```\n%s\n```' "$ERR")"
+  rm -f "$DIFF_FILE" "$REVIEW_FILE" "$AGENT_FILE"
   exit 1
 fi
+
+rm -f "$DIFF_FILE" "$AGENT_FILE"
 
 REVIEW=$(cat "$REVIEW_FILE")
 rm -f "$REVIEW_FILE"

@@ -18,8 +18,8 @@ if [ -z "$SPEC_DIFF" ]; then
   exit 0
 fi
 
-# Merge base into PR head to get the most up-to-date index.html for editing.
-# The actual regen commit will be parented on HEAD_SHA (not a merge).
+# Merge base into PR head to get the most up-to-date index.html for Claude
+# to edit. The actual regen commit will be parented on HEAD_SHA (not a merge).
 if MERGED_TREE=$(git merge-tree --write-tree HEAD "$HEAD_SHA" 2>/dev/null); then
   MERGE_COMMIT=$(git commit-tree "$MERGED_TREE" -p "$HEAD_SHA" -p "$BASE_HEAD" \
     -m "Merge $BASE_REF into PR branch")
@@ -31,62 +31,67 @@ fi
 # Save a copy to detect changes
 cp "$REPO_ROOT/index.html" "$REPO_ROOT/index.html.orig"
 
-CURRENT_HTML=$(cat "$REPO_ROOT/index.html")
+# Write the SPEC.md diff to a file the agent can reference
+DIFF_FILE=$(mktemp "$REPO_ROOT/spec-diff-XXXXXX.patch")
+printf '%s' "$SPEC_DIFF" > "$DIFF_FILE"
 
-# Build the prompt with the current HTML and diff
-PROMPT="You are a web developer maintaining a single-page HTML site.
+# Create a temporary kiro agent config
+AGENT_DIR="$REPO_ROOT/.kiro/agents"
+mkdir -p "$AGENT_DIR"
+AGENT_NAME="site-regenerator"
+AGENT_FILE="$AGENT_DIR/${AGENT_NAME}.json"
 
-Below is the current index.html followed by a SPEC.md diff. Update the HTML to reflect ONLY the changes in the diff.
+cat > "$AGENT_FILE" <<'AGENTEOF'
+{
+  "name": "site-regenerator",
+  "prompt": "You are a web developer maintaining a single-page HTML site. You update index.html to match changes in SPEC.md. Follow existing code style and structure exactly.",
+  "model": "claude-opus-4-6",
+  "tools": ["read", "edit", "web_fetch", "web_search"],
+  "allowedTools": ["read", "edit", "web_fetch", "web_search"]
+}
+AGENTEOF
 
-For added items: create the corresponding HTML (cards, people, links, etc.) matching the existing style/structure. Insert in the correct position.
+# Let kiro edit index.html directly
+PROMPT="Read the SPEC.md diff in $(basename "$DIFF_FILE") and update index.html to reflect ONLY those changes.
+
+For added items: create the corresponding HTML (cards, people, links, etc.) matching the existing style/structure in index.html. Insert in the correct position.
 For removed items: delete the corresponding HTML block.
 For modified items: update the corresponding HTML to match.
 
 Rules:
 - Do NOT modify any HTML comments.
 - Do NOT change anything not affected by the diff.
-- Output ONLY the complete updated HTML file — no explanations, no markdown fences, no commentary.
-- The output must start with <!DOCTYPE html> and end with </html>.
+- Use web_fetch to verify URLs for NEW items. If broken, add <!-- LINK CHECK: 404 --> next to the link.
+- Only edit index.html. Do not create or modify any other files."
 
-## Current index.html
-
-${CURRENT_HTML}
-
-## SPEC.md Diff
-
-\`\`\`diff
-${SPEC_DIFF}
-\`\`\`
-
-Output the complete updated index.html now:"
-
-OUTPUT_FILE=$(mktemp "$REPO_ROOT/output-XXXXXX.html")
-
-if ! kiro-cli-chat chat --no-interactive "$PROMPT" 2>/dev/null > "$OUTPUT_FILE"; then
+LLM_STDERR=$(mktemp)
+if ! kiro-cli chat --no-interactive --trust-all-tools \
+  --agent "$AGENT_NAME" \
+  "$PROMPT" \
+  2>"$LLM_STDERR"; then
+  ERR=$(tail -c 3000 "$LLM_STDERR")
   gh pr comment "$PR_NUMBER" --repo "$REPO" \
-    --body "❌ Site regeneration failed: kiro-cli-chat returned an error."
-  rm -f "$OUTPUT_FILE"
+    --body "$(printf '❌ Site regeneration failed:\n\n```\n%s\n```' "$ERR")"
+  rm -f "$DIFF_FILE" "$AGENT_FILE"
   exit 1
 fi
 
-NEW_HTML=$(cat "$OUTPUT_FILE")
-rm -f "$OUTPUT_FILE"
+rm -f "$DIFF_FILE" "$AGENT_FILE"
+
+NEW_HTML=$(cat "$REPO_ROOT/index.html")
 
 # Validate the output
 if [ ${#NEW_HTML} -lt 1000 ]; then
   gh pr comment "$PR_NUMBER" --repo "$REPO" \
-    --body "❌ Site regeneration failed: output is too small (${#NEW_HTML} bytes)."
+    --body "❌ Site regeneration failed: index.html is too small after editing (${#NEW_HTML} bytes)."
   exit 1
 fi
 
-if ! echo "$NEW_HTML" | head -1 | grep -qi '<!DOCTYPE html>'; then
+if ! head -1 "$REPO_ROOT/index.html" | grep -qi '<!DOCTYPE html>'; then
   gh pr comment "$PR_NUMBER" --repo "$REPO" \
-    --body "❌ Site regeneration failed: output does not start with <!DOCTYPE html>."
+    --body "❌ Site regeneration failed: index.html does not start with <!DOCTYPE html>."
   exit 1
 fi
-
-# Write the validated output
-printf '%s' "$NEW_HTML" > "$REPO_ROOT/index.html"
 
 # Check if index.html actually changed
 if diff -q "$REPO_ROOT/index.html" "$REPO_ROOT/index.html.orig" >/dev/null 2>&1; then
@@ -101,6 +106,9 @@ rm -f "$REPO_ROOT/index.html.orig"
 NEW_BLOB=$(cat "$REPO_ROOT/index.html" | git hash-object -w --stdin)
 
 # Build the regen commit on top of HEAD_SHA (the PR tip) — NOT a merge commit.
+# Using HEAD_SHA's tree preserves the PR's SPEC.md changes and only replaces
+# index.html. A merge commit with BASE_HEAD as parent would confuse GitHub's
+# PR diff calculation.
 NEW_TREE=$(git ls-tree "$HEAD_SHA" | \
   awk -v blob="$NEW_BLOB" '/\tindex\.html$/{printf "100644 blob %s\tindex.html\n", blob; next} {print}' | \
   git mktree)
@@ -113,7 +121,8 @@ if [ "${IS_FORK:-false}" = "true" ]; then
   BASE_OWNER="${REPO%%/*}"
 
   if [ -n "${MAINTAINER_PAT:-}" ]; then
-    # Strategy 1: Push directly to fork.
+    # Strategy 1: Push directly to fork. NEW_COMMIT is already built from
+    # HEAD_SHA's tree (no .github/ changes from base), so it's fork-safe.
     FORK_URL="https://x-access-token:${MAINTAINER_PAT}@github.com/${HEAD_REPO}.git"
     PUSH_ERR=$(mktemp)
     if git push --force "$FORK_URL" "$NEW_COMMIT:refs/heads/$HEAD_REF" 2>"$PUSH_ERR"; then
