@@ -13,37 +13,31 @@ if [ -z "$DIFF" ]; then
   exit 0
 fi
 
-# Write the diff to a file Claude can read
-DIFF_FILE=$(mktemp "$REPO_ROOT/spec-diff-XXXXXX.patch")
-printf '%s' "$DIFF" > "$DIFF_FILE"
-
-# Build the system prompt — inject live CONTRIBUTING.md into the prompt template
+# Build the full prompt — inject CONTRIBUTING.md and diff into the prompt template
 CONTRIBUTING=$(cat "$REPO_ROOT/CONTRIBUTING.md")
 PROMPT_TEMPLATE=$(cat "$SCRIPT_DIR/contribution-review-prompt.md")
 SYSTEM_PROMPT="${PROMPT_TEMPLATE/\{\{CONTRIBUTING_MD\}\}/$CONTRIBUTING}"
 
-# Write the review to a file instead of capturing stdout
+PROMPT="${SYSTEM_PROMPT}
+
+---
+
+## SPEC.md Diff to Review
+
+\`\`\`diff
+${DIFF}
+\`\`\`
+
+Review this diff according to the contribution guidelines above."
+
 REVIEW_FILE=$(mktemp "$REPO_ROOT/review-XXXXXX.md")
 
-PROMPT="Read the SPEC.md diff in $(basename "$DIFF_FILE") and review it according to the contribution guidelines.
-
-Write your review to $(basename "$REVIEW_FILE"). Use the WebFetch tool to verify every URL in the contribution. Do not modify any other files."
-
-LLM_STDERR=$(mktemp)
-if ! claude -p "$PROMPT" \
-  --system-prompt "$SYSTEM_PROMPT" \
-  --allowedTools "Read,Write,Edit,WebFetch,WebSearch" \
-  --model claude-opus-4-6 \
-  --max-turns 30 \
-  2>"$LLM_STDERR"; then
-  ERR=$(tail -c 3000 "$LLM_STDERR")
+if ! kiro-cli-chat chat --no-interactive "$PROMPT" 2>/dev/null > "$REVIEW_FILE"; then
   gh pr comment "$PR_NUMBER" --repo "$REPO" \
-    --body "$(printf '❌ Review failed:\n\n```\n%s\n```' "$ERR")"
-  rm -f "$DIFF_FILE" "$REVIEW_FILE"
+    --body "❌ Review failed: kiro-cli-chat returned an error."
+  rm -f "$REVIEW_FILE"
   exit 1
 fi
-
-rm -f "$DIFF_FILE"
 
 REVIEW=$(cat "$REVIEW_FILE")
 rm -f "$REVIEW_FILE"

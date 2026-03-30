@@ -7,6 +7,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 jobs:
   unauthorized:
@@ -69,14 +70,22 @@ jobs:
       - name: Fetch PR head
         run: git fetch origin ${{ steps.pr.outputs.head_sha }}
 
-      - name: Install Claude Code
-        run: npm install -g @anthropic-ai/claude-code
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Setup Kiro CLI
+        uses: clouatre-labs/setup-kiro-action@v1
+        with:
+          enable-sigv4: true
+          aws-region: us-east-1
 
       - name: Run site regen
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MAINTAINER_PAT: ${{ secrets.MAINTAINER_PAT }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
           HEAD_REF: ${{ steps.pr.outputs.head_ref }}
           HEAD_REPO: ${{ steps.pr.outputs.head_repo }}
