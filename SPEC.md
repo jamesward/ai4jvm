@@ -263,6 +263,16 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Description:** Awesome Copilot Skills is a curated registry of reusable AI agent skills that developers can plug into agents, providing ready-made capabilities, prompts, and workflows. It helps Java AI developers quickly extend agent functionality without building everything from scratch.
 - **Links:** website: https://awesome-copilot.github.com/skills/?q=java
 
+### jOOQ MCP Server
+- **Badge:** MCP Server
+- **Description:** Gives AI assistants live access to jOOQ documentation and examples. Connect any MCP client via Streamable HTTP.
+- **Links:** website: https://jooq-mcp.martinelli.ch/
+
+### Vaadin MCP Server
+- **Badge:** MCP Server
+- **Description:** Gives AI assistants live access to Vaadin documentation and examples. Connect any MCP client via Streamable HTTP.
+- **Links:** website: https://mcp.vaadin.com/docs/
+
 ---
 
 ## Inference & Training
@@ -419,6 +429,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/44456?v=4
 - **Role:** Creator of Jlama — Java LLM inference
 - **Links:** [@tjake](https://twitter.com/tjake) · [GitHub](https://github.com/tjake) · [LinkedIn](https://www.linkedin.com/in/tjake/)
+
+### Simon Martinelli
+
+- **Badge:** Person
+- **Initials:** MP
+- **Photo:** https://avatars.githubusercontent.com/u/593352?v=4
+- **Role:** Creator of AI Unfied Process and jOOQ MCP Server
+- **Links:** [@simas_ch](https://twitter.com/simas_ch) · [GitHub](https://github.com/simach) · [LinkedIn](https://www.linkedin.com/in/simonmartinelli/)
 
 ### Mark Pollack
 
