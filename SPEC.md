@@ -86,10 +86,10 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://spring.io/blog/2026/05/08/spring-ai-1-0-7-1-1-6-2-0-0-M6-available-now
 - https://aws.amazon.com/blogs/machine-learning/spring-ai-sdk-for-amazon-bedrock-agentcore-is-now-generally-available/
 - https://developers.googleblog.com/announcing-adk-for-java-100-building-the-future-of-ai-agents-in-java/
 - https://blog.jetbrains.com/idea/2026/03/ai-assisted-java-application-development-with-agent-skills/
-- https://spring.io/blog/2026/03/26/spring-ai-2-0-0-M4-and-1-1-4-and-1-0-5-available
 - https://blog.jetbrains.com/kotlin/2026/03/introducing-tracy-the-ai-observability-library-for-kotlin/
 - https://www.tmdevlab.com/mcp-server-performance-benchmark.html
 - https://thenewstack.io/2026-java-ai-apps/
