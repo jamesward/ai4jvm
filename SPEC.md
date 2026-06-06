@@ -230,6 +230,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** A portable layer across Java AI runtimes. Write `@Agent` once against a unified API (tool calling, memory, streaming, structured output); swap the runtime — Spring AI, LangChain4j, Google ADK, Embabel, Koog, or built-in OpenAI — by changing one dependency. `@Coordinator` orchestrates multi-agent fleets with parallel, sequential, and conditional routing. Served over transports (WebTransport/HTTP3, WebSocket, SSE, long-polling, gRPC) and protocols (MCP, A2A, AG-UI). Built by Async-IO.
 - **Links:** [Docs](https://atmosphere.github.io/docs/) · [GitHub](https://github.com/Atmosphere/atmosphere) · [Async-IO](https://async-io.live)
 
+### Erupt
+- **Badge:** Framework
+- **Description:** Annotation-driven Java admin framework (Spring Boot 3) with a built-in, fully UI-configurable AI harness. Annotate a JPA entity to generate a complete admin page, then wire LLMs and tools with no code: 50+ LLM providers, MCP-native tool calling (SSE & STDIO), A2A multi-agent workflows, and per-role tool access — all built on LangChain4j. Expose Spring beans as AI-callable tools via `@AiToolbox`. Apache-2.0.
+- **Links:** [GitHub](https://github.com/erupts/erupt) · [Docs](https://docs.erupt.xyz) · [Demo](https://demo.erupt.xyz)
+
 ---
 
 ## Java with Code Assistants
