@@ -430,6 +430,14 @@ Notes:
 - **Role:** Creator of Jlama — Java LLM inference
 - **Links:** [@tjake](https://twitter.com/tjake) · [GitHub](https://github.com/tjake) · [LinkedIn](https://www.linkedin.com/in/tjake/)
 
+### François Martin
+
+- **Badge:** Person
+- **Initials:** FM
+- **Photo:** https://avatars.githubusercontent.com/u/14319020?v=4
+- **Role:** International speaker and author, Oracle ACE Associate, senior full-stack software engineer
+- **Links:** [@fmartin_](https://x.com/fmartin_) · [GitHub](https://github.com/martinfrancois) · [LinkedIn](https://www.linkedin.com/in/fran%c3%a7oismartin/) · [Bluesky](https://bsky.app/profile/fmartin.ch) · [YouTube](https://www.youtube.com/@fmartindev) · [Website](https://fmartin.ch)
+
 ### Simon Martinelli
 
 - **Badge:** Person
