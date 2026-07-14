@@ -87,14 +87,9 @@ Latest headlines about the Java AI ecosystem. Each item has a link and brief des
 Note: Order by date, newest first. Don't show news older than 3 months
 
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
+- https://blog.ovhcloud.com/devoxx-france-2026/
+- https://quarkus.io/blog/introducing-agent-mcp/
 - https://aws.amazon.com/blogs/machine-learning/spring-ai-sdk-for-amazon-bedrock-agentcore-is-now-generally-available/
-- https://developers.googleblog.com/announcing-adk-for-java-100-building-the-future-of-ai-agents-in-java/
-- https://blog.jetbrains.com/idea/2026/03/ai-assisted-java-application-development-with-agent-skills/
-- https://blog.jetbrains.com/kotlin/2026/03/introducing-tracy-the-ai-observability-library-for-kotlin/
-- https://www.tmdevlab.com/mcp-server-performance-benchmark.html
-- https://thenewstack.io/2026-java-ai-apps/
-- https://medium.com/embabel/agent-memory-is-not-a-greenfield-problem-ground-it-in-your-existing-data-9272cabe1561
-- https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/
 
 ---
 
@@ -230,6 +225,16 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** A portable layer across Java AI runtimes. Write `@Agent` once against a unified API (tool calling, memory, streaming, structured output); swap the runtime — Spring AI, LangChain4j, Google ADK, Embabel, Koog, or built-in OpenAI — by changing one dependency. `@Coordinator` orchestrates multi-agent fleets with parallel, sequential, and conditional routing. Served over transports (WebTransport/HTTP3, WebSocket, SSE, long-polling, gRPC) and protocols (MCP, A2A, AG-UI). Built by Async-IO.
 - **Links:** [Docs](https://atmosphere.github.io/docs/) · [GitHub](https://github.com/Atmosphere/atmosphere) · [Async-IO](https://async-io.live)
 
+### Spring AI Agent Utils
+- **Badge:** Library
+- **Description:** Community library from the Spring AI team that brings Claude Code-inspired agentic primitives to Spring AI applications — file operations, shell execution, web fetch, task/subagent orchestration, auto-memory, and a portable Agent Skills implementation. Built on Spring AI 2.0's agentic foundation.
+- **Links:** [Docs](https://springaicommunity.mintlify.app/projects/incubating/spring-ai-agent-utils) · [GitHub](https://github.com/spring-ai-community/spring-ai-agent-utils)
+
+### Jakarta Agentic AI
+- **Badge:** Framework
+- **Description:** Eclipse Foundation specification proposal defining vendor-neutral APIs for building, deploying, and running AI agents on Jakarta EE runtimes. Annotation-based programming model (`@Agent`, `@Trigger`, `@Decision`, `@Action`, `@Outcome`) built on CDI, REST, and Config — pluggable with existing frameworks like LangChain4j and Spring AI rather than replacing them. Proposed by Payara and Reza Rahman, backed by Oracle, Fujitsu, and OmniFish; version 1.0 under active development.
+- **Links:** [GitHub](https://github.com/jakartaee/agentic-ai) · [Spec](https://jakarta.ee/specifications/agentic-ai/1.0/) · [Announcement](https://payara.fish/blog/announcing-the-jakarta-agentic-ai-project/)
+
 ---
 
 ## Java with Code Assistants
@@ -272,6 +277,21 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Badge:** MCP Server
 - **Description:** Gives AI assistants live access to Vaadin documentation and examples. Connect any MCP client via Streamable HTTP.
 - **Links:** website: https://mcp.vaadin.com/docs/
+
+### Quarkus Agent MCP
+- **Badge:** MCP Server
+- **Description:** Official standalone MCP server from the Quarkus team that teaches AI coding agents to work with Quarkus applications — scaffolding new projects, controlling the app lifecycle, proxying Dev MCP tools, and searching Quarkus documentation. Runs as a separate process that survives app crashes, so agents can read logs and fix code after failures. Works with Claude Code, GitHub Copilot, Cursor, and JetBrains AI.
+- **Links:** [Blog](https://quarkus.io/blog/introducing-agent-mcp/) · [GitHub](https://github.com/quarkusio/quarkus-agent-mcp)
+
+### Open Liberty MCP Server
+- **Badge:** MCP Server
+- **Description:** Built-in Open Liberty runtime feature (`mcpServer-1.0`) that exposes Jakarta EE and CDI business logic as MCP tools for agentic AI workflows — role-based authorization, dynamic tool registration, and streamable transport. Actively developed through 2026 beta releases from IBM's Open Liberty team.
+- **Links:** [Blog](https://openliberty.io/blog/2025/10/23/mcp-standalone-blog.html) · [Website](https://openliberty.io/)
+
+### Maven Tools MCP
+- **Badge:** MCP Server
+- **Description:** Gives AI agents dependency intelligence from Maven Central — version lookup, upgrade comparisons, CVE and license health signals, and POM-aware resolution across Maven, Gradle, SBT, and Mill projects. Helps agents make safer automated dependency-upgrade decisions.
+- **Links:** [GitHub](https://github.com/arvindand/maven-tools-mcp)
 
 ---
 
@@ -462,6 +482,15 @@ Notes:
 - **Role:** LangChain4j core team, Developer Advocate at Oracle
 - **Links:** [@LizeRaes](https://twitter.com/LizeRaes) · [GitHub](https://github.com/LizeRaes) · [LinkedIn](https://www.linkedin.com/in/lize-raes-a8a34110/)
 
+### Reza Rahman
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** RR
+- **Photo:** https://avatars.githubusercontent.com/u/3622346?v=4
+- **Role:** Jakarta Agentic AI project lead at Payara/Azul, Jakarta EE Ambassadors founder
+- **Links:** [GitHub](https://github.com/m-reza-rahman) · [LinkedIn](https://www.linkedin.com/in/javareza) · [Website](https://reza-rahman.me)
+
 ### K. Siva Prasad Reddy
 
 - **Badge:** Person
@@ -520,6 +549,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/12485205?v=4
 - **Role:** Lead Developer Advocate at Meta
 - **Links:** [@DmitryVinnik](https://twitter.com/DmitryVinnik) · [GitHub](https://github.com/dmitryvinn) · [LinkedIn](https://www.linkedin.com/in/dmitry-vinnik/) · [Blog](https://dvinnik.dev/)
+
+### Thomas Vitale
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** TV
+- **Photo:** https://avatars.githubusercontent.com/u/8523418?v=4
+- **Role:** Spring AI Lead Contributor, creator of Arconia, author of *Cloud Native Spring in Action*
+- **Links:** [@vitalethomas](https://x.com/vitalethomas) · [Bluesky](https://bsky.app/profile/thomasvitale.com) · [GitHub](https://github.com/ThomasVitale) · [LinkedIn](https://www.linkedin.com/in/vitalethomas/) · [Website](https://www.thomasvitale.com)
 
 ### Craig Walls
 
