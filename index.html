@@ -77,7 +77,9 @@
       {"@type": "ListItem", "position": 20, "name": "OmniHai", "url": "https://omnihai.org"},
       {"@type": "ListItem", "position": 21, "name": "A2A Java SDK", "url": "https://github.com/a2aproject/a2a-java"},
       {"@type": "ListItem", "position": 22, "name": "WildFly AI Feature Pack", "url": "https://github.com/wildfly-extras/wildfly-ai-feature-pack"},
-      {"@type": "ListItem", "position": 23, "name": "Atmosphere", "url": "https://atmosphere.github.io/docs/"}
+      {"@type": "ListItem", "position": 23, "name": "Atmosphere", "url": "https://atmosphere.github.io/docs/"},
+      {"@type": "ListItem", "position": 24, "name": "Spring AI Agent Utils", "url": "https://springaicommunity.mintlify.app/projects/incubating/spring-ai-agent-utils"},
+      {"@type": "ListItem", "position": 25, "name": "Jakarta Agentic AI", "url": "https://github.com/jakartaee/agentic-ai"}
     ]
   }
   </script>
@@ -369,14 +371,9 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Headlines</h2>
       <ul>
         <li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now">Spring AI 2.0.0 GA Available Now</a> &mdash; built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security</li>
+        <li><a href="https://blog.ovhcloud.com/devoxx-france-2026/">Devoxx France 2026: OVHcloud Highlights and Key Trends</a> &mdash; 65 of 259 sessions covered AI and agentic systems, the most-discussed topic, with a shift from experimentation toward production, RAG, observability, and governance</li>
+        <li><a href="https://quarkus.io/blog/introducing-agent-mcp/">Introducing Quarkus Agent MCP: Teaching AI Agents to Speak Quarkus</a> &mdash; a standalone MCP server that scaffolds and manages Quarkus apps, survives crashes, and searches Quarkus docs for Claude Code, Copilot, Cursor, and JetBrains AI</li>
         <li><a href="https://aws.amazon.com/blogs/machine-learning/spring-ai-sdk-for-amazon-bedrock-agentcore-is-now-generally-available/">Spring AI SDK for Amazon Bedrock AgentCore is Now Generally Available</a> &mdash; Spring AI integration with Amazon Bedrock AgentCore reaches GA</li>
-        <li><a href="https://developers.googleblog.com/announcing-adk-for-java-100-building-the-future-of-ai-agents-in-java/">Announcing ADK for Java 1.0.0: Building the Future of AI Agents in Java</a> &mdash; Google&rsquo;s Agent Development Kit for Java hits 1.0 with new tools, plugin architecture, context compaction, and human-in-the-loop support</li>
-        <li><a href="https://blog.jetbrains.com/idea/2026/03/ai-assisted-java-application-development-with-agent-skills/">AI-Assisted Java Application Development with Agent Skills</a> &mdash; how Agent Skills enable AI agents to extend their capabilities with specialized knowledge for Java development</li>
-        <li><a href="https://blog.jetbrains.com/kotlin/2026/03/introducing-tracy-the-ai-observability-library-for-kotlin/">Introducing Tracy: The AI Observability Library for Kotlin</a> &mdash; production-grade AI observability for Kotlin apps, debug failures and track LLM usage with OpenTelemetry</li>
-        <li><a href="https://www.tmdevlab.com/mcp-server-performance-benchmark.html">Multi-Language MCP Server Performance Benchmark</a> &mdash; comparative analysis across Go, Java, Python, and TypeScript</li>
-        <li><a href="https://thenewstack.io/2026-java-ai-apps/">2026 Java AI Apps</a> &mdash; building AI applications with Java in 2026</li>
-        <li><a href="https://medium.com/embabel/agent-memory-is-not-a-greenfield-problem-ground-it-in-your-existing-data-9272cabe1561">Agent Memory Is Not a Greenfield Problem</a> &mdash; ground it in your existing data</li>
-        <li><a href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">Production LangChain4j at Devoxx Belgium</a> &mdash; advanced RAG, agentic workflows, and production tips</li>
       </ul>
     </div>
   </div>
@@ -648,6 +645,27 @@
         </div>
       </div>
 
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://springaicommunity.mintlify.app/projects/incubating/spring-ai-agent-utils">Spring AI Agent Utils</a></h3>
+        <p>Community library from the Spring AI team that brings Claude Code-inspired agentic primitives to Spring AI applications &mdash; file operations, shell execution, web fetch, task/subagent orchestration, auto-memory, and a portable Agent Skills implementation. Built on Spring AI 2.0's agentic foundation.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://springaicommunity.mintlify.app/projects/incubating/spring-ai-agent-utils" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/spring-ai-community/spring-ai-agent-utils" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/jakartaee/agentic-ai">Jakarta Agentic AI</a></h3>
+        <p>Eclipse Foundation specification proposal defining vendor-neutral APIs for building, deploying, and running AI agents on Jakarta EE runtimes. Annotation-based programming model (<code>@Agent</code>, <code>@Trigger</code>, <code>@Decision</code>, <code>@Action</code>, <code>@Outcome</code>) built on CDI, REST, and Config &mdash; pluggable with existing frameworks like LangChain4j and Spring AI rather than replacing them. Proposed by Payara and Reza Rahman, backed by Oracle, Fujitsu, and OmniFish; version 1.0 under active development.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/jakartaee/agentic-ai" title="GitHub"></a>
+          <a class="icon icon-web" href="https://jakarta.ee/specifications/agentic-ai/1.0/" title="Spec"></a>
+          <a class="icon icon-web" href="https://payara.fish/blog/announcing-the-jakarta-agentic-ai-project/" title="Announcement"></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -710,6 +728,32 @@
         <span class="card-badge badge-assistant">MCP Server</span>
         <h3>Vaadin MCP Server</h3>
         <p>Gives AI assistants live access to Vaadin documentation and examples. Connect any MCP client via Streamable HTTP.</p>
+      </a>
+
+      <div class="card">
+        <span class="card-badge badge-assistant">MCP Server</span>
+        <h3><a href="https://quarkus.io/blog/introducing-agent-mcp/">Quarkus Agent MCP</a></h3>
+        <p>Official standalone MCP server from the Quarkus team that teaches AI coding agents to work with Quarkus applications &mdash; scaffolding new projects, controlling the app lifecycle, proxying Dev MCP tools, and searching Quarkus documentation. Runs as a separate process that survives app crashes, so agents can read logs and fix code after failures. Works with Claude Code, GitHub Copilot, Cursor, and JetBrains AI.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://quarkus.io/blog/introducing-agent-mcp/" title="Blog"></a>
+          <a class="icon icon-github" href="https://github.com/quarkusio/quarkus-agent-mcp" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-assistant">MCP Server</span>
+        <h3><a href="https://openliberty.io/blog/2025/10/23/mcp-standalone-blog.html">Open Liberty MCP Server</a></h3>
+        <p>Built-in Open Liberty runtime feature (<code>mcpServer-1.0</code>) that exposes Jakarta EE and CDI business logic as MCP tools for agentic AI workflows &mdash; role-based authorization, dynamic tool registration, and streamable transport. Actively developed through 2026 beta releases from IBM's Open Liberty team.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://openliberty.io/blog/2025/10/23/mcp-standalone-blog.html" title="Blog"></a>
+          <a class="icon icon-web" href="https://openliberty.io/" title="Website"></a>
+        </div>
+      </div>
+
+      <a class="card" href="https://github.com/arvindand/maven-tools-mcp">
+        <span class="card-badge badge-assistant">MCP Server</span>
+        <h3>Maven Tools MCP</h3>
+        <p>Gives AI agents dependency intelligence from Maven Central &mdash; version lookup, upgrade comparisons, CVE and license health signals, and POM-aware resolution across Maven, Gradle, SBT, and Mill projects.</p>
       </a>
 
     </div>
@@ -1040,6 +1084,20 @@
       </div>
 
       <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/3622346?v=4" alt="Reza Rahman"></div>
+        <div class="person-info">
+          <h4>Reza Rahman</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Jakarta Agentic AI project lead at Payara/Azul, Jakarta EE Ambassadors founder</p>
+          <div class="person-links">
+            <a class="icon icon-github" href="https://github.com/m-reza-rahman" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/javareza" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://reza-rahman.me" title="Website"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/542428?v=4" alt="K. Siva Prasad Reddy"></div>
         <div class="person-info">
           <h4>K. Siva Prasad Reddy</h4>
@@ -1136,6 +1194,22 @@
             <a class="icon icon-github" href="https://github.com/dmitryvinn" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/dmitry-vinnik/" title="LinkedIn"></a>
             <a class="icon icon-web" href="https://dvinnik.dev/" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/8523418?v=4" alt="Thomas Vitale"></div>
+        <div class="person-info">
+          <h4>Thomas Vitale</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Spring AI Lead Contributor, creator of Arconia, author of <em>Cloud Native Spring in Action</em></p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://x.com/vitalethomas" title="@vitalethomas"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/thomasvitale.com" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/ThomasVitale" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/vitalethomas/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://www.thomasvitale.com" title="Website"></a>
           </div>
         </div>
       </div>
