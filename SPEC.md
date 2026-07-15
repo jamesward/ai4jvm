@@ -89,7 +89,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
 - https://blog.ovhcloud.com/devoxx-france-2026/
 - https://quarkus.io/blog/introducing-agent-mcp/
-- https://aws.amazon.com/blogs/machine-learning/spring-ai-sdk-for-amazon-bedrock-agentcore-is-now-generally-available/
 
 ---
 
