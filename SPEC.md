@@ -86,10 +86,14 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 - https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0
+- https://github.com/langchain4j/langchain4j/releases/tag/1.17.0
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
+- https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
 - https://blog.ovhcloud.com/devoxx-france-2026/
 - https://quarkus.io/blog/introducing-agent-mcp/
+- https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html
 
 ---
 
@@ -235,6 +239,16 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Eclipse Foundation specification proposal defining vendor-neutral APIs for building, deploying, and running AI agents on Jakarta EE runtimes. Annotation-based programming model (`@Agent`, `@Trigger`, `@Decision`, `@Action`, `@Outcome`) built on CDI, REST, and Config — pluggable with existing frameworks like LangChain4j and Spring AI rather than replacing them. Proposed by Payara and Reza Rahman, backed by Oracle, Fujitsu, and OmniFish; version 1.0 under active development.
 - **Links:** [GitHub](https://github.com/jakartaee/agentic-ai) · [Spec](https://jakarta.ee/specifications/agentic-ai/1.0/) · [Announcement](https://payara.fish/blog/announcing-the-jakarta-agentic-ai-project/)
 
+### AgentScope Java
+- **Badge:** Framework
+- **Description:** Alibaba's JVM-native framework for production-ready, distributed agents. Event-streaming architecture, permission-gated tool execution, sandboxed tool execution (local, Docker, or Kubernetes), and distributed session/memory backed by Redis, MySQL, or PostgreSQL. Reached v2.0.0 GA in July 2026.
+- **Links:** [Website](https://java.agentscope.io/) · [GitHub](https://github.com/agentscope-ai/agentscope-java)
+
+### JVector
+- **Badge:** Library
+- **Description:** DataStax's pure-Java embedded vector search engine combining DiskANN and HNSW graph designs for approximate nearest-neighbor search, SIMD-accelerated via the Java Vector API. Supports indexes larger than available memory via two-pass compressed search. Powers Apache Cassandra and AstraDB; has an official LangChain4j embedding-store integration.
+- **Links:** [GitHub](https://github.com/datastax/jvector) · [LangChain4j Integration](https://docs.langchain4j.dev/integrations/embedding-stores/jvector/)
+
 ---
 
 ## Java with Code Assistants
@@ -332,6 +346,11 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Badge:** Training
 - **Description:** Java bindings for TensorFlow, maintained by the TensorFlow JVM SIG. Train and deploy TF models entirely in Java. Available as an optional Tribuo integration. Suitable for teams that want to stay within the JVM ecosystem while using TensorFlow's model formats.
 - **Links:** [Docs](https://www.tensorflow.org/jvm) · [GitHub](https://github.com/tensorflow/java)
+
+### Eclipse Deeplearning4j (DL4J)
+- **Badge:** Training
+- **Description:** Long-standing JVM deep-learning suite — DL4J for model building, ND4J for linear algebra, SameDiff for automatic differentiation, and DataVec for ETL. GPU/CPU acceleration and distributed training via Spark, plus model import from Keras, TensorFlow, and ONNX/PyTorch. Maintained by Konduit under the Eclipse Foundation.
+- **Links:** [Website](https://deeplearning4j.konduit.ai/) · [GitHub](https://github.com/deeplearning4j/deeplearning4j)
 
 ---
 
@@ -525,6 +544,15 @@ Notes:
 - **Role:** LangGraph4j creator, Principal Software Architect
 - **Links:** [@bsorrentinoJ](https://twitter.com/bsorrentinoJ) · [GitHub](https://github.com/bsorrentino) · [LinkedIn](https://www.linkedin.com/in/bartolomeosorrentino/)
 
+### Alex Soto Bueno
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** AS
+- **Photo:** https://avatars.githubusercontent.com/u/1517153?v=4
+- **Role:** Director of Developer Experience — Red Hat, co-author of "AI Agents with Java" (O'Reilly)
+- **Links:** [@alexsotob](https://twitter.com/alexsotob) · [GitHub](https://github.com/lordofthejars) · [Blog](https://www.lordofthejars.com)
+
 ### Christian Tzolov
 
 - **Badge:** Person
@@ -628,6 +656,12 @@ Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotl
 - **Badge:** Book
 - **Description:** Book by Antonio Goncalves — explore the fundamentals of AI, learn the history and evolution of AI models, and understand the core concepts of LangChain4j
 - **Links:** [Book](https://www.amazon.com/Understanding-LangChain4j-2nd-agoncal-fascicles-ebook/dp/B0FDQVSLXK)
+
+### AI Agents with Java (O'Reilly)
+
+- **Badge:** Book
+- **Description:** Early-release O'Reilly book by Java Champions Alex Soto Bueno, Markus Eisele, and Mario Fusco — building long-running, stateful agents on the JVM with zero-trust security, RAG, and multi-agent coordination using Quarkus, LangChain4j, and LangGraph4j
+- **Links:** [Book](https://www.oreilly.com/library/view/ai-agents-with/0642572245856/)
 
 ### Production LangChain4j — Inside.java
 
