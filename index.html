@@ -79,7 +79,9 @@
       {"@type": "ListItem", "position": 22, "name": "WildFly AI Feature Pack", "url": "https://github.com/wildfly-extras/wildfly-ai-feature-pack"},
       {"@type": "ListItem", "position": 23, "name": "Atmosphere", "url": "https://atmosphere.github.io/docs/"},
       {"@type": "ListItem", "position": 24, "name": "Spring AI Agent Utils", "url": "https://springaicommunity.mintlify.app/projects/incubating/spring-ai-agent-utils"},
-      {"@type": "ListItem", "position": 25, "name": "Jakarta Agentic AI", "url": "https://github.com/jakartaee/agentic-ai"}
+      {"@type": "ListItem", "position": 25, "name": "Jakarta Agentic AI", "url": "https://github.com/jakartaee/agentic-ai"},
+      {"@type": "ListItem", "position": 26, "name": "AgentScope Java", "url": "https://java.agentscope.io/"},
+      {"@type": "ListItem", "position": 27, "name": "JVector", "url": "https://github.com/datastax/jvector"}
     ]
   }
   </script>
@@ -370,10 +372,14 @@
     <div class="news-bar">
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Headlines</h2>
       <ul>
+        <li><a href="https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html">AgentScope Java v2.0.0 GA</a> &mdash; Alibaba's JVM-native agent framework reaches production-ready GA, with event-streaming, permission-gated tool execution, and a Workspace abstraction for long-running, safely sandboxed agents</li>
         <li><a href="https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0">Spring AI AgentCore SDK v2.0.0 Released</a> &mdash; major version release of the open-source Spring Boot integration for Amazon Bedrock AgentCore, with auto-configured invocation endpoints, SSE streaming, and short/long-term memory support</li>
+        <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.17.0">LangChain4j 1.17.0 Released</a> &mdash; adds a new Debate agentic pattern for multi-agent reasoning, tool compensating actions for error recovery, and Oracle Database-backed chat memory</li>
         <li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now">Spring AI 2.0.0 GA Available Now</a> &mdash; built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security</li>
+        <li><a href="https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/">Koog 1.0 Is Out</a> &mdash; JetBrains' Kotlin/Java agent framework reaches a stable core with a 1-year API guarantee, a redesigned Java interop layer, decoupled HTTP transport, and OpenTelemetry observability</li>
         <li><a href="https://blog.ovhcloud.com/devoxx-france-2026/">Devoxx France 2026: OVHcloud Highlights and Key Trends</a> &mdash; 65 of 259 sessions covered AI and agentic systems, the most-discussed topic, with a shift from experimentation toward production, RAG, observability, and governance</li>
         <li><a href="https://quarkus.io/blog/introducing-agent-mcp/">Introducing Quarkus Agent MCP: Teaching AI Agents to Speak Quarkus</a> &mdash; a standalone MCP server that scaffolds and manages Quarkus apps, survives crashes, and searches Quarkus docs for Claude Code, Copilot, Cursor, and JetBrains AI</li>
+        <li><a href="https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html">MCP's "By Design" STDIO Flaw Enables RCE Across the Ecosystem</a> &mdash; researchers disclosed a systemic command-injection weakness in MCP's STDIO transport affecting official SDKs in every supported language, including Java; Anthropic confirmed the execution model is intentional</li>
       </ul>
     </div>
   </div>
@@ -666,6 +672,26 @@
         </div>
       </div>
 
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://java.agentscope.io/">AgentScope Java</a></h3>
+        <p>Alibaba's JVM-native framework for production-ready, distributed agents. Event-streaming architecture, permission-gated tool execution, sandboxed tool execution (local, Docker, or Kubernetes), and distributed session/memory backed by Redis, MySQL, or PostgreSQL. Reached v2.0.0 GA in July 2026.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://java.agentscope.io/" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/agentscope-ai/agentscope-java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://github.com/datastax/jvector">JVector</a></h3>
+        <p>DataStax's pure-Java embedded vector search engine combining DiskANN and HNSW graph designs for approximate nearest-neighbor search, SIMD-accelerated via the Java Vector API. Supports indexes larger than available memory via two-pass compressed search. Powers Apache Cassandra and AstraDB; has an official LangChain4j embedding-store integration.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/datastax/jvector" title="GitHub"></a>
+          <a class="icon icon-web" href="https://docs.langchain4j.dev/integrations/embedding-stores/jvector/" title="LangChain4j Integration"></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -830,6 +856,16 @@
         <div class="card-links">
           <a class="icon icon-web" href="https://www.tensorflow.org/jvm" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/tensorflow/java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Training</span>
+        <h3><a href="https://deeplearning4j.konduit.ai/">Eclipse Deeplearning4j (DL4J)</a></h3>
+        <p>Long-standing JVM deep-learning suite &mdash; DL4J for model building, ND4J for linear algebra, SameDiff for automatic differentiation, and DataVec for ETL. GPU/CPU acceleration and distributed training via Spark, plus model import from Keras, TensorFlow, and ONNX/PyTorch. Maintained by Konduit under the Eclipse Foundation.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://deeplearning4j.konduit.ai/" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/deeplearning4j/deeplearning4j" title="GitHub"></a>
         </div>
       </div>
 
@@ -1155,6 +1191,20 @@
       </div>
 
       <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1517153?v=4" alt="Alex Soto Bueno"></div>
+        <div class="person-info">
+          <h4>Alex Soto Bueno</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Director of Developer Experience &mdash; Red Hat, co-author of "AI Agents with Java" (O'Reilly)</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/alexsotob" title="@alexsotob"></a>
+            <a class="icon icon-github" href="https://github.com/lordofthejars" title="GitHub"></a>
+            <a class="icon icon-web" href="https://www.lordofthejars.com" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1351573?v=4" alt="Christian Tzolov"></div>
         <div class="person-info">
           <h4>Christian Tzolov</h4>
@@ -1310,6 +1360,12 @@
         <span class="card-badge badge-framework">Book</span>
         <h3>Understanding LangChain4j</h3>
         <p>Book by Antonio Goncalves &mdash; explore the fundamentals of AI, learn the history and evolution of AI models, and understand the core concepts of LangChain4j</p>
+      </a>
+
+      <a class="card" href="https://www.oreilly.com/library/view/ai-agents-with/0642572245856/">
+        <span class="card-badge badge-framework">Book</span>
+        <h3>AI Agents with Java (O'Reilly)</h3>
+        <p>Early-release book by Java Champions Alex Soto Bueno, Markus Eisele, and Mario Fusco &mdash; building long-running, stateful agents on the JVM with zero-trust security, RAG, and multi-agent coordination</p>
       </a>
 
       <a class="card" href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">
