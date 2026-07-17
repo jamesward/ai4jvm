@@ -372,9 +372,10 @@
     <div class="news-bar">
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Headlines</h2>
       <ul>
+        <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.18.0">LangChain4j 1.18.0 Released</a> &mdash; introduces a Belief-Desire-Intention (BDI) agentic pattern, crash-resilient Human-in-the-Loop suspend/resume for agentic systems, OpenAI TTS support, and a revamped embedding-model API with per-call parameters and multimodal input</li>
+        <li><a href="https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/">JVM Pulse: Profiling Java with GitHub Copilot</a> &mdash; new open-source Copilot canvas extension from Bruno Borges automates GC/JFR profiling and hands off findings to Copilot for AI-driven tuning recommendations</li>
         <li><a href="https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html">AgentScope Java v2.0.0 GA</a> &mdash; Alibaba's JVM-native agent framework reaches production-ready GA, with event-streaming, permission-gated tool execution, and a Workspace abstraction for long-running, safely sandboxed agents</li>
         <li><a href="https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0">Spring AI AgentCore SDK v2.0.0 Released</a> &mdash; major version release of the open-source Spring Boot integration for Amazon Bedrock AgentCore, with auto-configured invocation endpoints, SSE streaming, and short/long-term memory support</li>
-        <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.17.0">LangChain4j 1.17.0 Released</a> &mdash; adds a new Debate agentic pattern for multi-agent reasoning, tool compensating actions for error recovery, and Oracle Database-backed chat memory</li>
         <li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now">Spring AI 2.0.0 GA Available Now</a> &mdash; built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security</li>
         <li><a href="https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/">Koog 1.0 Is Out</a> &mdash; JetBrains' Kotlin/Java agent framework reaches a stable core with a 1-year API guarantee, a redesigned Java interop layer, decoupled HTTP transport, and OpenTelemetry observability</li>
         <li><a href="https://blog.ovhcloud.com/devoxx-france-2026/">Devoxx France 2026: OVHcloud Highlights and Key Trends</a> &mdash; 65 of 259 sessions covered AI and agentic systems, the most-discussed topic, with a shift from experimentation toward production, RAG, observability, and governance</li>
@@ -781,6 +782,16 @@
         <h3>Maven Tools MCP</h3>
         <p>Gives AI agents dependency intelligence from Maven Central &mdash; version lookup, upgrade comparisons, CVE and license health signals, and POM-aware resolution across Maven, Gradle, SBT, and Mill projects.</p>
       </a>
+
+      <div class="card">
+        <span class="card-badge badge-assistant">Extension</span>
+        <h3><a href="https://github.com/brunoborges/jvm-pulse">JVM Pulse</a></h3>
+        <p>GitHub Copilot canvas extension that profiles a Java project's garbage collection and JFR telemetry &mdash; detects the build tool and JDK, runs a representative workload, and analyzes it with Microsoft's GCToolkit and the JDK <code>jfr</code> CLI. Surfaces throughput, pause times, heap usage, and allocation hot spots in an interactive dashboard, with an "Analyze with AI" hand-off into Copilot for tuning recommendations. Created by Bruno Borges. MIT license.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/brunoborges/jvm-pulse" title="GitHub"></a>
+          <a class="icon icon-web" href="https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/" title="Blog"></a>
+        </div>
+      </div>
 
     </div>
   </div>
