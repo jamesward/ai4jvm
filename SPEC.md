@@ -86,9 +86,10 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
+- https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
 - https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 - https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0
-- https://github.com/langchain4j/langchain4j/releases/tag/1.17.0
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
 - https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
 - https://blog.ovhcloud.com/devoxx-france-2026/
@@ -306,6 +307,11 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Badge:** MCP Server
 - **Description:** Gives AI agents dependency intelligence from Maven Central — version lookup, upgrade comparisons, CVE and license health signals, and POM-aware resolution across Maven, Gradle, SBT, and Mill projects. Helps agents make safer automated dependency-upgrade decisions.
 - **Links:** [GitHub](https://github.com/arvindand/maven-tools-mcp)
+
+### JVM Pulse
+- **Badge:** Extension
+- **Description:** GitHub Copilot canvas extension that profiles a Java project's garbage collection and JFR telemetry — detects the build tool and JDK, runs a representative workload, and analyzes it with Microsoft's GCToolkit and the JDK `jfr` CLI. Surfaces throughput, pause times, heap usage, and allocation hot spots in an interactive dashboard, with an "Analyze with AI" hand-off into Copilot for tuning recommendations. Created by Bruno Borges. MIT license.
+- **Links:** [GitHub](https://github.com/brunoborges/jvm-pulse) · [Blog](https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/)
 
 ---
 
