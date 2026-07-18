@@ -250,6 +250,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** DataStax's pure-Java embedded vector search engine combining DiskANN and HNSW graph designs for approximate nearest-neighbor search, SIMD-accelerated via the Java Vector API. Supports indexes larger than available memory via two-pass compressed search. Powers Apache Cassandra and AstraDB; has an official LangChain4j embedding-store integration.
 - **Links:** [GitHub](https://github.com/datastax/jvector) · [LangChain4j Integration](https://docs.langchain4j.dev/integrations/embedding-stores/jvector/)
 
+### ClawRunr
+- **Badge:** Framework
+- **Description:** Open-source personal AI agent runtime built on Spring Boot, Spring AI, and JobRunr — runs entirely on your own hardware. Schedules and executes background tasks, browses the web, and manages work via human-readable Markdown files, with multi-channel support (chat UI, Telegram, Discord) and pluggable OpenAI, Anthropic, or Ollama providers. Built by the JobRunr team; started as a demo and grew into a community project.
+- **Links:** [GitHub](https://github.com/ClawRunr/JavaClaw) · [Website](https://clawrunr.io/)
+
 ---
 
 ## Java with Code Assistants
