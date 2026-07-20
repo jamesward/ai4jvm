@@ -94,7 +94,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
 - https://blog.ovhcloud.com/devoxx-france-2026/
 - https://quarkus.io/blog/introducing-agent-mcp/
-- https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html
 
 ---
 
@@ -134,6 +133,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Framework
 - **Description:** Helidon's Model Context Protocol server and client implementation. Declarative and imperative APIs for building MCP servers with tools, resources, and prompts. Streamable HTTP and SSE transports, virtual threads, build-time processing. From Oracle's Helidon team.
 - **Links:** [Docs](https://helidon.io/docs/v4/se/ai/mcp) · [GitHub](https://github.com/helidon-io/helidon-mcp)
+
+### Micronaut MCP
+- **Badge:** Framework
+- **Description:** Official Micronaut module for building Model Context Protocol servers and clients. STDIO and Streamable HTTP transports, annotation and factory-based tools/prompts/resources, a LangChain4j-backed client option, and GraalVM native image support. Maintained by the Micronaut project team.
+- **Links:** [Docs](https://micronaut-projects.github.io/micronaut-mcp/latest/guide/) · [GitHub](https://github.com/micronaut-projects/micronaut-mcp)
 
 ### LangChain4j-CDI
 - **Badge:** Framework
