@@ -86,12 +86,15 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
-- https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
+- https://akka.io/blog/announcing-akkas-agentic-ai-release
 - https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
-- https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
+- https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
+- https://quarkus.io/blog/quarkus-langchain4j-opa-guardrails/
 - https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0
+- https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
 - https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
+- https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 - https://blog.ovhcloud.com/devoxx-france-2026/
 - https://quarkus.io/blog/introducing-agent-mcp/
 
@@ -259,6 +262,16 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Open-source personal AI agent runtime built on Spring Boot, Spring AI, and JobRunr — runs entirely on your own hardware. Schedules and executes background tasks, browses the web, and manages work via human-readable Markdown files, with multi-channel support (chat UI, Telegram, Discord) and pluggable OpenAI, Anthropic, or Ollama providers. Built by the JobRunr team; started as a demo and grew into a community project.
 - **Links:** [GitHub](https://github.com/ClawRunr/JavaClaw) · [Website](https://clawrunr.io/)
 
+### MCP Toolbox Java SDK
+- **Badge:** SDK
+- **Description:** Official Google Java client library for MCP Toolbox. Lets Java agents (Spring Boot, Quarkus, Jakarta EE) discover and invoke Toolbox-defined tools — database queries, API calls — via a type-safe, async-first `CompletableFuture` API with Google Cloud ADC authentication. Apache 2.0; feature set is still catching up to the Python, JS, and Go SDKs.
+- **Links:** [Docs](https://mcp-toolbox.dev/documentation/introduction/) · [GitHub](https://github.com/googleapis/mcp-toolbox-sdk-java)
+
+### Tools4AI
+- **Badge:** Framework
+- **Description:** Pure-Java agentic framework that converts natural-language prompts into executable actions — Java method calls, REST endpoints, shell commands, or Swagger API calls — with multi-provider support across Gemini, OpenAI, Anthropic, and LocalAI. No Spring dependency required. MIT licensed, published to Maven Central.
+- **Links:** [GitHub](https://github.com/vishalmysore/Tools4AI) · [Javadoc](https://javadoc.io/doc/io.github.vishalmysore/tools4ai/latest/index.html)
+
 ---
 
 ## Java with Code Assistants
@@ -321,6 +334,11 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Badge:** Extension
 - **Description:** GitHub Copilot canvas extension that profiles a Java project's garbage collection and JFR telemetry — detects the build tool and JDK, runs a representative workload, and analyzes it with Microsoft's GCToolkit and the JDK `jfr` CLI. Surfaces throughput, pause times, heap usage, and allocation hot spots in an interactive dashboard, with an "Analyze with AI" hand-off into Copilot for tuning recommendations. Created by Bruno Borges. MIT license.
 - **Links:** [GitHub](https://github.com/brunoborges/jvm-pulse) · [Blog](https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/)
+
+### IntelliJ IDEA MCP Server
+- **Badge:** MCP Server
+- **Description:** IntelliJ IDEA's built-in Model Context Protocol server, bundled and enabled by default since version 2025.2. Exposes over 100 IDE tools — code analysis, refactoring, debugging, run configurations, database operations — to external MCP clients like Claude Code, Claude Desktop, Cursor, and VS Code. Distinct from the JetBrains AI Assistant plugin above.
+- **Links:** [Docs](https://www.jetbrains.com/help/idea/mcp-server.html)
 
 ---
 
