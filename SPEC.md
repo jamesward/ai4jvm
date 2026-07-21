@@ -272,6 +272,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Pure-Java agentic framework that converts natural-language prompts into executable actions — Java method calls, REST endpoints, shell commands, or Swagger API calls — with multi-provider support across Gemini, OpenAI, Anthropic, and LocalAI. No Spring dependency required. MIT licensed, published to Maven Central.
 - **Links:** [GitHub](https://github.com/vishalmysore/Tools4AI) · [Javadoc](https://javadoc.io/doc/io.github.vishalmysore/tools4ai/latest/index.html)
 
+### EclipseStore
+- **Badge:** Library
+- **Description:** Eclipse Foundation's Java-native persistence engine — stores and loads full object graphs with microsecond response times, no JPA/ORM overhead. Version 4 integrates JVector into its GigaMap indexing, turning EclipseStore into an embedded, pure-Java vector database: HNSW similarity search, on-disk indexing for datasets larger than memory, and Product Quantization to shrink embedding footprints by up to 90%.
+- **Links:** [GitHub](https://github.com/eclipse-store/store) · [Docs](https://docs.eclipsestore.io/manual/gigamap/index.html) · [Blog](https://microstream.one/blog/2026/02/13/eclipsestore-4-beta-build-vector-database-apps-with-pure-java/)
+
 ---
 
 ## Java with Code Assistants
