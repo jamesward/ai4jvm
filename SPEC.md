@@ -86,16 +86,20 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
-- https://akka.io/blog/announcing-akkas-agentic-ai-release
-- https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
+- https://github.com/beehive-lab/TornadoVM/releases/tag/v5.1.0-jdk21
 - https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
+- https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
 - https://quarkus.io/blog/quarkus-langchain4j-opa-guardrails/
 - https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0
 - https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
-- https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
 - https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
+- https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/
+- https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
+- https://quarkus.io/blog/introducing-voting-pattern/
+- https://micronaut.io/2026/05/20/micronaut-framework-5-0-0-released/
 - https://blog.ovhcloud.com/devoxx-france-2026/
+- https://quarkus.io/blog/a2a-java-sdk-1-0-0-cr1-released/
 - https://quarkus.io/blog/introducing-agent-mcp/
 
 ---
@@ -277,6 +281,26 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Eclipse Foundation's Java-native persistence engine — stores and loads full object graphs with microsecond response times, no JPA/ORM overhead. Version 4 integrates JVector into its GigaMap indexing, turning EclipseStore into an embedded, pure-Java vector database: HNSW similarity search, on-disk indexing for datasets larger than memory, and Product Quantization to shrink embedding footprints by up to 90%.
 - **Links:** [GitHub](https://github.com/eclipse-store/store) · [Docs](https://docs.eclipsestore.io/manual/gigamap/index.html) · [Blog](https://microstream.one/blog/2026/02/13/eclipsestore-4-beta-build-vector-database-apps-with-pure-java/)
 
+### OpenAI Java SDK
+- **Badge:** SDK
+- **Description:** Official Java client library for the OpenAI API, maintained by OpenAI. Written in Kotlin with full Java interop. Typed access to Chat Completions and the Responses API, streaming, structured outputs, function calling, and asynchronous execution via `CompletableFuture`.
+- **Links:** [GitHub](https://github.com/openai/openai-java)
+
+### Google Gen AI Java SDK
+- **Badge:** SDK
+- **Description:** Google's official Java SDK unifying access to the Gemini Developer API and Vertex AI. Supports Gemini text/chat, Imagen image generation, Veo video generation, embeddings, token counting, and automatic function calling, with streaming and async options. Distinct from Google ADK for Java, which is an agent-orchestration framework built on top of it.
+- **Links:** [GitHub](https://github.com/googleapis/java-genai) · [Docs](https://googleapis.github.io/java-genai/javadoc/)
+
+### IBM watsonx.ai Java SDK
+- **Badge:** SDK
+- **Description:** IBM's official Java SDK for the watsonx.ai enterprise AI platform. Chat completions, streaming, tool calling, embeddings, text classification/extraction/detection, reranking, and time-series forecasting, for both IBM Cloud and on-premises (CP4D) deployments. Integrates with LangChain4j, Quarkus, and Apache Camel.
+- **Links:** [GitHub](https://github.com/IBM/watsonx-ai-java-sdk) · [Docs](https://ibm.github.io/watsonx-ai-java-sdk/)
+
+### SAP AI SDK for Java
+- **Badge:** SDK
+- **Description:** SAP's official Java SDK for integrating generative AI into enterprise applications via SAP AI Core and the Generative AI Hub. Orchestration service integration, prompt templating, grounding, data masking, content filtering, and Spring AI compatibility.
+- **Links:** [GitHub](https://github.com/SAP/ai-sdk-java)
+
 ---
 
 ## Java with Code Assistants
@@ -344,6 +368,26 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Badge:** MCP Server
 - **Description:** IntelliJ IDEA's built-in Model Context Protocol server, bundled and enabled by default since version 2025.2. Exposes over 100 IDE tools — code analysis, refactoring, debugging, run configurations, database operations — to external MCP clients like Claude Code, Claude Desktop, Cursor, and VS Code. Distinct from the JetBrains AI Assistant plugin above.
 - **Links:** [Docs](https://www.jetbrains.com/help/idea/mcp-server.html)
+
+### Apache Camel MCP Server
+- **Badge:** MCP Server
+- **Description:** Official MCP server shipped with Apache Camel 4.18 (`camel-jbang-mcp`). Exposes the live Camel and Kamelet catalogs, endpoint-URI validation, route understanding, and security analysis as 16 tools for AI coding assistants. Built on Quarkus, runs via JBang, supports STDIO and HTTP/SSE transports.
+- **Links:** [Blog](https://camel.apache.org/blog/2026/02/camel-jbang-mcp/) · [Manual](https://camel.apache.org/manual/camel-jbang-mcp.html)
+
+### Micronaut Fun MCP Server
+- **Badge:** MCP Server
+- **Description:** Official MCP server from the Micronaut project team giving AI assistants search access to Micronaut documentation and Guides via OpenSearch. Confirmed integrations for Claude Code, Claude Desktop, VS Code, cline, and IntelliJ IDEA.
+- **Links:** [Website](https://micronaut.fun/) · [GitHub](https://github.com/micronaut-projects/micronaut-fun)
+
+### Develocity MCP Servers
+- **Badge:** MCP Server
+- **Description:** Two official MCP servers from Gradle Inc.'s Develocity platform — one for per-build data (exceptions, stack traces, test outcomes, cache performance) to investigate failures, and an Analytics server for org-wide queries like flaky-test trends and cache effectiveness. Covers Gradle, Maven, sbt, and Bazel builds.
+- **Links:** [Docs](https://docs.develocity.ai/2026.1/integrations/mcp-servers/)
+
+### AssistAI (Eclipse IDE MCP Server)
+- **Badge:** Extension
+- **Description:** Community Eclipse IDE plugin (formerly "eclipse-chatgpt-plugin") that exposes the Eclipse workspace as an MCP server — code analysis, refactoring, build/debug control, and Git operations via EGit — so external AI agents like Claude Code edit through Eclipse's JDT APIs instead of the raw filesystem, keeping incremental compilation and error highlighting in sync. Also bundles an inline AI chat view. MIT licensed.
+- **Links:** [Eclipse Marketplace](https://marketplace.eclipse.org/content/assistai-eclipse-ide-mcp-server-ai-agents) · [GitHub](https://github.com/gradusnikov/eclipse-chatgpt-plugin)
 
 ---
 
@@ -741,6 +785,24 @@ Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotl
 - **Badge:** Livestream
 - **Description:** James Ward and Julian Wood explore building AI-powered Java apps — MCP integration, agent architectures with AgentCore, GraalVM optimization for AI workloads, and secure auth patterns for AI services on serverless
 - **Links:** https://www.youtube.com/watch?v=my2bQtHBUeY
+
+### Java for an AI World — JavaOne 2026 Opening Keynote
+
+- **Badge:** Videos
+- **Description:** Opening keynote of JavaOne 2026, featuring Rod Johnson, Josh Long, and engineering leads from Oracle, Microsoft, NVIDIA, JetBrains, and Uber on Java's AI direction, including the GitHub Copilot SDK for Java
+- **Links:** https://www.youtube.com/watch?v=3fLCOqpIfI0
+
+### Bootiful Spring AI — Josh Long & James Ward @ Spring I/O 2026
+
+- **Badge:** Videos
+- **Description:** Talk from Spring I/O 2026 in Barcelona demystifying AI integration with Spring Boot — agentic patterns, Spring AI, and MCP integration
+- **Links:** https://www.youtube.com/watch?v=nHnKReitDXc
+
+### Liberty LangChain4j Workshop
+
+- **Badge:** Workshop
+- **Description:** Hands-on, self-paced Open Liberty workshop that progresses from a simple chatbot to agentic systems using LangChain4j — prompt engineering, streaming, RAG, tool calling, MCP, guardrails/observability, and multi-agent supervisor patterns
+- **Links:** [Workshop](https://openliberty.github.io/liberty-workshop-langchain4j/) · [Blog](https://openliberty.io/blog/2026/07/10/liberty-langchain4j-workshop.html)
 
 ---
 
