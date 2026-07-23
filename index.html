@@ -93,7 +93,8 @@
       {"@type": "ListItem", "position": 36, "name": "OpenAI Java SDK", "url": "https://github.com/openai/openai-java"},
       {"@type": "ListItem", "position": 37, "name": "Google Gen AI Java SDK", "url": "https://github.com/googleapis/java-genai"},
       {"@type": "ListItem", "position": 38, "name": "IBM watsonx.ai Java SDK", "url": "https://github.com/IBM/watsonx-ai-java-sdk"},
-      {"@type": "ListItem", "position": 39, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"}
+      {"@type": "ListItem", "position": 39, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"},
+      {"@type": "ListItem", "position": 40, "name": "Tiberius", "url": "https://github.com/tiberius-security/tiberius"}
     ]
   }
   </script>
@@ -384,7 +385,7 @@
     <div class="news-bar">
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Headlines</h2>
       <ul>
-        <li><a href="https://github.com/beehive-lab/TornadoVM/releases/tag/v5.1.0-jdk21">TornadoVM 5.1.0 Adds FP8 GPU Support</a> &mdash; the Java-to-GPU compiler gains FP8 (E4M3/E5M2) precision for CUDA, a CUTLASS hybrid-API provider for fused GEMM operations, and Windows CUDA support, advancing GPU-accelerated inference for GPULlama3.java and LangChain4j</li>
+        <li><a href="https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21">TornadoVM 5.2.0 Adds FP8/BF16 Tensor-Core Support</a> &mdash; the Java-to-GPU compiler adds native FP8 (E4M3/E5M2) conversion, FP8/BF16 tensor-core MMA with cp.async copies for CUDA, first-class BFloat16 array support via cuBLAS/CUTLASS, and a differential fuzzer for backend testing</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.18.0">LangChain4j 1.18.0 Released</a> &mdash; introduces a Belief-Desire-Intention (BDI) agentic pattern, crash-resilient Human-in-the-Loop suspend/resume for agentic systems, OpenAI TTS support, and a revamped embedding-model API with per-call parameters and multimodal input</li>
         <li><a href="https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/">JVM Pulse: Profiling Java with GitHub Copilot</a> &mdash; new open-source Copilot canvas extension from Bruno Borges automates GC/JFR profiling and hands off findings to Copilot for AI-driven tuning recommendations</li>
         <li><a href="https://quarkus.io/blog/quarkus-langchain4j-opa-guardrails/">Compiling OPA Policies to WebAssembly for Quarkus LangChain4j Guardrails</a> &mdash; sub-millisecond prompt-injection pattern matching via Open Policy Agent rules compiled to Wasm, falling back to an LLM only for inconclusive cases</li>
@@ -797,6 +798,16 @@
         <p>SAP's official Java SDK for integrating generative AI into enterprise applications via SAP AI Core and the Generative AI Hub. Orchestration service integration, prompt templating, grounding, data masking, content filtering, and Spring AI compatibility.</p>
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/SAP/ai-sdk-java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://github.com/tiberius-security/tiberius">Tiberius</a></h3>
+        <p>Java security testing framework for LLM applications, integrating with JUnit 5 and Spring Boot so adversarial testing lives in the standard test suite. 200+ attack probes across the OWASP LLM Top 10, probabilistic testing (via PUnit) for non-deterministic outputs, fixture-based regression testing, and LangChain4j guardrail validation. Apache 2.0; created by Karakun Group's Iryna Dohndorf.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/tiberius-security/tiberius" title="GitHub"></a>
+          <a class="icon icon-web" href="https://foojay.io/today/tiberius-a-security-testing-framework-for-llm-applications-in-java/" title="Blog"></a>
         </div>
       </div>
 

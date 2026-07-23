@@ -86,7 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
-- https://github.com/beehive-lab/TornadoVM/releases/tag/v5.1.0-jdk21
+- https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
 - https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
 - https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
 - https://quarkus.io/blog/quarkus-langchain4j-opa-guardrails/
@@ -300,6 +300,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** SDK
 - **Description:** SAP's official Java SDK for integrating generative AI into enterprise applications via SAP AI Core and the Generative AI Hub. Orchestration service integration, prompt templating, grounding, data masking, content filtering, and Spring AI compatibility.
 - **Links:** [GitHub](https://github.com/SAP/ai-sdk-java)
+
+### Tiberius
+- **Badge:** Library
+- **Description:** Java security testing framework for LLM applications, integrating with JUnit 5 and Spring Boot so adversarial testing lives in the standard test suite. 200+ attack probes across the OWASP LLM Top 10, probabilistic testing (via PUnit) for non-deterministic outputs, fixture-based regression testing, and LangChain4j guardrail validation. Apache 2.0; created by Karakun Group's Iryna Dohndorf.
+- **Links:** [GitHub](https://github.com/tiberius-security/tiberius) · [Blog](https://foojay.io/today/tiberius-a-security-testing-framework-for-llm-applications-in-java/)
 
 ---
 
