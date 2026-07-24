@@ -123,7 +123,7 @@
         "name": "What is MCP and how does it work with Java?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, SSE, Streamable HTTP). Helidon MCP and several frameworks also offer MCP support."
+          "text": "The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support."
         }
       },
       {
@@ -390,14 +390,15 @@
         <li><a href="https://quarkus.io/blog/quarkus-langchain4j-opa-guardrails/">Compiling OPA Policies to WebAssembly for Quarkus LangChain4j Guardrails</a> &mdash; sub-millisecond prompt-injection pattern matching via Open Policy Agent rules compiled to Wasm, falling back to an LLM only for inconclusive cases</li>
         <li><a href="https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0">Spring AI AgentCore SDK v2.0.0 Released</a> &mdash; major version release of the open-source Spring Boot integration for Amazon Bedrock AgentCore, with auto-configured invocation endpoints, SSE streaming, and short/long-term memory support</li>
         <li><a href="https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/">LangChain4j Agentic Workflows: From AI Calls to Multi-Agent Systems</a> &mdash; tutorial covering sequential, loop, parallel, and conditional workflow patterns, goal-oriented planning, and supervisor-based multi-agent systems in Java</li>
+        <li><a href="https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/">A2A Java SDK Reaches 1.0 GA</a> &mdash; the Agent2Agent Java SDK ships 1.0.0.Final with spec classes converted to Java records, full JSON-RPC/gRPC/REST transport support, and a cross-SDK interop test kit, followed by 1.1.0 adding a <code>TaskAuthorizationProvider</code> SPI for per-user task authorization</li>
         <li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now">Spring AI 2.0.0 GA Available Now</a> &mdash; built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security</li>
+        <li><a href="https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0">MCP Java SDK 2.0.0 Reaches GA</a> &mdash; first major version since 1.x, tracking the 2025-11-25 MCP spec with spec-accurate JSON Schema 2020-12 validation, enforced required fields, and SSE transport deprecated in favor of Streamable HTTP</li>
         <li><a href="https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html">AgentScope Java v2.0.0 GA</a> &mdash; Alibaba's JVM-native agent framework reaches production-ready GA, with event-streaming, permission-gated tool execution, and a Workspace abstraction for long-running, safely sandboxed agents</li>
         <li><a href="https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/">The Gen AI Iceberg: Java Tooling Edition</a> &mdash; a tiered tour of Java's generative AI tooling, from mainstream frameworks like Spring AI and LangChain4j down to GPU kernel compilation and Project Babylon, arguing the JVM runs AI workloads natively rather than just calling out to them</li>
         <li><a href="https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/">Koog 1.0 Is Out</a> &mdash; JetBrains' Kotlin/Java agent framework reaches a stable core with a 1-year API guarantee, a redesigned Java interop layer, decoupled HTTP transport, and OpenTelemetry observability</li>
         <li><a href="https://quarkus.io/blog/introducing-voting-pattern/">Parallel Voting and Adaptive Model Selection in Quarkus</a> &mdash; LangChain4j's new voting pattern dispatches tasks to multiple evaluator agents in parallel and aggregates results, paired with dynamic chat model switching to balance cost and quality in agentic workflows</li>
         <li><a href="https://micronaut.io/2026/05/20/micronaut-framework-5-0-0-released/">Micronaut Framework 5.0.0 Released</a> &mdash; major platform refresh across 70+ modules adds a new Micronaut MCP module built on the MCP Java SDK, plus updated Micronaut LangChain4j integration, alongside Java 25/Kotlin 2.3 baselines</li>
         <li><a href="https://blog.ovhcloud.com/devoxx-france-2026/">Devoxx France 2026: OVHcloud Highlights and Key Trends</a> &mdash; 65 of 259 sessions covered AI and agentic systems, the most-discussed topic, with a shift from experimentation toward production, RAG, observability, and governance</li>
-        <li><a href="https://quarkus.io/blog/a2a-java-sdk-1-0-0-cr1-released/">A2A Java SDK 1.0.0.CR1 Released</a> &mdash; candidate release of the Agent2Agent Java SDK adds a v0.3 protocol compatibility layer, an Android HTTP client, and improved SSE parsing ahead of GA</li>
         <li><a href="https://quarkus.io/blog/introducing-agent-mcp/">Introducing Quarkus Agent MCP: Teaching AI Agents to Speak Quarkus</a> &mdash; a standalone MCP server that scaffolds and manages Quarkus apps, survives crashes, and searches Quarkus docs for Claude Code, Copilot, Cursor, and JetBrains AI</li>
       </ul>
     </div>
@@ -567,7 +568,7 @@
       <div class="card">
         <span class="card-badge badge-inference">SDK</span>
         <h3><a href="https://modelcontextprotocol.io/sdk/java/mcp-overview">MCP Java SDK</a></h3>
-        <p>The official Java SDK for Model Context Protocol servers and clients. Maintained by the Spring AI team. Sync/async, STDIO/SSE/Streamable HTTP transports, OAuth support via Spring integration.</p>
+        <p>The official Java SDK for Model Context Protocol servers and clients. Maintained by the Spring AI team. Sync/async, STDIO/Streamable HTTP transports (SSE deprecated as of 2.0), OAuth support via Spring integration. Reached v2.0.0 GA in June 2026 with spec-accurate JSON Schema 2020-12 validation and enforced required fields.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://modelcontextprotocol.io/sdk/java/mcp-overview" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/modelcontextprotocol/java-sdk" title="GitHub"></a>
@@ -636,7 +637,7 @@
       <div class="card">
         <span class="card-badge badge-inference">SDK</span>
         <h3><a href="https://github.com/a2aproject/a2a-java">A2A Java SDK</a></h3>
-        <p>The official Java SDK for <a href="https://a2a-protocol.org">Agent-2-Agent Protocol (A2A)</a> servers and clients. Reference implementation based on Quarkus.</p>
+        <p>The official Java SDK for <a href="https://a2a-protocol.org">Agent-2-Agent Protocol (A2A)</a> servers and clients. Reference implementation based on Quarkus. Reached 1.0 GA in June 2026 with full JSON-RPC/gRPC/REST transport support, OpenTelemetry integration, and a cross-SDK interop test kit; 1.1.0 added a <code>TaskAuthorizationProvider</code> SPI for per-user task authorization.</p>
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/a2aproject/a2a-java" title="GitHub"></a>
         </div>
@@ -1365,6 +1366,21 @@
       </div>
 
       <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/5804?v=4" alt="Venkat Subramaniam"></div>
+        <div class="person-info">
+          <h4>Venkat Subramaniam</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author and instructor at the University of Houston</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/venkat_s" title="@venkat_s"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/venkats.bsky.social" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/venkats" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/vsubramaniam/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1351573?v=4" alt="Christian Tzolov"></div>
         <div class="person-info">
           <h4>Christian Tzolov</h4>
@@ -1475,7 +1491,7 @@
       </details>
       <details class="faq-item">
         <summary>What is MCP and how does it work with Java?</summary>
-        <p>The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, SSE, Streamable HTTP). Helidon MCP and several frameworks also offer MCP support.</p>
+        <p>The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support.</p>
       </details>
       <details class="faq-item">
         <summary>Is Kotlin supported by Java AI frameworks?</summary>
