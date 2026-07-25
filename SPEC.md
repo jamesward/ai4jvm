@@ -86,11 +86,13 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
-- https://github.com/beehive-lab/TornadoVM/releases/tag/v5.1.0-jdk21
+- https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
+- https://javapro.io/2026/07/16/solving-spring-ais-ui-challenge-with-ag-uis-java-sdk/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
 - https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
 - https://quarkus.io/blog/quarkus-langchain4j-opa-guardrails/
 - https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0
+- https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.0
 - https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
 - https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
@@ -301,6 +303,16 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** SAP's official Java SDK for integrating generative AI into enterprise applications via SAP AI Core and the Generative AI Hub. Orchestration service integration, prompt templating, grounding, data masking, content filtering, and Spring AI compatibility.
 - **Links:** [GitHub](https://github.com/SAP/ai-sdk-java)
 
+### Ollama4j
+- **Badge:** SDK
+- **Description:** Java client library for running models via a local Ollama server. Chat, streaming, tool/function calling (including MCP tools), vision-model image inputs, embeddings, and model management, with Prometheus metrics support. Requires Java 17+, published to Maven Central.
+- **Links:** [GitHub](https://github.com/ollama4j/ollama4j)
+
+### Cohere Java SDK
+- **Badge:** SDK
+- **Description:** Official Java SDK for the Cohere API, generated and maintained by Cohere. Chat, embeddings, reranking, and classification endpoints, published to Maven Central.
+- **Links:** [GitHub](https://github.com/cohere-ai/cohere-java)
+
 ---
 
 ## Java with Code Assistants
@@ -434,6 +446,11 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Description:** Long-standing JVM deep-learning suite — DL4J for model building, ND4J for linear algebra, SameDiff for automatic differentiation, and DataVec for ETL. GPU/CPU acceleration and distributed training via Spark, plus model import from Keras, TensorFlow, and ONNX/PyTorch. Maintained by Konduit under the Eclipse Foundation.
 - **Links:** [Website](https://deeplearning4j.konduit.ai/) · [GitHub](https://github.com/deeplearning4j/deeplearning4j)
 
+### Apache OpenNLP
+- **Badge:** Training
+- **Description:** Apache's Java-native NLP toolkit — tokenization, part-of-speech tagging, named entity recognition, chunking, parsing, and language detection, with pluggable MaxEnt, Perceptron, Naive Bayes, and SVM classifiers. Actively maintained, with a Java 21-targeted 3.0 branch in progress.
+- **Links:** [Website](https://opennlp.apache.org) · [GitHub](https://github.com/apache/opennlp)
+
 ---
 
 ## People to Follow
@@ -454,6 +471,15 @@ Notes:
 - **Role:** Principal Program Manager — Microsoft Java Engineering Group
 - **Links:** [@brunoborges](https://twitter.com/brunoborges) · [Bluesky](https://bsky.app/profile/brunoborges.bsky.social) · [GitHub](https://github.com/brunoborges) · [LinkedIn](https://ca.linkedin.com/in/brunocborges) · [Blog](https://blog.brunoborges.info/)
 
+### Holly Cummins
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** HC
+- **Photo:** https://avatars.githubusercontent.com/u/11509290?v=4
+- **Role:** Senior Principal Software Engineer — IBM Quarkus team
+- **Links:** [@holly_cummins](https://twitter.com/holly_cummins) · [Bluesky](https://bsky.app/profile/hollycummins.com) · [GitHub](https://github.com/holly-cummins) · [LinkedIn](https://linkedin.com/in/holly-k-cummins/) · [Website](https://hollycummins.com)
+
 ### Eric Deandrea
 
 - **Badge:** Person
@@ -462,6 +488,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/363447?v=4
 - **Role:** [Docling Java](https://docling-project.github.io/docling-java/current) project lead, contributor to LangChain4j, Sr. Principal Software Engineer at IBM
 - **Links:** [Bluesky](https://bsky.app/profile/ericdeandrea.dev) · [@edeandrea](https://x.com/edeandrea) · [GitHub](https://github.com/edeandrea) · [LinkedIn](https://www.linkedin.com/in/edeandrea/)
+
+### Sébastien Deleuze
+
+- **Badge:** Person
+- **Initials:** SD
+- **Photo:** https://avatars.githubusercontent.com/u/141109?v=4
+- **Role:** Spring Framework core committer, Spring AI/MCP integration — Broadcom
+- **Links:** [@sdeleuze](https://x.com/sdeleuze) · [Bluesky](https://bsky.app/profile/seb.deleuze.fr) · [GitHub](https://github.com/sdeleuze) · [LinkedIn](https://www.linkedin.com/in/deleuze) · [Blog](https://seb.deleuze.fr)
 
 ### Markus Eisele
 
@@ -744,6 +778,12 @@ Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotl
 - **Badge:** Book
 - **Description:** Early-release O'Reilly book by Java Champions Alex Soto Bueno, Markus Eisele, and Mario Fusco — building long-running, stateful agents on the JVM with zero-trust security, RAG, and multi-agent coordination using Quarkus, LangChain4j, and LangGraph4j
 - **Links:** [Book](https://www.oreilly.com/library/view/ai-agents-with/0642572245856/)
+
+### Applied AI for Enterprise Java Development (O'Reilly)
+
+- **Badge:** Book
+- **Description:** Book by Alex Soto Bueno, Markus Eisele, and Natale Vinto — prompt engineering, RAG, guardrails, fault tolerance, and enterprise AI architecture using Quarkus, LangChain4j, and vector stores
+- **Links:** [Book](https://www.oreilly.com/library/view/applied-ai-for/9781098174491/)
 
 ### Production LangChain4j — Inside.java
 
