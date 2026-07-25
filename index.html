@@ -93,7 +93,9 @@
       {"@type": "ListItem", "position": 36, "name": "OpenAI Java SDK", "url": "https://github.com/openai/openai-java"},
       {"@type": "ListItem", "position": 37, "name": "Google Gen AI Java SDK", "url": "https://github.com/googleapis/java-genai"},
       {"@type": "ListItem", "position": 38, "name": "IBM watsonx.ai Java SDK", "url": "https://github.com/IBM/watsonx-ai-java-sdk"},
-      {"@type": "ListItem", "position": 39, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"}
+      {"@type": "ListItem", "position": 39, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"},
+      {"@type": "ListItem", "position": 40, "name": "Ollama4j", "url": "https://github.com/ollama4j/ollama4j"},
+      {"@type": "ListItem", "position": 41, "name": "Cohere Java SDK", "url": "https://github.com/cohere-ai/cohere-java"}
     ]
   }
   </script>
@@ -384,11 +386,13 @@
     <div class="news-bar">
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Headlines</h2>
       <ul>
-        <li><a href="https://github.com/beehive-lab/TornadoVM/releases/tag/v5.1.0-jdk21">TornadoVM 5.1.0 Adds FP8 GPU Support</a> &mdash; the Java-to-GPU compiler gains FP8 (E4M3/E5M2) precision for CUDA, a CUTLASS hybrid-API provider for fused GEMM operations, and Windows CUDA support, advancing GPU-accelerated inference for GPULlama3.java and LangChain4j</li>
+        <li><a href="https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21">TornadoVM 5.2.0 Adds Native FP8 Tensor-Core Support</a> &mdash; packed half2 support and native FP8 conversion with FP8/BF16 tensor-core MMA for the CUDA backend, plus expanded BFloat16 array support and new activation-function epilogues (SiLU, Sigmoid, Tanh, HardSwish)</li>
+        <li><a href="https://javapro.io/2026/07/16/solving-spring-ais-ui-challenge-with-ag-uis-java-sdk/">Solving Spring AI's UI Challenge with AG-UI's Java SDK</a> &mdash; walks through bridging Spring AI agent backends with frontend UIs like CopilotKit via a standardized streaming protocol</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.18.0">LangChain4j 1.18.0 Released</a> &mdash; introduces a Belief-Desire-Intention (BDI) agentic pattern, crash-resilient Human-in-the-Loop suspend/resume for agentic systems, OpenAI TTS support, and a revamped embedding-model API with per-call parameters and multimodal input</li>
         <li><a href="https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/">JVM Pulse: Profiling Java with GitHub Copilot</a> &mdash; new open-source Copilot canvas extension from Bruno Borges automates GC/JFR profiling and hands off findings to Copilot for AI-driven tuning recommendations</li>
         <li><a href="https://quarkus.io/blog/quarkus-langchain4j-opa-guardrails/">Compiling OPA Policies to WebAssembly for Quarkus LangChain4j Guardrails</a> &mdash; sub-millisecond prompt-injection pattern matching via Open Policy Agent rules compiled to Wasm, falling back to an LLM only for inconclusive cases</li>
         <li><a href="https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0">Spring AI AgentCore SDK v2.0.0 Released</a> &mdash; major version release of the open-source Spring Boot integration for Amazon Bedrock AgentCore, with auto-configured invocation endpoints, SSE streaming, and short/long-term memory support</li>
+        <li><a href="https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.0">AgentScope Java v2.0.0 Tagged on GitHub</a> &mdash; formal GA release tag for the dual-layer ReActAgent/HarnessAgent architecture, a unified 28-event observability model, and a new permission engine</li>
         <li><a href="https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/">LangChain4j Agentic Workflows: From AI Calls to Multi-Agent Systems</a> &mdash; tutorial covering sequential, loop, parallel, and conditional workflow patterns, goal-oriented planning, and supervisor-based multi-agent systems in Java</li>
         <li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now">Spring AI 2.0.0 GA Available Now</a> &mdash; built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security</li>
         <li><a href="https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html">AgentScope Java v2.0.0 GA</a> &mdash; Alibaba's JVM-native agent framework reaches production-ready GA, with event-streaming, permission-gated tool execution, and a Workspace abstraction for long-running, safely sandboxed agents</li>
@@ -800,6 +804,24 @@
         </div>
       </div>
 
+      <div class="card">
+        <span class="card-badge badge-inference">SDK</span>
+        <h3><a href="https://github.com/ollama4j/ollama4j">Ollama4j</a></h3>
+        <p>Java client library for running models via a local Ollama server. Chat, streaming, tool/function calling (including MCP tools), vision-model image inputs, embeddings, and model management, with Prometheus metrics support. Requires Java 17+, published to Maven Central.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/ollama4j/ollama4j" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">SDK</span>
+        <h3><a href="https://github.com/cohere-ai/cohere-java">Cohere Java SDK</a></h3>
+        <p>Official Java SDK for the Cohere API, generated and maintained by Cohere. Chat, embeddings, reranking, and classification endpoints, published to Maven Central.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/cohere-ai/cohere-java" title="GitHub"></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1029,6 +1051,16 @@
         </div>
       </div>
 
+      <div class="card">
+        <span class="card-badge badge-framework">Training</span>
+        <h3><a href="https://opennlp.apache.org">Apache OpenNLP</a></h3>
+        <p>Apache's Java-native NLP toolkit &mdash; tokenization, part-of-speech tagging, named entity recognition, chunking, parsing, and language detection, with pluggable MaxEnt, Perceptron, Naive Bayes, and SVM classifiers. Actively maintained, with a Java 21-targeted 3.0 branch in progress.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://opennlp.apache.org" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/apache/opennlp" title="GitHub"></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1057,6 +1089,22 @@
       </div>
 
       <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/11509290?v=4" alt="Holly Cummins"></div>
+        <div class="person-info">
+          <h4>Holly Cummins</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Senior Principal Software Engineer &mdash; IBM Quarkus team</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/holly_cummins" title="@holly_cummins"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/hollycummins.com" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/holly-cummins" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://linkedin.com/in/holly-k-cummins/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://hollycummins.com" title="Website"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/363447?v=4" alt="Eric Deandrea"></div>
         <div class="person-info">
           <h4>Eric Deandrea</h4>
@@ -1067,6 +1115,21 @@
             <a class="icon icon-x" href="https://x.com/edeandrea" title="@edeandrea"></a>
             <a class="icon icon-github" href="https://github.com/edeandrea" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/edeandrea/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/141109?v=4" alt="Sébastien Deleuze"></div>
+        <div class="person-info">
+          <h4>Sébastien Deleuze</h4>
+          <p>Spring Framework core committer, Spring AI/MCP integration &mdash; Broadcom</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://x.com/sdeleuze" title="@sdeleuze"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/seb.deleuze.fr" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/sdeleuze" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/deleuze" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://seb.deleuze.fr" title="Blog"></a>
           </div>
         </div>
       </div>
@@ -1526,6 +1589,12 @@
         <span class="card-badge badge-framework">Book</span>
         <h3>AI Agents with Java (O'Reilly)</h3>
         <p>Early-release book by Java Champions Alex Soto Bueno, Markus Eisele, and Mario Fusco &mdash; building long-running, stateful agents on the JVM with zero-trust security, RAG, and multi-agent coordination</p>
+      </a>
+
+      <a class="card" href="https://www.oreilly.com/library/view/applied-ai-for/9781098174491/">
+        <span class="card-badge badge-framework">Book</span>
+        <h3>Applied AI for Enterprise Java Development (O'Reilly)</h3>
+        <p>Book by Alex Soto Bueno, Markus Eisele, and Natale Vinto &mdash; prompt engineering, RAG, guardrails, fault tolerance, and enterprise AI architecture using Quarkus, LangChain4j, and vector stores</p>
       </a>
 
       <a class="card" href="https://inside.java/2026/02/01/devoxxbelgium-production-langchain4j/">
