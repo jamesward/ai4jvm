@@ -86,7 +86,9 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://inside.java/2026/07/25/design-java-mcp-tool/
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
+- https://inside.java/2026/07/23/podcast-063/
 - https://javapro.io/2026/07/16/solving-spring-ais-ui-challenge-with-ag-uis-java-sdk/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
 - https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
@@ -94,6 +96,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.0
 - https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/
+- https://a2aproject.github.io/a2a-java/posts/a2a-java-sdk-1-1-0-final-released/
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
 - https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 - https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/
@@ -843,6 +846,12 @@ Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotl
 - **Badge:** Workshop
 - **Description:** Hands-on, self-paced Open Liberty workshop that progresses from a simple chatbot to agentic systems using LangChain4j — prompt engineering, streaming, RAG, tool calling, MCP, guardrails/observability, and multi-agent supervisor patterns
 - **Links:** [Workshop](https://openliberty.github.io/liberty-workshop-langchain4j/) · [Blog](https://openliberty.io/blog/2026/07/10/liberty-langchain4j-workshop.html)
+
+### ScarfBench
+
+- **Badge:** Resource
+- **Description:** IBM Research's open benchmark for evaluating AI agents on enterprise Java framework migration — 102 applications and 204 tasks (~1,331 tests) covering Jakarta EE, Quarkus, and Spring, with a public leaderboard.
+- **Links:** [GitHub](https://github.com/scarfbench/benchmark) · [Announcement](https://www.ibm.com/new/announcements/scarfbench-a-public-benchmark-for-java-framework-migration)
 
 ---
 
