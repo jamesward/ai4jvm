@@ -86,6 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/embabel/embabel-agent/releases/tag/v1.0.0
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
 - https://javapro.io/2026/07/16/solving-spring-ais-ui-challenge-with-ag-uis-java-sdk/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
