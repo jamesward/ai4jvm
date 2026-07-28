@@ -337,6 +337,11 @@ Technologies that supercharge Java development when paired with AI code assistan
 
 **Section focus:** Prioritize tools that bridge the gap between AI assistants and the Java ecosystem — MCP servers, skill registries, IDE plugins, and context providers — over general-purpose AI tools.
 
+### AI-Git-Bot
+- **Badge:** Assistant
+- **Description:** Self-hosted AI workflow automation platform for Git repositories. Automates pull request reviews, test generation, issue management and documentation syncronization with the support of multiple AI backends. Pure Java application with a Spring-Boot based architecture.
+- **Links:** [Website](https://gitbot.eu/) · [GitHub](https://github.com/tmseidel/ai-git-bot)
+
 ### Javadocs.dev MCP Server
 - **Badge:** MCP Server
 - **Description:** Gives AI assistants live access to Java, Kotlin, and Scala library documentation from Maven Central. Six tools including latest-version lookup, Javadoc symbol browsing, and source file retrieval. Connect any MCP client via Streamable HTTP.
