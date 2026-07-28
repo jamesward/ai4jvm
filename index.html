@@ -97,7 +97,11 @@
       {"@type": "ListItem", "position": 40, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"},
       {"@type": "ListItem", "position": 41, "name": "Tiberius", "url": "https://github.com/tiberius-security/tiberius"},
       {"@type": "ListItem", "position": 42, "name": "Ollama4j", "url": "https://github.com/ollama4j/ollama4j"},
-      {"@type": "ListItem", "position": 43, "name": "Cohere Java SDK", "url": "https://github.com/cohere-ai/cohere-java"}
+      {"@type": "ListItem", "position": 43, "name": "Cohere Java SDK", "url": "https://github.com/cohere-ai/cohere-java"},
+      {"@type": "ListItem", "position": 44, "name": "kyo-ai", "url": "https://github.com/getkyo/kyo-ai"},
+      {"@type": "ListItem", "position": 45, "name": "zio-bedrock-converse", "url": "https://github.com/jamesward/zio-bedrock-converse"},
+      {"@type": "ListItem", "position": 46, "name": "zio-http-mcp", "url": "https://github.com/jamesward/zio-http-mcp"},
+      {"@type": "ListItem", "position": 47, "name": "Tachyon", "url": "https://github.com/kpavlov/tachyon"}
     ]
   }
   </script>
@@ -847,6 +851,43 @@
         <p>Official Java SDK for the Cohere API, generated and maintained by Cohere. Chat, embeddings, reranking, and classification endpoints, published to Maven Central.</p>
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/cohere-ai/cohere-java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/getkyo/kyo-ai">kyo-ai</a></h3>
+        <p>AI modules for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — <code>AI.gen[A]</code> derives the schema from your result type, drives the tool-call loop, and decodes the reply — with durable, crash-resumable agent runs and MCP support. Early stage and under active development. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/getkyo/kyo-ai" title="GitHub"></a>
+          <a class="icon icon-web" href="https://getkyo.io/" title="Website"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">SDK</span>
+        <h3><a href="https://github.com/jamesward/zio-bedrock-converse">zio-bedrock-converse</a></h3>
+        <p>Typed Scala 3 access to the Amazon Bedrock Converse API, built on ZIO and ZIO HTTP. Three abstraction levels — low-level wire control, single-turn requests, and multi-turn agentic loops with automatic tool dispatching — with tool schemas derived from Scala types and streaming text responses. Typed end-to-end with no <code>DynamicValue</code> in the public API. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/jamesward/zio-bedrock-converse" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://github.com/jamesward/zio-http-mcp">zio-http-mcp</a></h3>
+        <p>MCP server and client library for Scala 3, ZIO, and ZIO HTTP. Typed tool inputs and outputs via ZIO Schema, resources and prompt templates, OAuth 2.1 authorization, stateful or stateless HTTP transports, and server-initiated messaging (sampling, elicitation) over SSE. Supports the 2025-11-25 and 2026-07-28 MCP protocol revisions with automatic negotiation.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/jamesward/zio-http-mcp" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/kpavlov/tachyon">Tachyon</a></h3>
+        <p>Java 21+ runtime for building high-performance MCP servers — write blocking handler code and virtual threads run it off the Netty event loop, no reactive boilerplate. Stateless by default with optional sessions, native Netty transports (io_uring/epoll/kqueue), a Kotlin DSL, and full MCP 2025-11-25 and 2026-07-28 support verified against the official conformance tests. Apache 2.0, currently in beta.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/kpavlov/tachyon" title="GitHub"></a>
         </div>
       </div>
 
