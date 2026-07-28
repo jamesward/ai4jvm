@@ -872,6 +872,12 @@ Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotl
 - **Description:** Talk from Spring I/O 2026 in Barcelona demystifying AI integration with Spring Boot — agentic patterns, Spring AI, and MCP integration
 - **Links:** https://www.youtube.com/watch?v=nHnKReitDXc
 
+### Java and AI in 2026 and Beyond — James Ward Interview
+
+- **Badge:** Videos
+- **Description:** 68-minute interview with James Ward on the Code With Ease channel, recorded at GIDS Bangalore — the Java AI landscape from Spring AI, LangChain4j, Koog, and Embabel to MCP, agent memory, RAG vs tools vs skills, and production deployment with AWS AgentCore
+- **Links:** https://www.youtube.com/watch?v=-TWXNYRE0Q8
+
 ### Liberty LangChain4j Workshop
 
 - **Badge:** Workshop
