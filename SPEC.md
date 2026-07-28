@@ -329,6 +329,26 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Official Java SDK for the Cohere API, generated and maintained by Cohere. Chat, embeddings, reranking, and classification endpoints, published to Maven Central.
 - **Links:** [GitHub](https://github.com/cohere-ai/cohere-java)
 
+### kyo-ai
+- **Badge:** Framework
+- **Description:** AI modules for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — `AI.gen[A]` derives the schema from your result type, drives the tool-call loop, and decodes the reply — with durable, crash-resumable agent runs and MCP support. Early stage and under active development. Apache 2.0.
+- **Links:** [GitHub](https://github.com/getkyo/kyo-ai) · [Website](https://getkyo.io/)
+
+### zio-bedrock-converse
+- **Badge:** SDK
+- **Description:** Typed Scala 3 access to the Amazon Bedrock Converse API, built on ZIO and ZIO HTTP. Three abstraction levels — low-level wire control, single-turn requests, and multi-turn agentic loops with automatic tool dispatching — with tool schemas derived from Scala types and streaming text responses. Typed end-to-end with no `DynamicValue` in the public API. Apache 2.0.
+- **Links:** [GitHub](https://github.com/jamesward/zio-bedrock-converse)
+
+### zio-http-mcp
+- **Badge:** Library
+- **Description:** MCP server and client library for Scala 3, ZIO, and ZIO HTTP. Typed tool inputs and outputs via ZIO Schema, resources and prompt templates, OAuth 2.1 authorization, stateful or stateless HTTP transports, and server-initiated messaging (sampling, elicitation) over SSE. Supports the 2025-11-25 and 2026-07-28 MCP protocol revisions with automatic negotiation.
+- **Links:** [GitHub](https://github.com/jamesward/zio-http-mcp)
+
+### Tachyon
+- **Badge:** Framework
+- **Description:** Java 21+ runtime for building high-performance MCP servers — write blocking handler code and virtual threads run it off the Netty event loop, no reactive boilerplate. Stateless by default with optional sessions, native Netty transports (io_uring/epoll/kqueue), a Kotlin DSL, and full MCP 2025-11-25 and 2026-07-28 support verified against the official conformance tests. Apache 2.0, currently in beta.
+- **Links:** [GitHub](https://github.com/kpavlov/tachyon)
+
 ---
 
 ## Java with Code Assistants
