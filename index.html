@@ -86,16 +86,17 @@
       {"@type": "ListItem", "position": 29, "name": "Jakarta Agentic AI", "url": "https://github.com/jakartaee/agentic-ai"},
       {"@type": "ListItem", "position": 30, "name": "AgentScope Java", "url": "https://java.agentscope.io/"},
       {"@type": "ListItem", "position": 31, "name": "JVector", "url": "https://github.com/datastax/jvector"},
-      {"@type": "ListItem", "position": 32, "name": "ClawRunr", "url": "https://github.com/ClawRunr/JavaClaw"},
-      {"@type": "ListItem", "position": 33, "name": "MCP Toolbox Java SDK", "url": "https://github.com/googleapis/mcp-toolbox-sdk-java"},
-      {"@type": "ListItem", "position": 34, "name": "Tools4AI", "url": "https://github.com/vishalmysore/Tools4AI"},
-      {"@type": "ListItem", "position": 35, "name": "EclipseStore", "url": "https://github.com/eclipse-store/store"},
-      {"@type": "ListItem", "position": 36, "name": "OpenAI Java SDK", "url": "https://github.com/openai/openai-java"},
-      {"@type": "ListItem", "position": 37, "name": "Google Gen AI Java SDK", "url": "https://github.com/googleapis/java-genai"},
-      {"@type": "ListItem", "position": 38, "name": "IBM watsonx.ai Java SDK", "url": "https://github.com/IBM/watsonx-ai-java-sdk"},
-      {"@type": "ListItem", "position": 39, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"},
-      {"@type": "ListItem", "position": 40, "name": "Ollama4j", "url": "https://github.com/ollama4j/ollama4j"},
-      {"@type": "ListItem", "position": 41, "name": "Cohere Java SDK", "url": "https://github.com/cohere-ai/cohere-java"}
+      {"@type": "ListItem", "position": 32, "name": "Milvus Java SDK", "url": "https://github.com/milvus-io/milvus-sdk-java"},
+      {"@type": "ListItem", "position": 33, "name": "ClawRunr", "url": "https://github.com/ClawRunr/JavaClaw"},
+      {"@type": "ListItem", "position": 34, "name": "MCP Toolbox Java SDK", "url": "https://github.com/googleapis/mcp-toolbox-sdk-java"},
+      {"@type": "ListItem", "position": 35, "name": "Tools4AI", "url": "https://github.com/vishalmysore/Tools4AI"},
+      {"@type": "ListItem", "position": 36, "name": "EclipseStore", "url": "https://github.com/eclipse-store/store"},
+      {"@type": "ListItem", "position": 37, "name": "OpenAI Java SDK", "url": "https://github.com/openai/openai-java"},
+      {"@type": "ListItem", "position": 38, "name": "Google Gen AI Java SDK", "url": "https://github.com/googleapis/java-genai"},
+      {"@type": "ListItem", "position": 39, "name": "IBM watsonx.ai Java SDK", "url": "https://github.com/IBM/watsonx-ai-java-sdk"},
+      {"@type": "ListItem", "position": 40, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"},
+      {"@type": "ListItem", "position": 41, "name": "Ollama4j", "url": "https://github.com/ollama4j/ollama4j"},
+      {"@type": "ListItem", "position": 42, "name": "Cohere Java SDK", "url": "https://github.com/cohere-ai/cohere-java"}
     ]
   }
   </script>
@@ -388,6 +389,7 @@
       <ul>
         <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.0.0">Embabel 1.0.0 Reaches GA</a> &mdash; the JVM agent framework's first stable release promotes experimental RAG APIs to production status, adds generic media/document support, exposes MCP server health via Spring Boot Actuator, and now resolves entirely from Maven Central</li>
         <li><a href="https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21">TornadoVM 5.2.0 Adds Native FP8 Tensor-Core Support</a> &mdash; packed half2 support and native FP8 conversion with FP8/BF16 tensor-core MMA for the CUDA backend, plus expanded BFloat16 array support and new activation-function epilogues (SiLU, Sigmoid, Tanh, HardSwish)</li>
+        <li><a href="https://foojay.io/today/ai-found-the-bugs-whos-patching-your-eol-java-code/">AI Found the Bugs. Who's Patching Your EOL Java Code?</a> &mdash; argues AI-assisted vulnerability discovery is now outpacing human-speed patching for unsupported Java dependencies, raising security-economics questions for the ecosystem</li>
         <li><a href="https://javapro.io/2026/07/16/solving-spring-ais-ui-challenge-with-ag-uis-java-sdk/">Solving Spring AI's UI Challenge with AG-UI's Java SDK</a> &mdash; walks through bridging Spring AI agent backends with frontend UIs like CopilotKit via a standardized streaming protocol</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.18.0">LangChain4j 1.18.0 Released</a> &mdash; introduces a Belief-Desire-Intention (BDI) agentic pattern, crash-resilient Human-in-the-Loop suspend/resume for agentic systems, OpenAI TTS support, and a revamped embedding-model API with per-call parameters and multimodal input</li>
         <li><a href="https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/">JVM Pulse: Profiling Java with GitHub Copilot</a> &mdash; new open-source Copilot canvas extension from Bruno Borges automates GC/JFR profiling and hands off findings to Copilot for AI-driven tuning recommendations</li>
@@ -723,6 +725,16 @@
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/datastax/jvector" title="GitHub"></a>
           <a class="icon icon-web" href="https://docs.langchain4j.dev/integrations/embedding-stores/jvector/" title="LangChain4j Integration"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://github.com/milvus-io/milvus-sdk-java">Milvus Java SDK</a></h3>
+        <p>Official Java client for Milvus, one of the most widely used open-source vector databases. Type-safe API for collection management, ANN and hybrid search, and bulk import, with modular packaging (core plus an optional BulkWriter module). Commonly paired with LangChain4j and Spring AI vector-store integrations in Java RAG stacks.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/milvus-io/milvus-sdk-java" title="GitHub"></a>
+          <a class="icon icon-web" href="https://milvus.io" title="Website"></a>
         </div>
       </div>
 
@@ -1383,6 +1395,22 @@
             <a class="icon icon-github" href="https://github.com/JMHReif" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/jmhreif/" title="LinkedIn"></a>
             <a class="icon icon-web" href="https://jmhreif.com" title="Website"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/247332?v=4" alt="Baruch Sadogursky"></div>
+        <div class="person-info">
+          <h4>Baruch Sadogursky</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Developer Advocate at Tessl, co-author of <em>Liquid Software</em> and <em>DevOps Tools for Java Developers</em></p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/jbaruch" title="@jbaruch"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/jbaru.ch" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/jbaruch" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/jbaruch/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://speaking.jbaru.ch" title="Website"></a>
           </div>
         </div>
       </div>

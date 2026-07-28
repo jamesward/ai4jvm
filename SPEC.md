@@ -88,6 +88,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 - https://github.com/embabel/embabel-agent/releases/tag/v1.0.0
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
+- https://foojay.io/today/ai-found-the-bugs-whos-patching-your-eol-java-code/
 - https://javapro.io/2026/07/16/solving-spring-ais-ui-challenge-with-ag-uis-java-sdk/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
 - https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
@@ -263,6 +264,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Library
 - **Description:** DataStax's pure-Java embedded vector search engine combining DiskANN and HNSW graph designs for approximate nearest-neighbor search, SIMD-accelerated via the Java Vector API. Supports indexes larger than available memory via two-pass compressed search. Powers Apache Cassandra and AstraDB; has an official LangChain4j embedding-store integration.
 - **Links:** [GitHub](https://github.com/datastax/jvector) · [LangChain4j Integration](https://docs.langchain4j.dev/integrations/embedding-stores/jvector/)
+
+### Milvus Java SDK
+- **Badge:** Library
+- **Description:** Official Java client for Milvus, one of the most widely used open-source vector databases. Type-safe API for collection management, ANN and hybrid search, and bulk import, with modular packaging (core plus an optional BulkWriter module). Commonly paired with LangChain4j and Spring AI vector-store integrations in Java RAG stacks.
+- **Links:** [GitHub](https://github.com/milvus-io/milvus-sdk-java) · [Website](https://milvus.io)
 
 ### ClawRunr
 - **Badge:** Framework
@@ -643,6 +649,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/14850786?v=4
 - **Role:** Developer Advocate at Neo4j
 - **Links:** [@JMHReif](https://twitter.com/JMHReif) · [GitHub](https://github.com/JMHReif) · [LinkedIn](https://www.linkedin.com/in/jmhreif/) · [Website](https://jmhreif.com)
+
+### Baruch Sadogursky
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** BS
+- **Photo:** https://avatars.githubusercontent.com/u/247332?v=4
+- **Role:** Developer Advocate at Tessl, co-author of *Liquid Software* and *DevOps Tools for Java Developers*
+- **Links:** [@jbaruch](https://twitter.com/jbaruch) · [Bluesky](https://bsky.app/profile/jbaru.ch) · [GitHub](https://github.com/jbaruch) · [LinkedIn](https://www.linkedin.com/in/jbaruch/) · [Website](https://speaking.jbaru.ch)
 
 ### Oleg Šelajev
 
