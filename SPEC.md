@@ -41,7 +41,7 @@ Add a FAQ section before the Resources section. This targets long-tail search qu
 Questions and answers:
 - **"What is the best Java framework for building AI agents?"** — "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, and Akka Agents — each with different strengths for specific use cases."
 - **"Can Java run LLMs locally?"** — "Yes. Projects like Jlama and GPULlama3.java run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while GPULlama3.java leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML."
-- **"What is MCP and how does it work with Java?"** — "The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, SSE, Streamable HTTP). Helidon MCP and several frameworks also offer MCP support."
+- **"What is MCP and how does it work with Java?"** — "The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support."
 - **"Is Kotlin supported by Java AI frameworks?"** — "Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains is a Kotlin-native agent framework, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code."
 
 ### Sitemap
@@ -86,8 +86,10 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://inside.java/2026/07/25/design-java-mcp-tool/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.0.0
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
+- https://inside.java/2026/07/23/podcast-063/
 - https://foojay.io/today/ai-found-the-bugs-whos-patching-your-eol-java-code/
 - https://javapro.io/2026/07/16/solving-spring-ais-ui-challenge-with-ag-uis-java-sdk/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
@@ -96,14 +98,16 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.0
 - https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/
+- https://a2aproject.github.io/a2a-java/posts/a2a-java-sdk-1-1-0-final-released/
+- https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
+- https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0
 - https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 - https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/
 - https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
 - https://quarkus.io/blog/introducing-voting-pattern/
 - https://micronaut.io/2026/05/20/micronaut-framework-5-0-0-released/
 - https://blog.ovhcloud.com/devoxx-france-2026/
-- https://quarkus.io/blog/a2a-java-sdk-1-0-0-cr1-released/
 - https://quarkus.io/blog/introducing-agent-mcp/
 
 ---
@@ -187,7 +191,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### MCP Java SDK
 - **Badge:** SDK
-- **Description:** The official Java SDK for Model Context Protocol servers and clients. Maintained by the Spring AI team. Sync/async, STDIO/SSE/Streamable HTTP transports, OAuth support via Spring integration.
+- **Description:** The official Java SDK for Model Context Protocol servers and clients. Maintained by the Spring AI team. Sync/async, STDIO/Streamable HTTP transports (SSE deprecated as of 2.0), OAuth support via Spring integration. Reached v2.0.0 GA in June 2026 with spec-accurate JSON Schema 2020-12 validation and enforced required fields.
 - **Links:** [Docs](https://modelcontextprotocol.io/sdk/java/mcp-overview) · [GitHub](https://github.com/modelcontextprotocol/java-sdk)
 
 ### Anthropic Java SDK
@@ -222,7 +226,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### A2A Java SDK
 - **Badge:** SDK
-- **Description:** The official Java SDK for [Agent-2-Agent Protocol (A2A)](https://a2a-protocol.org) servers and clients. Reference implementation based on Quarkus.
+- **Description:** The official Java SDK for [Agent-2-Agent Protocol (A2A)](https://a2a-protocol.org) servers and clients. Reference implementation based on Quarkus. Reached 1.0 GA in June 2026 with full JSON-RPC/gRPC/REST transport support, OpenTelemetry integration, and a cross-SDK interop test kit; 1.1.0 added a `TaskAuthorizationProvider` SPI for per-user task authorization.
 - **Links:** [GitHub](https://github.com/a2aproject/a2a-java)
 
 ### A2A Java SDK for Jakarta Servers
@@ -309,6 +313,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** SDK
 - **Description:** SAP's official Java SDK for integrating generative AI into enterprise applications via SAP AI Core and the Generative AI Hub. Orchestration service integration, prompt templating, grounding, data masking, content filtering, and Spring AI compatibility.
 - **Links:** [GitHub](https://github.com/SAP/ai-sdk-java)
+
+### Tiberius
+- **Badge:** Library
+- **Description:** Java security testing framework for LLM applications, integrating with JUnit 5 and Spring Boot so adversarial testing lives in the standard test suite. 200+ attack probes across the OWASP LLM Top 10, probabilistic testing (via PUnit) for non-deterministic outputs, fixture-based regression testing, and LangChain4j guardrail validation. Apache 2.0; created by Karakun Group's Iryna Dohndorf.
+- **Links:** [GitHub](https://github.com/tiberius-security/tiberius) · [Blog](https://foojay.io/today/tiberius-a-security-testing-framework-for-llm-applications-in-java/)
 
 ### Ollama4j
 - **Badge:** SDK
@@ -685,6 +694,15 @@ Notes:
 - **Role:** Director of Developer Experience — Red Hat, co-author of "AI Agents with Java" (O'Reilly)
 - **Links:** [@alexsotob](https://twitter.com/alexsotob) · [GitHub](https://github.com/lordofthejars) · [Blog](https://www.lordofthejars.com)
 
+### Venkat Subramaniam
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** VS
+- **Photo:** https://avatars.githubusercontent.com/u/5804?v=4
+- **Role:** Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author and instructor at the University of Houston
+- **Links:** [@venkat_s](https://twitter.com/venkat_s) · [Bluesky](https://bsky.app/profile/venkats.bsky.social) · [GitHub](https://github.com/venkats) · [LinkedIn](https://www.linkedin.com/in/vsubramaniam/)
+
 ### Christian Tzolov
 
 - **Badge:** Person
@@ -750,7 +768,7 @@ The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if yo
 Yes. Projects like Jlama and GPULlama3.java run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while GPULlama3.java leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML.
 
 ### What is MCP and how does it work with Java?
-The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, SSE, Streamable HTTP). Helidon MCP and several frameworks also offer MCP support.
+The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support.
 
 ### Is Kotlin supported by Java AI frameworks?
 Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains is a Kotlin-native agent framework, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code.
@@ -859,6 +877,12 @@ Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotl
 - **Badge:** Workshop
 - **Description:** Hands-on, self-paced Open Liberty workshop that progresses from a simple chatbot to agentic systems using LangChain4j — prompt engineering, streaming, RAG, tool calling, MCP, guardrails/observability, and multi-agent supervisor patterns
 - **Links:** [Workshop](https://openliberty.github.io/liberty-workshop-langchain4j/) · [Blog](https://openliberty.io/blog/2026/07/10/liberty-langchain4j-workshop.html)
+
+### ScarfBench
+
+- **Badge:** Resource
+- **Description:** IBM Research's open benchmark for evaluating AI agents on enterprise Java framework migration — 102 applications and 204 tasks (~1,331 tests) covering Jakarta EE, Quarkus, and Spring, with a public leaderboard.
+- **Links:** [GitHub](https://github.com/scarfbench/benchmark) · [Announcement](https://www.ibm.com/new/announcements/scarfbench-a-public-benchmark-for-java-framework-migration)
 
 ---
 
