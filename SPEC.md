@@ -86,6 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/
 - https://inside.java/2026/07/25/design-java-mcp-tool/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.0.0
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
@@ -349,6 +350,31 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Java 21+ runtime for building high-performance MCP servers — write blocking handler code and virtual threads run it off the Netty event loop, no reactive boilerplate. Stateless by default with optional sessions, native Netty transports (io_uring/epoll/kqueue), a Kotlin DSL, and full MCP 2025-11-25 and 2026-07-28 support verified against the official conformance tests. Apache 2.0, currently in beta.
 - **Links:** [GitHub](https://github.com/kpavlov/tachyon)
 
+### Solon-AI
+- **Badge:** Framework
+- **Description:** Full-scenario Java AI application module of the Solon framework ecosystem — LLM chat and tool/skill calling, RAG knowledge bases, MCP client/server support, and ReAct/multi-agent Team orchestration. Embeddable in Spring Boot, jFinal, Vert.x, and Quarkus; supports Java 8–25.
+- **Links:** [GitHub](https://github.com/opensolon/solon-ai)
+
+### AWS SDK for Java v2 — Bedrock
+- **Badge:** SDK
+- **Description:** Official AWS SDK for Java v2 modules (`bedrockruntime`, `bedrockagentruntime`) for invoking Amazon Bedrock foundation models and Bedrock Agents from Java. Part of the actively-released `aws-sdk-java-v2` monorepo, joining the Google Gen AI, IBM watsonx.ai, and SAP AI Java SDKs already listed here.
+- **Links:** [GitHub](https://github.com/aws/aws-sdk-java-v2) · [Maven Central](https://central.sonatype.com/artifact/software.amazon.awssdk/bedrockruntime)
+
+### Qdrant Java Client
+- **Badge:** Library
+- **Description:** Official Java client for the Qdrant vector database — collection management, vector upsert, and similarity search over gRPC, with sync and async (`ListenableFuture`) support.
+- **Links:** [GitHub](https://github.com/qdrant/java-client)
+
+### Weaviate Java Client
+- **Badge:** Library
+- **Description:** Official Java client for the Weaviate vector database. The v6 line is a from-scratch rewrite for Weaviate ≥1.32, replacing the deprecated v5 client, with a "Tucked Builder" API for data ingestion, semantic search, filtering, and collection management.
+- **Links:** [GitHub](https://github.com/weaviate/java-client) · [Docs](https://docs.weaviate.io/weaviate/client-libraries/java)
+
+### Testcontainers Ollama Module
+- **Badge:** Library
+- **Description:** Official Testcontainers-for-Java module for spinning up disposable Ollama containers in integration tests — pull models and commit custom images for reuse. Commonly paired with Spring AI, LangChain4j, and Quarkus LangChain4j to test local-LLM code paths.
+- **Links:** [Docs](https://java.testcontainers.org/modules/ollama/) · [GitHub](https://github.com/testcontainers/testcontainers-java/tree/main/modules/ollama)
+
 ---
 
 ## Java with Code Assistants
@@ -442,6 +468,26 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Description:** Community Eclipse IDE plugin (formerly "eclipse-chatgpt-plugin") that exposes the Eclipse workspace as an MCP server — code analysis, refactoring, build/debug control, and Git operations via EGit — so external AI agents like Claude Code edit through Eclipse's JDT APIs instead of the raw filesystem, keeping incremental compilation and error highlighting in sync. Also bundles an inline AI chat view. MIT licensed.
 - **Links:** [Eclipse Marketplace](https://marketplace.eclipse.org/content/assistai-eclipse-ide-mcp-server-ai-agents) · [GitHub](https://github.com/gradusnikov/eclipse-chatgpt-plugin)
 
+### SonarQube MCP Server
+- **Badge:** MCP Server
+- **Description:** Official MCP server from SonarSource exposing SonarQube Cloud/Server code-quality and security analysis to AI coding agents — issue management, security hotspots, quality gates, coverage, and dependency risk across 50+ tools. Distributed as a Docker image.
+- **Links:** [GitHub](https://github.com/SonarSource/sonarqube-mcp-server)
+
+### TDA (Thread Dump Analyzer)
+- **Badge:** MCP Server
+- **Description:** JVM diagnostics tool for analyzing thread dumps and heap data — deadlocks, bottlenecks, virtual-thread pinning — across JDK 1.4–21+. Usable as a standalone Swing GUI, a JConsole/VisualVM plugin, or a headless MCP server for AI tools like Claude and Cursor.
+- **Links:** [GitHub](https://github.com/irockel/tda)
+
+### SolonCode
+- **Badge:** Assistant
+- **Description:** Open-source, provider-agnostic AI coding agent built on the Solon-AI framework, targeting Java 8–26 runtimes. CLI, web, and desktop-IDE interfaces with auto-edit, approval-based execution, and planning agent modes — an open alternative to Claude Code.
+- **Links:** [GitHub](https://github.com/opensolon/soloncode)
+
+### Junie
+- **Badge:** Assistant
+- **Description:** JetBrains' autonomous coding agent — plans and executes multi-step edits, runs tests and the debugger, and opens PRs. Reached GA in June 2026 with a standalone bring-your-own-key CLI (Anthropic, OpenAI, Google, xAI, OpenRouter, Copilot) alongside its JetBrains IDE integration. Distinct from the general-purpose JetBrains AI Assistant above.
+- **Links:** [Docs](https://www.jetbrains.com/help/ai-assistant/junie-agent.html) · [Marketplace](https://plugins.jetbrains.com/plugin/26104-junie-the-ai-coding-agent-by-jetbrains)
+
 ---
 
 ## Inference & Training
@@ -503,6 +549,15 @@ Notes:
 - Add profile photos if found.
 - Add Twitter, GitHub, LinkedIn, Bluesky, YouTube, if available.
 
+### Jean-François Arcand
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** JA
+- **Photo:** https://avatars.githubusercontent.com/u/51285?v=4
+- **Role:** Creator of the original Atmosphere Framework, Grizzly, and AsyncHttpClient; now building the new Atmosphere real-time transport layer for Java AI agents
+- **Links:** [@jfarcand](https://twitter.com/jfarcand) · [GitHub](https://github.com/jfarcand) · [LinkedIn](https://www.linkedin.com/in/jfarcand/)
+
 ### Bruno Borges
 
 - **Badge:** Person
@@ -511,6 +566,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/129743?v=4
 - **Role:** Principal Program Manager — Microsoft Java Engineering Group
 - **Links:** [@brunoborges](https://twitter.com/brunoborges) · [Bluesky](https://bsky.app/profile/brunoborges.bsky.social) · [GitHub](https://github.com/brunoborges) · [LinkedIn](https://ca.linkedin.com/in/brunocborges) · [Blog](https://blog.brunoborges.info/)
+
+### Vadim Briliantov
+
+- **Badge:** Person
+- **Initials:** VB
+- **Photo:** https://avatars.githubusercontent.com/u/24360128?v=4
+- **Role:** Technical Lead of Koog / AI Agents Platform — JetBrains
+- **Links:** [GitHub](https://github.com/Ololoshechkin) · [LinkedIn](https://hu.linkedin.com/in/vadim-briliantov) · [Blog](https://medium.com/@vadim.briliantov)
 
 ### Holly Cummins
 
@@ -529,6 +592,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/363447?v=4
 - **Role:** [Docling Java](https://docling-project.github.io/docling-java/current) project lead, contributor to LangChain4j, Sr. Principal Software Engineer at IBM
 - **Links:** [Bluesky](https://bsky.app/profile/ericdeandrea.dev) · [@edeandrea](https://x.com/edeandrea) · [GitHub](https://github.com/edeandrea) · [LinkedIn](https://www.linkedin.com/in/edeandrea/)
+
+### Ronald Dehuysser
+
+- **Badge:** Person
+- **Initials:** RD
+- **Photo:** https://avatars.githubusercontent.com/u/567842?v=4
+- **Role:** Creator of JobRunr and ClawRunr
+- **Links:** [@rdehuyss](https://twitter.com/rdehuyss) · [GitHub](https://github.com/rdehuyss) · [LinkedIn](https://www.linkedin.com/in/ronalddehuysser)
 
 ### Sébastien Deleuze
 
@@ -582,6 +653,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/1916583?v=4
 - **Role:** Creator of Spring Framework, CEO of Embabel
 - **Links:** [@springrod](https://twitter.com/springrod) · [GitHub](https://github.com/johnsonr) · [LinkedIn](https://www.linkedin.com/in/johnsonroda/) · [Blog](https://medium.com/@springrod)
+
+### Daniel Kec
+
+- **Badge:** Person
+- **Initials:** DK
+- **Photo:** https://avatars.githubusercontent.com/u/1773630?v=4
+- **Role:** Helidon developer — Oracle
+- **Links:** [@danielkec](https://twitter.com/danielkec) · [Bluesky](https://bsky.app/profile/kec.bsky.social) · [GitHub](https://github.com/danielkec) · [LinkedIn](https://www.linkedin.com/in/danielkec/)
 
 ### Kenneth Kousen
 
@@ -641,6 +720,22 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/593352?v=4
 - **Role:** Creator of AI Unfied Process and jOOQ MCP Server
 - **Links:** [@simas_ch](https://twitter.com/simas_ch) · [GitHub](https://github.com/simach) · [LinkedIn](https://www.linkedin.com/in/simonmartinelli/)
+
+### Vishal Mysore
+
+- **Badge:** Person
+- **Initials:** VM
+- **Photo:** https://avatars.githubusercontent.com/u/25938717?v=4
+- **Role:** Creator of Tools4AI
+- **Links:** [GitHub](https://github.com/vishalmysore) · [LinkedIn](https://www.linkedin.com/in/vishalrow/) · [Blog](https://medium.com/@visrow)
+
+### Konstantin Pavlov
+
+- **Badge:** Person
+- **Initials:** KP
+- **Photo:** https://avatars.githubusercontent.com/u/1517853?v=4
+- **Role:** Creator of Tachyon; maintainer of mokksy.dev and LangChain4j Kotlin extensions
+- **Links:** [Bluesky](https://bsky.app/profile/kpavlov.me) · [GitHub](https://github.com/kpavlov) · [Blog](https://kpavlov.me)
 
 ### Mark Pollack
 
