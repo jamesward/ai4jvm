@@ -101,7 +101,12 @@
       {"@type": "ListItem", "position": 44, "name": "kyo-ai", "url": "https://github.com/getkyo/kyo-ai"},
       {"@type": "ListItem", "position": 45, "name": "zio-bedrock-converse", "url": "https://github.com/jamesward/zio-bedrock-converse"},
       {"@type": "ListItem", "position": 46, "name": "zio-http-mcp", "url": "https://github.com/jamesward/zio-http-mcp"},
-      {"@type": "ListItem", "position": 47, "name": "Tachyon", "url": "https://github.com/kpavlov/tachyon"}
+      {"@type": "ListItem", "position": 47, "name": "Tachyon", "url": "https://github.com/kpavlov/tachyon"},
+      {"@type": "ListItem", "position": 48, "name": "Solon-AI", "url": "https://github.com/opensolon/solon-ai"},
+      {"@type": "ListItem", "position": 49, "name": "AWS SDK for Java v2 — Bedrock", "url": "https://github.com/aws/aws-sdk-java-v2"},
+      {"@type": "ListItem", "position": 50, "name": "Qdrant Java Client", "url": "https://github.com/qdrant/java-client"},
+      {"@type": "ListItem", "position": 51, "name": "Weaviate Java Client", "url": "https://github.com/weaviate/java-client"},
+      {"@type": "ListItem", "position": 52, "name": "Testcontainers Ollama Module", "url": "https://java.testcontainers.org/modules/ollama/"}
     ]
   }
   </script>
@@ -392,6 +397,7 @@
     <div class="news-bar">
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Headlines</h2>
       <ul>
+        <li><a href="https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/">Connecting Java Reinforcement Learning to Python Gymnasium</a> &mdash; bridges Java RL code to Python's Gymnasium library via JavaCPP, covering Python lifecycle management and NumPy data transfer, starting with CartPole before scaling up to CARLA</li>
         <li><a href="https://inside.java/2026/07/25/design-java-mcp-tool/">Pairing In-Process and Hosted Embeddings for Java MCP Tool Development</a> &mdash; designing an MCP server on Helidon that supports both local (DJL/MiniLM) and hosted (OpenAI) embedding models behind a stable tool interface</li>
         <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.0.0">Embabel 1.0.0 Reaches GA</a> &mdash; the JVM agent framework's first stable release promotes experimental RAG APIs to production status, adds generic media/document support, exposes MCP server health via Spring Boot Actuator, and now resolves entirely from Maven Central</li>
         <li><a href="https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21">TornadoVM 5.2.0 Adds Native FP8 Tensor-Core Support</a> &mdash; packed half2 support and native FP8 conversion with FP8/BF16 tensor-core MMA for the CUDA backend, plus expanded BFloat16 array support and new activation-function epilogues (SiLU, Sigmoid, Tanh, HardSwish)</li>
@@ -891,6 +897,54 @@
         </div>
       </div>
 
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/opensolon/solon-ai">Solon-AI</a></h3>
+        <p>Full-scenario Java AI application module of the Solon framework ecosystem &mdash; LLM chat and tool/skill calling, RAG knowledge bases, MCP client/server support, and ReAct/multi-agent Team orchestration. Embeddable in Spring Boot, jFinal, Vert.x, and Quarkus; supports Java 8&ndash;25.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/opensolon/solon-ai" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">SDK</span>
+        <h3><a href="https://github.com/aws/aws-sdk-java-v2">AWS SDK for Java v2 &mdash; Bedrock</a></h3>
+        <p>Official AWS SDK for Java v2 modules (<code>bedrockruntime</code>, <code>bedrockagentruntime</code>) for invoking Amazon Bedrock foundation models and Bedrock Agents from Java. Part of the actively-released <code>aws-sdk-java-v2</code> monorepo, joining the Google Gen AI, IBM watsonx.ai, and SAP AI Java SDKs already listed here.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/aws/aws-sdk-java-v2" title="GitHub"></a>
+          <a class="icon icon-web" href="https://central.sonatype.com/artifact/software.amazon.awssdk/bedrockruntime" title="Maven Central"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Library</span>
+        <h3><a href="https://github.com/qdrant/java-client">Qdrant Java Client</a></h3>
+        <p>Official Java client for the Qdrant vector database &mdash; collection management, vector upsert, and similarity search over gRPC, with sync and async (<code>ListenableFuture</code>) support.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/qdrant/java-client" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://github.com/weaviate/java-client">Weaviate Java Client</a></h3>
+        <p>Official Java client for the Weaviate vector database. The v6 line is a from-scratch rewrite for Weaviate &ge;1.32, replacing the deprecated v5 client, with a "Tucked Builder" API for data ingestion, semantic search, filtering, and collection management.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/weaviate/java-client" title="GitHub"></a>
+          <a class="icon icon-web" href="https://docs.weaviate.io/weaviate/client-libraries/java" title="Docs"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Library</span>
+        <h3><a href="https://java.testcontainers.org/modules/ollama/">Testcontainers Ollama Module</a></h3>
+        <p>Official Testcontainers-for-Java module for spinning up disposable Ollama containers in integration tests &mdash; pull models and commit custom images for reuse. Commonly paired with Spring AI, LangChain4j, and Quarkus LangChain4j to test local-LLM code paths.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://java.testcontainers.org/modules/ollama/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/testcontainers/testcontainers-java/tree/main/modules/ollama" title="GitHub"></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1043,6 +1097,37 @@
         </div>
       </div>
 
+      <a class="card" href="https://github.com/SonarSource/sonarqube-mcp-server">
+        <span class="card-badge badge-assistant">MCP Server</span>
+        <h3>SonarQube MCP Server</h3>
+        <p>Official MCP server from SonarSource exposing SonarQube Cloud/Server code-quality and security analysis to AI coding agents &mdash; issue management, security hotspots, quality gates, coverage, and dependency risk across 50+ tools. Distributed as a Docker image.</p>
+      </a>
+
+      <div class="card">
+        <span class="card-badge badge-assistant">MCP Server</span>
+        <h3><a href="https://github.com/irockel/tda">TDA (Thread Dump Analyzer)</a></h3>
+        <p>JVM diagnostics tool for analyzing thread dumps and heap data &mdash; deadlocks, bottlenecks, virtual-thread pinning &mdash; across JDK 1.4&ndash;21+. Usable as a standalone Swing GUI, a JConsole/VisualVM plugin, or a headless MCP server for AI tools like Claude and Cursor.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/irockel/tda" title="GitHub"></a>
+        </div>
+      </div>
+
+      <a class="card" href="https://github.com/opensolon/soloncode">
+        <span class="card-badge badge-assistant">Assistant</span>
+        <h3>SolonCode</h3>
+        <p>Open-source, provider-agnostic AI coding agent built on the Solon-AI framework, targeting Java 8&ndash;26 runtimes. CLI, web, and desktop-IDE interfaces with auto-edit, approval-based execution, and planning agent modes &mdash; an open alternative to Claude Code.</p>
+      </a>
+
+      <div class="card">
+        <span class="card-badge badge-assistant">Assistant</span>
+        <h3><a href="https://www.jetbrains.com/help/ai-assistant/junie-agent.html">Junie</a></h3>
+        <p>JetBrains' autonomous coding agent &mdash; plans and executes multi-step edits, runs tests and the debugger, and opens PRs. Reached GA in June 2026 with a standalone bring-your-own-key CLI (Anthropic, OpenAI, Google, xAI, OpenRouter, Copilot) alongside its JetBrains IDE integration. Distinct from the general-purpose JetBrains AI Assistant above.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://www.jetbrains.com/help/ai-assistant/junie-agent.html" title="Docs"></a>
+          <a class="icon icon-web" href="https://plugins.jetbrains.com/plugin/26104-junie-the-ai-coding-agent-by-jetbrains" title="Marketplace"></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1152,6 +1237,20 @@
     <div class="people-grid">
 
       <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/51285?v=4" alt="Jean-François Arcand"></div>
+        <div class="person-info">
+          <h4>Jean-Fran&ccedil;ois Arcand</h4>
+          <span class="badge-champion">Java Champion</span>
+          <p>Creator of the original Atmosphere Framework, Grizzly, and AsyncHttpClient; now building the new Atmosphere real-time transport layer for Java AI agents</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/jfarcand" title="@jfarcand"></a>
+            <a class="icon icon-github" href="https://github.com/jfarcand" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/jfarcand/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/129743?v=4" alt="Bruno Borges"></div>
         <div class="person-info">
           <h4>Bruno Borges</h4>
@@ -1163,6 +1262,19 @@
             <a class="icon icon-github" href="https://github.com/brunoborges" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://ca.linkedin.com/in/brunocborges" title="LinkedIn"></a>
             <a class="icon icon-web" href="https://blog.brunoborges.info/" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/24360128?v=4" alt="Vadim Briliantov"></div>
+        <div class="person-info">
+          <h4>Vadim Briliantov</h4>
+          <p>Technical Lead of Koog / AI Agents Platform &mdash; JetBrains</p>
+          <div class="person-links">
+            <a class="icon icon-github" href="https://github.com/Ololoshechkin" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://hu.linkedin.com/in/vadim-briliantov" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://medium.com/@vadim.briliantov" title="Blog"></a>
           </div>
         </div>
       </div>
@@ -1194,6 +1306,19 @@
             <a class="icon icon-x" href="https://x.com/edeandrea" title="@edeandrea"></a>
             <a class="icon icon-github" href="https://github.com/edeandrea" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/edeandrea/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/567842?v=4" alt="Ronald Dehuysser"></div>
+        <div class="person-info">
+          <h4>Ronald Dehuysser</h4>
+          <p>Creator of JobRunr and ClawRunr</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/rdehuyss" title="@rdehuyss"></a>
+            <a class="icon icon-github" href="https://github.com/rdehuyss" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/ronalddehuysser" title="LinkedIn"></a>
           </div>
         </div>
       </div>
@@ -1286,6 +1411,20 @@
             <a class="icon icon-github" href="https://github.com/johnsonr" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/johnsonroda/" title="LinkedIn"></a>
             <a class="icon icon-web" href="https://medium.com/@springrod" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1773630?v=4" alt="Daniel Kec"></div>
+        <div class="person-info">
+          <h4>Daniel Kec</h4>
+          <p>Helidon developer &mdash; Oracle</p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://twitter.com/danielkec" title="@danielkec"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/kec.bsky.social" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/danielkec" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/danielkec/" title="LinkedIn"></a>
           </div>
         </div>
       </div>
@@ -1391,6 +1530,32 @@
             <a class="icon icon-x" href="https://twitter.com/simas_ch" title="@simas_ch"></a>
             <a class="icon icon-github" href="https://github.com/simach" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/simonmartinelli/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/25938717?v=4" alt="Vishal Mysore"></div>
+        <div class="person-info">
+          <h4>Vishal Mysore</h4>
+          <p>Creator of Tools4AI</p>
+          <div class="person-links">
+            <a class="icon icon-github" href="https://github.com/vishalmysore" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/vishalrow/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://medium.com/@visrow" title="Blog"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1517853?v=4" alt="Konstantin Pavlov"></div>
+        <div class="person-info">
+          <h4>Konstantin Pavlov</h4>
+          <p>Creator of Tachyon; maintainer of mokksy.dev and LangChain4j Kotlin extensions</p>
+          <div class="person-links">
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/kpavlov.me" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/kpavlov" title="GitHub"></a>
+            <a class="icon icon-web" href="https://kpavlov.me" title="Blog"></a>
           </div>
         </div>
       </div>
