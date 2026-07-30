@@ -87,6 +87,7 @@ Latest headlines about the Java AI ecosystem. Each item has a link and brief des
 Note: Order by date, newest first. Don't show news older than 3 months
 
 - https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/
+- https://medium.com/graalvm/when-prompts-become-plugins-34a737d30f54
 - https://inside.java/2026/07/25/design-java-mcp-tool/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.0.0
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
@@ -204,6 +205,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** SDK
 - **Description:** Official Java SDK for embedding the GitHub Copilot agentic engine directly into Java applications. Uses the same agentic harness that powers the Copilot CLI — exposes planning, tool calling, file editing, and MCP integration via a simple Java API. Currently in technical preview.
 - **Links:** [Docs](https://github.github.com/copilot-sdk-java/) · [GitHub](https://github.com/github/copilot-sdk-java)
+
+### Graal Script Agent
+- **Badge:** Library
+- **Description:** Early-preview Java library for adding prompt-authored extensions to Java applications. Developers define where an application can be extended; users prompt for the behavior they need. It produces reusable JavaScript or Python extensions that execute locally in a sandbox without another model call.
+- **Links:** [Docs](https://graalvm.github.io/graal-script-agent/latest/) · [GitHub](https://github.com/graalvm/graal-script-agent) · [Blog](https://medium.com/graalvm/when-prompts-become-plugins-34a737d30f54)
 
 ### Tracy (JetBrains)
 - **Badge:** Library
