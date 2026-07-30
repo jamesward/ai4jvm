@@ -381,6 +381,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Official Testcontainers-for-Java module for spinning up disposable Ollama containers in integration tests — pull models and commit custom images for reuse. Commonly paired with Spring AI, LangChain4j, and Quarkus LangChain4j to test local-LLM code paths.
 - **Links:** [Docs](https://java.testcontainers.org/modules/ollama/) · [GitHub](https://github.com/testcontainers/testcontainers-java/tree/main/modules/ollama)
 
+### Camel LangChain4j Components
+- **Badge:** Framework
+- **Description:** Official Apache Camel components that let Camel routes call any LangChain4j-supported LLM. The chat component (since Camel 4.5) covers single, prompted, and multi-turn LLM calls with RAG enrichment; the agent component (since Camel 4.14) adds stateful/stateless AI agents that can invoke Camel routes as tools (via `ai-tool`) plus MCP client integration. Producer-only endpoints (`langchain4j-chat:id`, `langchain4j-agent:id`) fit naturally into existing integration pipelines.
+- **Links:** [Chat Component Docs](https://camel.apache.org/components/next/langchain4j-chat-component.html) · [Agent Component Docs](https://camel.apache.org/components/next/langchain4j-agent-component.html) · [GitHub](https://github.com/apache/camel)
+
 ---
 
 ## Java with Code Assistants
