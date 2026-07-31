@@ -100,6 +100,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.0.0
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.0
 - https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/
+- https://foojay.io/today/building-ai-systems-with-mongodb-implementing-the-planning-pattern/
 - https://a2aproject.github.io/a2a-java/posts/a2a-java-sdk-1-1-0-final-released/
 - https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
@@ -168,7 +169,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### Akka Agents
 - **Badge:** Framework
-- **Description:** Agentic AI platform built on Akka's actor model for distributed, resilient systems. Declarative Effects API for building goal-directed agents with durable memory, multi-agent orchestration, and automatic scaling. MCP and A2A protocol support, pluggable LLM providers, runtime prompt updates, and agents auto-exposed as HTTP, gRPC, or MCP endpoints. Java and Scala SDKs.
+- **Description:** Agentic AI platform built on Akka's actor model for distributed, resilient systems. Declarative Effects API for building goal-directed agents with durable memory, multi-agent orchestration, and automatic scaling. Task-based autonomous agents with pause/resume/terminate lifecycle control and task result subscriptions, alongside request-based agents. MCP and A2A protocol support, pluggable LLM providers, runtime prompt updates, and agents auto-exposed as HTTP, gRPC, or MCP endpoints. Java and Scala SDKs.
 - **Links:** [Docs](https://doc.akka.io/) · [GitHub](https://github.com/akka/akka-sdk) · [Website](https://akka.io/akka-agents)
 
 ### Koog (JetBrains)
@@ -798,6 +799,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/247332?v=4
 - **Role:** Developer Advocate at Tessl, co-author of *Liquid Software* and *DevOps Tools for Java Developers*
 - **Links:** [@jbaruch](https://twitter.com/jbaruch) · [Bluesky](https://bsky.app/profile/jbaru.ch) · [GitHub](https://github.com/jbaruch) · [LinkedIn](https://www.linkedin.com/in/jbaruch/) · [Website](https://speaking.jbaru.ch)
+
+### Otavio Santana
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** OS
+- **Photo:** https://avatars.githubusercontent.com/u/863011?v=4
+- **Role:** Jakarta Data/Jakarta NoSQL spec lead, Eclipse JNoSQL creator, writes on building AI agents with Jakarta EE and LangChain4j
+- **Links:** [@otaviojava](https://twitter.com/otaviojava) · [GitHub](https://github.com/otaviojava) · [LinkedIn](https://www.linkedin.com/in/otaviojava/) · [Website](https://otaviojava.com/) · [YouTube](https://www.youtube.com/@otaviojava)
 
 ### Oleg Šelajev
 
