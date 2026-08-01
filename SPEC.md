@@ -535,6 +535,11 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Description:** Java-native LLM inference with automatic GPU acceleration via TornadoVM. Supports Llama 3, Mistral, Qwen, Phi-3, and IBM Granite models in GGUF format. TornadoVM translates Java bytecode to GPU kernels (OpenCL, PTX, SPIR-V). From the University of Manchester's Beehive Lab.
 - **Links:** [InfoQ](https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/)
 
+### TornadoVM
+- **Badge:** Inference
+- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v5.2.0 added AI-focused kernels: native FP8 conversion, FP8/BF16 tensor-core matrix multiply, cuBLAS/CUTLASS-compatible BFloat16 arrays, and batched FP16 GEMM. From the University of Manchester's Beehive Lab.
+- **Links:** [Website](https://www.tornadovm.org) · [GitHub](https://github.com/beehive-lab/TornadoVM) · [Docs](https://tornadovm.readthedocs.io/en/latest/)
+
 ### TensorFlow Java
 - **Badge:** Training
 - **Description:** Java bindings for TensorFlow, maintained by the TensorFlow JVM SIG. Train and deploy TF models entirely in Java. Available as an optional Tribuo integration. Suitable for teams that want to stay within the JVM ecosystem while using TensorFlow's model formats.
@@ -656,6 +661,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/193434?v=4
 - **Role:** NYJavaSIG founder, AI 4 Java educator, JSR 381 co-author
 - **Links:** [@frankgreco](https://twitter.com/frankgreco) · [Bluesky](https://bsky.app/profile/frankgreco.bsky.social) · [GitHub](https://github.com/fgreco55) · [LinkedIn](https://www.linkedin.com/in/frankdgreco/) · [Website](https://ai4java.com)
+
+### Ivar Grimstad
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** IG
+- **Photo:** https://avatars.githubusercontent.com/u/149188?v=4
+- **Role:** Jakarta EE Developer Advocate — Eclipse Foundation; speaks on bringing AI to Jakarta EE (Jakarta Agentic AI)
+- **Links:** [@ivar_grimstad](https://twitter.com/ivar_grimstad) · [Bluesky](https://bsky.app/profile/theguywiththeduketattoo.com) · [GitHub](https://github.com/ivargrimstad) · [LinkedIn](https://www.linkedin.com/in/ivargrimstad/) · [Website](https://www.agilejava.eu)
 
 ### Rod Johnson
 
