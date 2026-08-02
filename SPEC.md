@@ -86,6 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://foojay.io/today/how-to-create-a-spring-boot-fraud-scoring-service/
 - https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/
 - https://medium.com/graalvm/when-prompts-become-plugins-34a737d30f54
 - https://inside.java/2026/07/25/design-java-mcp-tool/
@@ -755,6 +756,15 @@ Notes:
 - **Role:** Creator of Tools4AI
 - **Links:** [GitHub](https://github.com/vishalmysore) · [LinkedIn](https://www.linkedin.com/in/vishalrow/) · [Blog](https://medium.com/@visrow)
 
+### Daniel Oh
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** DO
+- **Photo:** https://avatars.githubusercontent.com/u/14066977?v=4
+- **Role:** Senior Principal Developer Advocate — Red Hat; CNCF Ambassador speaking on agentic AI and cloud-native Java
+- **Links:** [@danieloh30](https://twitter.com/danieloh30) · [Bluesky](https://bsky.app/profile/danieloh30.bsky.social) · [LinkedIn](https://www.linkedin.com/in/daniel-oh-083818112/)
+
 ### Konstantin Pavlov
 
 - **Badge:** Person
@@ -762,6 +772,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/1517853?v=4
 - **Role:** Creator of Tachyon; maintainer of mokksy.dev and LangChain4j Kotlin extensions
 - **Links:** [Bluesky](https://bsky.app/profile/kpavlov.me) · [GitHub](https://github.com/kpavlov) · [Blog](https://kpavlov.me)
+
+### Susanne Pieterse
+
+- **Badge:** Person
+- **Initials:** SP
+- **Photo:** https://avatars.githubusercontent.com/u/18641509?v=4
+- **Role:** Senior Software Engineer & iSAQB-certified Software Architect — OPEN.nl; LangChain4j contributor teaching Java teams to build reliable AI agents
+- **Links:** [Bluesky](https://bsky.app/profile/susivic.bsky.social) · [GitHub](https://github.com/Sus4nne)
 
 ### Mark Pollack
 
