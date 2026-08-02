@@ -86,6 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://foojay.io/today/how-to-create-a-spring-boot-fraud-scoring-service/
 - https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/
 - https://medium.com/graalvm/when-prompts-become-plugins-34a737d30f54
 - https://inside.java/2026/07/25/design-java-mcp-tool/
@@ -535,6 +536,11 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Description:** Java-native LLM inference with automatic GPU acceleration via TornadoVM. Supports Llama 3, Mistral, Qwen, Phi-3, and IBM Granite models in GGUF format. TornadoVM translates Java bytecode to GPU kernels (OpenCL, PTX, SPIR-V). From the University of Manchester's Beehive Lab.
 - **Links:** [InfoQ](https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/)
 
+### TornadoVM
+- **Badge:** Inference
+- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v5.2.0 added AI-focused kernels: native FP8 conversion, FP8/BF16 tensor-core matrix multiply, cuBLAS/CUTLASS-compatible BFloat16 arrays, and batched FP16 GEMM. From the University of Manchester's Beehive Lab.
+- **Links:** [Website](https://www.tornadovm.org) · [GitHub](https://github.com/beehive-lab/TornadoVM) · [Docs](https://tornadovm.readthedocs.io/en/latest/)
+
 ### TensorFlow Java
 - **Badge:** Training
 - **Description:** Java bindings for TensorFlow, maintained by the TensorFlow JVM SIG. Train and deploy TF models entirely in Java. Available as an optional Tribuo integration. Suitable for teams that want to stay within the JVM ecosystem while using TensorFlow's model formats.
@@ -657,6 +663,15 @@ Notes:
 - **Role:** NYJavaSIG founder, AI 4 Java educator, JSR 381 co-author
 - **Links:** [@frankgreco](https://twitter.com/frankgreco) · [Bluesky](https://bsky.app/profile/frankgreco.bsky.social) · [GitHub](https://github.com/fgreco55) · [LinkedIn](https://www.linkedin.com/in/frankdgreco/) · [Website](https://ai4java.com)
 
+### Ivar Grimstad
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** IG
+- **Photo:** https://avatars.githubusercontent.com/u/149188?v=4
+- **Role:** Jakarta EE Developer Advocate — Eclipse Foundation; speaks on bringing AI to Jakarta EE (Jakarta Agentic AI)
+- **Links:** [@ivar_grimstad](https://twitter.com/ivar_grimstad) · [Bluesky](https://bsky.app/profile/theguywiththeduketattoo.com) · [GitHub](https://github.com/ivargrimstad) · [LinkedIn](https://www.linkedin.com/in/ivargrimstad/) · [Website](https://www.agilejava.eu)
+
 ### Rod Johnson
 
 - **Badge:** Person
@@ -741,6 +756,15 @@ Notes:
 - **Role:** Creator of Tools4AI
 - **Links:** [GitHub](https://github.com/vishalmysore) · [LinkedIn](https://www.linkedin.com/in/vishalrow/) · [Blog](https://medium.com/@visrow)
 
+### Daniel Oh
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** DO
+- **Photo:** https://avatars.githubusercontent.com/u/14066977?v=4
+- **Role:** Senior Principal Developer Advocate — Red Hat; CNCF Ambassador speaking on agentic AI and cloud-native Java
+- **Links:** [@danieloh30](https://twitter.com/danieloh30) · [Bluesky](https://bsky.app/profile/danieloh30.bsky.social) · [LinkedIn](https://www.linkedin.com/in/daniel-oh-083818112/)
+
 ### Konstantin Pavlov
 
 - **Badge:** Person
@@ -748,6 +772,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/1517853?v=4
 - **Role:** Creator of Tachyon; maintainer of mokksy.dev and LangChain4j Kotlin extensions
 - **Links:** [Bluesky](https://bsky.app/profile/kpavlov.me) · [GitHub](https://github.com/kpavlov) · [Blog](https://kpavlov.me)
+
+### Susanne Pieterse
+
+- **Badge:** Person
+- **Initials:** SP
+- **Photo:** https://avatars.githubusercontent.com/u/18641509?v=4
+- **Role:** Senior Software Engineer & iSAQB-certified Software Architect — OPEN.nl; LangChain4j contributor teaching Java teams to build reliable AI agents
+- **Links:** [Bluesky](https://bsky.app/profile/susivic.bsky.social) · [GitHub](https://github.com/Sus4nne)
 
 ### Mark Pollack
 
