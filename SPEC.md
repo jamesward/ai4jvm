@@ -86,6 +86,8 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://www.infoq.com/news/2026/08/java-news-roundup-jul27-2026/
+- https://github.com/jakartaee/agentic-ai/releases/tag/1.0.0-M1
 - https://foojay.io/today/how-to-create-a-spring-boot-fraud-scoring-service/
 - https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/
 - https://medium.com/graalvm/when-prompts-become-plugins-34a737d30f54
@@ -388,6 +390,16 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Official Apache Camel components that let Camel routes call any LangChain4j-supported LLM. The chat component (since Camel 4.5) covers single, prompted, and multi-turn LLM calls with RAG enrichment; the agent component (since Camel 4.14) adds stateful/stateless AI agents that can invoke Camel routes as tools (via `ai-tool`) plus MCP client integration. Producer-only endpoints (`langchain4j-chat:id`, `langchain4j-agent:id`) fit naturally into existing integration pipelines.
 - **Links:** [Chat Component Docs](https://camel.apache.org/components/next/langchain4j-chat-component.html) · [Agent Component Docs](https://camel.apache.org/components/next/langchain4j-agent-component.html) · [GitHub](https://github.com/apache/camel)
 
+### Google ADK for Kotlin
+- **Badge:** Framework
+- **Description:** Google's official Kotlin port of the Agent Development Kit — code-first orchestration of tools, agents, and multi-agent hierarchies in Kotlin, with an included dev UI for testing and evaluation. A companion Android flavor adds on-device agent support (Gemini Nano) with cloud fallback.
+- **Links:** [Docs](https://adk.dev/) · [GitHub](https://github.com/google/adk-kotlin) · [Announcement](https://developers.googleblog.com/adk-kotlin-android-building-ai-agents/)
+
+### LLM4S
+- **Badge:** Framework
+- **Description:** Scala 3 framework for building LLM applications — multi-provider support (OpenAI, Anthropic, Azure OpenAI, Gemini, DeepSeek, Cohere, Mistral, OpenRouter, Ollama), an agent framework with tool calling via ScalaMeta, RAG/vector stores, multimodal input, and OpenTelemetry/Langfuse tracing. Broader in scope than the site's other Scala entries (kyo-ai, zio-bedrock-converse) — closer to a "LangChain4j for Scala." Pre-1.0, MIT licensed, active development with weekly community dev-hours.
+- **Links:** [Website](https://llm4s.org/) · [GitHub](https://github.com/llm4s/llm4s)
+
 ---
 
 ## Java with Code Assistants
@@ -626,6 +638,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/141109?v=4
 - **Role:** Spring Framework core committer, Spring AI/MCP integration — Broadcom
 - **Links:** [@sdeleuze](https://x.com/sdeleuze) · [Bluesky](https://bsky.app/profile/seb.deleuze.fr) · [GitHub](https://github.com/sdeleuze) · [LinkedIn](https://www.linkedin.com/in/deleuze) · [Blog](https://seb.deleuze.fr)
+
+### Julien Dubois
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** JD
+- **Photo:** https://avatars.githubusercontent.com/u/316835?v=4
+- **Role:** Creator of JHipster; leads a Developer Relations team at Microsoft focused on agentic developer tools for Java/Spring Boot
+- **Links:** [@juliendubois](https://twitter.com/juliendubois) · [Bluesky](https://bsky.app/profile/jdubois.bsky.social) · [GitHub](https://github.com/jdubois) · [LinkedIn](https://www.linkedin.com/in/juliendubois/) · [Website](https://www.julien-dubois.com/)
 
 ### Markus Eisele
 
