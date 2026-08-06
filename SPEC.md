@@ -327,7 +327,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### Tiberius
 - **Badge:** Library
-- **Description:** Java security and safety testing framework for LLM applications, integrating with JUnit 5 and Spring Boot so adversarial testing lives in the standard test suite. 200+ attack probes across the OWASP LLM Top 10, probabilistic testing (via PUnit) for non-deterministic outputs, fixture-based regression testing, bias testing, model fingerprinting, and LangChain4j guardrail validation. Apache 2.0; created1 by Iryna Dohndorf.
+- **Description:** Java security testing framework for LLM applications, integrating with JUnit 5 and Spring Boot so adversarial testing lives in the standard test suite. 200+ attack probes across the OWASP LLM Top 10, probabilistic testing (via PUnit) for non-deterministic outputs, fixture-based regression testing, and LangChain4j guardrail validation. Apache 2.0; created by Karakun Group's Iryna Dohndorf.
 - **Links:** [GitHub](https://github.com/tiberius-security/tiberius) · [Blog](https://foojay.io/today/tiberius-a-security-testing-framework-for-llm-applications-in-java/)
 
 ### Ollama4j
