@@ -327,7 +327,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### Tiberius
 - **Badge:** Library
-- **Description:** Java security testing framework for LLM applications, integrating with JUnit 5 and Spring Boot so adversarial testing lives in the standard test suite. 200+ attack probes across the OWASP LLM Top 10, probabilistic testing (via PUnit) for non-deterministic outputs, fixture-based regression testing, and LangChain4j guardrail validation. Apache 2.0; created by Karakun Group's Iryna Dohndorf.
+- **Description:** Java security and safety testing framework for LLM applications, integrating with JUnit 5 and Spring Boot so adversarial testing lives in the standard test suite. 200+ attack probes across the OWASP LLM Top 10, probabilistic testing (via PUnit) for non-deterministic outputs, fixture-based regression testing, bias testing, model fingerprinting, and LangChain4j guardrail validation. Apache 2.0; created1 by Iryna Dohndorf.
 - **Links:** [GitHub](https://github.com/tiberius-security/tiberius) · [Blog](https://foojay.io/today/tiberius-a-security-testing-framework-for-llm-applications-in-java/)
 
 ### Ollama4j
@@ -638,6 +638,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/141109?v=4
 - **Role:** Spring Framework core committer, Spring AI/MCP integration — Broadcom
 - **Links:** [@sdeleuze](https://x.com/sdeleuze) · [Bluesky](https://bsky.app/profile/seb.deleuze.fr) · [GitHub](https://github.com/sdeleuze) · [LinkedIn](https://www.linkedin.com/in/deleuze) · [Blog](https://seb.deleuze.fr)
+
+### Iryna Dohndorf
+
+- **Badge:** Person
+- **Dr.-Ing.**
+- **Initials:** ID
+- **Photo:** https://avatars.githubusercontent.com/u/79046580?v=4
+- **Role:** Creator of Tiberius - Java security and safety testing framework for LLM applications; software engineer at Karakun; her work sits at the intersection of Java engineering, AI safety, and antifragile system design
+- **Links:** [GitHub](https://github.com/IDohndorf) · [LinkedIn](https://www.linkedin.com/in/iryna-dohndorf/) · [Website](https://iryna-dohndorf.netlify.app/)
 
 ### Julien Dubois
 
