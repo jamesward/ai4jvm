@@ -639,6 +639,15 @@ Notes:
 - **Role:** Spring Framework core committer, Spring AI/MCP integration — Broadcom
 - **Links:** [@sdeleuze](https://x.com/sdeleuze) · [Bluesky](https://bsky.app/profile/seb.deleuze.fr) · [GitHub](https://github.com/sdeleuze) · [LinkedIn](https://www.linkedin.com/in/deleuze) · [Blog](https://seb.deleuze.fr)
 
+### Iryna Dohndorf
+
+- **Badge:** Person
+- **Dr.-Ing.**
+- **Initials:** ID
+- **Photo:** https://avatars.githubusercontent.com/u/79046580?v=4
+- **Role:** Creator of Tiberius - Java security and safety testing framework for LLM applications; software engineer at Karakun; her work sits at the intersection of Java engineering, AI safety, and antifragile system design
+- **Links:** [GitHub](https://github.com/IDohndorf) · [LinkedIn](https://www.linkedin.com/in/iryna-dohndorf/) · [Website](https://iryna-dohndorf.netlify.app/)
+
 ### Julien Dubois
 
 - **Badge:** Person
