@@ -86,10 +86,12 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.1
 - https://www.infoq.com/news/2026/08/java-news-roundup-jul27-2026/
 - https://github.com/jakartaee/agentic-ai/releases/tag/1.0.0-M1
 - https://foojay.io/today/how-to-create-a-spring-boot-fraud-scoring-service/
 - https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/
+- https://micronaut.io/2026/07/27/micronaut-framework-5-1-0-release/
 - https://medium.com/graalvm/when-prompts-become-plugins-34a737d30f54
 - https://inside.java/2026/07/25/design-java-mcp-tool/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.0.0
@@ -579,6 +581,14 @@ Notes:
 - Add profile photos if found.
 - Add Twitter, GitHub, LinkedIn, Bluesky, YouTube, if available.
 
+### Sandra Ahlgrimm
+
+- **Badge:** Person
+- **Initials:** SA
+- **Photo:** https://avatars.githubusercontent.com/u/5214683?v=4
+- **Role:** Senior Cloud Advocate for Java — Microsoft/GitHub; focused on GitHub Copilot for Java developers and LangChain4j integrations, co-leads a local JUG, and represents Microsoft on the GraalVM Program Advisory Board
+- **Links:** [GitHub](https://github.com/sandraahlgrimm) · [LinkedIn](https://www.linkedin.com/in/sandraahlgrimm/)
+
 ### Jean-François Arcand
 
 - **Badge:** Person
@@ -778,6 +788,15 @@ Notes:
 - **Role:** Creator of AI Unfied Process and jOOQ MCP Server
 - **Links:** [@simas_ch](https://twitter.com/simas_ch) · [GitHub](https://github.com/simach) · [LinkedIn](https://www.linkedin.com/in/simonmartinelli/)
 
+### Ana-Maria Mihalceanu
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** AM
+- **Photo:** https://avatars.githubusercontent.com/u/9703337?v=4
+- **Role:** Senior Developer Advocate, Java Platform Group at Oracle; writes and speaks on Java MCP tooling and AI, co-founder of the Bucharest Software Craftsmanship Community
+- **Links:** [@ammbra1508](https://twitter.com/ammbra1508) · [GitHub](https://github.com/ammbra) · [LinkedIn](https://www.linkedin.com/in/ana-maria-mihalceanu-1508/)
+
 ### Vishal Mysore
 
 - **Badge:** Person
@@ -794,6 +813,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/14066977?v=4
 - **Role:** Senior Principal Developer Advocate — Red Hat; CNCF Ambassador speaking on agentic AI and cloud-native Java
 - **Links:** [@danieloh30](https://twitter.com/danieloh30) · [Bluesky](https://bsky.app/profile/danieloh30.bsky.social) · [LinkedIn](https://www.linkedin.com/in/daniel-oh-083818112/)
+
+### Michalis Papadimitriou
+
+- **Badge:** Person
+- **Initials:** MP
+- **Photo:** https://avatars.githubusercontent.com/u/8652854?v=4
+- **Role:** Research Fellow, University of Manchester and Senior Software Engineer at Neo4j; TornadoVM core maintainer and lead author of GPULlama3.java, GPU-accelerated LLM inference in pure Java
+- **Links:** [GitHub](https://github.com/mikepapadim) · [LinkedIn](https://www.linkedin.com/in/michalis-papadimitriou/) · [Website](https://mpapadimitriou.com/)
 
 ### Konstantin Pavlov
 
@@ -862,6 +889,14 @@ Notes:
 - **Role:** Developer Advocate at Tessl, co-author of *Liquid Software* and *DevOps Tools for Java Developers*
 - **Links:** [@jbaruch](https://twitter.com/jbaruch) · [Bluesky](https://bsky.app/profile/jbaru.ch) · [GitHub](https://github.com/jbaruch) · [LinkedIn](https://www.linkedin.com/in/jbaruch/) · [Website](https://speaking.jbaru.ch)
 
+### Timo Salm
+
+- **Badge:** Person
+- **Initials:** TS
+- **Photo:** https://avatars.githubusercontent.com/u/52704922?v=4
+- **Role:** Principal Solutions Engineer, VMware Tanzu at Broadcom; frequent conference speaker comparing Java agentic-AI frameworks (Spring AI, LangChain4j, Embabel)
+- **Links:** [@salmto](https://twitter.com/salmto) · [GitHub](https://github.com/timosalm) · [LinkedIn](https://www.linkedin.com/in/timosalm)
+
 ### Otavio Santana
 
 - **Badge:** Person
@@ -879,6 +914,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/426039?v=4
 - **Role:** Developer Relations Lead for AI — Docker
 - **Links:** [@shelajev](https://twitter.com/shelajev) · [GitHub](https://github.com/shelajev) · [LinkedIn](https://www.linkedin.com/in/shelajev/)
+
+### Zoran Sevarac
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** ZS
+- **Photo:** https://avatars.githubusercontent.com/u/158153?v=4
+- **Role:** Associate Professor, University of Belgrade; creator of Deep Netts and Neuroph, pure-Java deep learning libraries, and JSR-381 (Visual Recognition API) co-lead
+- **Links:** [GitHub](https://github.com/sevarac) · [LinkedIn](https://www.linkedin.com/in/zoran-sevarac-phd-49a9a411/) · [Website](https://www.zoransevarac.com/)
 
 ### Bartosz Sorrentino
 
