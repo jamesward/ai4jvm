@@ -86,6 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/a2aproject/a2a-java/releases/tag/v1.2.0.Final
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.1
 - https://www.infoq.com/news/2026/08/java-news-roundup-jul27-2026/
 - https://github.com/jakartaee/agentic-ai/releases/tag/1.0.0-M1
@@ -239,7 +240,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### A2A Java SDK
 - **Badge:** SDK
-- **Description:** The official Java SDK for [Agent-2-Agent Protocol (A2A)](https://a2a-protocol.org) servers and clients. Reference implementation based on Quarkus. Reached 1.0 GA in June 2026 with full JSON-RPC/gRPC/REST transport support, OpenTelemetry integration, and a cross-SDK interop test kit; 1.1.0 added a `TaskAuthorizationProvider` SPI for per-user task authorization.
+- **Description:** The official Java SDK for [Agent-2-Agent Protocol (A2A)](https://a2a-protocol.org) servers and clients. Reference implementation based on Quarkus. Reached 1.0 GA in June 2026 with full JSON-RPC/gRPC/REST transport support, OpenTelemetry integration, and a cross-SDK interop test kit; 1.1.0 added a `TaskAuthorizationProvider` SPI for per-user task authorization; 1.2.0 (Aug 2026) adds programmatic auth wiring and a `TaskStreamLifecycleHook`, with breaking changes to `TaskState` naming and cross-module package resolution.
 - **Links:** [GitHub](https://github.com/a2aproject/a2a-java)
 
 ### A2A Java SDK for Jakarta Servers
