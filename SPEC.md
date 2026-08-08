@@ -99,6 +99,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v5.2.0-jdk21
 - https://inside.java/2026/07/23/podcast-063/
 - https://foojay.io/today/ai-found-the-bugs-whos-patching-your-eol-java-code/
+- https://github.com/JetBrains/koog/releases/tag/1.1.1
 - https://javapro.io/2026/07/16/solving-spring-ais-ui-challenge-with-ag-uis-java-sdk/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.18.0
 - https://foojay.io/today/i-asked-github-copilot-to-profile-a-java-app-it-found-a-bug-in-my-heap-sizing-and-offered-to-fix-it/
@@ -773,6 +774,14 @@ Notes:
 - **Role:** Creator of Jlama — Java LLM inference
 - **Links:** [@tjake](https://twitter.com/tjake) · [GitHub](https://github.com/tjake) · [LinkedIn](https://www.linkedin.com/in/tjake/)
 
+### Loïc Magnette
+
+- **Badge:** Person
+- **Initials:** LM
+- **Photo:** https://avatars.githubusercontent.com/u/6390187?v=4
+- **Role:** Senior Software Engineer — Oniryx; BeJUG (Belgian Java User Group) co-organizer, writes and speaks on LangChain4j agentic workflows for Quarkus
+- **Links:** [@LoMagnette](https://x.com/LoMagnette) · [Bluesky](https://bsky.app/profile/lomagnette.bsky.social) · [GitHub](https://github.com/lomagnette) · [LinkedIn](https://www.linkedin.com/in/lomagnette/) · [Blog](https://lomagnette.github.io/)
+
 ### François Martin
 
 - **Badge:** Person
@@ -1002,6 +1011,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/65043?v=4
 - **Role:** Developer Advocate — Java, Kotlin, Cloud, AI
 - **Links:** [@_JamesWard](https://twitter.com/_jamesward) · [Bluesky](https://bsky.app/profile/jamesward.com) · [GitHub](https://github.com/jamesward) · [LinkedIn](https://www.linkedin.com/in/jamesward) · [Blog](https://jamesward.com)
+
+### Pascal Wilbrink
+
+- **Badge:** Person
+- **Initials:** PW
+- **Photo:** https://avatars.githubusercontent.com/u/5970214?v=4
+- **Role:** Senior Software Developer — OpenValue; creator of the Spring AI AG-UI Java SDK, bringing the AG-UI protocol to Java/Spring AI
+- **Links:** [GitHub](https://github.com/pascalwilbrink) · [Website](https://pascalwilbrink.github.io)
 
 ---
 
