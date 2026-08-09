@@ -118,7 +118,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://quarkus.io/blog/introducing-voting-pattern/
 - https://micronaut.io/2026/05/20/micronaut-framework-5-0-0-released/
 - https://blog.ovhcloud.com/devoxx-france-2026/
-- https://quarkus.io/blog/introducing-agent-mcp/
 
 ---
 
@@ -403,6 +402,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Framework
 - **Description:** Scala 3 framework for building LLM applications — multi-provider support (OpenAI, Anthropic, Azure OpenAI, Gemini, DeepSeek, Cohere, Mistral, OpenRouter, Ollama), an agent framework with tool calling via ScalaMeta, RAG/vector stores, multimodal input, and OpenTelemetry/Langfuse tracing. Broader in scope than the site's other Scala entries (kyo-ai, zio-bedrock-converse) — closer to a "LangChain4j for Scala." Pre-1.0, MIT licensed, active development with weekly community dev-hours.
 - **Links:** [Website](https://llm4s.org/) · [GitHub](https://github.com/llm4s/llm4s)
+
+### Agents-Flex
+- **Badge:** Framework
+- **Description:** Lightweight Java AI application framework positioned as a Spring AI counterpart — unified abstractions for LLM calls, tool calling, agents (ReAct, routing, sub-agents), RAG with vector stores, MCP, a Skills system, and Text2SQL. Runs on plain Java, Spring Boot, or other JVM stacks (Java 8+). Apache 2.0, with frequent releases.
+- **Links:** [GitHub](https://github.com/agents-flex/agents-flex)
 
 ---
 
