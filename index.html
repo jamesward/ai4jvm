@@ -111,7 +111,8 @@
       {"@type": "ListItem", "position": 54, "name": "Camel LangChain4j Components", "url": "https://camel.apache.org/components/next/langchain4j-chat-component.html"},
       {"@type": "ListItem", "position": 55, "name": "Google ADK for Kotlin", "url": "https://adk.dev/"},
       {"@type": "ListItem", "position": 56, "name": "LLM4S", "url": "https://llm4s.org/"},
-      {"@type": "ListItem", "position": 57, "name": "Agents-Flex", "url": "https://github.com/agents-flex/agents-flex"}
+      {"@type": "ListItem", "position": 57, "name": "Agents-Flex", "url": "https://github.com/agents-flex/agents-flex"},
+      {"@type": "ListItem", "position": 58, "name": "Spring AI Alibaba", "url": "https://github.com/alibaba/spring-ai-alibaba"}
     ]
   }
   </script>
@@ -403,6 +404,7 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Headlines</h2>
       <ul>
         <li><a href="https://github.com/a2aproject/a2a-java/releases/tag/v1.2.0.Final">A2A Java SDK 1.2.0.Final Released</a> &mdash; adds programmatic auth wiring and a TaskStreamLifecycleHook, upgrades to Quarkus 3.37.3, and ships breaking changes: cross-module split-package resolution, <code>TaskState.UNRECOGNIZED</code> renamed to <code>TASK_STATE_UNSPECIFIED</code> per spec, and corrected authorization enforcement on referenced task lookups</li>
+        <li><a href="https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/">Camel Routes as AI Tools: Unified Tooling and MCP Server in Camel 4.22</a> &mdash; introduces <code>camel-ai-tool</code>, a unified tool abstraction so a route defined once works with LangChain4j, Spring AI, or OpenAI, and <code>camel-mcp-server</code>, which exposes tagged routes directly as MCP tools</li>
         <li><a href="https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.1">AgentScope Java 2.0.1 Released</a> &mdash; maintenance release expanding model-provider support (DeepSeek, GLM, Kimi, MiniMax) and hardening Harness subagent/permission handling, plus fixes for memory leaks and streaming tool-arg repair</li>
         <li><a href="https://www.infoq.com/news/2026/08/java-news-roundup-jul27-2026/">InfoQ Java News Roundup</a> &mdash; weekly Java ecosystem roundup covering two new JDK 28 JEPs, Jakarta Agentic AI's first milestone release, GPULlama3.java 1.0.0 GA, GraalVM 25.2's new Graal Script Agent, and point releases across Micronaut, Quarkus, and JobRunr</li>
         <li><a href="https://github.com/jakartaee/agentic-ai/releases/tag/1.0.0-M1">Jakarta Agentic AI 1.0.0-M1</a> &mdash; first milestone release of the new Jakarta EE agentic AI specification, adding TCK behavioral-test infrastructure and module/javadoc improvements ahead of 1.0</li>
@@ -975,7 +977,7 @@
       <div class="card">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://camel.apache.org/components/next/langchain4j-chat-component.html">Camel LangChain4j Components</a></h3>
-        <p>Official Apache Camel components that let Camel routes call any LangChain4j-supported LLM. The chat component (since Camel 4.5) covers single, prompted, and multi-turn LLM calls with RAG enrichment; the agent component (since Camel 4.14) adds stateful/stateless AI agents that can invoke Camel routes as tools (via <code>ai-tool</code>) plus MCP client integration. Producer-only endpoints (<code>langchain4j-chat:id</code>, <code>langchain4j-agent:id</code>) fit naturally into existing integration pipelines.</p>
+        <p>Official Apache Camel components that let Camel routes call any LangChain4j-supported LLM. The chat component (since Camel 4.5) covers single, prompted, and multi-turn LLM calls with RAG enrichment; the agent component (since Camel 4.14) adds stateful/stateless AI agents that can invoke Camel routes as tools plus MCP client integration. Producer-only endpoints (<code>langchain4j-chat:id</code>, <code>langchain4j-agent:id</code>) fit naturally into existing integration pipelines. Camel 4.22 generalized tool exposure beyond LangChain4j: <code>camel-ai-tool</code> defines a route-as-tool once for use with LangChain4j, Spring AI, or OpenAI, and <code>camel-mcp-server</code> exposes tagged routes directly as MCP tools.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://camel.apache.org/components/next/langchain4j-chat-component.html" title="Chat Component Docs"></a>
           <a class="icon icon-web" href="https://camel.apache.org/components/next/langchain4j-agent-component.html" title="Agent Component Docs"></a>
@@ -1010,6 +1012,15 @@
         <p>Lightweight Java AI application framework positioned as a Spring AI counterpart &mdash; unified abstractions for LLM calls, tool calling, agents (ReAct, routing, sub-agents), RAG with vector stores, MCP, a Skills system, and Text2SQL. Runs on plain Java, Spring Boot, or other JVM stacks (Java 8+). Apache 2.0, with frequent releases.</p>
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/agents-flex/agents-flex" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/alibaba/spring-ai-alibaba">Spring AI Alibaba</a></h3>
+        <p>Alibaba Cloud's production-ready framework for agentic, workflow, and multi-agent Java applications, built on top of Spring AI. Graph-based orchestration (<code>SequentialAgent</code>, <code>ParallelAgent</code>, <code>RoutingAgent</code>, <code>LoopAgent</code>), multimodal ReactAgent support, MCP integration, and a built-in Admin observability/eval console. JDK 17+, Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/alibaba/spring-ai-alibaba" title="GitHub"></a>
         </div>
       </div>
 
@@ -1337,6 +1348,21 @@
             <a class="icon icon-x" href="https://twitter.com/jfarcand" title="@jfarcand"></a>
             <a class="icon icon-github" href="https://github.com/jfarcand" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/jfarcand/" title="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/12056979?v=4" alt="Zineb Bendhiba"></div>
+        <div class="person-info">
+          <h4>Zineb Bendhiba</h4>
+          <p>Principal Software Engineer &mdash; IBM; Apache Camel PMC member, maintains Camel Quarkus and Quarkus Qdrant, lead author of Camel 4.22's <code>camel-ai-tool</code> and <code>camel-mcp-server</code></p>
+          <div class="person-links">
+            <a class="icon icon-x" href="https://x.com/ZinebBendhiba" title="@ZinebBendhiba"></a>
+            <a class="icon icon-bluesky" href="https://bsky.app/profile/zinebbendhiba.com" title="Bluesky"></a>
+            <a class="icon icon-github" href="https://github.com/zbendhiba" title="GitHub"></a>
+            <a class="icon icon-linkedin" href="https://www.linkedin.com/in/zbendhiba/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://zinebbendhiba.com/" title="Website"></a>
           </div>
         </div>
       </div>

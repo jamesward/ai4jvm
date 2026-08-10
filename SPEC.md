@@ -87,6 +87,7 @@ Latest headlines about the Java AI ecosystem. Each item has a link and brief des
 Note: Order by date, newest first. Don't show news older than 3 months
 
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.2.0.Final
+- https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.1
 - https://www.infoq.com/news/2026/08/java-news-roundup-jul27-2026/
 - https://github.com/jakartaee/agentic-ai/releases/tag/1.0.0-M1
@@ -390,7 +391,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### Camel LangChain4j Components
 - **Badge:** Framework
-- **Description:** Official Apache Camel components that let Camel routes call any LangChain4j-supported LLM. The chat component (since Camel 4.5) covers single, prompted, and multi-turn LLM calls with RAG enrichment; the agent component (since Camel 4.14) adds stateful/stateless AI agents that can invoke Camel routes as tools (via `ai-tool`) plus MCP client integration. Producer-only endpoints (`langchain4j-chat:id`, `langchain4j-agent:id`) fit naturally into existing integration pipelines.
+- **Description:** Official Apache Camel components that let Camel routes call any LangChain4j-supported LLM. The chat component (since Camel 4.5) covers single, prompted, and multi-turn LLM calls with RAG enrichment; the agent component (since Camel 4.14) adds stateful/stateless AI agents that can invoke Camel routes as tools plus MCP client integration. Producer-only endpoints (`langchain4j-chat:id`, `langchain4j-agent:id`) fit naturally into existing integration pipelines. Camel 4.22 generalized tool exposure beyond LangChain4j: `camel-ai-tool` defines a route-as-tool once for use with LangChain4j, Spring AI, or OpenAI, and `camel-mcp-server` exposes tagged routes directly as MCP tools.
 - **Links:** [Chat Component Docs](https://camel.apache.org/components/next/langchain4j-chat-component.html) · [Agent Component Docs](https://camel.apache.org/components/next/langchain4j-agent-component.html) · [GitHub](https://github.com/apache/camel)
 
 ### Google ADK for Kotlin
@@ -407,6 +408,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Framework
 - **Description:** Lightweight Java AI application framework positioned as a Spring AI counterpart — unified abstractions for LLM calls, tool calling, agents (ReAct, routing, sub-agents), RAG with vector stores, MCP, a Skills system, and Text2SQL. Runs on plain Java, Spring Boot, or other JVM stacks (Java 8+). Apache 2.0, with frequent releases.
 - **Links:** [GitHub](https://github.com/agents-flex/agents-flex)
+
+### Spring AI Alibaba
+- **Badge:** Framework
+- **Description:** Alibaba Cloud's production-ready framework for agentic, workflow, and multi-agent Java applications, built on top of Spring AI. Graph-based orchestration (`SequentialAgent`, `ParallelAgent`, `RoutingAgent`, `LoopAgent`), multimodal ReactAgent support, MCP integration, and a built-in Admin observability/eval console. JDK 17+, Apache 2.0.
+- **Links:** [GitHub](https://github.com/alibaba/spring-ai-alibaba)
 
 ---
 
@@ -603,6 +609,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/51285?v=4
 - **Role:** Creator of the original Atmosphere Framework, Grizzly, and AsyncHttpClient; now building the new Atmosphere real-time transport layer for Java AI agents
 - **Links:** [@jfarcand](https://twitter.com/jfarcand) · [GitHub](https://github.com/jfarcand) · [LinkedIn](https://www.linkedin.com/in/jfarcand/)
+
+### Zineb Bendhiba
+
+- **Badge:** Person
+- **Initials:** ZB
+- **Photo:** https://avatars.githubusercontent.com/u/12056979?v=4
+- **Role:** Principal Software Engineer — IBM; Apache Camel PMC member, maintains Camel Quarkus and Quarkus Qdrant, lead author of Camel 4.22's `camel-ai-tool` and `camel-mcp-server`
+- **Links:** [@ZinebBendhiba](https://x.com/ZinebBendhiba) · [Bluesky](https://bsky.app/profile/zinebbendhiba.com) · [GitHub](https://github.com/zbendhiba) · [LinkedIn](https://www.linkedin.com/in/zbendhiba/) · [Website](https://zinebbendhiba.com/)
 
 ### Bruno Borges
 
