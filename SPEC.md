@@ -86,6 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.2.0.Final
 - https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.1
