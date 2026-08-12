@@ -86,6 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/embabel/embabel-agent/releases/tag/v1.5.0
 - https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.2.0.Final
 - https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/
@@ -518,6 +519,11 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Description:** JVM diagnostics tool for analyzing thread dumps and heap data — deadlocks, bottlenecks, virtual-thread pinning — across JDK 1.4–21+. Usable as a standalone Swing GUI, a JConsole/VisualVM plugin, or a headless MCP server for AI tools like Claude and Cursor.
 - **Links:** [GitHub](https://github.com/irockel/tda)
 
+### JAFAR
+- **Badge:** MCP Server
+- **Description:** Fast, modern Java Flight Recorder (JFR) parser for the JVM with typed and untyped parsing APIs, heap-dump analysis, and an interactive analysis shell. Its `jfr-mcp` module exposes JFR analysis as MCP tools, letting AI agents like Claude directly investigate JVM performance recordings. Apache 2.0, early-stage but active.
+- **Links:** [GitHub](https://github.com/btraceio/jafar) · [Blog](https://jbachorik.github.io/posts/jfr-mcp-serve)
+
 ### SolonCode
 - **Badge:** Assistant
 - **Description:** Open-source, provider-agnostic AI coding agent built on the Solon-AI framework, targeting Java 8–26 runtimes. CLI, web, and desktop-IDE interfaces with auto-edit, approval-based execution, and planning agent modes — an open alternative to Claude Code.
@@ -610,6 +616,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/51285?v=4
 - **Role:** Creator of the original Atmosphere Framework, Grizzly, and AsyncHttpClient; now building the new Atmosphere real-time transport layer for Java AI agents
 - **Links:** [@jfarcand](https://twitter.com/jfarcand) · [GitHub](https://github.com/jfarcand) · [LinkedIn](https://www.linkedin.com/in/jfarcand/)
+
+### Jaroslav Bachorik
+
+- **Badge:** Person
+- **Initials:** JB
+- **Photo:** https://avatars.githubusercontent.com/u/738413?v=4
+- **Role:** JVM serviceability engineer — Datadog; creator of BTrace and JAFAR, a modern JFR parser whose `jfr-mcp` module lets AI agents analyze JVM Flight Recorder data directly
+- **Links:** [@BachorikJ](https://twitter.com/BachorikJ) · [GitHub](https://github.com/jbachorik) · [Blog](https://jbachorik.github.io)
 
 ### Zineb Bendhiba
 
@@ -732,6 +746,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/149188?v=4
 - **Role:** Jakarta EE Developer Advocate — Eclipse Foundation; speaks on bringing AI to Jakarta EE (Jakarta Agentic AI)
 - **Links:** [@ivar_grimstad](https://twitter.com/ivar_grimstad) · [Bluesky](https://bsky.app/profile/theguywiththeduketattoo.com) · [GitHub](https://github.com/ivargrimstad) · [LinkedIn](https://www.linkedin.com/in/ivargrimstad/) · [Website](https://www.agilejava.eu)
+
+### Emmanuel Hugonnet
+
+- **Badge:** Person
+- **Initials:** EH
+- **Photo:** https://avatars.githubusercontent.com/u/73053?v=4
+- **Role:** Software Engineer — IBM; WildFly core contributor driving most of the recent AI work across WildFly AI Feature Pack and LangChain4j-CDI
+- **Links:** [@ehsavoie](https://twitter.com/ehsavoie) · [Bluesky](https://bsky.app/profile/ehsavoie.bsky.social) · [GitHub](https://github.com/ehsavoie) · [LinkedIn](https://www.linkedin.com/in/ehsavoie/) · [Website](https://www.ehsavoie.com)
 
 ### Rod Johnson
 
