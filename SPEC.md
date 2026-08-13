@@ -86,7 +86,9 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://thetalkingapp.medium.com/spring-ai-recipe-building-a-graph-based-agentic-workflow-with-langgraph4j-0fbfcce25a57
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.0
+- https://thetalkingapp.medium.com/spring-ai-recipe-filtering-rag-results-with-metadata-bef2f8a7cb72
 - https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.2.0.Final
 - https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/
@@ -348,8 +350,8 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### kyo-ai
 - **Badge:** Framework
-- **Description:** AI modules for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — `AI.gen[A]` derives the schema from your result type, drives the tool-call loop, and decodes the reply — with durable, crash-resumable agent runs and MCP support. Early stage and under active development. Apache 2.0.
-- **Links:** [GitHub](https://github.com/getkyo/kyo-ai) · [Website](https://getkyo.io/)
+- **Description:** AI module for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — schema derived from your result type, tool-call loop and conversation threading handled automatically, streaming and persistent actor-backed agents included. Multi-provider (OpenAI-compatible, Anthropic). As of Kyo 1.0.0-RC5 (July 2026), `kyo-ai` moved into the main Kyo monorepo alongside a new `kyo-mcp` module for MCP server/client support. Apache 2.0.
+- **Links:** [GitHub](https://github.com/getkyo/kyo/tree/main/kyo-ai) · [Website](https://getkyo.io/)
 
 ### zio-bedrock-converse
 - **Badge:** SDK
@@ -523,6 +525,11 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Badge:** MCP Server
 - **Description:** Fast, modern Java Flight Recorder (JFR) parser for the JVM with typed and untyped parsing APIs, heap-dump analysis, and an interactive analysis shell. Its `jfr-mcp` module exposes JFR analysis as MCP tools, letting AI agents like Claude directly investigate JVM performance recordings. Apache 2.0, early-stage but active.
 - **Links:** [GitHub](https://github.com/btraceio/jafar) · [Blog](https://jbachorik.github.io/posts/jfr-mcp-serve)
+
+### MCP JDWP Java
+- **Badge:** MCP Server
+- **Description:** MCP server giving AI agents full debugger control over running Java applications via JDWP/JDI — inspect locals, fields, threads, and object graphs; set conditional, deferred, and chained breakpoints; evaluate expressions in suspended frames; and trace execution with non-intrusive logpoints and field watchpoints, all without restarting the JVM. Runs entirely locally over STDIO. Built on Spring Boot and Spring AI MCP. MIT licensed.
+- **Links:** [GitHub](https://github.com/fgforrest/mcp-jdwp-java)
 
 ### SolonCode
 - **Badge:** Assistant
