@@ -86,7 +86,9 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/langchain4j/langchain4j/releases/tag/1.19.0
 - https://thetalkingapp.medium.com/spring-ai-recipe-building-a-graph-based-agentic-workflow-with-langgraph4j-0fbfcce25a57
+- https://inside.java/2026/08/12/java-mcp-migration/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.0
 - https://thetalkingapp.medium.com/spring-ai-recipe-filtering-rag-results-with-metadata-bef2f8a7cb72
 - https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
@@ -97,6 +99,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://github.com/jakartaee/agentic-ai/releases/tag/1.0.0-M1
 - https://foojay.io/today/how-to-create-a-spring-boot-fraud-scoring-service/
 - https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/
+- https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.1.0
 - https://micronaut.io/2026/07/27/micronaut-framework-5-1-0-release/
 - https://medium.com/graalvm/when-prompts-become-plugins-34a737d30f54
 - https://inside.java/2026/07/25/design-java-mcp-tool/
@@ -937,6 +940,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/14850786?v=4
 - **Role:** Developer Advocate at Neo4j
 - **Links:** [@JMHReif](https://twitter.com/JMHReif) · [GitHub](https://github.com/JMHReif) · [LinkedIn](https://www.linkedin.com/in/jmhreif/) · [Website](https://jmhreif.com)
+
+### Victor Rentea
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** VR
+- **Photo:** https://avatars.githubusercontent.com/u/12481094?v=4
+- **Role:** Independent trainer and consultant; runs a full-day "Agentic Engineering" workshop covering MCP, context/prompt engineering, and multi-agent orchestration for Java teams, and speaks on AI-augmented engineering at Java conferences
+- **Links:** [@victorrentea](https://x.com/victorrentea) · [GitHub](https://github.com/victorrentea) · [LinkedIn](https://ro.linkedin.com/in/victor-rentea-trainer) · [Website](https://victorrentea.ro/)
 
 ### Baruch Sadogursky
 
