@@ -731,6 +731,15 @@ Notes:
 - **Role:** LangChain4j core team, Sr. Principal Software Engineer at IBM
 - **Links:** [@mariofusco](https://x.com/mariofusco) · [GitHub](https://github.com/mariofusco) · [LinkedIn](https://www.linkedin.com/in/mario-fusco-3467213/)
 
+### Clement Escoffier
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** CE
+- **Photo:** https://avatars.githubusercontent.com/u/402301?v=4
+- **Role:** Red Hat Distinguished Engineer, Quarkus co-creator, works on the Quarkus LangChain4j extension
+- **Links:** [GitHub](https://github.com/cescoffier) · [foojay](https://foojay.io/today/author/clement-escoffier/)
+
 ### Antonio Goncalves
 
 - **Badge:** Person
@@ -739,6 +748,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/729277?v=4
 - **Role:** Principal Software Engineer at Microsoft CoreAI, ParisJUG, Devoxx France, Café IA, book author
 - **Links:** [@agoncal](https://twitter.com/agoncal) · [Bluesky](https://bsky.app/profile/agoncal.bsky.social) · [GitHub](https://github.com/agoncal) · [LinkedIn](https://www.linkedin.com/in/agoncal/) · [Blog](https://antoniogoncalves.org)
+
+### Ilayaperumal Gopinathan
+
+- **Badge:** Person
+- **Initials:** IG
+- **Photo:** https://avatars.githubusercontent.com/u/151690?v=4
+- **Role:** Spring AI team, Broadcom; regularly drives Spring AI release announcements
+- **Links:** [GitHub](https://github.com/ilayaperumalg) · [Spring.io](https://spring.io/authors/ilayaperumalg/)
 
 ### Frank Greco
 
