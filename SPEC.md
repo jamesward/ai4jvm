@@ -86,6 +86,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.19.0
 - https://thetalkingapp.medium.com/spring-ai-recipe-building-a-graph-based-agentic-workflow-with-langgraph4j-0fbfcce25a57
 - https://inside.java/2026/08/12/java-mcp-migration/
