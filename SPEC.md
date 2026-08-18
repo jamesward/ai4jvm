@@ -29,6 +29,7 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 
 ### Section Introductions
 Each major content section (`<section>`) should have a 1–2 sentence introduction paragraph below its `<h2>` heading. These intro paragraphs provide keyword-rich body text for search engines and context for users. Examples:
+- **News:** "Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines."
 - **Agent Frameworks & Libraries:** "Open-source frameworks and SDKs for building AI-powered applications on the JVM — from full agent platforms to Model Context Protocol implementations."
 - **Java with Code Assistants:** "Tools that bridge AI coding assistants and the Java ecosystem — MCP servers, skill registries, and IDE integrations."
 - **Inference & Training:** "Run LLM inference, train ML models, and deploy AI workloads directly on the JVM without Python dependencies."
@@ -86,6 +87,10 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://quarkus.io/blog/a2a-java-sdk-1-2-0-final-released/
+- https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.0
+- https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/
+- https://micronaut.io/2026/08/17/micronaut-framework-5-1-1-released/
 - https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.19.0
 - https://thetalkingapp.medium.com/spring-ai-recipe-building-a-graph-based-agentic-workflow-with-langgraph4j-0fbfcce25a57
@@ -391,6 +396,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Library
 - **Description:** Official Java client for the Weaviate vector database. The v6 line is a from-scratch rewrite for Weaviate ≥1.32, replacing the deprecated v5 client, with a "Tucked Builder" API for data ingestion, semantic search, filtering, and collection management.
 - **Links:** [GitHub](https://github.com/weaviate/java-client) · [Docs](https://docs.weaviate.io/weaviate/client-libraries/java)
+
+### Pinecone Java Client
+- **Badge:** Library
+- **Description:** Official Java client for the Pinecone vector database. Covers index management (serverless, pod-based, BYOC, sparse indexes), collection operations, vector upsert/query/fetch/update/delete, namespace management, and Pinecone's hosted inference API (embeddings, reranking, model listing). Joins the site's other official vector-database clients for Qdrant, Weaviate, and Milvus.
+- **Links:** [GitHub](https://github.com/pinecone-io/pinecone-java-client)
 
 ### Testcontainers Ollama Module
 - **Badge:** Library
