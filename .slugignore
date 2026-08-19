@@ -1,0 +1,13 @@
+# Files not part of the published site (excluded from the S3 sync).
+# Heroku-style: one glob per line, '#' comments, blank lines ignored.
+.gitignore
+.idea/*
+.claude/*
+.github/*
+AGENTS.md
+CLAUDE.md
+CONTRIBUTING.md
+DESIGN-GENERALIZED.md
+LICENSE.md
+README.md
+SPEC.md
