@@ -50,7 +50,20 @@ Questions and answers:
 - Keep `<changefreq>weekly</changefreq>` and `<priority>1.0</priority>`
 
 ### Robots.txt
-- Keep `Allow: /` and `Sitemap:` directive (already correct)
+- Keep `Allow: /` and `Sitemap:` directive for the default `User-agent: *` group
+- Keep the `Content-Signal: search=yes, ai-input=yes, ai-train=yes` directive on the default group — AI4JVM is a public directory meant to be read, indexed, and cited by AI agents
+- Keep explicit `Allow: /` groups for named AI crawlers/assistants (GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-User, Claude-SearchBot, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, CCBot, Amazonbot, Bytespider, meta-externalagent)
+
+### Agent Friendliness
+- Maintain `/llms.txt` (per the [llms.txt spec](https://llmstxt.org)) as a plain-Markdown summary of the site: H1 title, one-line blockquote summary matching the meta description, a short description paragraph, and an H2 "Sections" list linking each `<section id>` anchor with a one-sentence summary matching its section intro paragraph
+- Keep `llms.txt`'s section list in sync with `index.html`'s `<h2>` sections (see Heading Hierarchy above)
+- `index.html`'s `<head>` links to it via `<link rel="alternate" type="text/markdown" href="/llms.txt">`
+
+### Performance
+- No web fonts — use the system font stack only (avoids render-blocking font requests)
+- All images (GitHub avatars) must have explicit `width`/`height`, `loading="lazy"`, and `decoding="async"`, and request a small size via GitHub's avatar sizing parameter (e.g. `?v=4&s=96`) rather than the full-resolution image
+- `<link rel="preconnect">` for third-party origins the page actually loads from (GitHub avatars, Google Tag Manager)
+- CSS stays inline in a single `<style>` block (no build step, no extra request); no unused CSS
 
 ## Site Structure
 

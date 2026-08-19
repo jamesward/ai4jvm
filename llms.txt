@@ -1,0 +1,21 @@
+# AI4JVM
+
+> The curated guide to AI on the JVM — Spring AI, LangChain4j, Kotlin AI frameworks, inference engines, and more. Compare Java AI agent frameworks, find learning resources, and follow key people building the Java AI ecosystem.
+
+AI4JVM is a single-page, human-curated directory covering agent frameworks, inference engines, code-assistant integrations, key people, and learning resources for building AI applications on the JVM (Java, Kotlin, and other JVM languages). Content is governed by an editorial policy: entries must be specific to Java/JVM developers (not general AI resources) and actively maintained; see the Contributing link below for the full criteria.
+
+## Sections
+
+- [Latest Java AI News](https://ai4jvm.com/#news): New framework versions, MCP updates, and inference engine releases across the Java AI ecosystem.
+- [Agent Frameworks & Libraries](https://ai4jvm.com/#frameworks): Open-source frameworks and SDKs for building AI-powered applications on the JVM, from full agent platforms to Model Context Protocol implementations.
+- [Java with Code Assistants](https://ai4jvm.com/#assistants): Tools that bridge AI coding assistants and the Java ecosystem — MCP servers, skill registries, and IDE integrations.
+- [Inference & Training](https://ai4jvm.com/#inference): Run LLM inference, train ML models, and deploy AI workloads directly on the JVM without Python dependencies.
+- [People to Follow](https://ai4jvm.com/#people): Key voices and project leads shaping the Java AI ecosystem.
+- [FAQ](https://ai4jvm.com/#faq): Answers to common questions about building AI agents on the JVM, running LLMs locally in Java, using MCP with Java, and Kotlin support.
+- [Recent & Noteworthy Content, Communities, and Resources](https://ai4jvm.com/#resources): Talks, tutorials, books, and communities for learning AI development on the JVM.
+
+## Optional
+
+- [Contributing guidelines](https://github.com/jamesward/ai4jvm/blob/main/CONTRIBUTING.md): Editorial policy for what gets included on the site and how to submit a resource.
+- [Full site content spec](https://github.com/jamesward/ai4jvm/blob/main/SPEC.md): Machine-readable source of truth for every entry on the site.
+- [Source repository](https://github.com/jamesward/ai4jvm): HTML source and site generation process.
