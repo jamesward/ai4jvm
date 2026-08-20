@@ -1,6 +1,6 @@
 # AI4JVM
 
-> The curated guide to AI on the JVM — Spring AI, LangChain4j, Kotlin AI frameworks, inference engines, and more. Compare Java AI agent frameworks, find learning resources, and follow key people building the Java AI ecosystem.
+> The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.
 
 AI4JVM is a single-page, human-curated directory covering agent frameworks, inference engines, code-assistant integrations, key people, and learning resources for building AI applications on the JVM (Java, Kotlin, and other JVM languages). Content is governed by an editorial policy: entries must be specific to Java/JVM developers (not general AI resources) and actively maintained; see the Contributing link below for the full criteria.
 
@@ -16,6 +16,7 @@ AI4JVM is a single-page, human-curated directory covering agent frameworks, infe
 
 ## Optional
 
+- [Full site content](https://ai4jvm.com/llms-full.txt): Every section and every entry from the site as plain Markdown — fetch this instead of parsing the HTML.
 - [Contributing guidelines](https://github.com/jamesward/ai4jvm/blob/main/CONTRIBUTING.md): Editorial policy for what gets included on the site and how to submit a resource.
 - [Full site content spec](https://github.com/jamesward/ai4jvm/blob/main/SPEC.md): Machine-readable source of truth for every entry on the site.
 - [Source repository](https://github.com/jamesward/ai4jvm): HTML source and site generation process.

@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF4ZE4J3N5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YF4ZE4J3N5');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI4JVM — Java &amp; JVM AI Ecosystem Guide: Agent Frameworks, Inference Engines &amp; Tools</title>
-  <meta name="description" content="The curated guide to AI on the JVM — Spring AI, LangChain4j, Kotlin AI frameworks, inference engines, and more. Compare Java AI agent frameworks, find learning resources, and follow key people building the Java AI ecosystem.">
+  <title>AI4JVM — Java AI Frameworks, LLM Inference &amp; Tools for the JVM</title>
+  <meta name="description" content="The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.">
+  <meta name="theme-color" content="#0f1117">
   <link rel="canonical" href="https://ai4jvm.com/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/favicon-192.png">
-  <!-- Plain-text summary of the site for AI agents/LLMs: https://llmstxt.org -->
+  <!-- Plain-text summaries of the site for AI agents/LLMs: https://llmstxt.org -->
   <link rel="alternate" type="text/markdown" href="/llms.txt" title="AI4JVM (llms.txt)">
+  <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="AI4JVM (llms-full.txt)">
   <!-- Speed up loading of GitHub avatar images -->
   <link rel="preconnect" href="https://avatars.githubusercontent.com" crossorigin>
+  <link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI4JVM — Java &amp; JVM AI Ecosystem Guide: Agent Frameworks, Inference Engines &amp; Tools">
-  <meta property="og:description" content="The curated guide to AI on the JVM — Spring AI, LangChain4j, Kotlin AI frameworks, inference engines, and more. Compare Java AI agent frameworks, find learning resources, and follow key people building the Java AI ecosystem.">
+  <meta property="og:title" content="AI4JVM — Java AI Frameworks, LLM Inference &amp; Tools for the JVM">
+  <meta property="og:description" content="The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.">
   <meta property="og:url" content="https://ai4jvm.com/">
   <meta property="og:site_name" content="AI4JVM">
   <meta property="og:locale" content="en_US">
@@ -35,21 +30,51 @@
   <meta property="og:image:alt" content="AI4JVM — Java &amp; JVM AI Ecosystem Guide">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI4JVM — Java &amp; JVM AI Ecosystem Guide: Agent Frameworks, Inference Engines &amp; Tools">
-  <meta name="twitter:description" content="The curated guide to AI on the JVM — Spring AI, LangChain4j, Kotlin AI frameworks, inference engines, and more. Compare Java AI agent frameworks, find learning resources, and follow key people building the Java AI ecosystem.">
+  <meta name="twitter:title" content="AI4JVM — Java AI Frameworks, LLM Inference &amp; Tools for the JVM">
+  <meta name="twitter:description" content="The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.">
   <meta name="twitter:image" content="https://ai4jvm.com/og-image.png">
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://ai4jvm.com/#website",
     "name": "AI4JVM",
+    "alternateName": "AI for the JVM",
     "url": "https://ai4jvm.com/",
+    "inLanguage": "en-US",
     "description": "The curated guide to AI on the JVM — compare agent frameworks, inference engines, code assistants, and find the people and resources shaping the Java AI ecosystem.",
     "publisher": {
       "@type": "Person",
       "name": "James Ward",
       "url": "https://jamesward.com"
+    },
+    "about": [
+      {"@type": "Thing", "name": "Java"},
+      {"@type": "Thing", "name": "Kotlin"},
+      {"@type": "Thing", "name": "Java virtual machine"},
+      {"@type": "Thing", "name": "Artificial intelligence"},
+      {"@type": "Thing", "name": "Large language model"},
+      {"@type": "Thing", "name": "Model Context Protocol"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://ai4jvm.com/#webpage",
+    "url": "https://ai4jvm.com/",
+    "name": "AI4JVM — Java AI Frameworks, LLM Inference & Tools for the JVM",
+    "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
+    "isPartOf": {"@id": "https://ai4jvm.com/#website"},
+    "inLanguage": "en-US",
+    "dateModified": "2026-08-20",
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://ai4jvm.com/og-image.png",
+      "width": 1200,
+      "height": 630
     }
   }
   </script>
@@ -68,57 +93,181 @@
       {"@type": "ListItem", "position": 6, "name": "Helidon LangChain4j", "url": "https://helidon.io/docs/v4/se/ai/langchain4j/langchain4j"},
       {"@type": "ListItem", "position": 7, "name": "Helidon MCP", "url": "https://helidon.io/docs/v4/se/ai/mcp"},
       {"@type": "ListItem", "position": 8, "name": "Micronaut MCP", "url": "https://micronaut-projects.github.io/micronaut-mcp/latest/guide/"},
-      {"@type": "ListItem", "position": 9, "name": "LangChain4j-CDI", "url": "https://github.com/langchain4j/langchain4j-cdi"},
-      {"@type": "ListItem", "position": 10, "name": "LangGraph4j", "url": "https://langgraph4j.github.io/langgraph4j/"},
-      {"@type": "ListItem", "position": 11, "name": "Akka Agents", "url": "https://akka.io/akka-agents"},
-      {"@type": "ListItem", "position": 12, "name": "Koog (JetBrains)", "url": "https://www.jetbrains.com/koog/"},
-      {"@type": "ListItem", "position": 13, "name": "Semantic Kernel (Java)", "url": "https://github.com/microsoft/semantic-kernel-java"},
-      {"@type": "ListItem", "position": 14, "name": "JamJet", "url": "https://docs.jamjet.dev"},
-      {"@type": "ListItem", "position": 15, "name": "Spring AI AgentCore SDK", "url": "https://springaicommunity.mintlify.app/projects/incubating/spring-ai-bedrock-agentcore"},
-      {"@type": "ListItem", "position": 16, "name": "MCP Java SDK", "url": "https://modelcontextprotocol.io/sdk/java/mcp-overview"},
-      {"@type": "ListItem", "position": 17, "name": "Anthropic Java SDK", "url": "https://github.com/anthropics/anthropic-sdk-java"},
-      {"@type": "ListItem", "position": 18, "name": "GitHub Copilot SDK for Java", "url": "https://github.github.com/copilot-sdk-java/"},
-      {"@type": "ListItem", "position": 19, "name": "Graal Script Agent", "url": "https://graalvm.github.io/graal-script-agent/latest/"},
-      {"@type": "ListItem", "position": 20, "name": "Tracy (JetBrains)", "url": "https://jetbrains.github.io/tracy/latest"},
-      {"@type": "ListItem", "position": 21, "name": "Docling Java", "url": "https://docling-project.github.io/docling-java/current"},
-      {"@type": "ListItem", "position": 22, "name": "OmniHai", "url": "https://omnihai.org"},
-      {"@type": "ListItem", "position": 23, "name": "ACP Langchain4j bridge", "url": "https://github.com/OsgiliathEnterprise/acp-langgraph-langchain-bridge"},
-      {"@type": "ListItem", "position": 24, "name": "A2A Java SDK", "url": "https://github.com/a2aproject/a2a-java"},
-      {"@type": "ListItem", "position": 25, "name": "A2A Java SDK for Jakarta Servers", "url": "https://github.com/wildfly-extras/a2a-java-sdk-server-jakarta"},
-      {"@type": "ListItem", "position": 26, "name": "WildFly AI Feature Pack", "url": "https://github.com/wildfly-extras/wildfly-ai-feature-pack"},
-      {"@type": "ListItem", "position": 27, "name": "MCP_JAVA Annotations", "url": "https://github.com/mcp-java/java-mcp-annotations"},
-      {"@type": "ListItem", "position": 28, "name": "Atmosphere", "url": "https://atmosphere.github.io/docs/"},
-      {"@type": "ListItem", "position": 29, "name": "Spring AI Agent Utils", "url": "https://springaicommunity.mintlify.app/projects/incubating/spring-ai-agent-utils"},
-      {"@type": "ListItem", "position": 30, "name": "Jakarta Agentic AI", "url": "https://github.com/jakartaee/agentic-ai"},
-      {"@type": "ListItem", "position": 31, "name": "AgentScope Java", "url": "https://java.agentscope.io/"},
-      {"@type": "ListItem", "position": 32, "name": "JVector", "url": "https://github.com/datastax/jvector"},
-      {"@type": "ListItem", "position": 33, "name": "Milvus Java SDK", "url": "https://github.com/milvus-io/milvus-sdk-java"},
-      {"@type": "ListItem", "position": 34, "name": "ClawRunr", "url": "https://github.com/ClawRunr/JavaClaw"},
-      {"@type": "ListItem", "position": 35, "name": "MCP Toolbox Java SDK", "url": "https://mcp-toolbox.dev/documentation/introduction/"},
-      {"@type": "ListItem", "position": 36, "name": "Tools4AI", "url": "https://github.com/vishalmysore/Tools4AI"},
-      {"@type": "ListItem", "position": 37, "name": "EclipseStore", "url": "https://github.com/eclipse-store/store"},
-      {"@type": "ListItem", "position": 38, "name": "OpenAI Java SDK", "url": "https://github.com/openai/openai-java"},
-      {"@type": "ListItem", "position": 39, "name": "Google Gen AI Java SDK", "url": "https://github.com/googleapis/java-genai"},
-      {"@type": "ListItem", "position": 40, "name": "IBM watsonx.ai Java SDK", "url": "https://github.com/IBM/watsonx-ai-java-sdk"},
-      {"@type": "ListItem", "position": 41, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"},
-      {"@type": "ListItem", "position": 42, "name": "Tiberius", "url": "https://github.com/tiberius-security/tiberius"},
-      {"@type": "ListItem", "position": 43, "name": "Ollama4j", "url": "https://github.com/ollama4j/ollama4j"},
-      {"@type": "ListItem", "position": 44, "name": "Cohere Java SDK", "url": "https://github.com/cohere-ai/cohere-java"},
-      {"@type": "ListItem", "position": 45, "name": "kyo-ai", "url": "https://github.com/getkyo/kyo/tree/main/kyo-ai"},
-      {"@type": "ListItem", "position": 46, "name": "zio-bedrock-converse", "url": "https://github.com/jamesward/zio-bedrock-converse"},
-      {"@type": "ListItem", "position": 47, "name": "zio-http-mcp", "url": "https://github.com/jamesward/zio-http-mcp"},
-      {"@type": "ListItem", "position": 48, "name": "Tachyon", "url": "https://github.com/kpavlov/tachyon"},
-      {"@type": "ListItem", "position": 49, "name": "Solon-AI", "url": "https://github.com/opensolon/solon-ai"},
-      {"@type": "ListItem", "position": 50, "name": "AWS SDK for Java v2 — Bedrock", "url": "https://github.com/aws/aws-sdk-java-v2"},
-      {"@type": "ListItem", "position": 51, "name": "Qdrant Java Client", "url": "https://github.com/qdrant/java-client"},
-      {"@type": "ListItem", "position": 52, "name": "Weaviate Java Client", "url": "https://github.com/weaviate/java-client"},
-      {"@type": "ListItem", "position": 53, "name": "Pinecone Java Client", "url": "https://github.com/pinecone-io/pinecone-java-client"},
-      {"@type": "ListItem", "position": 54, "name": "Testcontainers Ollama Module", "url": "https://java.testcontainers.org/modules/ollama/"},
-      {"@type": "ListItem", "position": 55, "name": "Camel LangChain4j Components", "url": "https://camel.apache.org/components/next/langchain4j-chat-component.html"},
-      {"@type": "ListItem", "position": 56, "name": "Google ADK for Kotlin", "url": "https://adk.dev/"},
-      {"@type": "ListItem", "position": 57, "name": "LLM4S", "url": "https://llm4s.org/"},
-      {"@type": "ListItem", "position": 58, "name": "Agents-Flex", "url": "https://github.com/agents-flex/agents-flex"},
-      {"@type": "ListItem", "position": 59, "name": "Spring AI Alibaba", "url": "https://github.com/alibaba/spring-ai-alibaba"}
+      {"@type": "ListItem", "position": 9, "name": "Micronaut LangChain4j", "url": "https://micronaut-projects.github.io/micronaut-langchain4j/latest/guide/"},
+      {"@type": "ListItem", "position": 10, "name": "LangChain4j-CDI", "url": "https://github.com/langchain4j/langchain4j-cdi"},
+      {"@type": "ListItem", "position": 11, "name": "LangGraph4j", "url": "https://langgraph4j.github.io/langgraph4j/"},
+      {"@type": "ListItem", "position": 12, "name": "Akka Agents", "url": "https://akka.io/akka-agents"},
+      {"@type": "ListItem", "position": 13, "name": "Koog (JetBrains)", "url": "https://www.jetbrains.com/koog/"},
+      {"@type": "ListItem", "position": 14, "name": "Semantic Kernel (Java)", "url": "https://github.com/microsoft/semantic-kernel-java"},
+      {"@type": "ListItem", "position": 15, "name": "JamJet", "url": "https://docs.jamjet.dev"},
+      {"@type": "ListItem", "position": 16, "name": "Spring AI AgentCore SDK", "url": "https://springaicommunity.mintlify.app/projects/incubating/spring-ai-bedrock-agentcore"},
+      {"@type": "ListItem", "position": 17, "name": "MCP Java SDK", "url": "https://modelcontextprotocol.io/sdk/java/mcp-overview"},
+      {"@type": "ListItem", "position": 18, "name": "Anthropic Java SDK", "url": "https://github.com/anthropics/anthropic-sdk-java"},
+      {"@type": "ListItem", "position": 19, "name": "GitHub Copilot SDK for Java", "url": "https://github.github.com/copilot-sdk-java/"},
+      {"@type": "ListItem", "position": 20, "name": "Graal Script Agent", "url": "https://graalvm.github.io/graal-script-agent/latest/"},
+      {"@type": "ListItem", "position": 21, "name": "Tracy (JetBrains)", "url": "https://jetbrains.github.io/tracy/latest"},
+      {"@type": "ListItem", "position": 22, "name": "Docling Java", "url": "https://docling-project.github.io/docling-java/current"},
+      {"@type": "ListItem", "position": 23, "name": "OmniHai", "url": "https://omnihai.org"},
+      {"@type": "ListItem", "position": 24, "name": "ACP Langchain4j bridge", "url": "https://github.com/OsgiliathEnterprise/acp-langgraph-langchain-bridge"},
+      {"@type": "ListItem", "position": 25, "name": "A2A Java SDK", "url": "https://github.com/a2aproject/a2a-java"},
+      {"@type": "ListItem", "position": 26, "name": "A2A Java SDK for Jakarta Servers", "url": "https://github.com/wildfly-extras/a2a-java-sdk-server-jakarta"},
+      {"@type": "ListItem", "position": 27, "name": "WildFly AI Feature Pack", "url": "https://github.com/wildfly-extras/wildfly-ai-feature-pack"},
+      {"@type": "ListItem", "position": 28, "name": "MCP_JAVA Annotations", "url": "https://github.com/mcp-java/java-mcp-annotations"},
+      {"@type": "ListItem", "position": 29, "name": "Atmosphere", "url": "https://atmosphere.github.io/docs/"},
+      {"@type": "ListItem", "position": 30, "name": "Spring AI Agent Utils", "url": "https://springaicommunity.mintlify.app/projects/incubating/spring-ai-agent-utils"},
+      {"@type": "ListItem", "position": 31, "name": "Spring AI A2A", "url": "https://github.com/spring-ai-community/spring-ai-a2a"},
+      {"@type": "ListItem", "position": 32, "name": "Spring AI Session", "url": "https://spring-ai-community.github.io/spring-ai-session/"},
+      {"@type": "ListItem", "position": 33, "name": "Spring AI Playground", "url": "https://github.com/spring-ai-community/spring-ai-playground"},
+      {"@type": "ListItem", "position": 34, "name": "Jakarta Agentic AI", "url": "https://github.com/jakartaee/agentic-ai"},
+      {"@type": "ListItem", "position": 35, "name": "AgentScope Java", "url": "https://java.agentscope.io/"},
+      {"@type": "ListItem", "position": 36, "name": "JVector", "url": "https://github.com/datastax/jvector"},
+      {"@type": "ListItem", "position": 37, "name": "Milvus Java SDK", "url": "https://github.com/milvus-io/milvus-sdk-java"},
+      {"@type": "ListItem", "position": 38, "name": "ClawRunr", "url": "https://github.com/ClawRunr/JavaClaw"},
+      {"@type": "ListItem", "position": 39, "name": "MCP Toolbox Java SDK", "url": "https://mcp-toolbox.dev/documentation/introduction/"},
+      {"@type": "ListItem", "position": 40, "name": "Tools4AI", "url": "https://github.com/vishalmysore/Tools4AI"},
+      {"@type": "ListItem", "position": 41, "name": "EclipseStore", "url": "https://github.com/eclipse-store/store"},
+      {"@type": "ListItem", "position": 42, "name": "OpenAI Java SDK", "url": "https://github.com/openai/openai-java"},
+      {"@type": "ListItem", "position": 43, "name": "Google Gen AI Java SDK", "url": "https://github.com/googleapis/java-genai"},
+      {"@type": "ListItem", "position": 44, "name": "IBM watsonx.ai Java SDK", "url": "https://github.com/IBM/watsonx-ai-java-sdk"},
+      {"@type": "ListItem", "position": 45, "name": "SAP AI SDK for Java", "url": "https://github.com/SAP/ai-sdk-java"},
+      {"@type": "ListItem", "position": 46, "name": "Tiberius", "url": "https://github.com/tiberius-security/tiberius"},
+      {"@type": "ListItem", "position": 47, "name": "Ollama4j", "url": "https://github.com/ollama4j/ollama4j"},
+      {"@type": "ListItem", "position": 48, "name": "Cohere Java SDK", "url": "https://github.com/cohere-ai/cohere-java"},
+      {"@type": "ListItem", "position": 49, "name": "kyo-ai", "url": "https://github.com/getkyo/kyo/tree/main/kyo-ai"},
+      {"@type": "ListItem", "position": 50, "name": "zio-bedrock-converse", "url": "https://github.com/jamesward/zio-bedrock-converse"},
+      {"@type": "ListItem", "position": 51, "name": "zio-http-mcp", "url": "https://github.com/jamesward/zio-http-mcp"},
+      {"@type": "ListItem", "position": 52, "name": "Tachyon", "url": "https://github.com/kpavlov/tachyon"},
+      {"@type": "ListItem", "position": 53, "name": "Solon-AI", "url": "https://github.com/opensolon/solon-ai"},
+      {"@type": "ListItem", "position": 54, "name": "AWS SDK for Java v2 — Bedrock", "url": "https://github.com/aws/aws-sdk-java-v2"},
+      {"@type": "ListItem", "position": 55, "name": "Qdrant Java Client", "url": "https://github.com/qdrant/java-client"},
+      {"@type": "ListItem", "position": 56, "name": "Weaviate Java Client", "url": "https://github.com/weaviate/java-client"},
+      {"@type": "ListItem", "position": 57, "name": "Pinecone Java Client", "url": "https://github.com/pinecone-io/pinecone-java-client"},
+      {"@type": "ListItem", "position": 58, "name": "Testcontainers Ollama Module", "url": "https://java.testcontainers.org/modules/ollama/"},
+      {"@type": "ListItem", "position": 59, "name": "Camel LangChain4j Components", "url": "https://camel.apache.org/components/next/langchain4j-chat-component.html"},
+      {"@type": "ListItem", "position": 60, "name": "Google ADK for Kotlin", "url": "https://adk.dev/"},
+      {"@type": "ListItem", "position": 61, "name": "LLM4S", "url": "https://llm4s.org/"},
+      {"@type": "ListItem", "position": 62, "name": "Agents-Flex", "url": "https://github.com/agents-flex/agents-flex"},
+      {"@type": "ListItem", "position": 63, "name": "Spring AI Alibaba", "url": "https://github.com/alibaba/spring-ai-alibaba"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Java AI Code Assistant Tools & MCP Servers",
+    "description": "Curated list of MCP servers, skill registries, and IDE integrations bridging AI coding assistants and the Java ecosystem",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "AI-Git-Bot", "url": "https://gitbot.eu/"},
+      {"@type": "ListItem", "position": 2, "name": "Javadocs.dev MCP Server", "url": "https://www.javadocs.dev/"},
+      {"@type": "ListItem", "position": 3, "name": "JetBrains AI", "url": "https://www.jetbrains.com/ai/"},
+      {"@type": "ListItem", "position": 4, "name": "SkillsJars", "url": "https://www.skillsjars.com/"},
+      {"@type": "ListItem", "position": 5, "name": "jvm-skills", "url": "https://jvmskills.com"},
+      {"@type": "ListItem", "position": 6, "name": "Awesome GitHub Copilot", "url": "https://awesome-copilot.github.com/skills/?q=java"},
+      {"@type": "ListItem", "position": 7, "name": "jOOQ MCP Server", "url": "https://jooq-mcp.martinelli.ch/"},
+      {"@type": "ListItem", "position": 8, "name": "Vaadin MCP Server", "url": "https://mcp.vaadin.com/docs/"},
+      {"@type": "ListItem", "position": 9, "name": "Quarkus Agent MCP", "url": "https://quarkus.io/blog/introducing-agent-mcp/"},
+      {"@type": "ListItem", "position": 10, "name": "Open Liberty MCP Server", "url": "https://openliberty.io/blog/2025/10/23/mcp-standalone-blog.html"},
+      {"@type": "ListItem", "position": 11, "name": "Maven Tools MCP", "url": "https://github.com/arvindand/maven-tools-mcp"},
+      {"@type": "ListItem", "position": 12, "name": "JVM Pulse", "url": "https://github.com/brunoborges/jvm-pulse"},
+      {"@type": "ListItem", "position": 13, "name": "IntelliJ IDEA MCP Server", "url": "https://www.jetbrains.com/help/idea/mcp-server.html"},
+      {"@type": "ListItem", "position": 14, "name": "Apache Camel MCP Server", "url": "https://camel.apache.org/blog/2026/02/camel-jbang-mcp/"},
+      {"@type": "ListItem", "position": 15, "name": "Micronaut Fun MCP Server", "url": "https://micronaut.fun/"},
+      {"@type": "ListItem", "position": 16, "name": "Develocity MCP Servers", "url": "https://docs.develocity.ai/2026.1/integrations/mcp-servers/"},
+      {"@type": "ListItem", "position": 17, "name": "AssistAI (Eclipse IDE MCP Server)", "url": "https://marketplace.eclipse.org/content/assistai-eclipse-ide-mcp-server-ai-agents"},
+      {"@type": "ListItem", "position": 18, "name": "SonarQube MCP Server", "url": "https://github.com/SonarSource/sonarqube-mcp-server"},
+      {"@type": "ListItem", "position": 19, "name": "TDA (Thread Dump Analyzer)", "url": "https://github.com/irockel/tda"},
+      {"@type": "ListItem", "position": 20, "name": "JAFAR", "url": "https://github.com/btraceio/jafar"},
+      {"@type": "ListItem", "position": 21, "name": "MCP JDWP Java", "url": "https://github.com/fgforrest/mcp-jdwp-java"},
+      {"@type": "ListItem", "position": 22, "name": "SolonCode", "url": "https://github.com/opensolon/soloncode"},
+      {"@type": "ListItem", "position": 23, "name": "Junie", "url": "https://www.jetbrains.com/help/ai-assistant/junie-agent.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "JVM Inference & Training Libraries",
+    "description": "Curated list of libraries for running LLM inference and training ML models directly on the JVM",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Deliverance", "url": "https://github.com/edwardcapriolo/deliverance"},
+      {"@type": "ListItem", "position": 2, "name": "Jlama", "url": "https://github.com/tjake/Jlama"},
+      {"@type": "ListItem", "position": 3, "name": "Deep Java Library (DJL)", "url": "https://github.com/deepjavalibrary/djl"},
+      {"@type": "ListItem", "position": 4, "name": "ONNX Runtime Java", "url": "https://onnxruntime.ai/docs/get-started/with-java.html"},
+      {"@type": "ListItem", "position": 5, "name": "Tribuo", "url": "https://tribuo.org/"},
+      {"@type": "ListItem", "position": 6, "name": "GPULlama3.java", "url": "https://github.com/beehive-lab/GPULlama3.java"},
+      {"@type": "ListItem", "position": 7, "name": "TornadoVM", "url": "https://www.tornadovm.org"},
+      {"@type": "ListItem", "position": 8, "name": "TensorFlow Java", "url": "https://www.tensorflow.org/jvm"},
+      {"@type": "ListItem", "position": 9, "name": "Eclipse Deeplearning4j (DL4J)", "url": "https://deeplearning4j.konduit.ai/"},
+      {"@type": "ListItem", "position": 10, "name": "Apache OpenNLP", "url": "https://opennlp.apache.org"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "People to Follow in the Java AI Ecosystem",
+    "description": "Key voices and project leads shaping AI development on the JVM",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "item": {"@type": "Person", "name": "Sandra Ahlgrimm", "url": "https://github.com/sandraahlgrimm"}},
+      {"@type": "ListItem", "position": 2, "item": {"@type": "Person", "name": "Jean-François Arcand", "url": "https://twitter.com/jfarcand"}},
+      {"@type": "ListItem", "position": 3, "item": {"@type": "Person", "name": "Jaroslav Bachorik", "url": "https://twitter.com/BachorikJ"}},
+      {"@type": "ListItem", "position": 4, "item": {"@type": "Person", "name": "Zineb Bendhiba", "url": "https://x.com/ZinebBendhiba"}},
+      {"@type": "ListItem", "position": 5, "item": {"@type": "Person", "name": "Bruno Borges", "url": "https://twitter.com/brunoborges"}},
+      {"@type": "ListItem", "position": 6, "item": {"@type": "Person", "name": "Vadim Briliantov", "url": "https://github.com/Ololoshechkin"}},
+      {"@type": "ListItem", "position": 7, "item": {"@type": "Person", "name": "Holly Cummins", "url": "https://twitter.com/holly_cummins"}},
+      {"@type": "ListItem", "position": 8, "item": {"@type": "Person", "name": "Eric Deandrea", "url": "https://bsky.app/profile/ericdeandrea.dev"}},
+      {"@type": "ListItem", "position": 9, "item": {"@type": "Person", "name": "Ronald Dehuysser", "url": "https://twitter.com/rdehuyss"}},
+      {"@type": "ListItem", "position": 10, "item": {"@type": "Person", "name": "Sébastien Deleuze", "url": "https://x.com/sdeleuze"}},
+      {"@type": "ListItem", "position": 11, "item": {"@type": "Person", "name": "Iryna Dohndorf", "url": "https://github.com/IDohndorf"}},
+      {"@type": "ListItem", "position": 12, "item": {"@type": "Person", "name": "Julien Dubois", "url": "https://twitter.com/juliendubois"}},
+      {"@type": "ListItem", "position": 13, "item": {"@type": "Person", "name": "Markus Eisele", "url": "https://twitter.com/myfear"}},
+      {"@type": "ListItem", "position": 14, "item": {"@type": "Person", "name": "Mario Fusco", "url": "https://x.com/mariofusco"}},
+      {"@type": "ListItem", "position": 15, "item": {"@type": "Person", "name": "Clement Escoffier", "url": "https://github.com/cescoffier"}},
+      {"@type": "ListItem", "position": 16, "item": {"@type": "Person", "name": "Antonio Goncalves", "url": "https://twitter.com/agoncal"}},
+      {"@type": "ListItem", "position": 17, "item": {"@type": "Person", "name": "Ilayaperumal Gopinathan", "url": "https://github.com/ilayaperumalg"}},
+      {"@type": "ListItem", "position": 18, "item": {"@type": "Person", "name": "Frank Greco", "url": "https://twitter.com/frankgreco"}},
+      {"@type": "ListItem", "position": 19, "item": {"@type": "Person", "name": "Ivar Grimstad", "url": "https://twitter.com/ivar_grimstad"}},
+      {"@type": "ListItem", "position": 20, "item": {"@type": "Person", "name": "Emmanuel Hugonnet", "url": "https://twitter.com/ehsavoie"}},
+      {"@type": "ListItem", "position": 21, "item": {"@type": "Person", "name": "Rod Johnson", "url": "https://twitter.com/springrod"}},
+      {"@type": "ListItem", "position": 22, "item": {"@type": "Person", "name": "Daniel Kec", "url": "https://twitter.com/danielkec"}},
+      {"@type": "ListItem", "position": 23, "item": {"@type": "Person", "name": "Kenneth Kousen", "url": "https://twitter.com/kenkousen"}},
+      {"@type": "ListItem", "position": 24, "item": {"@type": "Person", "name": "Guillaume Laforge", "url": "https://twitter.com/glaforge"}},
+      {"@type": "ListItem", "position": 25, "item": {"@type": "Person", "name": "Dmytro Liubarskyi", "url": "https://bsky.app/profile/dmythro.bsky.social"}},
+      {"@type": "ListItem", "position": 26, "item": {"@type": "Person", "name": "Josh Long", "url": "https://twitter.com/starbuxman"}},
+      {"@type": "ListItem", "position": 27, "item": {"@type": "Person", "name": "T. Jake Luciani", "url": "https://twitter.com/tjake"}},
+      {"@type": "ListItem", "position": 28, "item": {"@type": "Person", "name": "Loïc Magnette", "url": "https://x.com/LoMagnette"}},
+      {"@type": "ListItem", "position": 29, "item": {"@type": "Person", "name": "François Martin", "url": "https://x.com/fmartin_"}},
+      {"@type": "ListItem", "position": 30, "item": {"@type": "Person", "name": "Simon Martinelli", "url": "https://twitter.com/simas_ch"}},
+      {"@type": "ListItem", "position": 31, "item": {"@type": "Person", "name": "Ana-Maria Mihalceanu", "url": "https://twitter.com/ammbra1508"}},
+      {"@type": "ListItem", "position": 32, "item": {"@type": "Person", "name": "Vishal Mysore", "url": "https://github.com/vishalmysore"}},
+      {"@type": "ListItem", "position": 33, "item": {"@type": "Person", "name": "Daniel Oh", "url": "https://twitter.com/danieloh30"}},
+      {"@type": "ListItem", "position": 34, "item": {"@type": "Person", "name": "Michalis Papadimitriou", "url": "https://github.com/mikepapadim"}},
+      {"@type": "ListItem", "position": 35, "item": {"@type": "Person", "name": "Konstantin Pavlov", "url": "https://bsky.app/profile/kpavlov.me"}},
+      {"@type": "ListItem", "position": 36, "item": {"@type": "Person", "name": "Susanne Pieterse", "url": "https://bsky.app/profile/susivic.bsky.social"}},
+      {"@type": "ListItem", "position": 37, "item": {"@type": "Person", "name": "Mark Pollack", "url": "https://twitter.com/markpollack"}},
+      {"@type": "ListItem", "position": 38, "item": {"@type": "Person", "name": "Lize Raes", "url": "https://twitter.com/LizeRaes"}},
+      {"@type": "ListItem", "position": 39, "item": {"@type": "Person", "name": "Reza Rahman", "url": "https://github.com/m-reza-rahman"}},
+      {"@type": "ListItem", "position": 40, "item": {"@type": "Person", "name": "K. Siva Prasad Reddy", "url": "https://twitter.com/sivalabs"}},
+      {"@type": "ListItem", "position": 41, "item": {"@type": "Person", "name": "Jennifer Reif", "url": "https://twitter.com/JMHReif"}},
+      {"@type": "ListItem", "position": 42, "item": {"@type": "Person", "name": "Victor Rentea", "url": "https://x.com/victorrentea"}},
+      {"@type": "ListItem", "position": 43, "item": {"@type": "Person", "name": "Baruch Sadogursky", "url": "https://twitter.com/jbaruch"}},
+      {"@type": "ListItem", "position": 44, "item": {"@type": "Person", "name": "Timo Salm", "url": "https://twitter.com/salmto"}},
+      {"@type": "ListItem", "position": 45, "item": {"@type": "Person", "name": "Otavio Santana", "url": "https://twitter.com/otaviojava"}},
+      {"@type": "ListItem", "position": 46, "item": {"@type": "Person", "name": "Oleg Šelajev", "url": "https://twitter.com/shelajev"}},
+      {"@type": "ListItem", "position": 47, "item": {"@type": "Person", "name": "Zoran Sevarac", "url": "https://github.com/sevarac"}},
+      {"@type": "ListItem", "position": 48, "item": {"@type": "Person", "name": "Bartosz Sorrentino", "url": "https://twitter.com/bsorrentinoJ"}},
+      {"@type": "ListItem", "position": 49, "item": {"@type": "Person", "name": "Alex Soto Bueno", "url": "https://twitter.com/alexsotob"}},
+      {"@type": "ListItem", "position": 50, "item": {"@type": "Person", "name": "Venkat Subramaniam", "url": "https://twitter.com/venkat_s"}},
+      {"@type": "ListItem", "position": 51, "item": {"@type": "Person", "name": "Christian Tzolov", "url": "https://twitter.com/christzolov"}},
+      {"@type": "ListItem", "position": 52, "item": {"@type": "Person", "name": "Dan Vega", "url": "https://twitter.com/therealdanvega"}},
+      {"@type": "ListItem", "position": 53, "item": {"@type": "Person", "name": "Dmitry Vinnik", "url": "https://twitter.com/DmitryVinnik"}},
+      {"@type": "ListItem", "position": 54, "item": {"@type": "Person", "name": "Thomas Vitale", "url": "https://x.com/vitalethomas"}},
+      {"@type": "ListItem", "position": 55, "item": {"@type": "Person", "name": "Craig Walls", "url": "https://twitter.com/habuma"}},
+      {"@type": "ListItem", "position": 56, "item": {"@type": "Person", "name": "James Ward", "url": "https://twitter.com/_jamesward"}},
+      {"@type": "ListItem", "position": 57, "item": {"@type": "Person", "name": "Pascal Wilbrink", "url": "https://github.com/pascalwilbrink"}}
     ]
   }
   </script>
@@ -307,7 +456,7 @@
       overflow: hidden;
     }
     .person-avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .person-info h4 { font-size: .95rem; font-weight: 600; color: var(--text-bright); }
+    .person-info h3 { font-size: .95rem; font-weight: 600; color: var(--text-bright); }
     .badge-champion {
       display: inline-block;
       font-size: .55rem;
@@ -379,6 +528,14 @@
       .card-grid, .people-grid, .resource-list { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF4ZE4J3N5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YF4ZE4J3N5');
+  </script>
 </head>
 <body>
 <!-- NAV -->
@@ -410,6 +567,7 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.1">MCP Java SDK 2.0.1 Released</a> &mdash; first patch on the 2.0 line: upgrades the conformance suite to 0.1.16 and Spring AI conformance to 2.0.0 GA, bounds HTTP and STDIO server/client reads, and fixes SSE event classification, pagination, and unregistered-handler behavior in stateless servers</li>
         <li><a href="https://quarkus.io/blog/a2a-java-sdk-1-2-0-final-released/">A2A Java SDK 1.2.0.Final Released</a> &mdash; hardens the authorization model with read-authorization enforcement on referenced task lookups, adds a <code>TaskStreamLifecycleHook</code> SPI for stream lifecycle management, and ships breaking changes including method renames and a <code>TaskState</code> enum change</li>
         <li><a href="https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.0">Quarkus LangChain4j 1.13.0 Released</a> &mdash; upgrades to LangChain4j 1.19.0 and the latest MCP client spec, replaces the Qdrant gRPC client with a REST client, adds GPULlama3 tool-calling support, and expands the Dev UI with a Guardrails page and RAG context visibility</li>
         <li><a href="https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/">DevOps Patterns and Java 26 for On-Premises LLM Platforms in Safety-Critical Environments</a> &mdash; Cornelius May covers RAG-on-Kubernetes architecture, Java 26's AOT caching, Vector API, and Structured Concurrency, and treating prompts as versioned, governed code</li>
@@ -426,8 +584,13 @@
         <li><a href="https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.1">AgentScope Java 2.0.1 Released</a> &mdash; maintenance release expanding model-provider support (DeepSeek, GLM, Kimi, MiniMax) and hardening Harness subagent/permission handling, plus fixes for memory leaks and streaming tool-arg repair</li>
         <li><a href="https://www.infoq.com/news/2026/08/java-news-roundup-jul27-2026/">InfoQ Java News Roundup</a> &mdash; weekly Java ecosystem roundup covering two new JDK 28 JEPs, Jakarta Agentic AI's first milestone release, GPULlama3.java 1.0.0 GA, GraalVM 25.2's new Graal Script Agent, and point releases across Micronaut, Quarkus, and JobRunr</li>
         <li><a href="https://github.com/jakartaee/agentic-ai/releases/tag/1.0.0-M1">Jakarta Agentic AI 1.0.0-M1</a> &mdash; first milestone release of the new Jakarta EE agentic AI specification, adding TCK behavioral-test infrastructure and module/javadoc improvements ahead of 1.0</li>
+        <li><a href="https://foojay.io/today/jakarta-agentic-ai-hits-its-first-milestone/">Jakarta Agentic AI Hits Its First Milestone</a> &mdash; Dominika Tasarz walks through the 1.0.0-M1 release now on Maven Central: the draft spec's annotation model (<code>@Agent</code>, <code>@Trigger</code>, <code>@Decision</code>, <code>@Action</code>, <code>@Outcome</code>, <code>@HandleException</code>), a new CDI <code>@WorkflowScoped</code> context, and a vendor-neutral <code>LargeLanguageModel</code> facade</li>
         <li><a href="https://foojay.io/today/how-to-create-a-spring-boot-fraud-scoring-service/">How to Create a Spring Boot Fraud Scoring Service</a> &mdash; builds a production credit-card fraud detection REST API with Spring Boot and the pure-Java Deep Netts deep-learning library, embedding the model directly in the app instead of a separate Python inference server</li>
+        <li><a href="https://inside.java/2026/07/30/under-the-hat-empowering-gpu-acceleration-for-java/">Under the HAT: Empowering GPU Acceleration for Java</a> &mdash; Juan Fumero introduces the Heterogeneous Accelerator Toolkit, which uses OpenJDK Project Babylon's code-reflection APIs to translate sections of Java programs into CUDA and OpenCL at runtime, managing generated code and data migration automatically</li>
         <li><a href="https://javapro.io/2026/07/29/connecting-java-reinforcement-learning-to-python-gymnasium/">Connecting Java Reinforcement Learning to Python Gymnasium</a> &mdash; bridges Java RL code to Python's Gymnasium library via JavaCPP, covering Python lifecycle management and NumPy data transfer, starting with CartPole before scaling up to CARLA</li>
+        <li><a href="https://github.com/beehive-lab/GPULlama3.java/releases/tag/v1.0.0">GPULlama3.java 1.0.0 Released</a> &mdash; first major release of the GPU-accelerated Java LLM inference engine, now on Maven Central as <code>io.github.beehive-lab:gpu-llama3</code> with auto-activating <code>1.0.0-jdk21</code> and <code>1.0.0-jdk25</code> builds, making TornadoVM-backed GPU inference a plain Maven or Gradle dependency</li>
+        <li><a href="https://github.com/micronaut-projects/micronaut-langchain4j/releases/tag/v2.2.0">Micronaut LangChain4j 2.2.0 Released</a> &mdash; adds LangChain4j agentic support, Chroma embedding-store support, guardrails resolved from Micronaut beans, and evaluation testing to the official Micronaut integration</li>
+        <li><a href="https://blog.jetbrains.com/air/2026/07/what-s-new-air-gets-more-agents-local-models-and-java-kotlin-code-intelligence/">JetBrains Air Adds Java and Kotlin Code Intelligence</a> &mdash; the agent-first tool gains language intelligence powered by the IntelliJ IDEA code engine (Beta) for mixed Java/Kotlin projects &mdash; jump-to-definition, find usages, symbol search, and error highlighting on agent-modified code &mdash; plus local models via Ollama and LM Studio through ACP-compatible agents</li>
         <li><a href="https://github.com/spring-ai-community/spring-ai-agentcore/releases/tag/v2.1.0">Spring AI AgentCore 2.1.0 Released</a> &mdash; latest release of the Spring Boot integrations for Amazon Bedrock AgentCore, following the 2.0.0 GA</li>
         <li><a href="https://micronaut.io/2026/07/27/micronaut-framework-5-1-0-release/">Micronaut Framework 5.1.0 Released</a> &mdash; Micronaut LangChain4j upgraded to 2.2.0 with Oracle chat-memory auto-configuration, Chroma embedding-store support, bean-resolved AI-service guardrails, and agentic support, alongside a Micronaut MCP update to track the latest MCP Java SDK</li>
         <li><a href="https://medium.com/graalvm/when-prompts-become-plugins-34a737d30f54">When Prompts Become Plugins: Generating User Extensions with Graal Script Agent</a> &mdash; introduces a library for turning end-user prompts into sandboxed, reusable JavaScript or Python extensions that run locally within application-defined boundaries</li>
@@ -446,6 +609,8 @@
         <li><a href="https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/">LangChain4j Agentic Workflows: From AI Calls to Multi-Agent Systems</a> &mdash; tutorial covering sequential, loop, parallel, and conditional workflow patterns, goal-oriented planning, and supervisor-based multi-agent systems in Java</li>
         <li><a href="https://foojay.io/today/building-ai-systems-with-mongodb-implementing-the-planning-pattern/">Building AI Systems with MongoDB: Implementing the Planning Pattern</a> &mdash; tutorial building a travel-itinerary AI agent with Jakarta EE, Jakarta Data, LangChain4j, and MongoDB using a Reason-Act-Observe planning loop</li>
         <li><a href="https://a2aproject.github.io/a2a-java/posts/a2a-java-sdk-1-1-0-final-released/">A2A Java SDK 1.1.0.Final Released</a> &mdash; first feature release after GA, adding a TaskAuthorizationProvider SPI for per-user task authorization in multi-tenant deployments, plus a new project website</li>
+        <li><a href="https://spring.io/blog/2026/06/23/spring-ai-self-correcting-structured-output">Self-Correcting Structured Output in Spring AI 2.0</a> &mdash; Christian Tzolov shows how <code>validateSchema()</code> detects malformed model output and retries up to three times with the specific validation errors fed back to the model, while <code>useProviderStructuredOutput()</code> enforces the schema natively on OpenAI, Anthropic, and Google GenAI</li>
+        <li><a href="https://spring.io/blog/2026/06/15/spring-ai-composable-tool-calling">Tool Calling in Spring AI 2.0: A Composable, Agentic Architecture</a> &mdash; Christian Tzolov details lifting the tool-execution loop out of each chat model into the advisor chain as a recursive <code>ToolCallingAdvisor</code>, with <code>ToolSearchToolCallingAdvisor</code> progressive tool disclosure cutting tokens 34&ndash;64% across hundreds of tools</li>
         <li><a href="https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/">A2A Java SDK Reaches 1.0 GA</a> &mdash; the Agent2Agent Java SDK ships 1.0.0.Final with spec classes converted to Java records, full JSON-RPC/gRPC/REST transport support, and a cross-SDK interop test kit, followed by 1.1.0 adding a <code>TaskAuthorizationProvider</code> SPI for per-user task authorization</li>
         <li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now">Spring AI 2.0.0 GA Available Now</a> &mdash; built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security</li>
         <li><a href="https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0">MCP Java SDK 2.0.0 Reaches GA</a> &mdash; first major version since 1.x, tracking the 2025-11-25 MCP spec with spec-accurate JSON Schema 2020-12 validation, enforced required fields, and SSE transport deprecated in favor of Streamable HTTP</li>
@@ -546,6 +711,16 @@
         <div class="card-links">
           <a class="icon icon-web" href="https://micronaut-projects.github.io/micronaut-mcp/latest/guide/" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/micronaut-projects/micronaut-mcp" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://micronaut-projects.github.io/micronaut-langchain4j/latest/guide/">Micronaut LangChain4j</a></h3>
+        <p>Official Micronaut integration for LangChain4j. Compile-time-generated AI services with modules for OpenAI, Anthropic, Azure, Bedrock, Google AI, and Mistral, plus embedding stores for PostgreSQL, Redis, MongoDB, Elasticsearch, Neo4j, Chroma, and Qdrant. Version 2.2.0 adds agentic support, Chroma embedding stores, and guardrails resolved from Micronaut beans.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://micronaut-projects.github.io/micronaut-langchain4j/latest/guide/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/micronaut-projects/micronaut-langchain4j" title="GitHub"></a>
         </div>
       </div>
 
@@ -754,6 +929,34 @@
         <div class="card-links">
           <a class="icon icon-web" href="https://springaicommunity.mintlify.app/projects/incubating/spring-ai-agent-utils" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/spring-ai-community/spring-ai-agent-utils" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-assistant">SDK</span>
+        <h3><a href="https://github.com/spring-ai-community/spring-ai-a2a">Spring AI A2A</a></h3>
+        <p>Spring Boot integration for building Agent2Agent (A2A) protocol servers. Auto-configured JSON-RPC endpoints and task lifecycle handling wired to Spring AI's <code>ChatClient</code>, with full <code>@Tool</code> support and multi-agent orchestration. Complements the A2A Java SDK for Spring applications.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/spring-ai-community/spring-ai-a2a" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Library</span>
+        <h3><a href="https://spring-ai-community.github.io/spring-ai-session/">Spring AI Session</a></h3>
+        <p>Event-sourced conversation memory for Spring AI. Structured events with identity, timestamps, and session ownership; turn-aware compaction that trims history on turn boundaries; multi-agent branch isolation; keyword search over history; and pluggable in-memory or JDBC repositories via an SPI.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://spring-ai-community.github.io/spring-ai-session/" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/spring-ai-community/spring-ai-session" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/spring-ai-community/spring-ai-playground">Spring AI Playground</a></h3>
+        <p>Cross-platform desktop app from the Spring AI Community that acts as a local execution layer for AI agent tools. Build, test, and publish MCP tools with a deny-first sandbox, per-tool risk levels, and human-in-the-loop approval for sensitive operations, plus observability dashboards for tokens, cost, traces, and tool execution.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/spring-ai-community/spring-ai-playground" title="GitHub"></a>
         </div>
       </div>
 
@@ -1315,11 +1518,15 @@
         </div>
       </div>
 
-      <a class="card" href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/">
+      <div class="card">
         <span class="card-badge badge-inference">Inference</span>
-        <h3>GPULlama3.java</h3>
-        <p>Java-native LLM inference with automatic GPU acceleration via TornadoVM. Supports Llama 3, Mistral, Qwen, Phi-3, and IBM Granite models in GGUF format. TornadoVM translates Java bytecode to GPU kernels (OpenCL, PTX, SPIR-V). From the University of Manchester's Beehive Lab.</p>
-      </a>
+        <h3><a href="https://github.com/beehive-lab/GPULlama3.java">GPULlama3.java</a></h3>
+        <p>Java-native LLM inference with automatic GPU acceleration via TornadoVM. Supports Llama 3, Mistral, Qwen, Phi-3, and IBM Granite models in GGUF format. TornadoVM translates Java bytecode to GPU kernels (OpenCL, PTX, SPIR-V). Reached 1.0.0 in July 2026 and is published to Maven Central as <code>io.github.beehive-lab:gpu-llama3</code> with auto-activating JDK 21 and JDK 25 builds. From the University of Manchester's Beehive Lab.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/beehive-lab/GPULlama3.java" title="GitHub"></a>
+          <a class="icon icon-web" href="https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/" title="InfoQ"></a>
+        </div>
+      </div>
 
       <div class="card">
         <span class="card-badge badge-inference">Inference</span>
@@ -1376,7 +1583,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/5214683?v=4&amp;s=96" alt="Sandra Ahlgrimm" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Sandra Ahlgrimm</h4>
+          <h3>Sandra Ahlgrimm</h3>
           <p>Senior Cloud Advocate for Java &mdash; Microsoft/GitHub; focused on GitHub Copilot for Java developers and LangChain4j integrations, co-leads a local JUG, and represents Microsoft on the GraalVM Program Advisory Board</p>
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/sandraahlgrimm" title="GitHub"></a>
@@ -1388,7 +1595,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/51285?v=4&amp;s=96" alt="Jean-François Arcand" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Jean-Fran&ccedil;ois Arcand</h4>
+          <h3>Jean-Fran&ccedil;ois Arcand</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Creator of the original Atmosphere Framework, Grizzly, and AsyncHttpClient; now building the new Atmosphere real-time transport layer for Java AI agents</p>
           <div class="person-links">
@@ -1402,7 +1609,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/738413?v=4&amp;s=96" alt="Jaroslav Bachorik" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Jaroslav Bachorik</h4>
+          <h3>Jaroslav Bachorik</h3>
           <p>JVM serviceability engineer &mdash; Datadog; creator of BTrace and JAFAR, a modern JFR parser whose <code>jfr-mcp</code> module lets AI agents analyze JVM Flight Recorder data directly</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/BachorikJ" title="@BachorikJ"></a>
@@ -1415,7 +1622,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/12056979?v=4&amp;s=96" alt="Zineb Bendhiba" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Zineb Bendhiba</h4>
+          <h3>Zineb Bendhiba</h3>
           <p>Principal Software Engineer &mdash; IBM; Apache Camel PMC member, maintains Camel Quarkus and Quarkus Qdrant, lead author of Camel 4.22's <code>camel-ai-tool</code> and <code>camel-mcp-server</code></p>
           <div class="person-links">
             <a class="icon icon-x" href="https://x.com/ZinebBendhiba" title="@ZinebBendhiba"></a>
@@ -1430,7 +1637,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/129743?v=4&amp;s=96" alt="Bruno Borges" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Bruno Borges</h4>
+          <h3>Bruno Borges</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Principal Program Manager &mdash; Microsoft Java Engineering Group</p>
           <div class="person-links">
@@ -1446,7 +1653,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/24360128?v=4&amp;s=96" alt="Vadim Briliantov" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Vadim Briliantov</h4>
+          <h3>Vadim Briliantov</h3>
           <p>Technical Lead of Koog / AI Agents Platform &mdash; JetBrains</p>
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/Ololoshechkin" title="GitHub"></a>
@@ -1459,7 +1666,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/11509290?v=4&amp;s=96" alt="Holly Cummins" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Holly Cummins</h4>
+          <h3>Holly Cummins</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Senior Principal Software Engineer &mdash; IBM Quarkus team</p>
           <div class="person-links">
@@ -1475,7 +1682,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/363447?v=4&amp;s=96" alt="Eric Deandrea" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Eric Deandrea</h4>
+          <h3>Eric Deandrea</h3>
           <span class="badge-champion">Java Champion</span>
           <p><a href="https://docling-project.github.io/docling-java/current">Docling Java</a> project lead, contributor to LangChain4j, Sr. Principal Software Engineer at IBM</p>
           <div class="person-links">
@@ -1490,7 +1697,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/567842?v=4&amp;s=96" alt="Ronald Dehuysser" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Ronald Dehuysser</h4>
+          <h3>Ronald Dehuysser</h3>
           <p>Creator of JobRunr and ClawRunr</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/rdehuyss" title="@rdehuyss"></a>
@@ -1503,7 +1710,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/141109?v=4&amp;s=96" alt="Sébastien Deleuze" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Sébastien Deleuze</h4>
+          <h3>Sébastien Deleuze</h3>
           <p>Spring Framework core committer, Spring AI/MCP integration &mdash; Broadcom</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://x.com/sdeleuze" title="@sdeleuze"></a>
@@ -1518,7 +1725,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/79046580?v=4&amp;s=96" alt="Iryna Dohndorf" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Iryna Dohndorf</h4>
+          <h3>Iryna Dohndorf</h3>
           <p>Creator of Tiberius &mdash; Java security testing framework for LLM applications; software engineer at Karakun; her work sits at the intersection of Java engineering, AI safety, and antifragile system design</p>
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/IDohndorf" title="GitHub"></a>
@@ -1531,7 +1738,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/316835?v=4&amp;s=96" alt="Julien Dubois" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Julien Dubois</h4>
+          <h3>Julien Dubois</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Creator of JHipster; leads a Developer Relations team at Microsoft focused on agentic developer tools for Java/Spring Boot</p>
           <div class="person-links">
@@ -1547,7 +1754,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1358554?v=4&amp;s=96" alt="Markus Eisele" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Markus Eisele</h4>
+          <h3>Markus Eisele</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Developer Advocate &mdash; IBM Research, JavaLand founder</p>
           <div class="person-links">
@@ -1563,7 +1770,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/372781?v=4&amp;s=96" alt="Mario Fusco" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Mario Fusco</h4>
+          <h3>Mario Fusco</h3>
           <span class="badge-champion">Java Champion</span>
           <p>LangChain4j core team, Sr. Principal Software Engineer at IBM</p>
           <div class="person-links">
@@ -1577,7 +1784,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/402301?v=4&amp;s=96" alt="Clement Escoffier" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Clement Escoffier</h4>
+          <h3>Clement Escoffier</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Red Hat Distinguished Engineer, Quarkus co-creator, works on the Quarkus LangChain4j extension</p>
           <div class="person-links">
@@ -1590,7 +1797,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/729277?v=4&amp;s=96" alt="Antonio Goncalves" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Antonio Goncalves</h4>
+          <h3>Antonio Goncalves</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Principal Software Engineer at Microsoft CoreAI, ParisJUG, Devoxx France, Caf&eacute; IA, book author</p>
           <div class="person-links">
@@ -1606,7 +1813,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/151690?v=4&amp;s=96" alt="Ilayaperumal Gopinathan" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Ilayaperumal Gopinathan</h4>
+          <h3>Ilayaperumal Gopinathan</h3>
           <p>Spring AI team, Broadcom; regularly drives Spring AI release announcements</p>
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/ilayaperumalg" title="GitHub"></a>
@@ -1618,7 +1825,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/193434?v=4&amp;s=96" alt="Frank Greco" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Frank Greco</h4>
+          <h3>Frank Greco</h3>
           <span class="badge-champion">Java Champion</span>
           <p>NYJavaSIG founder, AI 4 Java educator, JSR 381 co-author</p>
           <div class="person-links">
@@ -1634,7 +1841,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/149188?v=4&amp;s=96" alt="Ivar Grimstad" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Ivar Grimstad</h4>
+          <h3>Ivar Grimstad</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Jakarta EE Developer Advocate &mdash; Eclipse Foundation; speaks on bringing AI to Jakarta EE (Jakarta Agentic AI)</p>
           <div class="person-links">
@@ -1650,7 +1857,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/73053?v=4&amp;s=96" alt="Emmanuel Hugonnet" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Emmanuel Hugonnet</h4>
+          <h3>Emmanuel Hugonnet</h3>
           <p>Software Engineer &mdash; IBM; WildFly core contributor driving most of the recent AI work across WildFly AI Feature Pack and LangChain4j-CDI</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/ehsavoie" title="@ehsavoie"></a>
@@ -1665,7 +1872,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1916583?v=4&amp;s=96" alt="Rod Johnson" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Rod Johnson</h4>
+          <h3>Rod Johnson</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Creator of Spring Framework, CEO of Embabel</p>
           <div class="person-links">
@@ -1680,7 +1887,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1773630?v=4&amp;s=96" alt="Daniel Kec" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Daniel Kec</h4>
+          <h3>Daniel Kec</h3>
           <p>Helidon developer &mdash; Oracle</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/danielkec" title="@danielkec"></a>
@@ -1694,7 +1901,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/22784?v=4&amp;s=96" alt="Kenneth Kousen" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Kenneth Kousen</h4>
+          <h3>Kenneth Kousen</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Author of six books including <em>Kotlin Cookbook</em> and <em>Modern Java Recipes</em>. O&rsquo;Reilly instructor for AI + Java courses. Professor of Practice in Computer Science at Trinity College. President of Kousen IT, Inc.</p>
           <div class="person-links">
@@ -1712,7 +1919,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/47907?v=4&amp;s=96" alt="Guillaume Laforge" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Guillaume Laforge</h4>
+          <h3>Guillaume Laforge</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Google Developer Advocate &mdash; Java, Groovy, AI</p>
           <div class="person-links">
@@ -1728,7 +1935,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/3154404?v=4&amp;s=96" alt="Dmytro Liubarskyi" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Dmytro Liubarskyi</h4>
+          <h3>Dmytro Liubarskyi</h3>
           <p>Creator of LangChain4j, Principal Architect &mdash; IBM</p>
           <div class="person-links">
             <a class="icon icon-bluesky" href="https://bsky.app/profile/dmythro.bsky.social" title="Bluesky"></a>
@@ -1741,7 +1948,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/54473?v=4&amp;s=96" alt="Josh Long" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Josh Long</h4>
+          <h3>Josh Long</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Spring Developer Advocate at Broadcom</p>
           <div class="person-links">
@@ -1757,7 +1964,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/44456?v=4&amp;s=96" alt="T. Jake Luciani" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>T. Jake Luciani</h4>
+          <h3>T. Jake Luciani</h3>
           <p>Creator of Jlama &mdash; Java LLM inference</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/tjake" title="@tjake"></a>
@@ -1770,7 +1977,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/6390187?v=4&amp;s=96" alt="Loïc Magnette" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Loïc Magnette</h4>
+          <h3>Loïc Magnette</h3>
           <p>Senior Software Engineer at Oniryx; BeJUG (Belgian Java User Group) co-organizer, writes and speaks on LangChain4j agentic workflows for Quarkus</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://x.com/LoMagnette" title="@LoMagnette"></a>
@@ -1785,7 +1992,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/14319020?v=4&amp;s=96" alt="François Martin" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>François Martin</h4>
+          <h3>François Martin</h3>
           <p>International speaker and author, Oracle ACE Associate, senior full-stack software engineer</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://x.com/fmartin_" title="@fmartin_"></a>
@@ -1801,7 +2008,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/593352?v=4&amp;s=96" alt="Simon Martinelli" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Simon Martinelli</h4>
+          <h3>Simon Martinelli</h3>
           <p>Creator of AI Unfied Process and the jOOQ MCP Server</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/simas_ch" title="@simas_ch"></a>
@@ -1814,7 +2021,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/9703337?v=4&amp;s=96" alt="Ana-Maria Mihalceanu" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Ana-Maria Mihalceanu</h4>
+          <h3>Ana-Maria Mihalceanu</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Senior Developer Advocate, Java Platform Group at Oracle; writes and speaks on Java MCP tooling and AI, co-founder of the Bucharest Software Craftsmanship Community</p>
           <div class="person-links">
@@ -1828,7 +2035,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/25938717?v=4&amp;s=96" alt="Vishal Mysore" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Vishal Mysore</h4>
+          <h3>Vishal Mysore</h3>
           <p>Creator of Tools4AI</p>
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/vishalmysore" title="GitHub"></a>
@@ -1841,7 +2048,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/14066977?v=4&amp;s=96" alt="Daniel Oh" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Daniel Oh</h4>
+          <h3>Daniel Oh</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Senior Principal Developer Advocate &mdash; Red Hat; CNCF Ambassador speaking on agentic AI and cloud-native Java</p>
           <div class="person-links">
@@ -1855,7 +2062,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/8652854?v=4&amp;s=96" alt="Michalis Papadimitriou" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Michalis Papadimitriou</h4>
+          <h3>Michalis Papadimitriou</h3>
           <p>Research Fellow, University of Manchester and Senior Software Engineer at Neo4j; TornadoVM core maintainer and lead author of GPULlama3.java, GPU-accelerated LLM inference in pure Java</p>
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/mikepapadim" title="GitHub"></a>
@@ -1868,7 +2075,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1517853?v=4&amp;s=96" alt="Konstantin Pavlov" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Konstantin Pavlov</h4>
+          <h3>Konstantin Pavlov</h3>
           <p>Creator of Tachyon; maintainer of mokksy.dev and LangChain4j Kotlin extensions</p>
           <div class="person-links">
             <a class="icon icon-bluesky" href="https://bsky.app/profile/kpavlov.me" title="Bluesky"></a>
@@ -1881,7 +2088,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/18641509?v=4&amp;s=96" alt="Susanne Pieterse" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Susanne Pieterse</h4>
+          <h3>Susanne Pieterse</h3>
           <p>Senior Software Engineer &amp; iSAQB-certified Software Architect &mdash; OPEN.nl; LangChain4j contributor teaching Java teams to build reliable AI agents</p>
           <div class="person-links">
             <a class="icon icon-bluesky" href="https://bsky.app/profile/susivic.bsky.social" title="Bluesky"></a>
@@ -1893,7 +2100,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/247466?v=4&amp;s=96" alt="Mark Pollack" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Mark Pollack</h4>
+          <h3>Mark Pollack</h3>
           <p>Spring AI project lead</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/markpollack" title="@markpollack"></a>
@@ -1906,7 +2113,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/49833622?v=4&amp;s=96" alt="Lize Raes" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Lize Raes</h4>
+          <h3>Lize Raes</h3>
           <p>LangChain4j core team, Developer Advocate at Oracle</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/LizeRaes" title="@LizeRaes"></a>
@@ -1919,7 +2126,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/3622346?v=4&amp;s=96" alt="Reza Rahman" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Reza Rahman</h4>
+          <h3>Reza Rahman</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Jakarta Agentic AI project lead at Payara/Azul, Jakarta EE Ambassadors founder</p>
           <div class="person-links">
@@ -1933,7 +2140,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/542428?v=4&amp;s=96" alt="K. Siva Prasad Reddy" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>K. Siva Prasad Reddy</h4>
+          <h3>K. Siva Prasad Reddy</h3>
           <p>Developer Advocate at JetBrains, author of <em>Beginning Spring Boot 3</em></p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/sivalabs" title="@sivalabs"></a>
@@ -1948,7 +2155,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/14850786?v=4&amp;s=96" alt="Jennifer Reif" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Jennifer Reif</h4>
+          <h3>Jennifer Reif</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Developer Advocate at Neo4j</p>
           <div class="person-links">
@@ -1963,7 +2170,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/12481094?v=4&amp;s=96" alt="Victor Rentea" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Victor Rentea</h4>
+          <h3>Victor Rentea</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Independent trainer and consultant; runs a full-day &quot;Agentic Engineering&quot; workshop covering MCP, context/prompt engineering, and multi-agent orchestration for Java teams, and speaks on AI-augmented engineering at Java conferences</p>
           <div class="person-links">
@@ -1978,7 +2185,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/247332?v=4&amp;s=96" alt="Baruch Sadogursky" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Baruch Sadogursky</h4>
+          <h3>Baruch Sadogursky</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Developer Advocate at Tessl, co-author of <em>Liquid Software</em> and <em>DevOps Tools for Java Developers</em></p>
           <div class="person-links">
@@ -1994,7 +2201,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/52704922?v=4&amp;s=96" alt="Timo Salm" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Timo Salm</h4>
+          <h3>Timo Salm</h3>
           <p>Principal Solutions Engineer, VMware Tanzu at Broadcom; frequent conference speaker comparing Java agentic-AI frameworks (Spring AI, LangChain4j, Embabel)</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/salmto" title="@salmto"></a>
@@ -2007,7 +2214,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/863011?v=4&amp;s=96" alt="Otavio Santana" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Otavio Santana</h4>
+          <h3>Otavio Santana</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Jakarta Data/Jakarta NoSQL spec lead, Eclipse JNoSQL creator, writes on building AI agents with Jakarta EE and LangChain4j</p>
           <div class="person-links">
@@ -2023,7 +2230,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/426039?v=4&amp;s=96" alt="Oleg Šelajev" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Oleg Šelajev</h4>
+          <h3>Oleg Šelajev</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Developer Relations Lead for AI &mdash; Docker</p>
           <div class="person-links">
@@ -2037,7 +2244,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/158153?v=4&amp;s=96" alt="Zoran Sevarac" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Zoran Sevarac</h4>
+          <h3>Zoran Sevarac</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Associate Professor, University of Belgrade; creator of Deep Netts and Neuroph, pure-Java deep learning libraries, and JSR-381 (Visual Recognition API) co-lead</p>
           <div class="person-links">
@@ -2051,7 +2258,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/301596?v=4&amp;s=96" alt="Bartosz Sorrentino" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Bartosz Sorrentino</h4>
+          <h3>Bartosz Sorrentino</h3>
           <p>LangGraph4j creator, Principal Software Architect</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/bsorrentinoJ" title="@bsorrentinoJ"></a>
@@ -2064,7 +2271,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1517153?v=4&amp;s=96" alt="Alex Soto Bueno" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Alex Soto Bueno</h4>
+          <h3>Alex Soto Bueno</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Director of Developer Experience &mdash; Red Hat, co-author of "AI Agents with Java" (O'Reilly)</p>
           <div class="person-links">
@@ -2078,7 +2285,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/5804?v=4&amp;s=96" alt="Venkat Subramaniam" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Venkat Subramaniam</h4>
+          <h3>Venkat Subramaniam</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author and instructor at the University of Houston</p>
           <div class="person-links">
@@ -2093,7 +2300,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1351573?v=4&amp;s=96" alt="Christian Tzolov" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Christian Tzolov</h4>
+          <h3>Christian Tzolov</h3>
           <p>Spring AI lead, MCP Java SDK founder, Spring team at Broadcom</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/christzolov" title="@christzolov"></a>
@@ -2107,7 +2314,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/349507?v=4&amp;s=96" alt="Dan Vega" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Dan Vega</h4>
+          <h3>Dan Vega</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Spring Developer Advocate, YouTube educator</p>
           <div class="person-links">
@@ -2123,7 +2330,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/12485205?v=4&amp;s=96" alt="Dmitry Vinnik" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Dmitry Vinnik</h4>
+          <h3>Dmitry Vinnik</h3>
           <p>Lead Developer Advocate at Meta</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/DmitryVinnik" title="@DmitryVinnik"></a>
@@ -2137,7 +2344,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/8523418?v=4&amp;s=96" alt="Thomas Vitale" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Thomas Vitale</h4>
+          <h3>Thomas Vitale</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Spring AI Lead Contributor, creator of Arconia, author of <em>Cloud Native Spring in Action</em></p>
           <div class="person-links">
@@ -2153,7 +2360,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/167926?v=4&amp;s=96" alt="Craig Walls" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Craig Walls</h4>
+          <h3>Craig Walls</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Author of <em>Spring AI in Action</em></p>
           <div class="person-links">
@@ -2168,7 +2375,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/65043?v=4&amp;s=96" alt="James Ward" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>James Ward</h4>
+          <h3>James Ward</h3>
           <span class="badge-champion">Java Champion</span>
           <p>Developer Advocate &mdash; Java, Kotlin, Cloud, AI</p>
           <div class="person-links">
@@ -2184,7 +2391,7 @@
       <div class="person">
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/5970214?v=4&amp;s=96" alt="Pascal Wilbrink" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
-          <h4>Pascal Wilbrink</h4>
+          <h3>Pascal Wilbrink</h3>
           <p>Senior Software Developer at OpenValue; creator of the Spring AI AG-UI Java SDK, bringing the AG-UI protocol to Java/Spring AI</p>
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/pascalwilbrink" title="GitHub"></a>
@@ -2349,6 +2556,17 @@
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/scarfbench/benchmark" title="GitHub"></a>
           <a class="icon icon-web" href="https://www.ibm.com/new/announcements/scarfbench-a-public-benchmark-for-java-framework-migration" title="Announcement"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-resource">Resource</span>
+        <h3><a href="https://kotlinlang.org/benchmark/">Kotlin Benchmark for AI Coding Agents</a></h3>
+        <p>JetBrains' open benchmark for evaluating AI coding agents on real-world Kotlin tasks &mdash; 105 issues drawn from active open-source Kotlin repositories including ktlint, detekt, and ort, each requiring the agent to read an issue, navigate the project, and produce a patch that passes the project's tests. Public leaderboard, built on the Multi-SWE-bench methodology.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://kotlinlang.org/benchmark/" title="Leaderboard"></a>
+          <a class="icon icon-github" href="https://github.com/Kotlin/kotlin-swe-bench" title="GitHub"></a>
+          <a class="icon icon-web" href="https://blog.jetbrains.com/kotlin/2026/07/introducing-the-kotlin-benchmark-evaluate-ai-coding-agents-on-real-world-kotlin-tasks/" title="Announcement"></a>
         </div>
       </div>
 
