@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI4JVM — Java AI Frameworks, LLM Inference &amp; Tools for the JVM</title>
+  <title>AI4JVM — Java AI Frameworks, LLM Inference &amp; JVM Tools</title>
   <meta name="description" content="The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.">
   <meta name="theme-color" content="#0f1117">
   <link rel="canonical" href="https://ai4jvm.com/">
@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI4JVM — Java AI Frameworks, LLM Inference &amp; Tools for the JVM">
+  <meta property="og:title" content="AI4JVM — Java AI Frameworks, LLM Inference &amp; JVM Tools">
   <meta property="og:description" content="The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.">
   <meta property="og:url" content="https://ai4jvm.com/">
   <meta property="og:site_name" content="AI4JVM">
@@ -30,7 +30,7 @@
   <meta property="og:image:alt" content="AI4JVM — Java &amp; JVM AI Ecosystem Guide">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI4JVM — Java AI Frameworks, LLM Inference &amp; Tools for the JVM">
+  <meta name="twitter:title" content="AI4JVM — Java AI Frameworks, LLM Inference &amp; JVM Tools">
   <meta name="twitter:description" content="The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.">
   <meta name="twitter:image" content="https://ai4jvm.com/og-image.png">
   <!-- Structured Data -->
@@ -65,11 +65,11 @@
     "@type": "CollectionPage",
     "@id": "https://ai4jvm.com/#webpage",
     "url": "https://ai4jvm.com/",
-    "name": "AI4JVM — Java AI Frameworks, LLM Inference & Tools for the JVM",
+    "name": "AI4JVM — Java AI Frameworks, LLM Inference & JVM Tools",
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-08-20",
+    "dateModified": "2026-08-21",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -571,7 +571,9 @@
         <li><a href="https://quarkus.io/blog/a2a-java-sdk-1-2-0-final-released/">A2A Java SDK 1.2.0.Final Released</a> &mdash; hardens the authorization model with read-authorization enforcement on referenced task lookups, adds a <code>TaskStreamLifecycleHook</code> SPI for stream lifecycle management, and ships breaking changes including method renames and a <code>TaskState</code> enum change</li>
         <li><a href="https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.0">Quarkus LangChain4j 1.13.0 Released</a> &mdash; upgrades to LangChain4j 1.19.0 and the latest MCP client spec, replaces the Qdrant gRPC client with a REST client, adds GPULlama3 tool-calling support, and expands the Dev UI with a Guardrails page and RAG context visibility</li>
         <li><a href="https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/">DevOps Patterns and Java 26 for On-Premises LLM Platforms in Safety-Critical Environments</a> &mdash; Cornelius May covers RAG-on-Kubernetes architecture, Java 26's AOT caching, Vector API, and Structured Concurrency, and treating prompts as versioned, governed code</li>
+        <li><a href="https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/">Vibe Coding, Maven, and the Dependencies You Didn't Choose</a> &mdash; Steve Poole warns that AI coding assistants are silently choosing an app's Maven dependencies, transitive packages, and plugins, and argues supply-chain scrutiny needs to keep pace with AI-accelerated dependency selection</li>
         <li><a href="https://micronaut.io/2026/08/17/micronaut-framework-5-1-1-released/">Micronaut Framework 5.1.1 Released</a> &mdash; maintenance release covering Micronaut Core and Micronaut OpenAPI</li>
+        <li><a href="https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc">Spring AI Recipe: Reasoning and Acting (ReAct)</a> &mdash; Craig Walls shows how Spring AI's <code>ChatClient</code> with tools implements the ReAct pattern via an automatic <code>ToolCallingAdvisor</code> loop &mdash; the LLM reasons, invokes a tool, observes the result, and iterates &mdash; demonstrated with a small Disney Parks example</li>
         <li><a href="https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/">Building AI-Driven Java Systems with Spring AI and Java 26</a> &mdash; treats LLMs as first-class components with explicit responsibilities, leveraging Java 26's Virtual Threads and Structured Concurrency for efficient I/O-bound agentic workflows</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.19.0">LangChain4j 1.19.0 Released</a> &mdash; adds MCP client improvements, Anthropic Batch Chat Model support, a Milvus V2 service update with hybrid search, watsonx.ai Model Gateway support, and Google GenAI thinking support</li>
         <li><a href="https://thetalkingapp.medium.com/spring-ai-recipe-building-a-graph-based-agentic-workflow-with-langgraph4j-0fbfcce25a57">Spring AI Recipe: Building a Graph-Based Agentic Workflow with LangGraph4j</a> &mdash; Craig Walls builds a customer-support workflow with LangGraph4j nodes for classification, billing, and technical support integrated with Spring AI, contrasting LangGraph4j's framework-neutral graphs with Spring AI Alibaba Graph</li>
@@ -618,8 +620,6 @@
         <li><a href="https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/">The Gen AI Iceberg: Java Tooling Edition</a> &mdash; a tiered tour of Java's generative AI tooling, from mainstream frameworks like Spring AI and LangChain4j down to GPU kernel compilation and Project Babylon, arguing the JVM runs AI workloads natively rather than just calling out to them</li>
         <li><a href="https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/">Koog 1.0 Is Out</a> &mdash; JetBrains' Kotlin/Java agent framework reaches a stable core with a 1-year API guarantee, a redesigned Java interop layer, decoupled HTTP transport, and OpenTelemetry observability</li>
         <li><a href="https://quarkus.io/blog/introducing-voting-pattern/">Parallel Voting and Adaptive Model Selection in Quarkus</a> &mdash; LangChain4j's new voting pattern dispatches tasks to multiple evaluator agents in parallel and aggregates results, paired with dynamic chat model switching to balance cost and quality in agentic workflows</li>
-        <li><a href="https://micronaut.io/2026/05/20/micronaut-framework-5-0-0-released/">Micronaut Framework 5.0.0 Released</a> &mdash; major platform refresh across 70+ modules adds a new Micronaut MCP module built on the MCP Java SDK, plus updated Micronaut LangChain4j integration, alongside Java 25/Kotlin 2.3 baselines</li>
-        <li><a href="https://blog.ovhcloud.com/devoxx-france-2026/">Devoxx France 2026: OVHcloud Highlights and Key Trends</a> &mdash; 65 of 259 sessions covered AI and agentic systems, the most-discussed topic, with a shift from experimentation toward production, RAG, observability, and governance</li>
       </ul>
     </div>
   </div>

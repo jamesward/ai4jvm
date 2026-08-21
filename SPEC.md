@@ -10,7 +10,7 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 ## SEO
 
 ### Head & Meta
-- **Title tag:** "AI4JVM — Java AI Frameworks, LLM Inference & Tools for the JVM" — keep under 60 characters so it isn't truncated in search results
+- **Title tag:** "AI4JVM — Java AI Frameworks, LLM Inference & JVM Tools" — keep under 60 characters so it isn't truncated in search results
 - **Meta description:** "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources." — keep between 150 and 160 characters
 - **Canonical URL:** `https://ai4jvm.com/`
 - Keep Open Graph and Twitter Card meta tags in sync with the title/description above
@@ -110,7 +110,9 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://quarkus.io/blog/a2a-java-sdk-1-2-0-final-released/
 - https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.0
 - https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/
+- https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/
 - https://micronaut.io/2026/08/17/micronaut-framework-5-1-1-released/
+- https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc
 - https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.19.0
 - https://thetalkingapp.medium.com/spring-ai-recipe-building-a-graph-based-agentic-workflow-with-langgraph4j-0fbfcce25a57
@@ -157,8 +159,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/
 - https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
 - https://quarkus.io/blog/introducing-voting-pattern/
-- https://micronaut.io/2026/05/20/micronaut-framework-5-0-0-released/
-- https://blog.ovhcloud.com/devoxx-france-2026/
 
 ---
 
