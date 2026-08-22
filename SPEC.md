@@ -106,6 +106,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/
 - https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.1
 - https://quarkus.io/blog/a2a-java-sdk-1-2-0-final-released/
 - https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.0
