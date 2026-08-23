@@ -16,6 +16,8 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 - Keep Open Graph and Twitter Card meta tags in sync with the title/description above
 - `<meta charset>` must appear within the first 1024 bytes of the document, so it comes first in `<head>`; the Google Analytics tag goes last, just before `</head>`
 - **Theme color:** `<meta name="theme-color" content="#0f1117">` matching the page background
+- `<meta name="robots" content="index, follow">` and `<meta name="author" content="James Ward">`
+- `og:image:type` (`image/png`) alongside the existing `og:image` dimensions/alt tags; `twitter:site` (`@_jamesward`) and `twitter:image:alt` alongside the existing Twitter Card tags
 
 ### Structured Data (JSON-LD)
 - Include `WebSite` schema with `@id`, `inLanguage`, `publisher`, and an `about` list naming the site's core topics (Java, Kotlin, JVM, AI, LLMs, MCP)
