@@ -387,6 +387,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** IBM's official Java SDK for the watsonx.ai enterprise AI platform. Chat completions, streaming, tool calling, embeddings, text classification/extraction/detection, reranking, and time-series forecasting, for both IBM Cloud and on-premises (CP4D) deployments. Integrates with LangChain4j, Quarkus, and Apache Camel.
 - **Links:** [GitHub](https://github.com/IBM/watsonx-ai-java-sdk) · [Docs](https://ibm.github.io/watsonx-ai-java-sdk/)
 
+### Spring AI — watsonx.ai
+- **Badge:** SDK
+- **Description:** Official Spring AI integration for IBM watsonx.ai. Spring Boot auto-configuration for chat (IBM Granite, Meta Llama, Mistral AI), embeddings, content moderation (HAP, PII, Granite Guardian), and document reranking via Spring AI's portable abstractions. Supports streaming, function calling, and reactive programming with WebFlux.
+- **Links:** [Docs](https://spring-ai-community.github.io/spring-ai-watsonx-ai) · [GitHub](https://github.com/spring-ai-community/spring-ai-watsonx-ai)
+
 ### SAP AI SDK for Java
 - **Badge:** SDK
 - **Description:** SAP's official Java SDK for integrating generative AI into enterprise applications via SAP AI Core and the Generative AI Hub. Orchestration service integration, prompt templating, grounding, data masking, content filtering, and Spring AI compatibility.
