@@ -487,6 +487,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Alibaba Cloud's production-ready framework for agentic, workflow, and multi-agent Java applications, built on top of Spring AI. Graph-based orchestration (`SequentialAgent`, `ParallelAgent`, `RoutingAgent`, `LoopAgent`), multimodal ReactAgent support, MCP integration, and a built-in Admin observability/eval console. JDK 17+, Apache 2.0.
 - **Links:** [GitHub](https://github.com/alibaba/spring-ai-alibaba)
 
+### BoxLang AI
+- **Badge:** Framework
+- **Description:** Unified AI platform for the JVM from Ortus Solutions (makers of BoxLang and ColdBox). One API across 15+ providers, plus multi-agent orchestration with parent-child hierarchies, an Agent Skills system implementing Anthropic's open standard, MCP support (consuming and serving), 20+ memory types with vector RAG, and a composable middleware pipeline. Reached v3.0 in 2026. Apache 2.0.
+- **Links:** [Website](https://ai.boxlang.io/) · [Docs](https://ai.ortusbooks.com) · [GitHub](https://github.com/ortus-boxlang/bx-ai)
+
 ---
 
 ## Java with Code Assistants
