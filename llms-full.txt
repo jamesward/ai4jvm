@@ -8,6 +8,8 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
+- [Embabel Agent 1.5.1 Released](https://github.com/embabel/embabel-agent/releases/tag/v1.5.1) — RAG improvements including a `SectionReader` for document navigation, embedding-driven skills, Atlas Cloud BYOK support, thinking-tag selection control, and fixes for Bedrock chat options and Ollama thinking-mode extraction
+- [Micronaut Framework 5.1.2 Released](https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/) — maintenance release with updates across Core, Cache, Test, Data, Security, Serialization, and Flyway modules
 - [Spring AI 2.0.1 Available Now](https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/) — first maintenance release since the June 2.0.0 GA, fixing 80+ issues including 7 CVEs (PDF processing, cache, session allocation, file operations, semantic caching, Redis, tool dispatch), adding configurable tool-call limits and OpenAI audio streaming, and removing deprecated Mistral AI chat models
 - [MCP Java SDK 2.0.1 Released](https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.1) — first patch on the 2.0 line: upgrades the conformance suite to 0.1.16 and Spring AI conformance to 2.0.0 GA, bounds HTTP and STDIO server/client reads, and fixes SSE event classification, pagination, and unregistered-handler behavior in stateless servers
 - [A2A Java SDK 1.2.0.Final Released](https://quarkus.io/blog/a2a-java-sdk-1-2-0-final-released/) — hardens the authorization model with read-authorization enforcement on referenced task lookups, adds a `TaskStreamLifecycleHook` SPI for stream lifecycle management, and ships breaking changes including method renames and a `TaskState` enum change
@@ -61,7 +63,6 @@ Latest news and releases from across the Java AI ecosystem — new framework ver
 - [AgentScope Java v2.0.0 GA](https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html) — Alibaba's JVM-native agent framework reaches production-ready GA, with event-streaming, permission-gated tool execution, and a Workspace abstraction for long-running, safely sandboxed agents
 - [The Gen AI Iceberg: Java Tooling Edition](https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/) — a tiered tour of Java's generative AI tooling, from mainstream frameworks like Spring AI and LangChain4j down to GPU kernel compilation and Project Babylon, arguing the JVM runs AI workloads natively rather than just calling out to them
 - [Koog 1.0 Is Out](https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/) — JetBrains' Kotlin/Java agent framework reaches a stable core with a 1-year API guarantee, a redesigned Java interop layer, decoupled HTTP transport, and OpenTelemetry observability
-- [Parallel Voting and Adaptive Model Selection in Quarkus](https://quarkus.io/blog/introducing-voting-pattern/) — LangChain4j's new voting pattern dispatches tasks to multiple evaluator agents in parallel and aggregates results, paired with dynamic chat model switching to balance cost and quality in agentic workflows
 
 ## Agent Frameworks & Libraries
 
@@ -621,13 +622,13 @@ Key voices at the intersection of Java and AI.
 - **Bio:** Developer Advocate — IBM Research, JavaLand founder
 - **Links:** [@myfear](https://twitter.com/myfear) · [Bluesky](https://bsky.app/profile/myfear.com) · [GitHub](https://github.com/myfear) · [LinkedIn](https://www.linkedin.com/in/markuseisele/) · [Blog](https://blog.eisele.net/)
 
-### Mario Fusco (Java Champion)
-- **Bio:** LangChain4j core team, Sr. Principal Software Engineer at IBM
-- **Links:** [@mariofusco](https://x.com/mariofusco) · [GitHub](https://github.com/mariofusco) · [LinkedIn](https://www.linkedin.com/in/mario-fusco-3467213/)
-
 ### Clement Escoffier (Java Champion)
 - **Bio:** Red Hat Distinguished Engineer, Quarkus co-creator, works on the Quarkus LangChain4j extension
 - **Links:** [GitHub](https://github.com/cescoffier) · [foojay](https://foojay.io/today/author/clement-escoffier/)
+
+### Mario Fusco (Java Champion)
+- **Bio:** LangChain4j core team, Sr. Principal Software Engineer at IBM
+- **Links:** [@mariofusco](https://x.com/mariofusco) · [GitHub](https://github.com/mariofusco) · [LinkedIn](https://www.linkedin.com/in/mario-fusco-3467213/)
 
 ### Antonio Goncalves (Java Champion)
 - **Bio:** Principal Software Engineer at Microsoft CoreAI, ParisJUG, Devoxx France, Café IA, book author

@@ -108,6 +108,8 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/embabel/embabel-agent/releases/tag/v1.5.1
+- https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
 - https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/
 - https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.1
 - https://quarkus.io/blog/a2a-java-sdk-1-2-0-final-released/
@@ -161,7 +163,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 - https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/
 - https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
-- https://quarkus.io/blog/introducing-voting-pattern/
 
 ---
 
@@ -792,15 +793,6 @@ Notes:
 - **Role:** Developer Advocate — IBM Research, JavaLand founder
 - **Links:** [@myfear](https://twitter.com/myfear) · [Bluesky](https://bsky.app/profile/myfear.com) · [GitHub](https://github.com/myfear) · [LinkedIn](https://www.linkedin.com/in/markuseisele/) · [Blog](https://blog.eisele.net/)
 
-### Mario Fusco
-
-- **Badge:** Person
-- **Java Champion**
-- **Initials:** MF
-- **Photo:** https://avatars.githubusercontent.com/u/372781?v=4
-- **Role:** LangChain4j core team, Sr. Principal Software Engineer at IBM
-- **Links:** [@mariofusco](https://x.com/mariofusco) · [GitHub](https://github.com/mariofusco) · [LinkedIn](https://www.linkedin.com/in/mario-fusco-3467213/)
-
 ### Clement Escoffier
 
 - **Badge:** Person
@@ -809,6 +801,15 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/402301?v=4
 - **Role:** Red Hat Distinguished Engineer, Quarkus co-creator, works on the Quarkus LangChain4j extension
 - **Links:** [GitHub](https://github.com/cescoffier) · [foojay](https://foojay.io/today/author/clement-escoffier/)
+
+### Mario Fusco
+
+- **Badge:** Person
+- **Java Champion**
+- **Initials:** MF
+- **Photo:** https://avatars.githubusercontent.com/u/372781?v=4
+- **Role:** LangChain4j core team, Sr. Principal Software Engineer at IBM
+- **Links:** [@mariofusco](https://x.com/mariofusco) · [GitHub](https://github.com/mariofusco) · [LinkedIn](https://www.linkedin.com/in/mario-fusco-3467213/)
 
 ### Antonio Goncalves
 
