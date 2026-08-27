@@ -74,7 +74,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-08-26",
+    "dateModified": "2026-08-27",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -154,7 +154,8 @@
       {"@type": "ListItem", "position": 62, "name": "LLM4S", "url": "https://llm4s.org/"},
       {"@type": "ListItem", "position": 63, "name": "Agents-Flex", "url": "https://github.com/agents-flex/agents-flex"},
       {"@type": "ListItem", "position": 64, "name": "Spring AI Alibaba", "url": "https://github.com/alibaba/spring-ai-alibaba"},
-      {"@type": "ListItem", "position": 65, "name": "BoxLang AI", "url": "https://ai.boxlang.io/"}
+      {"@type": "ListItem", "position": 65, "name": "BoxLang AI", "url": "https://ai.boxlang.io/"},
+      {"@type": "ListItem", "position": 66, "name": "Quarkus Flow", "url": "https://docs.quarkiverse.io/quarkus-flow/dev/index.html"}
     ]
   }
   </script>
@@ -274,7 +275,8 @@
       {"@type": "ListItem", "position": 54, "item": {"@type": "Person", "name": "Thomas Vitale", "url": "https://x.com/vitalethomas"}},
       {"@type": "ListItem", "position": 55, "item": {"@type": "Person", "name": "Craig Walls", "url": "https://twitter.com/habuma"}},
       {"@type": "ListItem", "position": 56, "item": {"@type": "Person", "name": "James Ward", "url": "https://twitter.com/_jamesward"}},
-      {"@type": "ListItem", "position": 57, "item": {"@type": "Person", "name": "Pascal Wilbrink", "url": "https://github.com/pascalwilbrink"}}
+      {"@type": "ListItem", "position": 57, "item": {"@type": "Person", "name": "Pascal Wilbrink", "url": "https://github.com/pascalwilbrink"}},
+      {"@type": "ListItem", "position": 58, "item": {"@type": "Person", "name": "Ricardo Zanini", "url": "https://twitter.com/zaninirica"}}
     ]
   }
   </script>
@@ -574,6 +576,9 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final">A2A Java SDK 1.3.0.Final Released</a> &mdash; adds multitenancy support with per-tenant routing, fail-closed task authorization defaults, SSRF prevention on push-notification URLs, and header-injection/redirect guards against credential leakage</li>
+        <li><a href="https://quarkus.io/blog/quarkus-flow-1-0-0-released/">Quarkus Flow 1.0.0 Released</a> &mdash; first stable release of the CNCF Open Workflow Specification-based workflow engine for Quarkus, with LangChain4j integration for multi-step agentic pipelines with branching, retries, and human-in-the-loop events</li>
+        <li><a href="https://foojay.io/today/whats-new-in-the-august-2026-azul-payara-release/">Azul Payara Community 7.2026.8 Previews Jakarta Agentic AI</a> &mdash; first runtime preview of the Jakarta Agentic AI 1.0 API, letting developers build AI agents on Jakarta EE using standard CDI beans and dependency injection</li>
         <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.5.1">Embabel Agent 1.5.1 Released</a> &mdash; RAG improvements including a <code>SectionReader</code> for document navigation, embedding-driven skills, Atlas Cloud BYOK support, thinking-tag selection control, and fixes for Bedrock chat options and Ollama thinking-mode extraction</li>
         <li><a href="https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/">Micronaut Framework 5.1.2 Released</a> &mdash; maintenance release with updates across Core, Cache, Test, Data, Security, Serialization, and Flyway modules</li>
         <li><a href="https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/">Spring AI 2.0.1 Available Now</a> &mdash; first maintenance release since the June 2.0.0 GA, fixing 80+ issues including 7 CVEs (PDF processing, cache, session allocation, file operations, semantic caching, Redis, tool dispatch), adding configurable tool-call limits and OpenAI audio streaming, and removing deprecated Mistral AI chat models</li>
@@ -1281,6 +1286,15 @@
         <div class="card-links">
           <a class="icon icon-web" href="https://ai.ortusbooks.com" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/ortus-boxlang/bx-ai" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://docs.quarkiverse.io/quarkus-flow/dev/index.html">Quarkus Flow</a></h3>
+        <p>Lightweight, low-dependency workflow engine for Quarkus built on the CNCF Open Workflow Specification. Injects LangChain4j <code>@RegisterAiService</code> beans directly into workflows as steps, enabling multi-step agentic pipelines with branching, retries, and human-in-the-loop events &mdash; no manual orchestration required. Fluent Java DSL, CDI-first, native-image support. Reached 1.0.0 in August 2026. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/quarkiverse/quarkus-flow" title="GitHub"></a>
         </div>
       </div>
 
@@ -2425,6 +2439,18 @@
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/pascalwilbrink" title="GitHub"></a>
             <a class="icon icon-web" href="https://pascalwilbrink.github.io" title="Website"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/1538000?v=4&amp;s=96" alt="Ricardo Zanini" width="48" height="48" loading="lazy" decoding="async"></div>
+        <div class="person-info">
+          <h3>Ricardo Zanini</h3>
+          <p>Senior Principal Software Engineer at Red Hat; creator of Quarkus Flow and a lead contributor to the CNCF Open Workflow Specification, bringing agentic workflow orchestration to Quarkus</p>
+          <div class="person-links">
+            <a class="icon icon-github" href="https://github.com/ricardozanini" title="GitHub"></a>
+            <a class="icon icon-x" href="https://twitter.com/zaninirica" title="@zaninirica"></a>
           </div>
         </div>
       </div>

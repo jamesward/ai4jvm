@@ -8,6 +8,9 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
+- [A2A Java SDK 1.3.0.Final Released](https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final) — adds multitenancy support with per-tenant routing, fail-closed task authorization defaults, SSRF prevention on push-notification URLs, and header-injection/redirect guards against credential leakage
+- [Quarkus Flow 1.0.0 Released](https://quarkus.io/blog/quarkus-flow-1-0-0-released/) — first stable release of the CNCF Open Workflow Specification-based workflow engine for Quarkus, with LangChain4j integration for multi-step agentic pipelines with branching, retries, and human-in-the-loop events
+- [Azul Payara Community 7.2026.8 Previews Jakarta Agentic AI](https://foojay.io/today/whats-new-in-the-august-2026-azul-payara-release/) — first runtime preview of the Jakarta Agentic AI 1.0 API, letting developers build AI agents on Jakarta EE using standard CDI beans and dependency injection
 - [Embabel Agent 1.5.1 Released](https://github.com/embabel/embabel-agent/releases/tag/v1.5.1) — RAG improvements including a `SectionReader` for document navigation, embedding-driven skills, Atlas Cloud BYOK support, thinking-tag selection control, and fixes for Bedrock chat options and Ollama thinking-mode extraction
 - [Micronaut Framework 5.1.2 Released](https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/) — maintenance release with updates across Core, Cache, Test, Data, Security, Serialization, and Flyway modules
 - [Spring AI 2.0.1 Available Now](https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/) — first maintenance release since the June 2.0.0 GA, fixing 80+ issues including 7 CVEs (PDF processing, cache, session allocation, file operations, semantic caching, Redis, tool dispatch), adding configurable tool-call limits and OpenAI audio streaming, and removing deprecated Mistral AI chat models
@@ -392,6 +395,11 @@ Open-source frameworks and SDKs for building AI-powered applications on the JVM 
 - **Badge:** Framework
 - **Description:** Unified AI platform for the JVM from Ortus Solutions (makers of BoxLang and ColdBox). One API across 15+ providers, plus multi-agent orchestration with parent-child hierarchies, an Agent Skills system implementing Anthropic's open standard, MCP support (consuming and serving), 20+ memory types with vector RAG, and a composable middleware pipeline. Reached v3.0 in 2026. Apache 2.0.
 - **Links:** [Website](https://ai.boxlang.io/) · [Docs](https://ai.ortusbooks.com) · [GitHub](https://github.com/ortus-boxlang/bx-ai)
+
+### Quarkus Flow
+- **Badge:** Framework
+- **Description:** Lightweight, low-dependency workflow engine for Quarkus built on the CNCF Open Workflow Specification. Injects LangChain4j `@RegisterAiService` beans directly into workflows as steps, enabling multi-step agentic pipelines with branching, retries, and human-in-the-loop events — no manual orchestration required. Fluent Java DSL, CDI-first, native-image support. Reached 1.0.0 in August 2026. Apache 2.0.
+- **Links:** [Docs](https://docs.quarkiverse.io/quarkus-flow/dev/index.html) · [GitHub](https://github.com/quarkiverse/quarkus-flow)
 
 ## Java with Code Assistants
 
@@ -797,6 +805,10 @@ Key voices at the intersection of Java and AI.
 ### Pascal Wilbrink
 - **Bio:** Senior Software Developer at OpenValue; creator of the Spring AI AG-UI Java SDK, bringing the AG-UI protocol to Java/Spring AI
 - **Links:** [GitHub](https://github.com/pascalwilbrink) · [Website](https://pascalwilbrink.github.io)
+
+### Ricardo Zanini
+- **Bio:** Senior Principal Software Engineer at Red Hat; creator of Quarkus Flow and a lead contributor to the CNCF Open Workflow Specification, bringing agentic workflow orchestration to Quarkus
+- **Links:** [GitHub](https://github.com/ricardozanini) · [X](https://twitter.com/zaninirica)
 
 ## FAQ
 
