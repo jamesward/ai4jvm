@@ -417,7 +417,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### kyo-ai
 - **Badge:** Framework
-- **Description:** AI module for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — schema derived from your result type, tool-call loop and conversation threading handled automatically, streaming and persistent actor-backed agents included. Multi-provider (OpenAI-compatible, Anthropic). As of Kyo 1.0.0-RC5 (July 2026), `kyo-ai` moved into the main Kyo monorepo alongside a new `kyo-mcp` module for MCP server/client support. Apache 2.0.
+- **Description:** AI module for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — schema derived from your result type, tool-call loop, and conversation threading handled automatically, streaming and persistent actor-backed agents included. Multi-provider (OpenAI-compatible, Anthropic). As of Kyo 1.0.0-RC5 (July 2026), `kyo-ai` moved into the main Kyo monorepo alongside a new `kyo-mcp` module for MCP server/client support. Apache 2.0.
 - **Links:** [GitHub](https://github.com/getkyo/kyo/tree/main/kyo-ai) · [Website](https://getkyo.io/)
 
 ### zio-bedrock-converse
@@ -505,7 +505,7 @@ Technologies that supercharge Java development when paired with AI code assistan
 
 ### AI-Git-Bot
 - **Badge:** Assistant
-- **Description:** Self-hosted AI workflow automation platform for Git repositories. Automates pull request reviews, test generation, issue management and documentation synchronization with the support of multiple AI backends. Pure Java application with a Spring-Boot based architecture.
+- **Description:** Self-hosted AI workflow automation platform for Git repositories. Automates pull request reviews, test generation, issue management, and documentation synchronization with the support of multiple AI backends. Pure Java application with a Spring-Boot based architecture.
 - **Links:** [Website](https://gitbot.eu/) · [GitHub](https://github.com/tmseidel/ai-git-bot)
 
 ### Javadocs.dev MCP Server
@@ -935,10 +935,11 @@ Notes:
 ### Simon Martinelli
 
 - **Badge:** Person
-- **Initials:** MP
+- **Java Champion**
+- **Initials:** SM
 - **Photo:** https://avatars.githubusercontent.com/u/593352?v=4
-- **Role:** Creator of AI Unfied Process and jOOQ MCP Server
-- **Links:** [@simas_ch](https://twitter.com/simas_ch) · [GitHub](https://github.com/simach) · [LinkedIn](https://www.linkedin.com/in/simonmartinelli/)
+- **Role:** Independent consultant, teacher, author, and speaker. Creator of the AI Unified Process and jOOQ MCP Server
+- **Links:** [@simas_ch](https://twitter.com/simas_ch) · [GitHub](https://github.com/simasch) · [LinkedIn](https://www.linkedin.com/in/simonmartinelli/) · [Website](https://martinelli.ch)
 
 ### Ana-Maria Mihalceanu
 
@@ -1108,7 +1109,7 @@ Notes:
 - **Java Champion**
 - **Initials:** VS
 - **Photo:** https://avatars.githubusercontent.com/u/5804?v=4
-- **Role:** Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author and instructor at the University of Houston
+- **Role:** Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author, and instructor at the University of Houston
 - **Links:** [@venkat_s](https://twitter.com/venkat_s) · [Bluesky](https://bsky.app/profile/venkats.bsky.social) · [GitHub](https://github.com/venkats) · [LinkedIn](https://www.linkedin.com/in/vsubramaniam/)
 
 ### Christian Tzolov
