@@ -108,6 +108,9 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/JetBrains/koog/releases/tag/1.2.0
+- https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final
+- https://quarkus.io/blog/quarkus-flow-1-0-0-released/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.1
 - https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
 - https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/
@@ -162,7 +165,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0
 - https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 - https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/
-- https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/
 
 ---
 
