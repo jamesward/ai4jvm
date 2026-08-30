@@ -8,8 +8,9 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
-- [A2A Java SDK 1.3.0.Final Released](https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final) — adds multitenancy support with per-tenant routing, fail-closed task authorization defaults, SSRF prevention on push-notification URLs, and header-injection/redirect guards against credential leakage
-- [Quarkus Flow 1.0.0 Released](https://quarkus.io/blog/quarkus-flow-1-0-0-released/) — first stable release of the CNCF Open Workflow Specification-based workflow engine for Quarkus, with LangChain4j integration for multi-step agentic pipelines with branching, retries, and human-in-the-loop events
+- [Koog 1.2.0 Released](https://github.com/JetBrains/koog/releases/tag/1.2.0) — adds a `skills` module implementing the Agent Skills specification (repository discovery, catalog prompt generation in XML/YAML/JSON) and a `koog-bedrock-agentcore-runtime` module for running Koog agents as Amazon Bedrock AgentCore Runtime entry points, plus OpenAI Responses API and reasoning-content fixes
+- [A2A Java SDK 1.3.0.Final Released](https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final) — adds multitenancy support with per-tenant routing and a functional-interface `AgentExecutor` with a default cancel method, alongside security hardening: CR/LF header-injection prevention, SSRF protection for push-notification URLs, and fail-closed task-authorization enforcement
+- [Quarkus Flow 1.0.0 Released](https://quarkus.io/blog/quarkus-flow-1-0-0-released/) — first stable release of Quarkus's embedded workflow engine, defining workflows in YAML (Open Workflow Specification) or a Java DSL, with LangChain4j integration for agentic pipelines (branching, retries, human-in-the-loop), CloudEvents/Reactive Messaging support, and GraalVM native compilation
 - [Azul Payara Community 7.2026.8 Previews Jakarta Agentic AI](https://foojay.io/today/whats-new-in-the-august-2026-azul-payara-release/) — first runtime preview of the Jakarta Agentic AI 1.0 API, letting developers build AI agents on Jakarta EE using standard CDI beans and dependency injection
 - [Embabel Agent 1.5.1 Released](https://github.com/embabel/embabel-agent/releases/tag/v1.5.1) — RAG improvements including a `SectionReader` for document navigation, embedding-driven skills, Atlas Cloud BYOK support, thinking-tag selection control, and fixes for Bedrock chat options and Ollama thinking-mode extraction
 - [Micronaut Framework 5.1.2 Released](https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/) — maintenance release with updates across Core, Cache, Test, Data, Security, Serialization, and Flyway modules
@@ -65,7 +66,6 @@ Latest news and releases from across the Java AI ecosystem — new framework ver
 - [MCP Java SDK 2.0.0 Reaches GA](https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0) — first major version since 1.x, tracking the 2025-11-25 MCP spec with spec-accurate JSON Schema 2020-12 validation, enforced required fields, and SSE transport deprecated in favor of Streamable HTTP
 - [AgentScope Java v2.0.0 GA](https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html) — Alibaba's JVM-native agent framework reaches production-ready GA, with event-streaming, permission-gated tool execution, and a Workspace abstraction for long-running, safely sandboxed agents
 - [The Gen AI Iceberg: Java Tooling Edition](https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/) — a tiered tour of Java's generative AI tooling, from mainstream frameworks like Spring AI and LangChain4j down to GPU kernel compilation and Project Babylon, arguing the JVM runs AI workloads natively rather than just calling out to them
-- [Koog 1.0 Is Out](https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/) — JetBrains' Kotlin/Java agent framework reaches a stable core with a 1-year API guarantee, a redesigned Java interop layer, decoupled HTTP transport, and OpenTelemetry observability
 
 ## Agent Frameworks & Libraries
 
@@ -318,7 +318,7 @@ Open-source frameworks and SDKs for building AI-powered applications on the JVM 
 
 ### kyo-ai
 - **Badge:** Framework
-- **Description:** AI module for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — schema derived from your result type, tool-call loop and conversation threading handled automatically, streaming and persistent actor-backed agents included. Multi-provider (OpenAI-compatible, Anthropic). As of Kyo 1.0.0-RC5 (July 2026), `kyo-ai` moved into the main Kyo monorepo alongside a new `kyo-mcp` module for MCP server/client support. Apache 2.0.
+- **Description:** AI module for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — schema derived from your result type, tool-call loop, and conversation threading handled automatically, streaming and persistent actor-backed agents included. Multi-provider (OpenAI-compatible, Anthropic). As of Kyo 1.0.0-RC5 (July 2026), `kyo-ai` moved into the main Kyo monorepo alongside a new `kyo-mcp` module for MCP server/client support. Apache 2.0.
 - **Links:** [GitHub](https://github.com/getkyo/kyo/tree/main/kyo-ai) · [Website](https://getkyo.io/)
 
 ### zio-bedrock-converse
@@ -407,7 +407,7 @@ Technologies that supercharge Java development when paired with AI code assistan
 
 ### AI-Git-Bot
 - **Badge:** Assistant
-- **Description:** Self-hosted AI workflow automation platform for Git repositories. Automates pull request reviews, test generation, issue management and documentation synchronization with the support of multiple AI backends. Pure Java application with a Spring-Boot based architecture.
+- **Description:** Self-hosted AI workflow automation platform for Git repositories. Automates pull request reviews, test generation, issue management, and documentation synchronization with the support of multiple AI backends. Pure Java application with a Spring-Boot based architecture.
 - **Links:** [Website](https://gitbot.eu/) · [GitHub](https://github.com/tmseidel/ai-git-bot)
 
 ### Javadocs.dev MCP Server
@@ -694,9 +694,9 @@ Key voices at the intersection of Java and AI.
 - **Bio:** International speaker and author, Oracle ACE Associate, senior full-stack software engineer
 - **Links:** [@fmartin_](https://x.com/fmartin_) · [GitHub](https://github.com/martinfrancois) · [LinkedIn](https://www.linkedin.com/in/fran%c3%a7oismartin/) · [Bluesky](https://bsky.app/profile/fmartin.ch) · [YouTube](https://www.youtube.com/@fmartindev) · [Website](https://fmartin.ch)
 
-### Simon Martinelli
-- **Bio:** Creator of AI Unfied Process and the jOOQ MCP Server
-- **Links:** [@simas_ch](https://twitter.com/simas_ch) · [GitHub](https://github.com/simach) · [LinkedIn](https://www.linkedin.com/in/simonmartinelli/)
+### Simon Martinelli (Java Champion)
+- **Bio:** Independent consultant, teacher, author, and speaker. Creator of the AI Unified Process and jOOQ MCP Server
+- **Links:** [@simas_ch](https://twitter.com/simas_ch) · [GitHub](https://github.com/simasch) · [LinkedIn](https://www.linkedin.com/in/simonmartinelli/) · [Website](https://martinelli.ch)
 
 ### Ana-Maria Mihalceanu (Java Champion)
 - **Bio:** Senior Developer Advocate, Java Platform Group at Oracle; writes and speaks on Java MCP tooling and AI, co-founder of the Bucharest Software Craftsmanship Community
@@ -775,7 +775,7 @@ Key voices at the intersection of Java and AI.
 - **Links:** [@alexsotob](https://twitter.com/alexsotob) · [GitHub](https://github.com/lordofthejars) · [Blog](https://www.lordofthejars.com)
 
 ### Venkat Subramaniam (Java Champion)
-- **Bio:** Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author and instructor at the University of Houston
+- **Bio:** Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author, and instructor at the University of Houston
 - **Links:** [@venkat_s](https://twitter.com/venkat_s) · [Bluesky](https://bsky.app/profile/venkats.bsky.social) · [GitHub](https://github.com/venkats) · [LinkedIn](https://www.linkedin.com/in/vsubramaniam/)
 
 ### Christian Tzolov

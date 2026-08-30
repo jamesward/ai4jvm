@@ -74,7 +74,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-08-27",
+    "dateModified": "2026-08-30",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -576,8 +576,9 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
-        <li><a href="https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final">A2A Java SDK 1.3.0.Final Released</a> &mdash; adds multitenancy support with per-tenant routing, fail-closed task authorization defaults, SSRF prevention on push-notification URLs, and header-injection/redirect guards against credential leakage</li>
-        <li><a href="https://quarkus.io/blog/quarkus-flow-1-0-0-released/">Quarkus Flow 1.0.0 Released</a> &mdash; first stable release of the CNCF Open Workflow Specification-based workflow engine for Quarkus, with LangChain4j integration for multi-step agentic pipelines with branching, retries, and human-in-the-loop events</li>
+        <li><a href="https://github.com/JetBrains/koog/releases/tag/1.2.0">Koog 1.2.0 Released</a> &mdash; adds a <code>skills</code> module implementing the Agent Skills specification (repository discovery, catalog prompt generation in XML/YAML/JSON) and a <code>koog-bedrock-agentcore-runtime</code> module for running Koog agents as Amazon Bedrock AgentCore Runtime entry points, plus OpenAI Responses API and reasoning-content fixes</li>
+        <li><a href="https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final">A2A Java SDK 1.3.0.Final Released</a> &mdash; adds multitenancy support with per-tenant routing and a functional-interface <code>AgentExecutor</code> with a default cancel method, alongside security hardening: CR/LF header-injection prevention, SSRF protection for push-notification URLs, and fail-closed task-authorization enforcement</li>
+        <li><a href="https://quarkus.io/blog/quarkus-flow-1-0-0-released/">Quarkus Flow 1.0.0 Released</a> &mdash; first stable release of Quarkus's embedded workflow engine, defining workflows in YAML (Open Workflow Specification) or a Java DSL, with LangChain4j integration for agentic pipelines (branching, retries, human-in-the-loop), CloudEvents/Reactive Messaging support, and GraalVM native compilation</li>
         <li><a href="https://foojay.io/today/whats-new-in-the-august-2026-azul-payara-release/">Azul Payara Community 7.2026.8 Previews Jakarta Agentic AI</a> &mdash; first runtime preview of the Jakarta Agentic AI 1.0 API, letting developers build AI agents on Jakarta EE using standard CDI beans and dependency injection</li>
         <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.5.1">Embabel Agent 1.5.1 Released</a> &mdash; RAG improvements including a <code>SectionReader</code> for document navigation, embedding-driven skills, Atlas Cloud BYOK support, thinking-tag selection control, and fixes for Bedrock chat options and Ollama thinking-mode extraction</li>
         <li><a href="https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/">Micronaut Framework 5.1.2 Released</a> &mdash; maintenance release with updates across Core, Cache, Test, Data, Security, Serialization, and Flyway modules</li>
@@ -633,7 +634,6 @@
         <li><a href="https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0">MCP Java SDK 2.0.0 Reaches GA</a> &mdash; first major version since 1.x, tracking the 2025-11-25 MCP spec with spec-accurate JSON Schema 2020-12 validation, enforced required fields, and SSE transport deprecated in favor of Streamable HTTP</li>
         <li><a href="https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html">AgentScope Java v2.0.0 GA</a> &mdash; Alibaba's JVM-native agent framework reaches production-ready GA, with event-streaming, permission-gated tool execution, and a Workspace abstraction for long-running, safely sandboxed agents</li>
         <li><a href="https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/">The Gen AI Iceberg: Java Tooling Edition</a> &mdash; a tiered tour of Java's generative AI tooling, from mainstream frameworks like Spring AI and LangChain4j down to GPU kernel compilation and Project Babylon, arguing the JVM runs AI workloads natively rather than just calling out to them</li>
-        <li><a href="https://blog.jetbrains.com/ai/2026/05/koog-1-0-is-out-stable-core-better-interop-and-multiplatform-observability/">Koog 1.0 Is Out</a> &mdash; JetBrains' Kotlin/Java agent framework reaches a stable core with a 1-year API guarantee, a redesigned Java interop layer, decoupled HTTP transport, and OpenTelemetry observability</li>
       </ul>
     </div>
   </div>
@@ -1138,7 +1138,7 @@
       <div class="card">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://github.com/getkyo/kyo/tree/main/kyo-ai">kyo-ai</a></h3>
-        <p>AI module for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — schema derived from your result type, tool-call loop and conversation threading handled automatically, streaming and persistent actor-backed agents included. Multi-provider (OpenAI-compatible, Anthropic). As of Kyo 1.0.0-RC5 (July 2026), <code>kyo-ai</code> moved into the main Kyo monorepo alongside a new <code>kyo-mcp</code> module for MCP server/client support. Apache 2.0.</p>
+        <p>AI module for Kyo, the Scala 3 algebraic-effects toolkit. Makes an LLM call a typed, composable value — schema derived from your result type, tool-call loop, and conversation threading handled automatically, streaming and persistent actor-backed agents included. Multi-provider (OpenAI-compatible, Anthropic). As of Kyo 1.0.0-RC5 (July 2026), <code>kyo-ai</code> moved into the main Kyo monorepo alongside a new <code>kyo-mcp</code> module for MCP server/client support. Apache 2.0.</p>
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/getkyo/kyo/tree/main/kyo-ai" title="GitHub"></a>
           <a class="icon icon-web" href="https://getkyo.io/" title="Website"></a>
@@ -1312,7 +1312,7 @@
       <div class="card">
         <span class="card-badge badge-assistant">Assistant</span>
         <h3><a href="https://gitbot.eu/">AI-Git-Bot</a></h3>
-        <p>Self-hosted AI workflow automation platform for Git repositories. Automates pull request reviews, test generation, issue management and documentation synchronization with the support of multiple AI backends. Pure Java application with a Spring-Boot based architecture.</p>
+        <p>Self-hosted AI workflow automation platform for Git repositories. Automates pull request reviews, test generation, issue management, and documentation synchronization with the support of multiple AI backends. Pure Java application with a Spring-Boot based architecture.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://gitbot.eu/" title="Website"></a>
           <a class="icon icon-github" href="https://github.com/tmseidel/ai-git-bot" title="GitHub"></a>
@@ -2052,11 +2052,13 @@
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/593352?v=4&amp;s=96" alt="Simon Martinelli" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
           <h3>Simon Martinelli</h3>
-          <p>Creator of AI Unfied Process and the jOOQ MCP Server</p>
+          <span class="badge-champion">Java Champion</span>
+          <p>Independent consultant, teacher, author, and speaker. Creator of the AI Unified Process and jOOQ MCP Server</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/simas_ch" title="@simas_ch"></a>
-            <a class="icon icon-github" href="https://github.com/simach" title="GitHub"></a>
+            <a class="icon icon-github" href="https://github.com/simasch" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/simonmartinelli/" title="LinkedIn"></a>
+            <a class="icon icon-web" href="https://martinelli.ch" title="Website"></a>
           </div>
         </div>
       </div>
@@ -2330,7 +2332,7 @@
         <div class="person-info">
           <h3>Venkat Subramaniam</h3>
           <span class="badge-champion">Java Champion</span>
-          <p>Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author and instructor at the University of Houston</p>
+          <p>Founder of Agile Developer, creator of the dev2next and Arc of AI conferences, award-winning author, and instructor at the University of Houston</p>
           <div class="person-links">
             <a class="icon icon-x" href="https://twitter.com/venkat_s" title="@venkat_s"></a>
             <a class="icon icon-bluesky" href="https://bsky.app/profile/venkats.bsky.social" title="Bluesky"></a>
