@@ -559,6 +559,11 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v5.2.0 added AI-focused kernels: native FP8 conversion, FP8/BF16 tensor-core matrix multiply, cuBLAS/CUTLASS-compatible BFloat16 arrays, and batched FP16 GEMM. From the University of Manchester's Beehive Lab.
 - **Links:** [Website](https://www.tornadovm.org) · [GitHub](https://github.com/beehive-lab/TornadoVM) · [Docs](https://tornadovm.readthedocs.io/en/latest/)
 
+### ModelJARs
+- **Badge:** Inference
+- **Description:** Community registry that publishes AI models as versioned marker JARs, so a model becomes an ordinary Maven or Gradle dependency (`org.modeljars.huggingface:…`) pinned by SHA-256 to an immutable Hugging Face revision instead of vendored weights. Covers GGUF, Safetensors, and CACT artifacts, and ships a native CLI for search/pull plus the Java 25 Models runtime for in-process inference, with pure-Java Vector API, native, TornadoVM GPU, and Apple Foundation Models backends. Maintainers qualify each artifact in CI and publish benchmarks against llama.cpp and Ollama. From Integrallis.
+- **Links:** [Website](https://modeljars.org/) · [GitHub](https://github.com/ModelJars/modeljars) · [Docs](https://integrallis.github.io/models/docs/models/current/index.html) · [Benchmarks](https://modeljars.org/benchmarks/)
+
 ### TensorFlow Java
 - **Badge:** Training
 - **Description:** Java bindings for TensorFlow, maintained by the TensorFlow JVM SIG. Train and deploy TF models entirely in Java. Available as an optional Tribuo integration. Suitable for teams that want to stay within the JVM ecosystem while using TensorFlow's model formats.

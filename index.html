@@ -74,7 +74,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-08-30",
+    "dateModified": "2026-08-31",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -206,9 +206,10 @@
       {"@type": "ListItem", "position": 5, "name": "Tribuo", "url": "https://tribuo.org/"},
       {"@type": "ListItem", "position": 6, "name": "GPULlama3.java", "url": "https://github.com/beehive-lab/GPULlama3.java"},
       {"@type": "ListItem", "position": 7, "name": "TornadoVM", "url": "https://www.tornadovm.org"},
-      {"@type": "ListItem", "position": 8, "name": "TensorFlow Java", "url": "https://www.tensorflow.org/jvm"},
-      {"@type": "ListItem", "position": 9, "name": "Eclipse Deeplearning4j (DL4J)", "url": "https://deeplearning4j.konduit.ai/"},
-      {"@type": "ListItem", "position": 10, "name": "Apache OpenNLP", "url": "https://opennlp.apache.org"}
+      {"@type": "ListItem", "position": 8, "name": "ModelJARs", "url": "https://modeljars.org/"},
+      {"@type": "ListItem", "position": 9, "name": "TensorFlow Java", "url": "https://www.tensorflow.org/jvm"},
+      {"@type": "ListItem", "position": 10, "name": "Eclipse Deeplearning4j (DL4J)", "url": "https://deeplearning4j.konduit.ai/"},
+      {"@type": "ListItem", "position": 11, "name": "Apache OpenNLP", "url": "https://opennlp.apache.org"}
     ]
   }
   </script>
@@ -1579,6 +1580,18 @@
           <a class="icon icon-web" href="https://www.tornadovm.org" title="Website"></a>
           <a class="icon icon-github" href="https://github.com/beehive-lab/TornadoVM" title="GitHub"></a>
           <a class="icon icon-web" href="https://tornadovm.readthedocs.io/en/latest/" title="Docs"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">Inference</span>
+        <h3><a href="https://modeljars.org/">ModelJARs</a></h3>
+        <p>Community registry that publishes AI models as versioned marker JARs, so a model becomes an ordinary Maven or Gradle dependency (<code>org.modeljars.huggingface:&hellip;</code>) pinned by SHA-256 to an immutable Hugging Face revision instead of vendored weights. Covers GGUF, Safetensors, and CACT artifacts, and ships a native CLI for search/pull plus the Java 25 Models runtime for in-process inference, with pure-Java Vector API, native, TornadoVM GPU, and Apple Foundation Models backends. Maintainers qualify each artifact in CI and publish benchmarks against llama.cpp and Ollama. From Integrallis.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://modeljars.org/" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/ModelJars/modeljars" title="GitHub"></a>
+          <a class="icon icon-web" href="https://integrallis.github.io/models/docs/models/current/index.html" title="Docs"></a>
+          <a class="icon icon-web" href="https://modeljars.org/benchmarks/" title="Benchmarks"></a>
         </div>
       </div>
 
