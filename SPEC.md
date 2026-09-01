@@ -108,6 +108,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/ortus-boxlang/bx-ai/releases/tag/v3.4.0
 - https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.1
 - https://github.com/JetBrains/koog/releases/tag/1.2.0
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final
