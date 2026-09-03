@@ -108,9 +108,14 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
+- https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.2
+- https://github.com/ortus-boxlang/bx-ai/releases/tag/v3.4.0
+- https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.1
 - https://github.com/JetBrains/koog/releases/tag/1.2.0
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final
 - https://quarkus.io/blog/quarkus-flow-1-0-0-released/
+- https://foojay.io/today/whats-new-in-the-august-2026-azul-payara-release/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.1
 - https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
 - https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/
@@ -494,6 +499,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Framework
 - **Description:** Unified AI platform for the JVM from Ortus Solutions (makers of BoxLang and ColdBox). One API across 15+ providers, plus multi-agent orchestration with parent-child hierarchies, an Agent Skills system implementing Anthropic's open standard, MCP support (consuming and serving), 20+ memory types with vector RAG, and a composable middleware pipeline. Reached v3.0 in 2026. Apache 2.0.
 - **Links:** [Website](https://ai.boxlang.io/) · [Docs](https://ai.ortusbooks.com) · [GitHub](https://github.com/ortus-boxlang/bx-ai)
+
+### Quarkus Flow
+- **Badge:** Framework
+- **Description:** Lightweight, low-dependency workflow engine for Quarkus built on the CNCF Open Workflow Specification. Injects LangChain4j `@RegisterAiService` beans directly into workflows as steps, enabling multi-step agentic pipelines with branching, retries, and human-in-the-loop events — no manual orchestration required. Fluent Java DSL, CDI-first, native-image support. Reached 1.0.0 in August 2026. Apache 2.0.
+- **Links:** [Docs](https://docs.quarkiverse.io/quarkus-flow/dev/index.html) · [GitHub](https://github.com/quarkiverse/quarkus-flow)
 
 ---
 
@@ -1176,6 +1186,14 @@ Notes:
 - **Photo:** https://avatars.githubusercontent.com/u/5970214?v=4
 - **Role:** Senior Software Developer — OpenValue; creator of the Spring AI AG-UI Java SDK, bringing the AG-UI protocol to Java/Spring AI
 - **Links:** [GitHub](https://github.com/pascalwilbrink) · [Website](https://pascalwilbrink.github.io)
+
+### Ricardo Zanini
+
+- **Badge:** Person
+- **Initials:** RZ
+- **Photo:** https://avatars.githubusercontent.com/u/1538000?v=4
+- **Role:** Senior Principal Software Engineer — Red Hat; creator of Quarkus Flow and a lead contributor to the CNCF Open Workflow Specification, bringing agentic workflow orchestration to Quarkus
+- **Links:** [GitHub](https://github.com/ricardozanini) · [X](https://twitter.com/zaninirica)
 
 ---
 
