@@ -108,6 +108,8 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
+- https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.2
 - https://github.com/ortus-boxlang/bx-ai/releases/tag/v3.4.0
 - https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.1
 - https://github.com/JetBrains/koog/releases/tag/1.2.0
