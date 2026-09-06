@@ -69,9 +69,10 @@ Questions and answers:
 ### Performance
 - No web fonts — use the system font stack only (avoids render-blocking font requests)
 - All images (GitHub avatars) must have explicit `width`/`height`, `loading="lazy"`, and `decoding="async"`, and request a small size via GitHub's avatar sizing parameter (e.g. `?v=4&s=96`) rather than the full-resolution image
-- `<link rel="preconnect">` for third-party origins the page actually loads from (GitHub avatars, Google Tag Manager), with a `dns-prefetch` fallback for the avatar origin
+- `<link rel="preconnect">` for third-party origins the page actually loads from (GitHub avatars, Google Tag Manager, the Google Analytics collection endpoint), with a `dns-prefetch` fallback for the avatar and analytics origins
 - The Google Analytics tag is the last thing in `<head>` so it never delays parsing of the title, meta, and inline CSS
 - CSS stays inline in a single `<style>` block (no build step, no extra request); no unused CSS
+- The inline `<style>` block comes before the JSON-LD structured data scripts in `<head>`, so the parser reaches CSS before the (larger, growing) structured-data payload
 
 ## Site Structure
 
