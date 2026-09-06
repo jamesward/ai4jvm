@@ -16,7 +16,7 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 - Keep Open Graph and Twitter Card meta tags in sync with the title/description above
 - `<meta charset>` must appear within the first 1024 bytes of the document, so it comes first in `<head>`; the Google Analytics tag goes last, just before `</head>`
 - **Theme color:** `<meta name="theme-color" content="#0f1117">` matching the page background
-- `<meta name="robots" content="index, follow">` and `<meta name="author" content="James Ward">`
+- `<meta name="robots" content="index, follow, max-image-preview:large">` (the `max-image-preview:large` directive lets Google show the full-size `og-image.png` in search result previews instead of a small thumbnail) and `<meta name="author" content="James Ward">`
 - `og:image:type` (`image/png`) alongside the existing `og:image` dimensions/alt tags; `twitter:site` (`@_jamesward`) and `twitter:image:alt` alongside the existing Twitter Card tags
 
 ### Structured Data (JSON-LD)
@@ -24,7 +24,7 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 - Include a `CollectionPage` schema referencing the `WebSite` via `isPartOf`, with `dateModified` kept in sync with `sitemap.xml`'s `<lastmod>`
 - Include one `ItemList` schema per catalog section — Agent Frameworks & Libraries, Java with Code Assistants, Inference & Training, and People to Follow — enumerating every card as a `ListItem` with name, url, and position. People entries wrap a nested `Person`. This helps search engines understand the site as a directory and surface it for "Java AI frameworks" queries.
 - Every `ItemList` must stay in sync with the cards actually rendered in its section
-- Add a `FAQPage` schema for the FAQ section (see below)
+- Add a `FAQPage` schema for the FAQ section (see below). Note: Google retired FAQ rich results in Search as of May 2026, so this no longer produces a Google SERP snippet — keep it anyway, since other search engines and AI answer engines/crawlers still consume `FAQPage` data for citations.
 
 ### Heading Hierarchy
 - `<h1>`: One per page (the hero title) — must contain primary keywords "Java" and "AI"
@@ -43,7 +43,7 @@ Each major content section (`<section>`) should have a 1–2 sentence introducti
 - **Resources:** "Talks, tutorials, books, and communities for learning AI development on the JVM."
 
 ### FAQ Section
-Add a FAQ section before the Resources section. This targets long-tail search queries. Use `<h2>FAQ</h2>` heading and render as an accordion or simple Q&A list. Each Q&A pair should also be included in FAQPage structured data.
+Add a FAQ section before the Resources section. This targets long-tail search queries. Use `<h2>FAQ</h2>` heading and render as an accordion or simple Q&A list. Each Q&A pair should also be included in FAQPage structured data. The first mention of a framework/tool name in each answer should link to that item's card (`<a href="#card-id">`, see the anchor ids required in Site Structure) for internal linking — this doubles as keyword-relevant, crawlable navigation between the FAQ and the catalog.
 
 Questions and answers:
 - **"What is the best Java framework for building AI agents?"** — "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, and Akka Agents — each with different strengths for specific use cases."
@@ -81,6 +81,7 @@ Questions and answers:
 - Sticky nav, hero section, then content sections separated by dividers
 - Responsive: cards collapse to single column on mobile
 - Preserve the ordering in this spec
+- Any card referenced by name from FAQ copy or other section's prose must have a stable `id` (kebab-case slug of its name, e.g. `id="spring-ai"`) on its `.card` div, so it can be deep-linked with `#anchor` from elsewhere on the page
 
 ## Visual Design
 
@@ -109,9 +110,14 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/langchain4j/langchain4j/releases/tag/1.20.0
 - https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
+- https://github.com/a2aproject/a2a-java/releases/tag/v1.3.1.Final
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.2
+- https://github.com/beehive-lab/TornadoVM/releases/tag/v6.0.0
 - https://github.com/ortus-boxlang/bx-ai/releases/tag/v3.4.0
+- https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/
+- https://camel.apache.org/blog/2026/09/camel-genai-observability-spring-boot/
 - https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.1
 - https://github.com/JetBrains/koog/releases/tag/1.2.0
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.0.Final

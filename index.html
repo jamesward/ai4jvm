@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI4JVM — Java AI Frameworks, LLM Inference &amp; JVM Tools</title>
   <meta name="description" content="The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="James Ward">
   <meta name="theme-color" content="#0f1117">
   <link rel="canonical" href="https://ai4jvm.com/">
@@ -293,7 +293,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-06",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -658,7 +658,7 @@
     <p class="section-subtitle">Open-source frameworks and SDKs for building AI-powered applications on the JVM &mdash; from full agent platforms to Model Context Protocol implementations.</p>
     <div class="card-grid">
 
-      <div class="card">
+      <div class="card" id="spring-ai">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://spring.io/projects/spring-ai/">Spring AI</a></h3>
         <p>The Spring ecosystem's official AI framework. Portable abstractions across 20+ model providers, tool calling, RAG, chat memory, vector stores, and MCP support. Built by the Spring team at Broadcom.</p>
@@ -669,7 +669,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="langchain4j">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://docs.langchain4j.dev/">LangChain4j</a></h3>
         <p>The most popular Java LLM library. Unified API across 20+ LLM providers and 20+ embedding stores. Three levels of abstraction from low-level prompts to high-level AI Services. Supports RAG, tool calling, MCP, and agents.</p>
@@ -679,7 +679,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="embabel">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://github.com/embabel/embabel-agent">Embabel</a></h3>
         <p>Created by Rod Johnson (Spring Framework creator). JVM agent framework using Goal-Oriented Action Planning (GOAP) for dynamic replanning. Strongly typed, Spring-integrated, MCP support. Written in Kotlin with full Java interop.</p>
@@ -689,7 +689,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="google-adk-for-java">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://google.github.io/adk-docs/get-started/java/">Google ADK for Java</a></h3>
         <p>Google's Agent Development Kit &mdash; code-first Java toolkit for building, evaluating, and deploying AI agents. Supports Gemini natively plus third-party models via LangChain4j integration. A2A protocol for agent-to-agent communication.</p>
@@ -720,7 +720,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="helidon-mcp">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://helidon.io/docs/v4/se/ai/mcp">Helidon MCP</a></h3>
         <p>Helidon's Model Context Protocol server and client implementation. Declarative and imperative APIs for building MCP servers with tools, resources, and prompts. Streamable HTTP and SSE transports, virtual threads, build-time processing. From Oracle's Helidon team.</p>
@@ -769,7 +769,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="akka-agents">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://akka.io/akka-agents">Akka Agents</a></h3>
         <p>Agentic AI platform built on Akka's actor model for distributed, resilient systems. Declarative Effects API for building goal-directed agents with durable memory, multi-agent orchestration, and automatic scaling. Task-based autonomous agents with pause/resume/terminate lifecycle control and task result subscriptions, alongside request-based agents. MCP and A2A protocol support, pluggable LLM providers, runtime prompt updates, and agents auto-exposed as HTTP, gRPC, or MCP endpoints. Java and Scala SDKs.</p>
@@ -780,7 +780,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="koog-jetbrains">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://www.jetbrains.com/koog/">Koog (JetBrains)</a></h3>
         <p>Kotlin-native agent framework from JetBrains. Type-safe DSL, multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.</p>
@@ -821,7 +821,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="mcp-java-sdk">
         <span class="card-badge badge-inference">SDK</span>
         <h3><a href="https://modelcontextprotocol.io/sdk/java/mcp-overview">MCP Java SDK</a></h3>
         <p>The official Java SDK for Model Context Protocol servers and clients. Maintained by the Spring AI team. Sync/async, STDIO/Streamable HTTP transports (SSE deprecated as of 2.0), OAuth support via Spring integration. Reached v2.0.0 GA in June 2026 with spec-accurate JSON Schema 2020-12 validation and enforced required fields.</p>
@@ -861,7 +861,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="tracy-jetbrains">
         <span class="card-badge badge-inference">Library</span>
         <h3><a href="https://jetbrains.github.io/tracy/latest">Tracy (JetBrains)</a></h3>
         <p>AI tracing library for Kotlin and Java. Captures structured traces from LLM interactions &mdash; messages, cost, token usage, and execution time. Implements OpenTelemetry Generative AI Semantic Conventions with exports to Langfuse, Weights &amp; Biases, and more.</p>
@@ -1533,7 +1533,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="jlama">
         <span class="card-badge badge-inference">Inference</span>
         <h3><a href="https://github.com/tjake/Jlama">Jlama</a></h3>
         <p>⚠️ No longer actively maintained. Modern LLM inference engine written in pure Java. Runs Llama, Gemma, Mistral, and more locally on CPU. Uses Java's Vector API (Project Panama) for SIMD-accelerated matrix math. Supports SafeTensors format, quantized models, and distributed inference.</p>
@@ -1553,7 +1553,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="onnx-runtime-java">
         <span class="card-badge badge-inference">Inference</span>
         <h3><a href="https://onnxruntime.ai/docs/get-started/with-java.html">ONNX Runtime Java</a></h3>
         <p>Run transformer and classical ML models directly on the JVM. Hardware acceleration via CUDA, DirectML, CoreML, and more. Enables deploying scikit-learn, PyTorch, and HuggingFace models as ONNX in Java without Python at inference time.</p>
@@ -1573,7 +1573,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="gpullama3-java">
         <span class="card-badge badge-inference">Inference</span>
         <h3><a href="https://github.com/beehive-lab/GPULlama3.java">GPULlama3.java</a></h3>
         <p>Java-native LLM inference with automatic GPU acceleration via TornadoVM. Supports Llama 3, Mistral, Qwen, Phi-3, and IBM Granite models in GGUF format. TornadoVM translates Java bytecode to GPU kernels (OpenCL, PTX, SPIR-V). Reached 1.0.0 in July 2026 and is published to Maven Central as <code>io.github.beehive-lab:gpu-llama3</code> with auto-activating JDK 21 and JDK 25 builds. From the University of Manchester's Beehive Lab.</p>
@@ -2493,19 +2493,19 @@
     <div class="faq-list">
       <details class="faq-item" open>
         <summary>What is the best Java framework for building AI agents?</summary>
-        <p>The most popular choices are <a href="#frameworks">Spring AI and LangChain4j</a>. Spring AI is ideal if you&rsquo;re already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, and Akka Agents &mdash; each with different strengths for specific use cases.</p>
+        <p>The most popular choices are <a href="#spring-ai">Spring AI</a> and <a href="#langchain4j">LangChain4j</a>. Spring AI is ideal if you&rsquo;re already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include <a href="#google-adk-for-java">Google ADK for Java</a>, <a href="#embabel">Embabel</a>, and <a href="#akka-agents">Akka Agents</a> &mdash; each with different strengths for specific use cases.</p>
       </details>
       <details class="faq-item">
         <summary>Can Java run LLMs locally?</summary>
-        <p>Yes. Projects like <a href="#inference">Jlama and GPULlama3.java</a> run Llama, Mistral, and other models directly on the JVM. Jlama uses Java&rsquo;s Vector API for SIMD-accelerated inference on CPU, while GPULlama3.java leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML.</p>
+        <p>Yes. Projects like <a href="#jlama">Jlama</a> and <a href="#gpullama3-java">GPULlama3.java</a> run Llama, Mistral, and other models directly on the JVM. Jlama uses Java&rsquo;s Vector API for SIMD-accelerated inference on CPU, while GPULlama3.java leverages TornadoVM for GPU acceleration. For production deployments, <a href="#onnx-runtime-java">ONNX Runtime Java</a> supports hardware-accelerated inference across CUDA, DirectML, and CoreML.</p>
       </details>
       <details class="faq-item">
         <summary>What is MCP and how does it work with Java?</summary>
-        <p>The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support.</p>
+        <p>The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official <a href="#mcp-java-sdk">MCP Java SDK</a>, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). <a href="#helidon-mcp">Helidon MCP</a> and several frameworks also offer MCP support.</p>
       </details>
       <details class="faq-item">
         <summary>Is Kotlin supported by Java AI frameworks?</summary>
-        <p>Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains is a Kotlin-native agent framework, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code.</p>
+        <p>Yes. Most Java AI frameworks run on any JVM language. <a href="#embabel">Embabel</a> is written in Kotlin with full Java interop, <a href="#koog-jetbrains">Koog from JetBrains</a> is a Kotlin-native agent framework, and <a href="#tracy-jetbrains">Tracy</a> provides AI observability for Kotlin. <a href="#langchain4j">LangChain4j</a> and <a href="#spring-ai">Spring AI</a> work seamlessly from Kotlin code.</p>
       </details>
     </div>
   </div>
