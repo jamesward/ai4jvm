@@ -110,8 +110,11 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3
+- https://www.infoq.com/news/2026/09/java-news-roundup-aug31-2026/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.20.0
 - https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
+- https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.1.Final
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.2
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v6.0.0
@@ -176,7 +179,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
 - https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0
 - https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
-- https://javapro.io/2026/06/03/the-gen-ai-iceberg-java-tooling-edition/
 
 ---
 
@@ -394,8 +396,13 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### Google Gen AI Java SDK
 - **Badge:** SDK
-- **Description:** Google's official Java SDK unifying access to the Gemini Developer API and Vertex AI. Supports Gemini text/chat, Imagen image generation, Veo video generation, embeddings, token counting, and automatic function calling, with streaming and async options. Distinct from Google ADK for Java, which is an agent-orchestration framework built on top of it.
+- **Description:** Google's official Java SDK unifying access to the Gemini Developer API and Vertex AI. Supports Gemini text/chat, Imagen image generation, Veo video generation, embeddings, token counting, and automatic function calling, with streaming and async options. Distinct from [Google ADK for Java](#google-adk-for-java), which is an agent-orchestration framework built on top of it.
 - **Links:** [GitHub](https://github.com/googleapis/java-genai) · [Docs](https://googleapis.github.io/java-genai/javadoc/)
+
+### Google Gen AI SDK for Kotlin
+- **Badge:** SDK
+- **Description:** Google's official Kotlin Multiplatform SDK (JVM, Android) for the Gemini Developer API and Gemini Enterprise Agent Platform. Coroutines-based streaming via `Flow`, multi-turn chat, multimodal input, automatic function calling, Google Search grounding, and the WebSocket-based Live API. Published to Maven Central.
+- **Links:** [GitHub](https://github.com/googleapis/kotlin-genai)
 
 ### IBM watsonx.ai Java SDK
 - **Badge:** SDK
