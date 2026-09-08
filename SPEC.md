@@ -114,6 +114,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://www.infoq.com/news/2026/09/java-news-roundup-aug31-2026/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.20.0
 - https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
+- https://foojay.io/today/building-an-agentic-warehouse-management-system-part-2-java-and-spring-ai/
 - https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.1.Final
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.2
