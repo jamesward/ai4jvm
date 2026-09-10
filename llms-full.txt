@@ -560,6 +560,11 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Description:** Run transformer and classical ML models directly on the JVM. Hardware acceleration via CUDA, DirectML, CoreML, and more. Enables deploying scikit-learn, PyTorch, and HuggingFace models as ONNX in Java without Python at inference time.
 - **Links:** [Docs](https://onnxruntime.ai/docs/get-started/with-java.html) · [InfoQ Guide](https://www.infoq.com/articles/onnx-ai-inference-with-java/)
 
+### inference4j
+- **Badge:** Inference
+- **Description:** Inference-only library wrapping ONNX Runtime behind typed Java APIs for image classification, object detection, CLIP, speech-to-text, embeddings, reranking, NER, and text generation — taking standard Java types rather than tensors. Downloads and caches models from Hugging Face automatically, and ships a Spring Boot starter. Also publishes the only Maven Central build of Microsoft's onnxruntime-genai Java bindings.
+- **Links:** [GitHub](https://github.com/inference4j/inference4j) · [Docs](https://inference4j.github.io/inference4j)
+
 ### Tribuo
 - **Badge:** Training
 - **Description:** Oracle Labs' ML library for classification, regression, clustering, and anomaly detection. Strong typing, provenance tracking for reproducibility, and integrations with XGBoost, ONNX Runtime, TensorFlow, and LibSVM.
