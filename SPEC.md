@@ -110,9 +110,11 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3
 - https://www.infoq.com/news/2026/09/java-news-roundup-aug31-2026/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.20.0
+- https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/
 - https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
 - https://foojay.io/today/building-an-agentic-warehouse-management-system-part-2-java-and-spring-ai/
 - https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
@@ -179,7 +181,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
 - https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0
-- https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 
 ---
 

@@ -293,7 +293,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-08",
+    "dateModified": "2026-09-10",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -580,9 +580,11 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final">A2A Java SDK 1.3.2.Final Released</a> &mdash; patch release fixing the HTTP client's <code>PostBuilder</code> to not follow redirects by default, plus logger field renames and test cleanup</li>
         <li><a href="https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3">AgentScope Java 2.0.3 Released</a> &mdash; adds Anthropic prompt caching, a <code>deliver_artifact</code> tool for sandboxed agents, <code>FinalAnswerFilterMiddleware</code> for ReAct streams, state versioning for concurrency control, an <code>AgentProtocolEventBus</code> for SSE handling, and reliability fixes across the reasoning loop, harness, and sandbox layers</li>
         <li><a href="https://www.infoq.com/news/2026/09/java-news-roundup-aug31-2026/">InfoQ Java News Roundup</a> &mdash; weekly Java ecosystem roundup covering TornadoVM 6.0 with Foreign Function &amp; Memory API support, LangChain4j 1.20.0's reactive AI service methods, and point releases across JReleaser, Java Operator SDK, JHipster, and Yupiik Fusion</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.20.0">LangChain4j 1.20.0 Released</a> &mdash; adds non-blocking/reactive support for AI Services (methods can return <code>CompletableFuture</code> or <code>Flow.Publisher</code>), opt-in Jackson 3 support, and fixes across MCP, embedding stores, and Azure integrations</li>
+        <li><a href="https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/">From Spec-Driven Development to Living Specifications in Java Projects</a> &mdash; Maximillian Arruda introduces SDD4J, a workflow keeping specifications synchronized with code via architecture adapters, testable EARS requirements, and specification-to-test traceability, without forcing a single architectural style</li>
         <li><a href="https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/">Did Your AI Agent Run the Debugger?</a> &mdash; a case study comparing two Claude agent runs fixing the same JVM bug in a JetBrains plugin, showing that reproducing a failure at a breakpoint beats reasoning from stack traces alone &mdash; fewer tokens, no unnecessary API changes</li>
         <li><a href="https://foojay.io/today/building-an-agentic-warehouse-management-system-part-2-java-and-spring-ai/">Building an Agentic Warehouse Management System &mdash; Part 2: Java and Spring AI</a> &mdash; implements a warehouse-replenishment agent with Spring AI using a planner/executor/reporter architecture, where the planner turns high-level goals into structured, MongoDB-stored execution plans built from the agent's declared capabilities rather than hardcoded logic</li>
         <li><a href="https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini">Google Gen AI SDK for Kotlin 1.0 Announced</a> &mdash; a Kotlin Multiplatform (JVM, Android) SDK for the Gemini Developer API and Gemini Enterprise Agent Platform, with coroutines-based streaming, multi-turn chat, automatic function calling, and the Live API, published to Maven Central</li>
@@ -649,7 +651,6 @@
         <li><a href="https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/">A2A Java SDK Reaches 1.0 GA</a> &mdash; the Agent2Agent Java SDK ships 1.0.0.Final with spec classes converted to Java records, full JSON-RPC/gRPC/REST transport support, and a cross-SDK interop test kit, followed by 1.1.0 adding a <code>TaskAuthorizationProvider</code> SPI for per-user task authorization</li>
         <li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now">Spring AI 2.0.0 GA Available Now</a> &mdash; built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security</li>
         <li><a href="https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0">MCP Java SDK 2.0.0 Reaches GA</a> &mdash; first major version since 1.x, tracking the 2025-11-25 MCP spec with spec-accurate JSON Schema 2020-12 validation, enforced required fields, and SSE transport deprecated in favor of Streamable HTTP</li>
-        <li><a href="https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html">AgentScope Java v2.0.0 GA</a> &mdash; Alibaba's JVM-native agent framework reaches production-ready GA, with event-streaming, permission-gated tool execution, and a Workspace abstraction for long-running, safely sandboxed agents</li>
       </ul>
     </div>
   </div>
