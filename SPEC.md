@@ -110,10 +110,15 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
+- https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final
+- https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3
 - https://www.infoq.com/news/2026/09/java-news-roundup-aug31-2026/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.20.0
+- https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/
 - https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
+- https://foojay.io/today/building-an-agentic-warehouse-management-system-part-2-java-and-spring-ai/
 - https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.1.Final
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.2
@@ -178,7 +183,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/
 - https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
 - https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0
-- https://java.agentscope.io/v2/en/blogs/agentscope-v2-release.html
 
 ---
 
@@ -518,6 +522,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Framework
 - **Description:** Lightweight, low-dependency workflow engine for Quarkus built on the CNCF Open Workflow Specification. Injects LangChain4j `@RegisterAiService` beans directly into workflows as steps, enabling multi-step agentic pipelines with branching, retries, and human-in-the-loop events — no manual orchestration required. Fluent Java DSL, CDI-first, native-image support. Reached 1.0.0 in August 2026. Apache 2.0.
 - **Links:** [Docs](https://docs.quarkiverse.io/quarkus-flow/dev/index.html) · [GitHub](https://github.com/quarkiverse/quarkus-flow)
+
+### Agent Client
+- **Badge:** Framework
+- **Description:** Portable Java API for autonomous CLI coding agents — Claude Code, Gemini CLI, Codex, Grok, and more — behind one `AgentClient` interface, with an optional Spring Boot auto-configuration layer and sandboxed execution. Full provider-parity testing for five providers; four more (Amazon Q, Amp, Qwen Code, SWE-agent) are experimental. Created by Spring AI project lead Mark Pollack as the successor to the now-archived `spring-ai-community/agent-client`; current releases use the Business Source License 1.1 (pre-0.18 versions remain Apache 2.0).
+- **Links:** [Docs](https://lab.pollack.ai/projects/agent-client) · [GitHub](https://github.com/markpollack/agent-client)
 
 ---
 
