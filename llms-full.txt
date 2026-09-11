@@ -8,7 +8,9 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
+- [One Base URL, Many Coding Agents](https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/) — Yurii Kostyukov shows how to probe an OpenAI-compatible AI gateway's availability from Java's `java.net.http` client, plus token-estimate calibration and credential-refresh lessons from building a multi-agent IDE gateway
 - [A2A Java SDK 1.3.2.Final Released](https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final) — patch release fixing the HTTP client's `PostBuilder` to not follow redirects by default, plus logger field renames and test cleanup
+- [Debugging Is Invariant Discovery](https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/) — a Kotlin/Spring Boot/Kafka case study showing an AI agent was tactically useful (queries, log reads) but strategically passive without runtime access, and how making implicit business invariants explicit as tests helps both humans and agents spot related failures
 - [AgentScope Java 2.0.3 Released](https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3) — adds Anthropic prompt caching, a `deliver_artifact` tool for sandboxed agents, `FinalAnswerFilterMiddleware` for ReAct streams, state versioning for concurrency control, an `AgentProtocolEventBus` for SSE handling, and reliability fixes across the reasoning loop, harness, and sandbox layers
 - [InfoQ Java News Roundup](https://www.infoq.com/news/2026/09/java-news-roundup-aug31-2026/) — weekly Java ecosystem roundup covering TornadoVM 6.0 with Foreign Function & Memory API support, LangChain4j 1.20.0's reactive AI service methods, and point releases across JReleaser, Java Operator SDK, JHipster, and Yupiik Fusion
 - [LangChain4j 1.20.0 Released](https://github.com/langchain4j/langchain4j/releases/tag/1.20.0) — adds non-blocking/reactive support for AI Services (methods can return `CompletableFuture` or `Flow.Publisher`), opt-in Jackson 3 support, and fixes across MCP, embedding stores, and Azure integrations
@@ -418,6 +420,11 @@ Open-source frameworks and SDKs for building AI-powered applications on the JVM 
 - **Badge:** Framework
 - **Description:** Lightweight, low-dependency workflow engine for Quarkus built on the CNCF Open Workflow Specification. Injects LangChain4j `@RegisterAiService` beans directly into workflows as steps, enabling multi-step agentic pipelines with branching, retries, and human-in-the-loop events — no manual orchestration required. Fluent Java DSL, CDI-first, native-image support. Reached 1.0.0 in August 2026. Apache 2.0.
 - **Links:** [Docs](https://docs.quarkiverse.io/quarkus-flow/dev/index.html) · [GitHub](https://github.com/quarkiverse/quarkus-flow)
+
+### Agent Client
+- **Badge:** Framework
+- **Description:** Portable Java API for autonomous CLI coding agents — Claude Code, Gemini CLI, Codex, Grok, and more — behind one `AgentClient` interface, with an optional Spring Boot auto-configuration layer and sandboxed execution. Full provider-parity testing for five providers; four more (Amazon Q, Amp, Qwen Code, SWE-agent) are experimental. Created by Spring AI project lead Mark Pollack as the successor to the now-archived `spring-ai-community/agent-client`; current releases use the Business Source License 1.1 (pre-0.18 versions remain Apache 2.0).
+- **Links:** [Docs](https://lab.pollack.ai/projects/agent-client) · [GitHub](https://github.com/markpollack/agent-client)
 
 ## Java with Code Assistants
 
