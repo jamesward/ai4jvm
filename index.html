@@ -120,6 +120,8 @@
       border-radius: var(--radius);
       padding: 1.5rem;
       transition: border-color .2s, transform .2s;
+      content-visibility: auto;
+      contain-intrinsic-size: 0 220px;
     }
     .card:hover { border-color: var(--accent); }
     a.card { display: block; color: inherit; text-decoration: none; cursor: pointer; }
@@ -175,6 +177,8 @@
       background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
       padding: 1rem 1.25rem;
       transition: border-color .2s;
+      content-visibility: auto;
+      contain-intrinsic-size: 0 76px;
     }
     .person:hover { border-color: var(--accent2); }
     .person-avatar {
@@ -271,7 +275,8 @@
     "publisher": {
       "@type": "Person",
       "name": "James Ward",
-      "url": "https://jamesward.com"
+      "url": "https://jamesward.com",
+      "sameAs": ["https://twitter.com/_jamesward", "https://github.com/jamesward", "https://www.linkedin.com/in/jamesward"]
     },
     "about": [
       {"@type": "Thing", "name": "Java"},
@@ -376,7 +381,8 @@
       {"@type": "ListItem", "position": 65, "name": "Spring AI Alibaba", "url": "https://github.com/alibaba/spring-ai-alibaba"},
       {"@type": "ListItem", "position": 66, "name": "BoxLang AI", "url": "https://ai.boxlang.io/"},
       {"@type": "ListItem", "position": 67, "name": "Quarkus Flow", "url": "https://docs.quarkiverse.io/quarkus-flow/dev/index.html"},
-      {"@type": "ListItem", "position": 68, "name": "Agent Client", "url": "https://lab.pollack.ai/projects/agent-client"}
+      {"@type": "ListItem", "position": 68, "name": "Agent Client", "url": "https://lab.pollack.ai/projects/agent-client"},
+      {"@type": "ListItem", "position": 69, "name": "Erupt", "url": "https://docs.erupt.xyz"}
     ]
   }
   </script>
@@ -582,15 +588,19 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/">A2A Jakarta 1.0.0.Final Released</a> &mdash; first stable release of Jakarta integrations for the A2A Java SDK's JSON-RPC, gRPC, and HTTP+JSON/REST transports, built on a2a-java 1.3.2.Final, with a new example demonstrating A2A agent deployment across multiple WildFly cluster nodes using JPA and Kafka for shared state</li>
         <li><a href="https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/">One Base URL, Many Coding Agents</a> &mdash; Yurii Kostyukov shows how to probe an OpenAI-compatible AI gateway's availability from Java's <code>java.net.http</code> client, plus token-estimate calibration and credential-refresh lessons from building a multi-agent IDE gateway</li>
         <li><a href="https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final">A2A Java SDK 1.3.2.Final Released</a> &mdash; patch release fixing the HTTP client's <code>PostBuilder</code> to not follow redirects by default, plus logger field renames and test cleanup</li>
+        <li><a href="https://foojay.io/today/commit-created-but-it-isnt-why-the-agents-word-needs-external-verification-and-what-the-mistake-costs/">"Commit Created" &mdash; But It Isn't</a> &mdash; Viktoria Evdokimova analyzes public issue trackers from Claude Code, Copilot, and other coding agents to identify three root causes of agents falsely reporting completed work, and gives under-a-minute independent verification checks (<code>git log</code>, <code>ls -la</code>, run panels) developers can run against agent claims</li>
         <li><a href="https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/">Debugging Is Invariant Discovery</a> &mdash; a Kotlin/Spring Boot/Kafka case study showing an AI agent was tactically useful (queries, log reads) but strategically passive without runtime access, and how making implicit business invariants explicit as tests helps both humans and agents spot related failures</li>
         <li><a href="https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3">AgentScope Java 2.0.3 Released</a> &mdash; adds Anthropic prompt caching, a <code>deliver_artifact</code> tool for sandboxed agents, <code>FinalAnswerFilterMiddleware</code> for ReAct streams, state versioning for concurrency control, an <code>AgentProtocolEventBus</code> for SSE handling, and reliability fixes across the reasoning loop, harness, and sandbox layers</li>
         <li><a href="https://www.infoq.com/news/2026/09/java-news-roundup-aug31-2026/">InfoQ Java News Roundup</a> &mdash; weekly Java ecosystem roundup covering TornadoVM 6.0 with Foreign Function &amp; Memory API support, LangChain4j 1.20.0's reactive AI service methods, and point releases across JReleaser, Java Operator SDK, JHipster, and Yupiik Fusion</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.20.0">LangChain4j 1.20.0 Released</a> &mdash; adds non-blocking/reactive support for AI Services (methods can return <code>CompletableFuture</code> or <code>Flow.Publisher</code>), opt-in Jackson 3 support, and fixes across MCP, embedding stores, and Azure integrations</li>
         <li><a href="https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/">From Spec-Driven Development to Living Specifications in Java Projects</a> &mdash; Maximillian Arruda introduces SDD4J, a workflow keeping specifications synchronized with code via architecture adapters, testable EARS requirements, and specification-to-test traceability, without forcing a single architectural style</li>
         <li><a href="https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/">Did Your AI Agent Run the Debugger?</a> &mdash; a case study comparing two Claude agent runs fixing the same JVM bug in a JetBrains plugin, showing that reproducing a failure at a breakpoint beats reasoning from stack traces alone &mdash; fewer tokens, no unnecessary API changes</li>
+        <li><a href="https://foojay.io/today/building-an-agentic-warehouse-management-system-part-3-tools-decisions-and-actions/">Building an Agentic Warehouse Management System &mdash; Part 3: Tools, Decisions, and Actions</a> &mdash; Ricardo Mello shows the agent accessing operational data, retrieving business policies via semantic search, deciding on replenishment, and acting through controlled tools that create requests and draft notifications within application-defined boundaries</li>
         <li><a href="https://foojay.io/today/building-an-agentic-warehouse-management-system-part-2-java-and-spring-ai/">Building an Agentic Warehouse Management System &mdash; Part 2: Java and Spring AI</a> &mdash; implements a warehouse-replenishment agent with Spring AI using a planner/executor/reporter architecture, where the planner turns high-level goals into structured, MongoDB-stored execution plans built from the agent's declared capabilities rather than hardcoded logic</li>
+        <li><a href="https://foojay.io/today/building-an-agentic-warehouse-management-system-part-1-where-ai-agents-add-value/">Building an Agentic Warehouse Management System &mdash; Part 1: Where AI Agents Add Value</a> &mdash; Ricardo Mello opens the series by examining inventory-replenishment decisions that need contextual analysis beyond fixed rules, and how an agent orchestrates tools within defined boundaries rather than replacing deterministic business logic</li>
         <li><a href="https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini">Google Gen AI SDK for Kotlin 1.0 Announced</a> &mdash; a Kotlin Multiplatform (JVM, Android) SDK for the Gemini Developer API and Gemini Enterprise Agent Platform, with coroutines-based streaming, multi-turn chat, automatic function calling, and the Live API, published to Maven Central</li>
         <li><a href="https://github.com/a2aproject/a2a-java/releases/tag/v1.3.1.Final">A2A Java SDK 1.3.1.Final Released</a> &mdash; patch release fixing a missing <code>beans.xml</code> in the multitenancy module, makes <code>@PublicAgentCard</code> optional with a fallback, and adds 404 handling for unknown tenants</li>
         <li><a href="https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.2">AgentScope Java 2.0.2 Released</a> &mdash; routes tasks through AgentFactory, adds RuntimeContext force-sync for agent spawning, parent session ID tracking and full event forwarding for remote subagents, and decouples TaskStore from the execution WorkspaceManager</li>
@@ -1335,6 +1345,17 @@
         <div class="card-links">
           <a class="icon icon-web" href="https://lab.pollack.ai/projects/agent-client" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/markpollack/agent-client" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://docs.erupt.xyz">Erupt</a></h3>
+        <p>Annotation-driven Java admin framework (Spring Boot 3, Java 17+) that generates a full CRUD admin UI from a single annotated JPA entity. Its <code>erupt-ai</code> module adds an AI harness with 50+ LLM providers, MCP-native tool calling, and A2A multi-agent communication, with tools secured through the same role-based access control as the generated admin pages. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://docs.erupt.xyz" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/erupts/erupt" title="GitHub"></a>
+          <a class="icon icon-web" href="https://demo.erupt.xyz" title="Demo"></a>
         </div>
       </div>
 
