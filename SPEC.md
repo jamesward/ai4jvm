@@ -110,15 +110,19 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
 - https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final
+- https://foojay.io/today/commit-created-but-it-isnt-why-the-agents-word-needs-external-verification-and-what-the-mistake-costs/
 - https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3
 - https://www.infoq.com/news/2026/09/java-news-roundup-aug31-2026/
 - https://github.com/langchain4j/langchain4j/releases/tag/1.20.0
 - https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/
 - https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
+- https://foojay.io/today/building-an-agentic-warehouse-management-system-part-3-tools-decisions-and-actions/
 - https://foojay.io/today/building-an-agentic-warehouse-management-system-part-2-java-and-spring-ai/
+- https://foojay.io/today/building-an-agentic-warehouse-management-system-part-1-where-ai-agents-add-value/
 - https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.1.Final
 - https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.2
@@ -527,6 +531,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Framework
 - **Description:** Portable Java API for autonomous CLI coding agents — Claude Code, Gemini CLI, Codex, Grok, and more — behind one `AgentClient` interface, with an optional Spring Boot auto-configuration layer and sandboxed execution. Full provider-parity testing for five providers; four more (Amazon Q, Amp, Qwen Code, SWE-agent) are experimental. Created by Spring AI project lead Mark Pollack as the successor to the now-archived `spring-ai-community/agent-client`; current releases use the Business Source License 1.1 (pre-0.18 versions remain Apache 2.0).
 - **Links:** [Docs](https://lab.pollack.ai/projects/agent-client) · [GitHub](https://github.com/markpollack/agent-client)
+
+### Erupt
+- **Badge:** Framework
+- **Description:** Annotation-driven Java admin framework (Spring Boot 3, Java 17+) that generates a full CRUD admin UI from a single annotated JPA entity. Its `erupt-ai` module adds an AI harness with 50+ LLM providers, MCP-native tool calling, and A2A multi-agent communication, with tools secured through the same role-based access control as the generated admin pages. Apache 2.0.
+- **Links:** [Docs](https://docs.erupt.xyz) · [GitHub](https://github.com/erupts/erupt) · [Demo](https://demo.erupt.xyz)
 
 ---
 
