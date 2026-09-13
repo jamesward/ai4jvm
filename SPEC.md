@@ -185,8 +185,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://spring.io/blog/2026/06/23/spring-ai-self-correcting-structured-output
 - https://spring.io/blog/2026/06/15/spring-ai-composable-tool-calling
 - https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/
-- https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now
-- https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0
 
 ---
 
@@ -1332,7 +1330,7 @@ Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotl
 - **Description:** Hands-on AWS workshop for building intelligent AI agents with Spring AI and AWS services, including deployment to EKS
 - **Links:** [Workshop](https://catalog.workshops.aws/java-spring-ai-agents/en-US)
 
-## AI & Java on Serverless Office Hours
+### AI & Java on Serverless Office Hours
 - **Badge:** Livestream
 - **Description:** James Ward and Julian Wood explore building AI-powered Java apps — MCP integration, agent architectures with AgentCore, GraalVM optimization for AI workloads, and secure auth patterns for AI services on serverless
 - **Links:** https://www.youtube.com/watch?v=my2bQtHBUeY

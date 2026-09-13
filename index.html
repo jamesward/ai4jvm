@@ -298,7 +298,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-09-13",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -663,8 +663,6 @@
         <li><a href="https://spring.io/blog/2026/06/23/spring-ai-self-correcting-structured-output">Self-Correcting Structured Output in Spring AI 2.0</a> &mdash; Christian Tzolov shows how <code>validateSchema()</code> detects malformed model output and retries up to three times with the specific validation errors fed back to the model, while <code>useProviderStructuredOutput()</code> enforces the schema natively on OpenAI, Anthropic, and Google GenAI</li>
         <li><a href="https://spring.io/blog/2026/06/15/spring-ai-composable-tool-calling">Tool Calling in Spring AI 2.0: A Composable, Agentic Architecture</a> &mdash; Christian Tzolov details lifting the tool-execution loop out of each chat model into the advisor chain as a recursive <code>ToolCallingAdvisor</code>, with <code>ToolSearchToolCallingAdvisor</code> progressive tool disclosure cutting tokens 34&ndash;64% across hundreds of tools</li>
         <li><a href="https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/">A2A Java SDK Reaches 1.0 GA</a> &mdash; the Agent2Agent Java SDK ships 1.0.0.Final with spec classes converted to Java records, full JSON-RPC/gRPC/REST transport support, and a cross-SDK interop test kit, followed by 1.1.0 adding a <code>TaskAuthorizationProvider</code> SPI for per-user task authorization</li>
-        <li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now">Spring AI 2.0.0 GA Available Now</a> &mdash; built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security</li>
-        <li><a href="https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0">MCP Java SDK 2.0.0 Reaches GA</a> &mdash; first major version since 1.x, tracking the 2025-11-25 MCP spec with spec-accurate JSON Schema 2020-12 validation, enforced required fields, and SSE transport deprecated in favor of Streamable HTTP</li>
       </ul>
     </div>
   </div>
@@ -2651,7 +2649,7 @@
 
       <a class="card" href="https://catalog.workshops.aws/java-spring-ai-agents/en-US">
         <span class="card-badge badge-resource">Workshop</span>
-        <h3>Building Java AI Agents with Spring AI (AWS)</h3>
+        <h3>Building Java AI Agents with Spring AI (AWS Workshop)</h3>
         <p>Hands-on AWS workshop for building intelligent AI agents with Spring AI and AWS services, including deployment to EKS</p>
       </a>
 

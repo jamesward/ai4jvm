@@ -79,8 +79,6 @@ Latest news and releases from across the Java AI ecosystem — new framework ver
 - [Self-Correcting Structured Output in Spring AI 2.0](https://spring.io/blog/2026/06/23/spring-ai-self-correcting-structured-output) — Christian Tzolov shows how `validateSchema()` detects malformed model output and retries up to three times with the specific validation errors fed back to the model, while `useProviderStructuredOutput()` enforces the schema natively on OpenAI, Anthropic, and Google GenAI
 - [Tool Calling in Spring AI 2.0: A Composable, Agentic Architecture](https://spring.io/blog/2026/06/15/spring-ai-composable-tool-calling) — Christian Tzolov details lifting the tool-execution loop out of each chat model into the advisor chain as a recursive `ToolCallingAdvisor`, with `ToolSearchToolCallingAdvisor` progressive tool disclosure cutting tokens 34–64% across hundreds of tools
 - [A2A Java SDK Reaches 1.0 GA](https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/) — the Agent2Agent Java SDK ships 1.0.0.Final with spec classes converted to Java records, full JSON-RPC/gRPC/REST transport support, and a cross-SDK interop test kit, followed by 1.1.0 adding a `TaskAuthorizationProvider` SPI for per-user task authorization
-- [Spring AI 2.0.0 GA Available Now](https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now) — built on Spring Boot 4 with Jackson 3 JSON handling and null-safety annotations, tool calling elevated to a composable advisor-chain component for agentic patterns, and Model Context Protocol integration with annotation-driven programming and enterprise security
-- [MCP Java SDK 2.0.0 Reaches GA](https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.0) — first major version since 1.x, tracking the 2025-11-25 MCP spec with spec-accurate JSON Schema 2020-12 validation, enforced required fields, and SSE transport deprecated in favor of Streamable HTTP
 
 ## Agent Frameworks & Libraries
 
@@ -925,10 +923,10 @@ Talks, tutorials, books, and communities for learning AI development on the JVM.
 - **Description:** Agents, MCP, graph databases — developers navigate the AI revolution
 - **Links:** [Foojay Podcast: Java AI Revolution](https://foojay.io/today/foojay-podcast-86/)
 
-### Building Java AI Agents with Spring AI (AWS)
+### Building Java AI Agents with Spring AI (AWS Workshop)
 - **Badge:** Workshop
 - **Description:** Hands-on AWS workshop for building intelligent AI agents with Spring AI and AWS services, including deployment to EKS
-- **Links:** [Building Java AI Agents with Spring AI (AWS)](https://catalog.workshops.aws/java-spring-ai-agents/en-US)
+- **Links:** [Building Java AI Agents with Spring AI (AWS Workshop)](https://catalog.workshops.aws/java-spring-ai-agents/en-US)
 
 ### AI & Java on Serverless Office Hours
 - **Badge:** Livestream
