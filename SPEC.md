@@ -110,7 +110,11 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
+- https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/
+- https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/
 - https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
+- https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/
 - https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final
 - https://foojay.io/today/commit-created-but-it-isnt-why-the-agents-word-needs-external-verification-and-what-the-mistake-costs/
@@ -497,8 +501,8 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### Google ADK for Kotlin
 - **Badge:** Framework
-- **Description:** Google's official Kotlin port of the Agent Development Kit — code-first orchestration of tools, agents, and multi-agent hierarchies in Kotlin, with an included dev UI for testing and evaluation. A companion Android flavor adds on-device agent support (Gemini Nano) with cloud fallback.
-- **Links:** [Docs](https://adk.dev/) · [GitHub](https://github.com/google/adk-kotlin) · [Announcement](https://developers.googleblog.com/adk-kotlin-android-building-ai-agents/)
+- **Description:** Google's official Kotlin port of the Agent Development Kit, reaching 1.0 GA in September 2026 with full feature parity with ADK Core. Built on Kotlin Multiplatform with hierarchical multi-agent orchestration and human-in-the-loop workflows; Android-focused extensions add on-device inference via LiteRT-LM and ML Kit, Firebase AI Logic for hybrid cloud workflows, and state persistence through Room and AppSearch.
+- **Links:** [Docs](https://adk.dev/) · [GitHub](https://github.com/google/adk-kotlin) · [Announcement](https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/)
 
 ### LLM4S
 - **Badge:** Framework

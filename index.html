@@ -298,7 +298,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-13",
+    "dateModified": "2026-09-15",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -588,7 +588,11 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/">How I Built an AI Assistant for My Career with Java, Spring AI, and MongoDB</a> &mdash; Ricardo Mello builds "RicAI," a Spring Boot career assistant combining Spring AI's <code>VectorStore</code> (MongoDB Atlas + OpenAI embeddings) for semantic search, a <code>ChatClient</code> with MongoDB-backed conversation memory, and <code>@Tool</code>-annotated methods for structured queries and Calendly meeting scheduling</li>
+        <li><a href="https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/">Can You Explain the Diff Your AI Agent Just Wrote?</a> &mdash; Viktoria Evdokimova argues passing tests prove correctness but not comprehension, and shows how JetBrains-IDE agents like Explyt surface debugger state and structured test results &mdash; with a rule of thumb: if you can't explain what an AI-generated diff breaks when reverted, you don't understand it well enough to merge it</li>
+        <li><a href="https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/">InfoQ Java News Roundup</a> &mdash; weekly Java ecosystem roundup covering the Jakarta Agentic AI 1.0 specification's M1 milestone release and new project website, Google's ADK for Kotlin reaching 1.0 GA, Jakarta CDI 5.0 GA, and point releases across TornadoVM, RefactorFirst, Groovy, and Gradle</li>
         <li><a href="https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/">A2A Jakarta 1.0.0.Final Released</a> &mdash; first stable release of Jakarta integrations for the A2A Java SDK's JSON-RPC, gRPC, and HTTP+JSON/REST transports, built on a2a-java 1.3.2.Final, with a new example demonstrating A2A agent deployment across multiple WildFly cluster nodes using JPA and Kafka for shared state</li>
+        <li><a href="https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/">ADK for Kotlin 1.0 Announced</a> &mdash; Google's Agent Development Kit for Kotlin reaches full feature parity with ADK Core, adding on-device inference via LiteRT-LM and ML Kit, Firebase AI Logic for hybrid cloud workflows, Room/AppSearch-backed state persistence, and Kotlin Symbol Processing for compile-time tool-schema generation</li>
         <li><a href="https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/">One Base URL, Many Coding Agents</a> &mdash; Yurii Kostyukov shows how to probe an OpenAI-compatible AI gateway's availability from Java's <code>java.net.http</code> client, plus token-estimate calibration and credential-refresh lessons from building a multi-agent IDE gateway</li>
         <li><a href="https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final">A2A Java SDK 1.3.2.Final Released</a> &mdash; patch release fixing the HTTP client's <code>PostBuilder</code> to not follow redirects by default, plus logger field renames and test cleanup</li>
         <li><a href="https://foojay.io/today/commit-created-but-it-isnt-why-the-agents-word-needs-external-verification-and-what-the-mistake-costs/">"Commit Created" &mdash; But It Isn't</a> &mdash; Viktoria Evdokimova analyzes public issue trackers from Claude Code, Copilot, and other coding agents to identify three root causes of agents falsely reporting completed work, and gives under-a-minute independent verification checks (<code>git log</code>, <code>ls -la</code>, run panels) developers can run against agent claims</li>
@@ -1281,11 +1285,11 @@
       <div class="card">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://adk.dev/">Google ADK for Kotlin</a></h3>
-        <p>Google's official Kotlin port of the Agent Development Kit &mdash; code-first orchestration of tools, agents, and multi-agent hierarchies in Kotlin, with an included dev UI for testing and evaluation. A companion Android flavor adds on-device agent support (Gemini Nano) with cloud fallback.</p>
+        <p>Google's official Kotlin port of the Agent Development Kit, reaching 1.0 GA in September 2026 with full feature parity with ADK Core. Built on Kotlin Multiplatform with hierarchical multi-agent orchestration and human-in-the-loop workflows; Android-focused extensions add on-device inference via LiteRT-LM and ML Kit, Firebase AI Logic for hybrid cloud workflows, and state persistence through Room and AppSearch.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://adk.dev/" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/google/adk-kotlin" title="GitHub"></a>
-          <a class="icon icon-web" href="https://developers.googleblog.com/adk-kotlin-android-building-ai-agents/" title="Announcement"></a>
+          <a class="icon icon-web" href="https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/" title="Announcement"></a>
         </div>
       </div>
 
