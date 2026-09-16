@@ -110,10 +110,14 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/embabel/embabel-agent/releases/tag/v1.5.2
 - https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
 - https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/
+- https://camel.apache.org/blog/2026/09/camel-local-model-benchmark/
+- https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.3
 - https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/
 - https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
+- https://github.com/beehive-lab/TornadoVM/releases/tag/v6.1.0
 - https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/
 - https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
 - https://github.com/a2aproject/a2a-java/releases/tag/v1.3.2.Final
@@ -187,8 +191,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://foojay.io/today/building-ai-systems-with-mongodb-implementing-the-planning-pattern/
 - https://a2aproject.github.io/a2a-java/posts/a2a-java-sdk-1-1-0-final-released/
 - https://spring.io/blog/2026/06/23/spring-ai-self-correcting-structured-output
-- https://spring.io/blog/2026/06/15/spring-ai-composable-tool-calling
-- https://quarkus.io/blog/a2a-java-sdk-1-0-0-final-released/
 
 ---
 
@@ -316,7 +318,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### A2A Java SDK
 - **Badge:** SDK
-- **Description:** The official Java SDK for [Agent-2-Agent Protocol (A2A)](https://a2a-protocol.org) servers and clients. Reference implementation based on Quarkus. Reached 1.0 GA in June 2026 with full JSON-RPC/gRPC/REST transport support, OpenTelemetry integration, and a cross-SDK interop test kit; 1.1.0 added a `TaskAuthorizationProvider` SPI for per-user task authorization; 1.2.0 (Aug 2026) adds programmatic auth wiring and a `TaskStreamLifecycleHook`, with breaking changes to `TaskState` naming and cross-module package resolution.
+- **Description:** The official Java SDK for [Agent-2-Agent Protocol (A2A)](https://a2a-protocol.org) servers and clients. Reference implementation based on Quarkus. Reached 1.0 GA in June 2026 with full JSON-RPC/gRPC/REST transport support, OpenTelemetry integration, and a cross-SDK interop test kit; 1.2.0 (Aug 2026) adds programmatic auth wiring and a `TaskStreamLifecycleHook`; 1.3.0 (Sep 2026) adds multitenancy support and security hardening (CR/LF header-injection prevention, SSRF protection for push-notification URLs, fail-closed task-authorization enforcement), with 1.3.1 and 1.3.2 patch releases following.
 - **Links:** [GitHub](https://github.com/a2aproject/a2a-java)
 
 ### A2A Java SDK for Jakarta Servers
@@ -521,7 +523,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### BoxLang AI
 - **Badge:** Framework
-- **Description:** Unified AI platform for the JVM from Ortus Solutions (makers of BoxLang and ColdBox). One API across 15+ providers, plus multi-agent orchestration with parent-child hierarchies, an Agent Skills system implementing Anthropic's open standard, MCP support (consuming and serving), 20+ memory types with vector RAG, and a composable middleware pipeline. Reached v3.0 in 2026. Apache 2.0.
+- **Description:** Unified AI platform for the JVM from Ortus Solutions (makers of BoxLang and ColdBox). One API across 15+ providers, plus multi-agent orchestration with parent-child hierarchies, an Agent Skills system implementing Anthropic's open standard, MCP support (consuming and serving), 20+ memory types with vector RAG, and a composable middleware pipeline. Reached v3.0 in 2026; v3.4.0 (Sep 2026) added gateway session management, live run control, batch tool-call approvals, and prompt-injection/PII guard middleware. Apache 2.0.
 - **Links:** [Website](https://ai.boxlang.io/) · [Docs](https://ai.ortusbooks.com) · [GitHub](https://github.com/ortus-boxlang/bx-ai)
 
 ### Quarkus Flow
@@ -704,7 +706,7 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 
 ### TornadoVM
 - **Badge:** Inference
-- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v5.2.0 added AI-focused kernels: native FP8 conversion, FP8/BF16 tensor-core matrix multiply, cuBLAS/CUTLASS-compatible BFloat16 arrays, and batched FP16 GEMM. From the University of Manchester's Beehive Lab.
+- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v6.0.0 added a CUDA C backend via NVRTC and native FP8/BF16 tensor-core support while removing the legacy PTX, SPIR-V, and FPGA backends; v6.1.0 added cuRAND device-side random number generation and CUDA launch-overhead optimizations. From the University of Manchester's Beehive Lab.
 - **Links:** [Website](https://www.tornadovm.org) · [GitHub](https://github.com/beehive-lab/TornadoVM) · [Docs](https://tornadovm.readthedocs.io/en/latest/)
 
 ### ModelJARs
