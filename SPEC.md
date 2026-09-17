@@ -110,11 +110,13 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.2
 - https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
 - https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/
 - https://camel.apache.org/blog/2026/09/camel-local-model-benchmark/
 - https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.13.3
+- https://quarkus.io/blog/quarkus-insights-259-reshapr/
 - https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/
 - https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v6.1.0
