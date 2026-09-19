@@ -298,7 +298,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-17",
+    "dateModified": "2026-09-19",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -588,6 +588,7 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/">Authorizing What an AI Agent May Do in Apache Camel</a> &mdash; rather than relying on prompts for security, enforces AI agent tool calls at the boundary using SPIFFE for identity and Open Policy Agent (OPA) for authorization, so a <code>camel-ai-tool</code>-exposed route can safely expose different capabilities to different callers based on verified identity</li>
         <li><a href="https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/">What's New in the September 2026 Azul Payara Release?</a> &mdash; MicroProfile 7.1 lands across Payara's product lines, Jakarta Agentic AI support expands to Payara Micro and Embedded (an agent as a CDI bean annotated with <code>@Agent</code>), and a jackson-databind security patch ships across all supported branches</li>
         <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.5.2">Embabel Agent 1.5.2 Released</a> &mdash; adds agent process persistence with snapshot/restore functionality backed by JCache storage, improvements to LLM retry policies and structured output APIs, and a new Podman skill script execution engine</li>
         <li><a href="https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/">How I Built an AI Assistant for My Career with Java, Spring AI, and MongoDB</a> &mdash; Ricardo Mello builds "RicAI," a Spring Boot career assistant combining Spring AI's <code>VectorStore</code> (MongoDB Atlas + OpenAI embeddings) for semantic search, a <code>ChatClient</code> with MongoDB-backed conversation memory, and <code>@Tool</code>-annotated methods for structured queries and Calendly meeting scheduling</li>

@@ -110,6 +110,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/
 - https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.2
 - https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
