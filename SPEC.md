@@ -46,10 +46,10 @@ Each major content section (`<section>`) should have a 1–2 sentence introducti
 Add a FAQ section before the Resources section. This targets long-tail search queries. Use `<h2>FAQ</h2>` heading and render as an accordion or simple Q&A list. Each Q&A pair should also be included in FAQPage structured data. The first mention of a framework/tool name in each answer should link to that item's card (`<a href="#card-id">`, see the anchor ids required in Site Structure) for internal linking — this doubles as keyword-relevant, crawlable navigation between the FAQ and the catalog.
 
 Questions and answers:
-- **"What is the best Java framework for building AI agents?"** — "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, and Akka Agents — each with different strengths for specific use cases."
+- **"What is the best Java framework for building AI agents?"** — "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, Akka Agents, and Koog, which now ships idiomatic Java APIs alongside its original Kotlin DSL — each with different strengths for specific use cases."
 - **"Can Java run LLMs locally?"** — "Yes. Projects like Jlama and GPULlama3.java run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while GPULlama3.java leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML."
 - **"What is MCP and how does it work with Java?"** — "The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support."
-- **"Is Kotlin supported by Java AI frameworks?"** — "Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains is a Kotlin-native agent framework, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code."
+- **"Is Kotlin supported by Java AI frameworks?"** — "Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains now offers idiomatic APIs for both Kotlin and Java, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code."
 
 ### Sitemap
 - `sitemap.xml` must have `<lastmod>` updated whenever `index.html` content changes
@@ -261,7 +261,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### Koog (JetBrains)
 - **Badge:** Framework
-- **Description:** Kotlin-native agent framework from JetBrains. Type-safe DSL, multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.
+- **Description:** Agent framework from JetBrains with idiomatic APIs for both Java and Kotlin — fluent builder-style APIs and thread pool executors for Java, a type-safe DSL for Kotlin. Multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.
 - **Links:** [Website](https://www.jetbrains.com/koog/) · [GitHub](https://github.com/JetBrains/koog) · [Docs](https://docs.koog.ai/)
 
 ### Semantic Kernel (Java)
@@ -1246,7 +1246,7 @@ Notes:
 Frequently asked questions about AI development on the JVM. Rendered as a Q&A list. Include matching `FAQPage` structured data in the page `<head>`.
 
 ### What is the best Java framework for building AI agents?
-The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, and Akka Agents — each with different strengths for specific use cases.
+The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, Akka Agents, and Koog, which now ships idiomatic Java APIs alongside its original Kotlin DSL — each with different strengths for specific use cases.
 
 ### Can Java run LLMs locally?
 Yes. Projects like Jlama and GPULlama3.java run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while GPULlama3.java leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML.
@@ -1255,7 +1255,7 @@ Yes. Projects like Jlama and GPULlama3.java run Llama, Mistral, and other models
 The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support.
 
 ### Is Kotlin supported by Java AI frameworks?
-Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains is a Kotlin-native agent framework, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code.
+Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains now offers idiomatic APIs for both Kotlin and Java, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code.
 
 ---
 

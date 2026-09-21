@@ -298,7 +298,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-19",
+    "dateModified": "2026-09-21",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -519,7 +519,7 @@
         "name": "What is the best Java framework for building AI agents?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, and Akka Agents — each with different strengths for specific use cases."
+          "text": "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, Akka Agents, and Koog, which now ships idiomatic Java APIs alongside its original Kotlin DSL — each with different strengths for specific use cases."
         }
       },
       {
@@ -543,7 +543,7 @@
         "name": "Is Kotlin supported by Java AI frameworks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains is a Kotlin-native agent framework, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code."
+          "text": "Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains now offers idiomatic APIs for both Kotlin and Java, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code."
         }
       }
     ]
@@ -809,7 +809,7 @@
       <div class="card" id="koog-jetbrains">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://www.jetbrains.com/koog/">Koog (JetBrains)</a></h3>
-        <p>Kotlin-native agent framework from JetBrains. Type-safe DSL, multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.</p>
+        <p>Agent framework from JetBrains with idiomatic APIs for both Java and Kotlin &mdash; fluent builder-style APIs and thread pool executors for Java, a type-safe DSL for Kotlin. Multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://www.jetbrains.com/koog/" title="Website"></a>
           <a class="icon icon-github" href="https://github.com/JetBrains/koog" title="GitHub"></a>
@@ -2559,7 +2559,7 @@
     <div class="faq-list">
       <details class="faq-item" open>
         <summary>What is the best Java framework for building AI agents?</summary>
-        <p>The most popular choices are <a href="#spring-ai">Spring AI</a> and <a href="#langchain4j">LangChain4j</a>. Spring AI is ideal if you&rsquo;re already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include <a href="#google-adk-for-java">Google ADK for Java</a>, <a href="#embabel">Embabel</a>, and <a href="#akka-agents">Akka Agents</a> &mdash; each with different strengths for specific use cases.</p>
+        <p>The most popular choices are <a href="#spring-ai">Spring AI</a> and <a href="#langchain4j">LangChain4j</a>. Spring AI is ideal if you&rsquo;re already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include <a href="#google-adk-for-java">Google ADK for Java</a>, <a href="#embabel">Embabel</a>, <a href="#akka-agents">Akka Agents</a>, and <a href="#koog-jetbrains">Koog</a>, which now ships idiomatic Java APIs alongside its original Kotlin DSL &mdash; each with different strengths for specific use cases.</p>
       </details>
       <details class="faq-item">
         <summary>Can Java run LLMs locally?</summary>
@@ -2571,7 +2571,7 @@
       </details>
       <details class="faq-item">
         <summary>Is Kotlin supported by Java AI frameworks?</summary>
-        <p>Yes. Most Java AI frameworks run on any JVM language. <a href="#embabel">Embabel</a> is written in Kotlin with full Java interop, <a href="#koog-jetbrains">Koog from JetBrains</a> is a Kotlin-native agent framework, and <a href="#tracy-jetbrains">Tracy</a> provides AI observability for Kotlin. <a href="#langchain4j">LangChain4j</a> and <a href="#spring-ai">Spring AI</a> work seamlessly from Kotlin code.</p>
+        <p>Yes. Most Java AI frameworks run on any JVM language. <a href="#embabel">Embabel</a> is written in Kotlin with full Java interop, <a href="#koog-jetbrains">Koog from JetBrains</a> now offers idiomatic APIs for both Kotlin and Java, and <a href="#tracy-jetbrains">Tracy</a> provides AI observability for Kotlin. <a href="#langchain4j">LangChain4j</a> and <a href="#spring-ai">Spring AI</a> work seamlessly from Kotlin code.</p>
       </details>
     </div>
   </div>
