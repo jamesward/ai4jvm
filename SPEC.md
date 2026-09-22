@@ -47,7 +47,7 @@ Add a FAQ section before the Resources section. This targets long-tail search qu
 
 Questions and answers:
 - **"What is the best Java framework for building AI agents?"** — "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, Akka Agents, and Koog, which now ships idiomatic Java APIs alongside its original Kotlin DSL — each with different strengths for specific use cases."
-- **"Can Java run LLMs locally?"** — "Yes. Projects like Jlama and GPULlama3.java run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while GPULlama3.java leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML."
+- **"Can Java run LLMs locally?"** — "Yes. Projects like Jlama and JLLM run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while JLLM leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML."
 - **"What is MCP and how does it work with Java?"** — "The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support."
 - **"Is Kotlin supported by Java AI frameworks?"** — "Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains now offers idiomatic APIs for both Kotlin and Java, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code."
 
@@ -442,6 +442,16 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Java security and safety testing framework for Java LLM-enriched applications, integrating with JUnit 5 and Spring Boot so adversarial testing lives in the standard test suite. 200+ attack probes across the OWASP LLM Top 10, probabilistic testing (via PUnit) for non-deterministic LLM outputs, fixture-based regression testing, bias testing, model fingerprinting, and LangChain4j guardrail validation. Apache 2.0.
 - **Links:** [Docs](https://github.com/tiberius-security/tiberius/blob/main/docs/langchain4j-guardrail-testing.md) · [GitHub](https://github.com/tiberius-security/tiberius) · [Blog](https://foojay.io/today/tiberius-a-security-testing-framework-for-llm-applications-in-java/) · [Article](https://dev.karakun.com/2026/07/20/llm-security-testing-java-tiberius.html) · [Podcast](https://foojay.io/today/foojay-podcast-99/)
 
+### Dokimos
+- **Badge:** Library
+- **Description:** LLM and agent evaluation framework for Java and Kotlin that runs in JUnit and CI. Provides dataset-driven experiments, built-in correctness, faithfulness, hallucination, tool-call, cost, and latency evaluators, plus integrations for Spring AI, Spring AI Alibaba, LangChain4j, Koog, and Embabel. MIT licensed and published to Maven Central.
+- **Links:** [Website](https://dokimos.dev/) · [GitHub](https://github.com/dokimos-dev/dokimos) · [Javadoc](https://dokimos.dev/apidocs/)
+
+### Rage4J
+- **Badge:** Library
+- **Description:** Java 21+ evaluation library for testing RAG pipelines and AI agents with familiar JUnit assertions. Measures answer correctness, faithfulness, relevance, semantic similarity, BLEU/ROUGE, and tool-call accuracy, with JSONL persistence and HTML reports for CI. MIT licensed and published to Maven Central.
+- **Links:** [Docs](https://rage4j.dev/docs/intro) · [GitHub](https://github.com/explore-de/rage4j) · [Website](https://rage4j.dev/)
+
 ### Ollama4j
 - **Badge:** SDK
 - **Description:** Java client library for running models via a local Ollama server. Chat, streaming, tool/function calling (including MCP tools), vision-model image inputs, embeddings, and model management, with Prometheus metrics support. Requires Java 17+, published to Maven Central.
@@ -705,14 +715,19 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Description:** Oracle Labs' ML library for classification, regression, clustering, and anomaly detection. Strong typing, provenance tracking for reproducibility, and integrations with XGBoost, ONNX Runtime, TensorFlow, and LibSVM.
 - **Links:** [Website](https://tribuo.org/) · [GitHub](https://github.com/oracle/tribuo)
 
-### GPULlama3.java
+### Smile
+- **Badge:** Training
+- **Description:** Comprehensive machine-learning engine for Java, Scala, and Kotlin, covering classification, regression, clustering, feature engineering, model validation, NLP, and numerical computing. Also provides LibTorch-backed GPU deep learning and Llama/Qwen inference with an OpenAI-compatible server. Actively maintained and published to Maven Central.
+- **Links:** [Website](https://www.aihalo.dev/) · [GitHub](https://github.com/haifengl/smile) · [Java API](https://www.aihalo.dev/api/java/index.html)
+
+### JLLM
 - **Badge:** Inference
-- **Description:** Java-native LLM inference with automatic GPU acceleration via TornadoVM. Supports Llama 3, Mistral, Qwen, Phi-3, and IBM Granite models in GGUF format. TornadoVM translates Java bytecode to GPU kernels (OpenCL, PTX, SPIR-V). Reached 1.0.0 in July 2026 and is published to Maven Central as `io.github.beehive-lab:gpu-llama3` with auto-activating JDK 21 and JDK 25 builds. From the University of Manchester's Beehive Lab.
-- **Links:** [GitHub](https://github.com/beehive-lab/GPULlama3.java) · [InfoQ](https://www.infoq.com/news/2025/06/gpullama3-java-gpu-llm/)
+- **Description:** JVM-native LLM inference and serving engine from the University of Manchester's Beehive Lab, formerly GPULlama3.java. TornadoVM JIT-compiles its Java transformer kernels for NVIDIA, Intel, AMD, and Apple GPUs via CUDA, OpenCL, or Metal. Supports multiple GGUF model families, an OpenAI-compatible server, and official LangChain4j and Quarkus integrations; published to Maven Central for Java 21 and 25.
+- **Links:** [GitHub](https://github.com/beehive-lab/jllm) · [Website](https://beehive-lab.github.io/jllm/) · [Maven Central](https://central.sonatype.com/artifact/io.github.beehive-lab/jllm)
 
 ### TornadoVM
 - **Badge:** Inference
-- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.
+- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers JLLM's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.
 - **Links:** [Website](https://www.tornadovm.org) · [GitHub](https://github.com/beehive-lab/TornadoVM) · [Docs](https://tornadovm.readthedocs.io/en/latest/)
 
 ### ModelJARs
@@ -1034,7 +1049,7 @@ Notes:
 - **Badge:** Person
 - **Initials:** MP
 - **Photo:** https://avatars.githubusercontent.com/u/8652854?v=4
-- **Role:** Research Fellow, University of Manchester and Senior Software Engineer at Neo4j; TornadoVM core maintainer and lead author of GPULlama3.java, GPU-accelerated LLM inference in pure Java
+- **Role:** Research Fellow, University of Manchester and Senior Software Engineer at Neo4j; TornadoVM core maintainer and lead author of JLLM (formerly GPULlama3.java), GPU-accelerated LLM inference in pure Java
 - **Links:** [GitHub](https://github.com/mikepapadim) · [LinkedIn](https://www.linkedin.com/in/michalis-papadimitriou/) · [Website](https://mpapadimitriou.com/)
 
 ### Konstantin Pavlov
@@ -1252,7 +1267,7 @@ Frequently asked questions about AI development on the JVM. Rendered as a Q&A li
 The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, Akka Agents, and Koog, which now ships idiomatic Java APIs alongside its original Kotlin DSL — each with different strengths for specific use cases.
 
 ### Can Java run LLMs locally?
-Yes. Projects like Jlama and GPULlama3.java run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while GPULlama3.java leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML.
+Yes. Projects like Jlama and JLLM run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while JLLM leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML.
 
 ### What is MCP and how does it work with Java?
 The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support.
