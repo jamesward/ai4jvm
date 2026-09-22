@@ -111,6 +111,7 @@ Latest headlines about the Java AI ecosystem. Each item has a link and brief des
 Note: Order by date, newest first. Don't show news older than 3 months
 
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0
+- https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment
 - https://github.com/google/adk-java/releases/tag/v1.10.1
 - https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.2
 - https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/
@@ -366,6 +367,11 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Badge:** Framework
 - **Description:** Cross-platform desktop app from the Spring AI Community that acts as a local execution layer for AI agent tools. Build, test, and publish MCP tools with a deny-first sandbox, per-tool risk levels, and human-in-the-loop approval for sensitive operations, plus observability dashboards for tokens, cost, traces, and tool execution.
 - **Links:** [GitHub](https://github.com/spring-ai-community/spring-ai-playground)
+
+### Spring AI TypeSafe
+- **Badge:** Library
+- **Description:** Spring AI Community integration for TypeSafe AI's hosted Jev API. It answers typed yes/no, choice, and score questions for classification, scoring, and routing without generating text, and provides Spring AI integrations for judging and self-refinement, guardrails, RAG filtering and reranking, tool selection, and evaluation. Version 0.1.0 is available on Maven Central.
+- **Links:** [Docs](https://spring-ai-community.github.io/spring-ai-typesafe/latest/) · [GitHub](https://github.com/spring-ai-community/spring-ai-typesafe) · [Article](https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment)
 
 ### Jakarta Agentic AI
 - **Badge:** Framework
