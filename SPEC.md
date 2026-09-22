@@ -110,6 +110,9 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0
+- https://github.com/google/adk-java/releases/tag/v1.10.1
+- https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.2
 - https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/
 - https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.2
@@ -271,7 +274,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 
 ### JamJet
 - **Badge:** Framework
-- **Description:** Production-grade agent runtime with native Java SDK. Rust core (Tokio) for performance, graph-based durable workflow orchestration with event-sourced state, automatic crash recovery, audit trails, and first-class human-in-the-loop. Native MCP client/server and A2A protocol support. Java SDK uses records, virtual threads, and fluent builder API. Apache 2.0.
+- **Description:** Action-control layer that sits underneath agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, Spring AI) to enforce policy: blocking unsafe tool calls, gating risky actions behind human approval, capping costs, and recording audit trails, with crash recovery/replay on a Rust, event-sourced core. On the JVM, a `jamjet-spring-boot-starter` auto-instruments Spring AI's `ChatClient` for durable, audited calls with no code changes, plus a native Java Runtime with virtual threads and no sidecar process.
 - **Links:** [Docs](https://docs.jamjet.dev) · [GitHub](https://github.com/jamjet-labs/jamjet) · [Examples](https://github.com/jamjet-labs/jamjet/tree/main/sdk/java/examples)
 
 ### Spring AI AgentCore SDK
@@ -709,7 +712,7 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 
 ### TornadoVM
 - **Badge:** Inference
-- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v6.0.0 added a CUDA C backend via NVRTC and native FP8/BF16 tensor-core support while removing the legacy PTX, SPIR-V, and FPGA backends; v6.1.0 added cuRAND device-side random number generation and CUDA launch-overhead optimizations. From the University of Manchester's Beehive Lab.
+- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.
 - **Links:** [Website](https://www.tornadovm.org) · [GitHub](https://github.com/beehive-lab/TornadoVM) · [Docs](https://tornadovm.readthedocs.io/en/latest/)
 
 ### ModelJARs
