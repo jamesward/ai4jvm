@@ -298,7 +298,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-19",
+    "dateModified": "2026-09-22",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -519,7 +519,7 @@
         "name": "What is the best Java framework for building AI agents?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, and Akka Agents — each with different strengths for specific use cases."
+          "text": "The most popular choices are Spring AI and LangChain4j. Spring AI is ideal if you're already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, Akka Agents, and Koog, which now ships idiomatic Java APIs alongside its original Kotlin DSL — each with different strengths for specific use cases."
         }
       },
       {
@@ -543,7 +543,7 @@
         "name": "Is Kotlin supported by Java AI frameworks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains is a Kotlin-native agent framework, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code."
+          "text": "Yes. Most Java AI frameworks run on any JVM language. Embabel is written in Kotlin with full Java interop, Koog from JetBrains now offers idiomatic APIs for both Kotlin and Java, and Tracy provides AI observability for Kotlin. LangChain4j and Spring AI work seamlessly from Kotlin code."
         }
       }
     ]
@@ -588,6 +588,9 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0">TornadoVM 7.0.0 Released</a> &mdash; adds a TileContext API for Java CUDA tile-based GPU compute, a cuDF library-task provider, matrix multiply-accumulate improvements, and fixes half-precision (FP16) conversion and storage across the CUDA, OpenCL, and Metal backends</li>
+        <li><a href="https://github.com/google/adk-java/releases/tag/v1.10.1">Google ADK for Java 1.10.1 Released</a> &mdash; adds an <code>@Experimental</code> annotation for unstable APIs, session-resumability checkpoints, and a one-way ADK Java-to-Kotlin interop module, plus fixes for dev UI routing, memory-search timestamps, and Vertex AI session handling</li>
+        <li><a href="https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.2">Quarkus Flow 1.1.2 Released</a> &mdash; patch release adding missing native-image classes, fixing OIDC-blocking and topology issues, and adding missing <code>ServiceLoader</code> registration for <code>URITemplate</code></li>
         <li><a href="https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/">Authorizing What an AI Agent May Do in Apache Camel</a> &mdash; rather than relying on prompts for security, enforces AI agent tool calls at the boundary using SPIFFE for identity and Open Policy Agent (OPA) for authorization, so a <code>camel-ai-tool</code>-exposed route can safely expose different capabilities to different callers based on verified identity</li>
         <li><a href="https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/">What's New in the September 2026 Azul Payara Release?</a> &mdash; MicroProfile 7.1 lands across Payara's product lines, Jakarta Agentic AI support expands to Payara Micro and Embedded (an agent as a CDI bean annotated with <code>@Agent</code>), and a jackson-databind security patch ships across all supported branches</li>
         <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.5.2">Embabel Agent 1.5.2 Released</a> &mdash; adds agent process persistence with snapshot/restore functionality backed by JCache storage, improvements to LLM retry policies and structured output APIs, and a new Podman skill script execution engine</li>
@@ -809,7 +812,7 @@
       <div class="card" id="koog-jetbrains">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://www.jetbrains.com/koog/">Koog (JetBrains)</a></h3>
-        <p>Kotlin-native agent framework from JetBrains. Type-safe DSL, multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.</p>
+        <p>Agent framework from JetBrains with idiomatic APIs for both Java and Kotlin &mdash; fluent builder-style APIs and thread pool executors for Java, a type-safe DSL for Kotlin. Multiplatform (JVM, JS, WasmJS, Android, iOS), A2A protocol support, fault tolerance with persistence, and multi-LLM support.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://www.jetbrains.com/koog/" title="Website"></a>
           <a class="icon icon-github" href="https://github.com/JetBrains/koog" title="GitHub"></a>
@@ -829,7 +832,7 @@
       <div class="card">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://docs.jamjet.dev">JamJet</a></h3>
-        <p>Production-grade agent runtime with native Java SDK. Rust core (Tokio) for performance, graph-based durable workflow orchestration with event-sourced state, automatic crash recovery, audit trails, and first-class human-in-the-loop. Native MCP client/server and A2A protocol support. Java SDK uses records, virtual threads, and fluent builder API. Apache 2.0.</p>
+        <p>Action-control layer that sits underneath agent frameworks (LangGraph, CrewAI, OpenAI Agents SDK, Spring AI) to enforce policy: blocking unsafe tool calls, gating risky actions behind human approval, capping costs, and recording audit trails, with crash recovery/replay on a Rust, event-sourced core. On the JVM, a <code>jamjet-spring-boot-starter</code> auto-instruments Spring AI's <code>ChatClient</code> for durable, audited calls with no code changes, plus a native Java Runtime with virtual threads and no sidecar process.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://docs.jamjet.dev" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/jamjet-labs/jamjet" title="GitHub"></a>
@@ -1652,7 +1655,7 @@
       <div class="card">
         <span class="card-badge badge-inference">Inference</span>
         <h3><a href="https://www.tornadovm.org">TornadoVM</a></h3>
-        <p>GPU programming framework for Java &mdash; JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v6.0.0 added a CUDA C backend via NVRTC and native FP8/BF16 tensor-core support while removing the legacy PTX, SPIR-V, and FPGA backends; v6.1.0 added cuRAND device-side random number generation and CUDA launch-overhead optimizations. From the University of Manchester's Beehive Lab.</p>
+        <p>GPU programming framework for Java &mdash; JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers GPULlama3.java's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://www.tornadovm.org" title="Website"></a>
           <a class="icon icon-github" href="https://github.com/beehive-lab/TornadoVM" title="GitHub"></a>
@@ -2559,7 +2562,7 @@
     <div class="faq-list">
       <details class="faq-item" open>
         <summary>What is the best Java framework for building AI agents?</summary>
-        <p>The most popular choices are <a href="#spring-ai">Spring AI</a> and <a href="#langchain4j">LangChain4j</a>. Spring AI is ideal if you&rsquo;re already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include <a href="#google-adk-for-java">Google ADK for Java</a>, <a href="#embabel">Embabel</a>, and <a href="#akka-agents">Akka Agents</a> &mdash; each with different strengths for specific use cases.</p>
+        <p>The most popular choices are <a href="#spring-ai">Spring AI</a> and <a href="#langchain4j">LangChain4j</a>. Spring AI is ideal if you&rsquo;re already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include <a href="#google-adk-for-java">Google ADK for Java</a>, <a href="#embabel">Embabel</a>, <a href="#akka-agents">Akka Agents</a>, and <a href="#koog-jetbrains">Koog</a>, which now ships idiomatic Java APIs alongside its original Kotlin DSL &mdash; each with different strengths for specific use cases.</p>
       </details>
       <details class="faq-item">
         <summary>Can Java run LLMs locally?</summary>
@@ -2571,7 +2574,7 @@
       </details>
       <details class="faq-item">
         <summary>Is Kotlin supported by Java AI frameworks?</summary>
-        <p>Yes. Most Java AI frameworks run on any JVM language. <a href="#embabel">Embabel</a> is written in Kotlin with full Java interop, <a href="#koog-jetbrains">Koog from JetBrains</a> is a Kotlin-native agent framework, and <a href="#tracy-jetbrains">Tracy</a> provides AI observability for Kotlin. <a href="#langchain4j">LangChain4j</a> and <a href="#spring-ai">Spring AI</a> work seamlessly from Kotlin code.</p>
+        <p>Yes. Most Java AI frameworks run on any JVM language. <a href="#embabel">Embabel</a> is written in Kotlin with full Java interop, <a href="#koog-jetbrains">Koog from JetBrains</a> now offers idiomatic APIs for both Kotlin and Java, and <a href="#tracy-jetbrains">Tracy</a> provides AI observability for Kotlin. <a href="#langchain4j">LangChain4j</a> and <a href="#spring-ai">Spring AI</a> work seamlessly from Kotlin code.</p>
       </details>
     </div>
   </div>
