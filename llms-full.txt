@@ -455,6 +455,16 @@ Open-source frameworks and SDKs for building AI-powered applications on the JVM 
 - **Description:** Annotation-driven Java admin framework (Spring Boot 3, Java 17+) that generates a full CRUD admin UI from a single annotated JPA entity. Its `erupt-ai` module adds an AI harness with 50+ LLM providers, MCP-native tool calling, and A2A multi-agent communication, with tools secured through the same role-based access control as the generated admin pages. Apache 2.0.
 - **Links:** [Docs](https://docs.erupt.xyz) · [GitHub](https://github.com/erupts/erupt) · [Demo](https://demo.erupt.xyz)
 
+### Claude Agent SDK for Java
+- **Badge:** SDK
+- **Description:** Java SDK for driving the Claude Code CLI as a subprocess, with three APIs — one-shot `Query`, blocking multi-turn `ClaudeSyncClient`, and reactive `ClaudeAsyncClient` (Project Reactor). Supports hooks, permission callbacks, MCP server integration, and subagent definitions, with no native dependencies. Created by Spring AI project lead Mark Pollack, continuing development from the archived `spring-ai-community/claude-agent-sdk-java`. Complements Agent Client, which targets multiple CLI coding agents instead of just Claude Code. Apache 2.0.
+- **Links:** [Docs](https://lab.pollack.ai/projects/claude-agent-sdk) · [GitHub](https://github.com/markpollack/claude-agent-sdk-java)
+
+### Vectors (Integrallis)
+- **Badge:** Library
+- **Description:** Embedded vector search and persistence library for Java — indexed similarity search, durable local state, and metadata filtering in-process without a separate vector-database service. Built on the JDK Vector API for SIMD distance kernels, with FLAT/HNSW/Vamana/IVF index types, eight quantization methods, and Spring AI and LangChain4j adapters. Requires JDK 25+. Core modules Apache 2.0; distributed-tier modules use FSL-1.1-ALv2, converting to Apache 2.0 on a documented change date. From Integrallis, makers of ModelJARs.
+- **Links:** [GitHub](https://github.com/integrallis/vectors)
+
 ## Java with Code Assistants
 
 Technologies that supercharge Java development when paired with AI code assistants — from MCP servers that give agents live Javadoc access, to reusable skill packages and IDE integrations.

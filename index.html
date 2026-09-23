@@ -298,7 +298,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-22",
+    "dateModified": "2026-09-23",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -385,7 +385,9 @@
       {"@type": "ListItem", "position": 69, "name": "BoxLang AI", "url": "https://ai.boxlang.io/"},
       {"@type": "ListItem", "position": 70, "name": "Quarkus Flow", "url": "https://docs.quarkiverse.io/quarkus-flow/dev/index.html"},
       {"@type": "ListItem", "position": 71, "name": "Agent Client", "url": "https://lab.pollack.ai/projects/agent-client"},
-      {"@type": "ListItem", "position": 72, "name": "Erupt", "url": "https://docs.erupt.xyz"}
+      {"@type": "ListItem", "position": 72, "name": "Erupt", "url": "https://docs.erupt.xyz"},
+      {"@type": "ListItem", "position": 73, "name": "Claude Agent SDK for Java", "url": "https://lab.pollack.ai/projects/claude-agent-sdk"},
+      {"@type": "ListItem", "position": 74, "name": "Vectors (Integrallis)", "url": "https://github.com/integrallis/vectors"}
     ]
   }
   </script>
@@ -1386,7 +1388,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="agent-client">
         <span class="card-badge badge-framework">Framework</span>
         <h3><a href="https://lab.pollack.ai/projects/agent-client">Agent Client</a></h3>
         <p>Portable Java API for autonomous CLI coding agents &mdash; Claude Code, Gemini CLI, Codex, Grok, and more &mdash; behind one <code>AgentClient</code> interface, with an optional Spring Boot auto-configuration layer and sandboxed execution. Full provider-parity testing for five providers; four more (Amazon Q, Amp, Qwen Code, SWE-agent) are experimental. Created by Spring AI project lead Mark Pollack as the successor to the now-archived <code>spring-ai-community/agent-client</code>; current releases use the Business Source License 1.1 (pre-0.18 versions remain Apache 2.0).</p>
@@ -1404,6 +1406,25 @@
           <a class="icon icon-web" href="https://docs.erupt.xyz" title="Docs"></a>
           <a class="icon icon-github" href="https://github.com/erupts/erupt" title="GitHub"></a>
           <a class="icon icon-web" href="https://demo.erupt.xyz" title="Demo"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-inference">SDK</span>
+        <h3><a href="https://lab.pollack.ai/projects/claude-agent-sdk">Claude Agent SDK for Java</a></h3>
+        <p>Java SDK for driving the Claude Code CLI as a subprocess, with three APIs &mdash; one-shot <code>Query</code>, blocking multi-turn <code>ClaudeSyncClient</code>, and reactive <code>ClaudeAsyncClient</code> (Project Reactor). Supports hooks, permission callbacks, MCP server integration, and subagent definitions, with no native dependencies. Created by Spring AI project lead Mark Pollack, continuing development from the archived <code>spring-ai-community/claude-agent-sdk-java</code>. Complements <a href="#agent-client">Agent Client</a>, which targets multiple CLI coding agents instead of just Claude Code. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://lab.pollack.ai/projects/claude-agent-sdk" title="Docs"></a>
+          <a class="icon icon-github" href="https://github.com/markpollack/claude-agent-sdk-java" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-badge badge-framework">Library</span>
+        <h3><a href="https://github.com/integrallis/vectors">Vectors (Integrallis)</a></h3>
+        <p>Embedded vector search and persistence library for Java &mdash; indexed similarity search, durable local state, and metadata filtering in-process without a separate vector-database service. Built on the JDK Vector API for SIMD distance kernels, with FLAT/HNSW/Vamana/IVF index types, eight quantization methods, and Spring AI and LangChain4j adapters. Requires JDK 25+. Core modules Apache 2.0; distributed-tier modules use FSL-1.1-ALv2, converting to Apache 2.0 on a documented change date. From Integrallis, makers of <a href="#modeljars">ModelJARs</a>.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/integrallis/vectors" title="GitHub"></a>
         </div>
       </div>
 
@@ -1713,7 +1734,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="modeljars">
         <span class="card-badge badge-inference">Inference</span>
         <h3><a href="https://modeljars.org/">ModelJARs</a></h3>
         <p>Community registry that publishes AI models as versioned marker JARs, so a model becomes an ordinary Maven or Gradle dependency (<code>org.modeljars.huggingface:&hellip;</code>) pinned by SHA-256 to an immutable Hugging Face revision instead of vendored weights. Covers GGUF, Safetensors, and CACT artifacts, and ships a native CLI for search/pull plus the Java 25 Models runtime for in-process inference, with pure-Java Vector API, native, TornadoVM GPU, and Apple Foundation Models backends. Maintainers qualify each artifact in CI and publish benchmarks against llama.cpp and Ollama. From Integrallis.</p>
