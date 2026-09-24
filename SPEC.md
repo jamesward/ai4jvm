@@ -27,7 +27,7 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 - Add a `FAQPage` schema for the FAQ section (see below). Note: Google retired FAQ rich results in Search as of May 2026, so this no longer produces a Google SERP snippet — keep it anyway, since other search engines and AI answer engines/crawlers still consume `FAQPage` data for citations.
 
 ### Heading Hierarchy
-- `<h1>`: One per page (the hero title) — must contain primary keywords "Java" and "AI"
+- `<h1>`: One per page (the hero title) — must contain the primary keyword "Java", and either the literal "AI" or its spelled-out form "Artificial Intelligence" (as in the Hero title)
 - `<h2>`: One per major section (News, Agent Frameworks & Libraries, Java with Code Assistants, Inference & Training, People to Follow, FAQ, Resources)
 - `<h3>`: Individual cards/items within sections, including person names in the People section
 - Never skip a heading level — headings must descend sequentially (an `<h4>` directly under an `<h2>` is an accessibility violation)
@@ -37,9 +37,9 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 Each major content section (`<section>`) should have a 1–2 sentence introduction paragraph below its `<h2>` heading. These intro paragraphs provide keyword-rich body text for search engines and context for users. Examples:
 - **News:** "Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines."
 - **Agent Frameworks & Libraries:** "Open-source frameworks and SDKs for building AI-powered applications on the JVM — from full agent platforms to Model Context Protocol implementations."
-- **Java with Code Assistants:** "Tools that bridge AI coding assistants and the Java ecosystem — MCP servers, skill registries, and IDE integrations."
-- **Inference & Training:** "Run LLM inference, train ML models, and deploy AI workloads directly on the JVM without Python dependencies."
-- **People to Follow:** "Key voices and project leads shaping the Java AI ecosystem."
+- **Java with Code Assistants:** "Technologies that supercharge Java development when paired with AI code assistants — from MCP servers that give agents live Javadoc access, to reusable skill packages and IDE integrations."
+- **Inference & Training:** "Run models, train classifiers, and do ML inference directly on the JVM — no Python required."
+- **People to Follow:** "Key voices at the intersection of Java and AI."
 - **Resources:** "Talks, tutorials, books, and communities for learning AI development on the JVM."
 
 ### FAQ Section
@@ -73,6 +73,7 @@ Questions and answers:
 - The Google Analytics tag is the last thing in `<head>` so it never delays parsing of the title, meta, and inline CSS
 - CSS stays inline in a single `<style>` block (no build step, no extra request); no unused CSS
 - The inline `<style>` block comes before the JSON-LD structured data scripts in `<head>`, so the parser reaches CSS before the (larger, growing) structured-data payload
+- News list items use `content-visibility: auto` to reduce off-screen layout/paint cost, matching the card/person pattern
 
 ## Site Structure
 
@@ -110,6 +111,9 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/JetBrains/koog/releases/tag/1.3.0
+- https://camel.apache.org/blog/2026/09/camel-tui-byoa/
+- https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/
 - https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0
 - https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment
 - https://github.com/google/adk-java/releases/tag/v1.10.1
@@ -197,7 +201,6 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/
 - https://foojay.io/today/building-ai-systems-with-mongodb-implementing-the-planning-pattern/
 - https://a2aproject.github.io/a2a-java/posts/a2a-java-sdk-1-1-0-final-released/
-- https://spring.io/blog/2026/06/23/spring-ai-self-correcting-structured-output
 
 ---
 
@@ -573,6 +576,16 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - **Description:** Embedded vector search and persistence library for Java — indexed similarity search, durable local state, and metadata filtering in-process without a separate vector-database service. Built on the JDK Vector API for SIMD distance kernels, with FLAT/HNSW/Vamana/IVF index types, eight quantization methods, and Spring AI and LangChain4j adapters. Requires JDK 25+. Core modules Apache 2.0; distributed-tier modules use FSL-1.1-ALv2, converting to Apache 2.0 on a documented change date. From Integrallis, makers of [ModelJARs](#modeljars).
 - **Links:** [GitHub](https://github.com/integrallis/vectors)
 
+### LiteFlow
+- **Badge:** Framework
+- **Description:** Lightweight, DSL-driven component orchestration engine for Java that treats AI agents as first-class components alongside ordinary business-logic nodes (since v2.16.0). Supports sync/async and dynamic orchestration, multi-language scripting, nested rules, and hot deployment without restarts. Apache 2.0, part of the Dromara ecosystem.
+- **Links:** [GitHub](https://github.com/dromara/liteflow)
+
+### EDDI
+- **Badge:** Framework
+- **Description:** Config-driven, multi-agent orchestration middleware for conversational AI built on Quarkus/Java — JSON-defined agents, 12+ LLM providers, MCP/A2A protocol support, RAG, persistent memory, and enterprise compliance controls (EU AI Act, GDPR, HIPAA) without custom code. Ships as a Red Hat–certified Docker image. Apache 2.0, from Labs AI.
+- **Links:** [Website](https://eddi.technology) · [GitHub](https://github.com/labsai/EDDI)
+
 ---
 
 ## Java with Code Assistants
@@ -695,6 +708,11 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Badge:** Assistant
 - **Description:** JetBrains' autonomous coding agent — plans and executes multi-step edits, runs tests and the debugger, and opens PRs. Reached GA in June 2026 with a standalone bring-your-own-key CLI (Anthropic, OpenAI, Google, xAI, OpenRouter, Copilot) alongside its JetBrains IDE integration. Distinct from the general-purpose JetBrains AI Assistant above.
 - **Links:** [Docs](https://www.jetbrains.com/help/ai-assistant/junie-agent.html) · [Marketplace](https://plugins.jetbrains.com/plugin/26104-junie-the-ai-coding-agent-by-jetbrains)
+
+### SkillHub
+- **Badge:** Skills
+- **Description:** Self-hosted, open-source registry for publishing and versioning AI agent skill packages behind an enterprise firewall — RBAC governance, audit logging, and Docker/Kubernetes deployment. Spring Boot 3 (Java 21) backend with a React/TypeScript UI. From iFlytek, Apache 2.0.
+- **Links:** [GitHub](https://github.com/iflytek/skillhub)
 
 ---
 

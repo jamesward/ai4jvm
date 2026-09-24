@@ -8,7 +8,11 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
+- [Koog 1.3.0 Released](https://github.com/JetBrains/koog/releases/tag/1.3.0) — adds ready-made `LLModel` definitions for the latest Anthropic, OpenAI, Google, Bedrock, DashScope, DeepSeek, Mistral, Ollama, and OpenRouter models, and fixes Google prompt-cache token accounting and Langfuse/Gemini trace display
 - [TornadoVM 7.0.0 Released](https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0) — adds a TileContext API for Java CUDA tile-based GPU compute, a cuDF library-task provider, matrix multiply-accumulate improvements, and fixes half-precision (FP16) conversion and storage across the CUDA, OpenCL, and Metal backends
+- [B.Y.O.A.](https://camel.apache.org/blog/2026/09/camel-tui-byoa/) — Camel 4.23 adds support for bringing your own coding agent, via the Agent Client Protocol, into Camel TUI, paired with Camel Kit to build and inspect integrations in one conversation
+- [Camel's Local-Model Coding Benchmark, Round 2](https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/) — follow-up to the original local-model benchmark post: 31 of 33 found issues fixed in Camel 4.23, with step-by-step accuracy improving from 81% to 92%
+- [Spring AI and TypeSafe Jev: Fast, Cheap, Structured Decisions](https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment) — introduces Spring AI TypeSafe 0.1.0, a Spring AI Community integration with TypeSafe AI's hosted Jev API for typed classification, scoring, judging, guardrails, RAG filtering and reranking, and tool selection without generating text
 - [Google ADK for Java 1.10.1 Released](https://github.com/google/adk-java/releases/tag/v1.10.1) — adds an `@Experimental` annotation for unstable APIs, session-resumability checkpoints, and a one-way ADK Java-to-Kotlin interop module, plus fixes for dev UI routing, memory-search timestamps, and Vertex AI session handling
 - [Quarkus Flow 1.1.2 Released](https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.2) — patch release adding missing native-image classes, fixing OIDC-blocking and topology issues, and adding missing `ServiceLoader` registration for `URITemplate`
 - [Authorizing What an AI Agent May Do in Apache Camel](https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/) — rather than relying on prompts for security, enforces AI agent tool calls at the boundary using SPIFFE for identity and Open Policy Agent (OPA) for authorization, so a `camel-ai-tool`-exposed route can safely expose different capabilities to different callers based on verified identity
@@ -94,7 +98,6 @@ Latest news and releases from across the Java AI ecosystem — new framework ver
 - [LangChain4j Agentic Workflows: From AI Calls to Multi-Agent Systems](https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/) — tutorial covering sequential, loop, parallel, and conditional workflow patterns, goal-oriented planning, and supervisor-based multi-agent systems in Java
 - [Building AI Systems with MongoDB: Implementing the Planning Pattern](https://foojay.io/today/building-ai-systems-with-mongodb-implementing-the-planning-pattern/) — tutorial building a travel-itinerary AI agent with Jakarta EE, Jakarta Data, LangChain4j, and MongoDB using a Reason-Act-Observe planning loop
 - [A2A Java SDK 1.1.0.Final Released](https://a2aproject.github.io/a2a-java/posts/a2a-java-sdk-1-1-0-final-released/) — first feature release after GA, adding a TaskAuthorizationProvider SPI for per-user task authorization in multi-tenant deployments, plus a new project website
-- [Self-Correcting Structured Output in Spring AI 2.0](https://spring.io/blog/2026/06/23/spring-ai-self-correcting-structured-output) — Christian Tzolov shows how `validateSchema()` detects malformed model output and retries up to three times with the specific validation errors fed back to the model, while `useProviderStructuredOutput()` enforces the schema natively on OpenAI, Anthropic, and Google GenAI
 
 ## Agent Frameworks & Libraries
 
@@ -264,6 +267,11 @@ Open-source frameworks and SDKs for building AI-powered applications on the JVM 
 - **Badge:** Framework
 - **Description:** Cross-platform desktop app from the Spring AI Community that acts as a local execution layer for AI agent tools. Build, test, and publish MCP tools with a deny-first sandbox, per-tool risk levels, and human-in-the-loop approval for sensitive operations, plus observability dashboards for tokens, cost, traces, and tool execution.
 - **Links:** [GitHub](https://github.com/spring-ai-community/spring-ai-playground)
+
+### Spring AI TypeSafe
+- **Badge:** Library
+- **Description:** Spring AI Community integration for TypeSafe AI's hosted Jev API. It answers typed yes/no, choice, and score questions for classification, scoring, and routing without generating text, and provides Spring AI integrations for judging and self-refinement, guardrails, RAG filtering and reranking, tool selection, and evaluation. Version 0.1.0 is available on Maven Central.
+- **Links:** [Docs](https://spring-ai-community.github.io/spring-ai-typesafe/latest/) · [GitHub](https://github.com/spring-ai-community/spring-ai-typesafe) · [Article](https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment)
 
 ### Jakarta Agentic AI
 - **Badge:** Framework
@@ -465,6 +473,16 @@ Open-source frameworks and SDKs for building AI-powered applications on the JVM 
 - **Description:** Embedded vector search and persistence library for Java — indexed similarity search, durable local state, and metadata filtering in-process without a separate vector-database service. Built on the JDK Vector API for SIMD distance kernels, with FLAT/HNSW/Vamana/IVF index types, eight quantization methods, and Spring AI and LangChain4j adapters. Requires JDK 25+. Core modules Apache 2.0; distributed-tier modules use FSL-1.1-ALv2, converting to Apache 2.0 on a documented change date. From Integrallis, makers of ModelJARs.
 - **Links:** [GitHub](https://github.com/integrallis/vectors)
 
+### LiteFlow
+- **Badge:** Framework
+- **Description:** Lightweight, DSL-driven component orchestration engine for Java that treats AI agents as first-class components alongside ordinary business-logic nodes (since v2.16.0). Supports sync/async and dynamic orchestration, multi-language scripting, nested rules, and hot deployment without restarts. Apache 2.0, part of the Dromara ecosystem.
+- **Links:** [GitHub](https://github.com/dromara/liteflow)
+
+### EDDI
+- **Badge:** Framework
+- **Description:** Config-driven, multi-agent orchestration middleware for conversational AI built on Quarkus/Java — JSON-defined agents, 12+ LLM providers, MCP/A2A protocol support, RAG, persistent memory, and enterprise compliance controls (EU AI Act, GDPR, HIPAA) without custom code. Ships as a Red Hat–certified Docker image. Apache 2.0, from Labs AI.
+- **Links:** [Website](https://eddi.technology) · [GitHub](https://github.com/labsai/EDDI)
+
 ## Java with Code Assistants
 
 Technologies that supercharge Java development when paired with AI code assistants — from MCP servers that give agents live Javadoc access, to reusable skill packages and IDE integrations.
@@ -583,6 +601,11 @@ Technologies that supercharge Java development when paired with AI code assistan
 - **Badge:** Assistant
 - **Description:** JetBrains' autonomous coding agent — plans and executes multi-step edits, runs tests and the debugger, and opens PRs. Reached GA in June 2026 with a standalone bring-your-own-key CLI (Anthropic, OpenAI, Google, xAI, OpenRouter, Copilot) alongside its JetBrains IDE integration. Distinct from the general-purpose JetBrains AI Assistant above.
 - **Links:** [Docs](https://www.jetbrains.com/help/ai-assistant/junie-agent.html) · [Marketplace](https://plugins.jetbrains.com/plugin/26104-junie-the-ai-coding-agent-by-jetbrains)
+
+### SkillHub
+- **Badge:** Skills
+- **Description:** Self-hosted, open-source registry for publishing and versioning AI agent skill packages behind an enterprise firewall — RBAC governance, audit logging, and Docker/Kubernetes deployment. Spring Boot 3 (Java 21) backend with a React/TypeScript UI. From iFlytek, Apache 2.0.
+- **Links:** [GitHub](https://github.com/iflytek/skillhub)
 
 ## Inference & Training
 

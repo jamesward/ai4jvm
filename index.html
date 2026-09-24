@@ -240,7 +240,7 @@
     }
     .news-bar h3 { font-size: 1rem; font-weight: 600; color: var(--accent3); margin-bottom: .75rem; }
     .news-bar ul { list-style: none; }
-    .news-bar li { padding: .35rem 0; font-size: .9rem; color: var(--text-muted); }
+    .news-bar li { padding: .35rem 0; font-size: .9rem; color: var(--text-muted); content-visibility: auto; contain-intrinsic-size: 0 60px; }
     .news-bar li::before { content: "\2022"; color: var(--accent3); margin-right: .5rem; }
     .news-bar li a { color: var(--text); text-decoration: underline; text-underline-offset: 2px; }
     .news-bar li a:hover { color: var(--accent3); }
@@ -298,7 +298,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-09-23",
+    "dateModified": "2026-09-24",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -387,7 +387,9 @@
       {"@type": "ListItem", "position": 71, "name": "Agent Client", "url": "https://lab.pollack.ai/projects/agent-client"},
       {"@type": "ListItem", "position": 72, "name": "Erupt", "url": "https://docs.erupt.xyz"},
       {"@type": "ListItem", "position": 73, "name": "Claude Agent SDK for Java", "url": "https://lab.pollack.ai/projects/claude-agent-sdk"},
-      {"@type": "ListItem", "position": 74, "name": "Vectors (Integrallis)", "url": "https://github.com/integrallis/vectors"}
+      {"@type": "ListItem", "position": 74, "name": "Vectors (Integrallis)", "url": "https://github.com/integrallis/vectors"},
+      {"@type": "ListItem", "position": 75, "name": "LiteFlow", "url": "https://github.com/dromara/liteflow"},
+      {"@type": "ListItem", "position": 76, "name": "EDDI", "url": "https://eddi.technology"}
     ]
   }
   </script>
@@ -420,7 +422,8 @@
       {"@type": "ListItem", "position": 20, "name": "JAFAR", "url": "https://github.com/btraceio/jafar"},
       {"@type": "ListItem", "position": 21, "name": "MCP JDWP Java", "url": "https://github.com/fgforrest/mcp-jdwp-java"},
       {"@type": "ListItem", "position": 22, "name": "SolonCode", "url": "https://github.com/opensolon/soloncode"},
-      {"@type": "ListItem", "position": 23, "name": "Junie", "url": "https://www.jetbrains.com/help/ai-assistant/junie-agent.html"}
+      {"@type": "ListItem", "position": 23, "name": "Junie", "url": "https://www.jetbrains.com/help/ai-assistant/junie-agent.html"},
+      {"@type": "ListItem", "position": 24, "name": "SkillHub", "url": "https://github.com/iflytek/skillhub"}
     ]
   }
   </script>
@@ -594,7 +597,10 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://github.com/JetBrains/koog/releases/tag/1.3.0">Koog 1.3.0 Released</a> &mdash; adds ready-made <code>LLModel</code> definitions for the latest Anthropic, OpenAI, Google, Bedrock, DashScope, DeepSeek, Mistral, Ollama, and OpenRouter models, and fixes Google prompt-cache token accounting and Langfuse/Gemini trace display</li>
         <li><a href="https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0">TornadoVM 7.0.0 Released</a> &mdash; adds a TileContext API for Java CUDA tile-based GPU compute, a cuDF library-task provider, matrix multiply-accumulate improvements, and fixes half-precision (FP16) conversion and storage across the CUDA, OpenCL, and Metal backends</li>
+        <li><a href="https://camel.apache.org/blog/2026/09/camel-tui-byoa/">B.Y.O.A.</a> &mdash; Camel 4.23 adds support for bringing your own coding agent, via the Agent Client Protocol, into Camel TUI, paired with Camel Kit to build and inspect integrations in one conversation</li>
+        <li><a href="https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/">Camel's Local-Model Coding Benchmark, Round 2</a> &mdash; follow-up to the original local-model benchmark post: 31 of 33 found issues fixed in Camel 4.23, with step-by-step accuracy improving from 81% to 92%</li>
         <li><a href="https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment">Spring AI and TypeSafe Jev: Fast, Cheap, Structured Decisions</a> &mdash; introduces Spring AI TypeSafe 0.1.0, a Spring AI Community integration with TypeSafe AI's hosted Jev API for typed classification, scoring, judging, guardrails, RAG filtering and reranking, and tool selection without generating text</li>
         <li><a href="https://github.com/google/adk-java/releases/tag/v1.10.1">Google ADK for Java 1.10.1 Released</a> &mdash; adds an <code>@Experimental</code> annotation for unstable APIs, session-resumability checkpoints, and a one-way ADK Java-to-Kotlin interop module, plus fixes for dev UI routing, memory-search timestamps, and Vertex AI session handling</li>
         <li><a href="https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.2">Quarkus Flow 1.1.2 Released</a> &mdash; patch release adding missing native-image classes, fixing OIDC-blocking and topology issues, and adding missing <code>ServiceLoader</code> registration for <code>URITemplate</code></li>
@@ -681,7 +687,6 @@
         <li><a href="https://javapro.io/2026/07/08/langchain4j-agentic-workflows-from-ai-calls-to-multi-agent-systems-in-java/">LangChain4j Agentic Workflows: From AI Calls to Multi-Agent Systems</a> &mdash; tutorial covering sequential, loop, parallel, and conditional workflow patterns, goal-oriented planning, and supervisor-based multi-agent systems in Java</li>
         <li><a href="https://foojay.io/today/building-ai-systems-with-mongodb-implementing-the-planning-pattern/">Building AI Systems with MongoDB: Implementing the Planning Pattern</a> &mdash; tutorial building a travel-itinerary AI agent with Jakarta EE, Jakarta Data, LangChain4j, and MongoDB using a Reason-Act-Observe planning loop</li>
         <li><a href="https://a2aproject.github.io/a2a-java/posts/a2a-java-sdk-1-1-0-final-released/">A2A Java SDK 1.1.0.Final Released</a> &mdash; first feature release after GA, adding a TaskAuthorizationProvider SPI for per-user task authorization in multi-tenant deployments, plus a new project website</li>
-        <li><a href="https://spring.io/blog/2026/06/23/spring-ai-self-correcting-structured-output">Self-Correcting Structured Output in Spring AI 2.0</a> &mdash; Christian Tzolov shows how <code>validateSchema()</code> detects malformed model output and retries up to three times with the specific validation errors fed back to the model, while <code>useProviderStructuredOutput()</code> enforces the schema natively on OpenAI, Anthropic, and Google GenAI</li>
       </ul>
     </div>
   </div>
@@ -1428,6 +1433,25 @@
         </div>
       </div>
 
+      <div class="card" id="liteflow">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://github.com/dromara/liteflow">LiteFlow</a></h3>
+        <p>Lightweight, DSL-driven component orchestration engine for Java that treats AI agents as first-class components alongside ordinary business-logic nodes (since v2.16.0). Supports sync/async and dynamic orchestration, multi-language scripting, nested rules, and hot deployment without restarts. Apache 2.0, part of the Dromara ecosystem.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/dromara/liteflow" title="GitHub"></a>
+        </div>
+      </div>
+
+      <div class="card" id="eddi">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://eddi.technology">EDDI</a></h3>
+        <p>Config-driven, multi-agent orchestration middleware for conversational AI built on Quarkus/Java &mdash; JSON-defined agents, 12+ LLM providers, MCP/A2A protocol support, RAG, persistent memory, and enterprise compliance controls (EU AI Act, GDPR, HIPAA) without custom code. Ships as a Red Hat&ndash;certified Docker image. Apache 2.0, from Labs AI.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://eddi.technology" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/labsai/EDDI" title="GitHub"></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1627,6 +1651,15 @@
         <div class="card-links">
           <a class="icon icon-web" href="https://www.jetbrains.com/help/ai-assistant/junie-agent.html" title="Docs"></a>
           <a class="icon icon-web" href="https://plugins.jetbrains.com/plugin/26104-junie-the-ai-coding-agent-by-jetbrains" title="Marketplace"></a>
+        </div>
+      </div>
+
+      <div class="card" id="skillhub">
+        <span class="card-badge badge-framework">Skills</span>
+        <h3><a href="https://github.com/iflytek/skillhub">SkillHub</a></h3>
+        <p>Self-hosted, open-source registry for publishing and versioning AI agent skill packages behind an enterprise firewall &mdash; RBAC governance, audit logging, and Docker/Kubernetes deployment. Spring Boot 3 (Java 21) backend with a React/TypeScript UI. From iFlytek, Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-github" href="https://github.com/iflytek/skillhub" title="GitHub"></a>
         </div>
       </div>
 
