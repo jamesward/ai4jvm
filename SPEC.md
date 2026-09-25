@@ -111,6 +111,9 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://spring.io/blog/2026/09/25/spring-ai-2-1-0-M1-available-now
+- https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.0
+- https://github.com/langchain4j/langchain4j/releases/tag/1.20.1
 - https://github.com/JetBrains/koog/releases/tag/1.3.0
 - https://camel.apache.org/blog/2026/09/camel-tui-byoa/
 - https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/

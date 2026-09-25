@@ -8,6 +8,9 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
+- [Spring AI 2.1.0-M1 Available Now](https://spring.io/blog/2026/09/25/spring-ai-2-1-0-M1-available-now) — adds a Message Parts content model (ordered `TextPart`/`ReasoningPart`/`ToolCallPart`) for round-tripping reasoning and tool calls, a new `OpenAiResponsesChatModel` for OpenAI's Responses API, and `VectorStore.upsert()` support for pre-computed embeddings; baseline moves to Spring Boot 4.2
+- [Quarkus LangChain4j 1.14.0 Released](https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.0) — adds a new `@McpClientAgent` annotation, fixes MCP SSE parsing and A2A agent discovery via Apicurio Registry, and upgrades to LangChain4j 1.20.1
+- [LangChain4j 1.20.1 Released](https://github.com/langchain4j/langchain4j/releases/tag/1.20.1) — methods annotated `@McpClientSupplier` can now also accept supplier parameters
 - [Koog 1.3.0 Released](https://github.com/JetBrains/koog/releases/tag/1.3.0) — adds ready-made `LLModel` definitions for the latest Anthropic, OpenAI, Google, Bedrock, DashScope, DeepSeek, Mistral, Ollama, and OpenRouter models, and fixes Google prompt-cache token accounting and Langfuse/Gemini trace display
 - [TornadoVM 7.0.0 Released](https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0) — adds a TileContext API for Java CUDA tile-based GPU compute, a cuDF library-task provider, matrix multiply-accumulate improvements, and fixes half-precision (FP16) conversion and storage across the CUDA, OpenCL, and Metal backends
 - [B.Y.O.A.](https://camel.apache.org/blog/2026/09/camel-tui-byoa/) — Camel 4.23 adds support for bringing your own coding agent, via the Agent Client Protocol, into Camel TUI, paired with Camel Kit to build and inspect integrations in one conversation
