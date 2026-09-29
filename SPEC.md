@@ -111,6 +111,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/langchain4j/langchain4j/releases/tag/1.20.2
 - https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
 - https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.3
 - https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/
