@@ -1,5 +1,10 @@
 {
   "enabledPlugins": {
     "chrome-devtools-mcp@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -X POST https://isitagentready.com/api/scan:*)"
+    ]
   }
 }

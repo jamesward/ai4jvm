@@ -83,8 +83,10 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
 ## 5. Check SEO, agent readiness and performance
 
 - **SEO:** use a well-regarded SEO Skill if one is available, and fix what applies.
-- **Agent readiness:** run https://isitagentready.com against https://ai4jvm.com (`POST /api/scan`, or
-  the page itself) and fix what applies. Skip auth-related checks; the site is public.
+- **Agent readiness:** scan the public site with
+  `curl -s -X POST https://isitagentready.com/api/scan -H 'Content-Type: application/json' -d '{"url":"https://ai4jvm.com"}'`
+  (pre-approved in `.claude/settings.json`; it only sends the site's public URL). Report the level and
+  the failing checks, and fix what applies. Skip auth-related checks; the site is public.
 - **Performance:** run Lighthouse (the engine behind PageSpeed Insights; don't use the PageSpeed API,
   which returns HTTP 429 without a key) against your local working copy, so the check covers your
   changes before they're published. These commands are tested on the cloud VM's OS (Ubuntu 24.04, as
