@@ -8,6 +8,7 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
+- [LangChain4j 1.21.0 Released](https://github.com/langchain4j/langchain4j/releases/tag/1.21.0) — introduces decision models, a new type that answers questions with typed responses and probabilities instead of generated text, for classification and routing
 - [LangChain4j 1.20.2 Released](https://github.com/langchain4j/langchain4j/releases/tag/1.20.2) — patch release with A2A fixes
 - [One Database, Two Models](https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/) — A N M Bazlur Rahman explores MySQL JSON Duality Views in Java: simpler document reads/writes over JDBC, optional-etag conflict handling, comparisons with JPA/Spring Data JDBC, and read-only LangChain4j tools backed by local Ollama for AI agents
 - [Quarkus Flow 1.1.3 Released](https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.3) — patch release fixing while-mode loops in `LoopAgenticFlow`, removing the in-memory/MVStore lifecycle-management module, and dropping the unused Dev UI extension descriptor
