@@ -83,21 +83,26 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
 - **SEO:** use a well-regarded SEO Skill if one is available, and fix what applies.
 - **Agent readiness:** run https://isitagentready.com against https://ai4jvm.com (`POST /api/scan`, or
   the page itself) and fix what applies. Skip auth-related checks; the site is public.
-- **Performance:** run Lighthouse against your local working copy, so the check covers your changes
-  before they're published:
+- **Performance:** run Lighthouse (the engine behind PageSpeed Insights; don't use the PageSpeed API,
+  which returns HTTP 429 without a key) against your local working copy, so the check covers your
+  changes before they're published. These commands are tested on the cloud VM's OS (Ubuntu 24.04, as
+  root):
 
   ```bash
-  npx -y @puppeteer/browsers install chrome-headless-shell@stable --path /tmp/chrome
-  CHROME="$(find /tmp/chrome -type f -name chrome-headless-shell | head -1)"
+  npx -y playwright@1 install-deps chromium >/dev/null 2>&1
+  npx -y playwright@1 install chromium >/dev/null 2>&1
+  CHROME="$(find ~/.cache/ms-playwright -type f -path '*chrome-linux*/chrome' | head -1)"
   python3 -m http.server 8765 >/dev/null 2>&1 &
-  npx -y lighthouse@12 http://localhost:8765/ --chrome-path="$CHROME" --chrome-flags="--headless=new --no-sandbox" \
+  CHROME_PATH="$CHROME" npx -y lighthouse@12 http://localhost:8765/ --chrome-path="$CHROME" \
+    --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu" \
     --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=/tmp/lh.json --quiet
   kill %1
+  python3 -c "import json; d=json.load(open('/tmp/lh.json')); print({k: v['score'] for k, v in d['categories'].items()})"
   ```
 
-  Read the scores and the failing audits in `/tmp/lh.json`. Fix regressions caused by this run's
-  changes, and fix cheap improvements. If Chrome or Lighthouse can't run, say so in the report and
-  carry on.
+  Read the scores and failing audits in `/tmp/lh.json`. Fix regressions caused by this run's changes,
+  and fix cheap improvements. Report the four scores. If Lighthouse still can't run, report the exact
+  error and carry on.
 
 ## 6. Validate and publish
 
