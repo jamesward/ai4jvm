@@ -11,7 +11,8 @@ The people who are included should be helping those developers learn how to use 
 
 ## Process
 
-1. Make changes to `SPEC.md`
-2. Have your AI code assistant update the website from the `SPEC.md` file
-3. Validate the changes locally
-4. Send a PR
+1. Make changes to `SPEC.md` (the source of truth for the site content)
+2. Optionally, have your AI code assistant regenerate `index.html`, `llms.txt`, `llms-full.txt` and `sitemap.xml` from it, and run `python3 .factory/check-site.py`
+3. Send a PR
+
+A daily maintenance routine reviews open PRs against these guidelines, verifies every link, regenerates the site if needed, and then merges the PR or asks the maintainer for a decision.
