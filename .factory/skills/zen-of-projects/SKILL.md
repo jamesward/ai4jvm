@@ -141,15 +141,15 @@ These apply to every maintained project, whatever its type.
 - Use the latest **stable, non-prerelease** sbt 2.x release. Do not select versions containing qualifiers such as `RC`, `M`, or `SNAPSHOT` merely because Maven metadata sorts them as latest. Resolve versions through [javadocs.dev](https://www.javadocs.dev/org.scala-sbt/sbt), then confirm ambiguous results against the [official sbt download page](https://www.scala-sbt.org/download/).
 - Use the latest stable Scala release from `org.scala-lang:scala-library`. Reject prerelease versions and confirm ambiguity against the [official Scala download page](https://www.scala-lang.org/download/).
 - Resolve the latest stable version of every plugin and dependency, then pin the exact version in the build. Never leave `<latest version>` or an open version range in a finished project.
-- Use Java 21 LTS by default for local development and CI unless the project documents a reason to require a newer version.
+- Use Java 25 LTS for local development and CI (`java-version: 25` with `actions/setup-java`), unless `AGENTS.md` documents a reason for another version. A library can still target older bytecode (for example `-release 17`); record the target in `AGENTS.md`.
 
 ## Compatibility rules for upgrades
 
 "Latest stable" is constrained by these rules. Automated version bumps often break them.
 
 - **sbt plugins use sbt's Scala.** An sbt 2 plugin's Scala 3 `scalaVersion` must equal the `scala3-library_3` version in the pinned `org.scala-sbt:sbt` POM (3.8.4 for sbt 2.0.9). Never bump a plugin's Scala on its own: newer TASTy cannot be read by sbt's build compiler. Plugins cross-built for sbt 1 use the latest Scala 2.12.x with `-deprecation -Xfatal-warnings`, because 2.12 has no strict equality. Scripted test fixtures follow the same rule.
-- **Java 25 bytecode forces Java 25.** Some libraries publish class file version 69, for example Kyo `1.0.0-RC*` and `html-to-markdown` 3.x. On Java 21 they fail with `UnsupportedClassVersionError`. Projects that depend on them use Java 25 and record the reason in `AGENTS.md`. After a failed build on the wrong JDK, run `clean` before validating again.
-- **JDK 24+-only JVM flags.** Flags such as `--sun-misc-unsafe-memory-access=allow` stop Java 21 from starting. Keep them out of `.sbtopts` and `.jvmopts`. Prefer `-Dsun.misc.unsafe.memory.access=allow`, which works on JDK 21 through 25, including in native-packager's `application.ini`. Otherwise add the flag conditionally inside `Def.uncached { ... }`, because sbt 2 caches JDK-dependent task results across JDK switches.
+- **Java 25 bytecode needs Java 25.** Some libraries publish class file version 69, for example Kyo `1.0.0-RC*` and `html-to-markdown` 3.x. Older JDKs fail on them with `UnsupportedClassVersionError`, which is one more reason to stay on the Java 25 default. After a failed build on the wrong JDK, run `clean` before validating again.
+- **JDK 24+-only JVM flags.** Flags such as `--sun-misc-unsafe-memory-access=allow` are fine on the Java 25 default. In a project that must also build or run on an older JDK (documented in `AGENTS.md`), they stop that JDK from starting: use `-Dsun.misc.unsafe.memory.access=allow` instead, which older JDKs ignore (it works in native-packager's `application.ini` too), or add the flag conditionally inside `Def.uncached { ... }`, because sbt 2 caches JDK-dependent task results across JDK switches.
 - **Prereleases only when there is no stable release.** Examples are `dev.zio:zio-direct` 1.0.0-RC7 and Kyo 1.0.0-RC*. Take the newest such release only if the tests pass, and record the exception in `AGENTS.md`.
 - **Intentional pins.** Keep a version that `AGENTS.md` documents as intentionally pinned, such as one used by a bug reproducer.
 - **Container images track production.** A Testcontainers image stands in for a production service, such as a Heroku Postgres or Heroku Key-Value Store (Valkey) add-on. Pin it to the major.minor version that production runs, not to the newest image. Don't bump it during the maintenance routine. Only change it when `AGENTS.md` records that production moved to a new version. `AGENTS.md` lists each image with the production service and version it mirrors. Floating tags like `8.1` count as pins; don't replace them with exact patch tags.
@@ -402,7 +402,7 @@ Maven and Gradle projects follow the same approach as sbt projects: a pinned wra
 
 ## Shared
 
-- **Java:** Java 21 LTS unless `AGENTS.md` records a reason for something else (for example a library that still targets Java 8). Compile with a toolchain or `--release`, never with whatever JDK happens to be installed.
+- **Java:** Java 25 LTS, the same as sbt projects, unless `AGENTS.md` records a reason for something else (for example a library that still targets Java 8). Compile with a toolchain or `--release`, never with whatever JDK happens to be installed.
 - **Wrappers:** commit the wrapper and keep it current. Use `mvnw`, `mvnw.cmd` and `.mvn/wrapper/` for Maven, and `gradlew`, `gradlew.bat` and `gradle/wrapper/` for Gradle. Commit the POSIX executable bit. Always build through the wrapper.
 - **Strict compilation:** warnings fail the build. For Java, use `-Xlint:all -Werror` (add `-Xlint:-processing` if annotation processors are noisy). For Kotlin, use `allWarningsAsErrors`. Fix deprecations rather than suppressing them.
   - **Old Java targets:** when a library targets an old Java version (for example 8), javac warns that the source/target is obsolete. Add `-Xlint:-options` for that warning only. `--release 8` can fail under `-Werror` when a dependency annotates element types that Java 8 lacks (jspecify's `@NullMarked` on modules, for example). In that case use `-source`/`-target` and record it in `AGENTS.md`. JDK 8's javac also warns `unknown enum constant ElementType.MODULE` for such annotations, and no `-Xlint` option suppresses that. If CI builds on JDK 8, enable `-Werror` only on newer JDKs, through a Maven profile activated on `<jdk>[9,)</jdk>` or a Gradle condition on the toolchain. Verify any Java-target exception with a strict build on every JDK that CI uses before writing it down.
@@ -421,7 +421,7 @@ Maven and Gradle projects follow the same approach as sbt projects: a pinned wra
 
 ## Maven
 
-- **Versions:** pin every plugin version, including the build defaults (compiler, surefire, jar, install, deploy and so on), and keep shared versions in `<properties>`. Set `<maven.compiler.release>21</maven.compiler.release>`.
+- **Versions:** pin every plugin version, including the build defaults (compiler, surefire, jar, install, deploy and so on), and keep shared versions in `<properties>`. Set `<maven.compiler.release>25</maven.compiler.release>` (or the older target `AGENTS.md` records for a library).
 - **Wrapper:** update with `./mvnw wrapper:wrapper -Dmaven=<version>`. The latest Maven is the latest stable `org.apache.maven:apache-maven`.
 - **Compiler:**
 
@@ -464,7 +464,7 @@ Maven and Gradle projects follow the same approach as sbt projects: a pinned wra
 - **Toolchain and compiler:**
 
   ```kotlin
-  java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }   // or kotlin { jvmToolchain(21) }
+  java { toolchain { languageVersion = JavaLanguageVersion.of(25) } }   // or kotlin { jvmToolchain(25) }
   tasks.withType<JavaCompile> { options.compilerArgs.addAll(listOf("-Xlint:all", "-Werror")) }
   kotlin { compilerOptions { allWarningsAsErrors = true } }               // Kotlin projects
   ```
