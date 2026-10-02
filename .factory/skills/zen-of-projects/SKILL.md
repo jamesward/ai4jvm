@@ -60,8 +60,10 @@ If there are other open PRs for this work, update that PR instead of creating a 
    - Gradle: `./gradlew extractSkillsJars`
 
    `.kiro/skills/` is gitignored, so it doesn't exist until this runs. If the build can't download
-   artifacts (for example HTTP 429 or a proxy 403), stop and report the error instead of changing
-   resolvers.
+   artifacts, quote the exact error; don't guess at a cause such as a rate limit. A "Not found" for a
+   version released in the last day means it hasn't reached every mirror yet: pin the newest version
+   that does resolve, continue, and say so in the report. For any other download error (for example
+   HTTP 429 or a proxy 403), stop and report it instead of changing resolvers.
 3. Read `.kiro/skills/*zen-of-projects*/SKILL.md` and follow its "Maintenance Routine" section, using
    `AGENTS.md` for this project's commands and documented exceptions. While an unreleased version of
    the Skill is being tested, `.factory/skills/zen-of-projects/SKILL.md` exists. Read that file
@@ -89,7 +91,7 @@ The skills dependency is updated first so the rest of the run follows the newest
    - GitHub Actions versions in `.github/workflows`.
    - Builds nested in the repo that are part of its tests or examples, such as an `example/` build or `src/sbt-test` fixtures. Leave fixtures that pin old versions on purpose.
 
-   Fold in any open dependency-bump PRs, then close them. After changing `project/build.properties` or `project/plugins.sbt`, reload sbt before validating (`reload` through `sbt-task`, or `./sbt shutdown`).
+   Fold in any open dependency-bump PRs, then close them. If a just-released version fails to resolve with "Not found", it hasn't reached every mirror yet: use the newest version that does resolve for this run and note it, rather than reporting a rate limit or failing the run. After changing `project/build.properties` or `project/plugins.sbt`, reload sbt before validating (`reload` through `sbt-task`, or `./sbt shutdown`).
 
    How to find versions:
 

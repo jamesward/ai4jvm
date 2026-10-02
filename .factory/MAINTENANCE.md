@@ -2,8 +2,10 @@
 
 If there are other open PRs for this work, update that PR instead of creating a new one.
 
-Every step below is required. Don't skip or shorten a step because the run looks quick, and don't call
-any step optional. Merging to `main` publishes the site within minutes, so every merge is a production
+Every step below is required on every run, including runs that find nothing new: "nothing changed"
+is a result to report, not a reason to skip a step. Don't skip or shorten a step because the run
+looks quick, and don't call any step optional. The report (step 7) must show the outcome of every
+step. Merging to `main` publishes the site within minutes, so every merge is a production
 deploy.
 
 ## 1. Load guidance
