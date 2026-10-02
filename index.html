@@ -386,10 +386,11 @@
       {"@type": "ListItem", "position": 70, "name": "Quarkus Flow", "url": "https://docs.quarkiverse.io/quarkus-flow/dev/index.html"},
       {"@type": "ListItem", "position": 71, "name": "Agent Client", "url": "https://lab.pollack.ai/projects/agent-client"},
       {"@type": "ListItem", "position": 72, "name": "Erupt", "url": "https://docs.erupt.xyz"},
-      {"@type": "ListItem", "position": 73, "name": "Claude Agent SDK for Java", "url": "https://lab.pollack.ai/projects/claude-agent-sdk"},
-      {"@type": "ListItem", "position": 74, "name": "Vectors (Integrallis)", "url": "https://github.com/integrallis/vectors"},
-      {"@type": "ListItem", "position": 75, "name": "LiteFlow", "url": "https://github.com/dromara/liteflow"},
-      {"@type": "ListItem", "position": 76, "name": "EDDI", "url": "https://eddi.technology"}
+      {"@type": "ListItem", "position": 73, "name": "DVARA LLM Gateway", "url": "https://dvarahq.com/"},
+      {"@type": "ListItem", "position": 74, "name": "Claude Agent SDK for Java", "url": "https://lab.pollack.ai/projects/claude-agent-sdk"},
+      {"@type": "ListItem", "position": 75, "name": "Vectors (Integrallis)", "url": "https://github.com/integrallis/vectors"},
+      {"@type": "ListItem", "position": 76, "name": "LiteFlow", "url": "https://github.com/dromara/liteflow"},
+      {"@type": "ListItem", "position": 77, "name": "EDDI", "url": "https://eddi.technology"}
     ]
   }
   </script>
@@ -441,12 +442,13 @@
       {"@type": "ListItem", "position": 5, "name": "inference4j", "url": "https://github.com/inference4j/inference4j"},
       {"@type": "ListItem", "position": 6, "name": "Tribuo", "url": "https://tribuo.org/"},
       {"@type": "ListItem", "position": 7, "name": "Smile", "url": "https://www.aihalo.dev/"},
-      {"@type": "ListItem", "position": 8, "name": "JLLM", "url": "https://github.com/beehive-lab/jllm"},
-      {"@type": "ListItem", "position": 9, "name": "TornadoVM", "url": "https://www.tornadovm.org"},
-      {"@type": "ListItem", "position": 10, "name": "ModelJARs", "url": "https://modeljars.org/"},
-      {"@type": "ListItem", "position": 11, "name": "TensorFlow Java", "url": "https://www.tensorflow.org/jvm"},
-      {"@type": "ListItem", "position": 12, "name": "Eclipse Deeplearning4j (DL4J)", "url": "https://deeplearning4j.konduit.ai/"},
-      {"@type": "ListItem", "position": 13, "name": "Apache OpenNLP", "url": "https://opennlp.apache.org"}
+      {"@type": "ListItem", "position": 8, "name": "jitLLM", "url": "https://github.com/beehive-lab/jitllm"},
+      {"@type": "ListItem", "position": 9, "name": "Quixotic AI", "url": "https://qxotic.ai/"},
+      {"@type": "ListItem", "position": 10, "name": "TornadoVM", "url": "https://www.tornadovm.org"},
+      {"@type": "ListItem", "position": 11, "name": "ModelJARs", "url": "https://modeljars.org/"},
+      {"@type": "ListItem", "position": 12, "name": "TensorFlow Java", "url": "https://www.tensorflow.org/jvm"},
+      {"@type": "ListItem", "position": 13, "name": "Eclipse Deeplearning4j (DL4J)", "url": "https://deeplearning4j.konduit.ai/"},
+      {"@type": "ListItem", "position": 14, "name": "Apache OpenNLP", "url": "https://opennlp.apache.org"}
     ]
   }
   </script>
@@ -536,7 +538,7 @@
         "name": "Can Java run LLMs locally?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Projects like Jlama and JLLM run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while JLLM leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML."
+          "text": "Yes. Projects like Jlama and jitLLM run Llama, Mistral, and other models directly on the JVM. Jlama uses Java's Vector API for SIMD-accelerated inference on CPU, while jitLLM leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML."
         }
       },
       {
@@ -1424,6 +1426,16 @@
         </div>
       </div>
 
+      <div class="card" id="dvara-llm-gateway">
+        <span class="card-badge badge-framework">Framework</span>
+        <h3><a href="https://dvarahq.com/">DVARA LLM Gateway</a></h3>
+        <p>Open-source, OpenAI-compatible LLM gateway for Java 25+ from the DVARA AI governance platform, with Spring Boot starters. Routes to 14 providers and adds policy enforcement, PII redaction, guardrails, rate limits, spend control, and a tamper-evident audit log; the wider platform also covers MCP and A2A traffic. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://dvarahq.com/" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/dvarahq/dvara" title="GitHub"></a>
+        </div>
+      </div>
+
       <div class="card">
         <span class="card-badge badge-inference">SDK</span>
         <h3><a href="https://lab.pollack.ai/projects/claude-agent-sdk">Claude Agent SDK for Java</a></h3>
@@ -1690,7 +1702,7 @@
         <p>Deliverance is a Java inference engine capable of generating text, tokenizing input, computing embeddings, and more. Can be used as embedded library inside your Java application or as an HTTP server /chat/completion). Deliverance also provides chat and Rag Chat through vibrant-maven-plugin allowing you to chat with your code!</p>
         <div class="card-links">
           <a class="icon icon-github" href="https://github.com/edwardcapriolo/deliverance" title="GitHub"></a>
-          <a class="icon icon-web" href="https://hub.docker.com/repository/docker/ecapriolo/deliverance/general" title="Dockerhub"></a><!-- LINK CHECK: 404 -->
+          <a class="icon icon-web" href="https://hub.docker.com/r/ecapriolo/deliverance" title="Dockerhub"></a>
         </div>
       </div>
 
@@ -1755,21 +1767,31 @@
         </div>
       </div>
 
-      <div class="card" id="jllm">
+      <div class="card" id="jitllm">
         <span class="card-badge badge-inference">Inference</span>
-        <h3><a href="https://github.com/beehive-lab/jllm">JLLM</a></h3>
-        <p>JVM-native LLM inference and serving engine from the University of Manchester's Beehive Lab, formerly GPULlama3.java. TornadoVM JIT-compiles its Java transformer kernels for NVIDIA, Intel, AMD, and Apple GPUs via CUDA, OpenCL, or Metal. Supports multiple GGUF model families, an OpenAI-compatible server, and official LangChain4j and Quarkus integrations; published to Maven Central for Java 21 and 25.</p>
+        <h3><a href="https://github.com/beehive-lab/jitllm">jitLLM</a></h3>
+        <p>JVM-native LLM inference and serving engine from the University of Manchester's Beehive Lab (TornadoVM team), formerly JLLM and GPULlama3.java. TornadoVM JIT-compiles its Java transformer kernels for NVIDIA, Intel, AMD, and Apple GPUs via CUDA, OpenCL, or Metal. Supports Llama 3, Mistral, Qwen, Phi-3, Granite, Gemma, and DeepSeek-R1-Distill models in GGUF format, an OpenAI-compatible server, and official LangChain4j and Quarkus integrations; published to Maven Central for Java 21 and 25.</p>
         <div class="card-links">
-          <a class="icon icon-github" href="https://github.com/beehive-lab/jllm" title="GitHub"></a>
-          <a class="icon icon-web" href="https://beehive-lab.github.io/jllm/" title="Website"></a>
-          <a class="icon icon-web" href="https://central.sonatype.com/artifact/io.github.beehive-lab/jllm" title="Maven Central"></a>
+          <a class="icon icon-github" href="https://github.com/beehive-lab/jitllm" title="GitHub"></a>
+          <a class="icon icon-web" href="https://www.tornadovm.org/jitllm" title="Website"></a>
+          <a class="icon icon-web" href="https://central.sonatype.com/artifact/io.github.beehive-lab/jitllm" title="Maven Central"></a>
+        </div>
+      </div>
+
+      <div class="card" id="quixotic-ai">
+        <span class="card-badge badge-inference">Inference</span>
+        <h3><a href="https://qxotic.ai/">Quixotic AI</a></h3>
+        <p>Modular, pure-Java AI stack from Quixotic AI (Switzerland). Its jinfer engine provides chat, vision, embeddings, and text-to-speech inference with Spring AI and LangChain4j integrations and GraalVM Native Image support. Companion libraries cover GGUF and Safetensors reading/writing, tokenizers, and quantized matrix multiplication. Apache 2.0.</p>
+        <div class="card-links">
+          <a class="icon icon-web" href="https://qxotic.ai/" title="Website"></a>
+          <a class="icon icon-github" href="https://github.com/qxoticai/qxotic" title="GitHub"></a>
         </div>
       </div>
 
       <div class="card">
         <span class="card-badge badge-inference">Inference</span>
         <h3><a href="https://www.tornadovm.org">TornadoVM</a></h3>
-        <p>GPU programming framework for Java &mdash; JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers JLLM's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.</p>
+        <p>GPU programming framework for Java &mdash; JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers jitLLM's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.</p>
         <div class="card-links">
           <a class="icon icon-web" href="https://www.tornadovm.org" title="Website"></a>
           <a class="icon icon-github" href="https://github.com/beehive-lab/TornadoVM" title="GitHub"></a>
@@ -2315,7 +2337,7 @@
         <div class="person-avatar"><img src="https://avatars.githubusercontent.com/u/8652854?v=4&amp;s=96" alt="Michalis Papadimitriou" width="48" height="48" loading="lazy" decoding="async"></div>
         <div class="person-info">
           <h3>Michalis Papadimitriou</h3>
-          <p>Research Fellow, University of Manchester and Senior Software Engineer at Neo4j; TornadoVM core maintainer and lead author of JLLM (formerly GPULlama3.java), GPU-accelerated LLM inference in pure Java</p>
+          <p>Research Fellow, University of Manchester and Senior Software Engineer at Neo4j; TornadoVM core maintainer and lead author of jitLLM (formerly GPULlama3.java), GPU-accelerated LLM inference in pure Java</p>
           <div class="person-links">
             <a class="icon icon-github" href="https://github.com/mikepapadim" title="GitHub"></a>
             <a class="icon icon-linkedin" href="https://www.linkedin.com/in/michalis-papadimitriou/" title="LinkedIn"></a>
@@ -2680,7 +2702,7 @@
       </details>
       <details class="faq-item">
         <summary>Can Java run LLMs locally?</summary>
-        <p>Yes. Projects like <a href="#jlama">Jlama</a> and <a href="#jllm">JLLM</a> run Llama, Mistral, and other models directly on the JVM. Jlama uses Java&rsquo;s Vector API for SIMD-accelerated inference on CPU, while JLLM leverages TornadoVM for GPU acceleration. For production deployments, <a href="#onnx-runtime-java">ONNX Runtime Java</a> supports hardware-accelerated inference across CUDA, DirectML, and CoreML.</p>
+        <p>Yes. Projects like <a href="#jlama">Jlama</a> and <a href="#jitllm">jitLLM</a> run Llama, Mistral, and other models directly on the JVM. Jlama uses Java&rsquo;s Vector API for SIMD-accelerated inference on CPU, while jitLLM leverages TornadoVM for GPU acceleration. For production deployments, <a href="#onnx-runtime-java">ONNX Runtime Java</a> supports hardware-accelerated inference across CUDA, DirectML, and CoreML.</p>
       </details>
       <details class="faq-item">
         <summary>What is MCP and how does it work with Java?</summary>

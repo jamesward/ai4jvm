@@ -473,6 +473,11 @@ Open-source frameworks and SDKs for building AI-powered applications on the JVM 
 - **Description:** Annotation-driven Java admin framework (Spring Boot 3, Java 17+) that generates a full CRUD admin UI from a single annotated JPA entity. Its `erupt-ai` module adds an AI harness with 50+ LLM providers, MCP-native tool calling, and A2A multi-agent communication, with tools secured through the same role-based access control as the generated admin pages. Apache 2.0.
 - **Links:** [Docs](https://docs.erupt.xyz) · [GitHub](https://github.com/erupts/erupt) · [Demo](https://demo.erupt.xyz)
 
+### DVARA LLM Gateway
+- **Badge:** Framework
+- **Description:** Open-source, OpenAI-compatible LLM gateway for Java 25+ from the DVARA AI governance platform, with Spring Boot starters. Routes to 14 providers and adds policy enforcement, PII redaction, guardrails, rate limits, spend control, and a tamper-evident audit log; the wider platform also covers MCP and A2A traffic. Apache 2.0.
+- **Links:** [Website](https://dvarahq.com/) · [GitHub](https://github.com/dvarahq/dvara)
+
 ### Claude Agent SDK for Java
 - **Badge:** SDK
 - **Description:** Java SDK for driving the Claude Code CLI as a subprocess, with three APIs — one-shot `Query`, blocking multi-turn `ClaudeSyncClient`, and reactive `ClaudeAsyncClient` (Project Reactor). Supports hooks, permission callbacks, MCP server integration, and subagent definitions, with no native dependencies. Created by Spring AI project lead Mark Pollack, continuing development from the archived `spring-ai-community/claude-agent-sdk-java`. Complements Agent Client, which targets multiple CLI coding agents instead of just Claude Code. Apache 2.0.
@@ -624,7 +629,7 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 ### Deliverance
 - **Badge:** Inference
 - **Description:** Deliverance is a Java inference engine capable of generating text, tokenizing input, computing embeddings, and more. Can be used as embedded library inside your Java application or as an HTTP server /chat/completion). Deliverance also provides chat and Rag Chat through vibrant-maven-plugin allowing you to chat with your code!
-- **Links:** [GitHub](https://github.com/edwardcapriolo/deliverance) · [Dockerhub](https://hub.docker.com/repository/docker/ecapriolo/deliverance/general)
+- **Links:** [GitHub](https://github.com/edwardcapriolo/deliverance) · [Dockerhub](https://hub.docker.com/r/ecapriolo/deliverance)
 
 ### Jlama
 - **Badge:** Inference
@@ -656,14 +661,19 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Description:** Comprehensive machine-learning engine for Java, Scala, and Kotlin, covering classification, regression, clustering, feature engineering, model validation, NLP, and numerical computing. Also provides LibTorch-backed GPU deep learning and Llama/Qwen inference with an OpenAI-compatible server. Actively maintained and published to Maven Central.
 - **Links:** [Website](https://www.aihalo.dev/) · [GitHub](https://github.com/haifengl/smile) · [Java API](https://www.aihalo.dev/api/java/index.html)
 
-### JLLM
+### jitLLM
 - **Badge:** Inference
-- **Description:** JVM-native LLM inference and serving engine from the University of Manchester's Beehive Lab, formerly GPULlama3.java. TornadoVM JIT-compiles its Java transformer kernels for NVIDIA, Intel, AMD, and Apple GPUs via CUDA, OpenCL, or Metal. Supports multiple GGUF model families, an OpenAI-compatible server, and official LangChain4j and Quarkus integrations; published to Maven Central for Java 21 and 25.
-- **Links:** [GitHub](https://github.com/beehive-lab/jllm) · [Website](https://beehive-lab.github.io/jllm/) · [Maven Central](https://central.sonatype.com/artifact/io.github.beehive-lab/jllm)
+- **Description:** JVM-native LLM inference and serving engine from the University of Manchester's Beehive Lab (TornadoVM team), formerly JLLM and GPULlama3.java. TornadoVM JIT-compiles its Java transformer kernels for NVIDIA, Intel, AMD, and Apple GPUs via CUDA, OpenCL, or Metal. Supports Llama 3, Mistral, Qwen, Phi-3, Granite, Gemma, and DeepSeek-R1-Distill models in GGUF format, an OpenAI-compatible server, and official LangChain4j and Quarkus integrations; published to Maven Central for Java 21 and 25.
+- **Links:** [GitHub](https://github.com/beehive-lab/jitllm) · [Website](https://www.tornadovm.org/jitllm) · [Maven Central](https://central.sonatype.com/artifact/io.github.beehive-lab/jitllm)
+
+### Quixotic AI
+- **Badge:** Inference
+- **Description:** Modular, pure-Java AI stack from Quixotic AI (Switzerland). Its jinfer engine provides chat, vision, embeddings, and text-to-speech inference with Spring AI and LangChain4j integrations and GraalVM Native Image support. Companion libraries cover GGUF and Safetensors reading/writing, tokenizers, and quantized matrix multiplication. Apache 2.0.
+- **Links:** [Website](https://qxotic.ai/) · [GitHub](https://github.com/qxoticai/qxotic)
 
 ### TornadoVM
 - **Badge:** Inference
-- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers JLLM's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.
+- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers jitLLM's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.
 - **Links:** [Website](https://www.tornadovm.org) · [GitHub](https://github.com/beehive-lab/TornadoVM) · [Docs](https://tornadovm.readthedocs.io/en/latest/)
 
 ### ModelJARs
@@ -823,7 +833,7 @@ Key voices at the intersection of Java and AI.
 - **Links:** [@danieloh30](https://twitter.com/danieloh30) · [Bluesky](https://bsky.app/profile/danieloh30.bsky.social) · [LinkedIn](https://www.linkedin.com/in/daniel-oh-083818112/)
 
 ### Michalis Papadimitriou
-- **Bio:** Research Fellow, University of Manchester and Senior Software Engineer at Neo4j; TornadoVM core maintainer and lead author of JLLM (formerly GPULlama3.java), GPU-accelerated LLM inference in pure Java
+- **Bio:** Research Fellow, University of Manchester and Senior Software Engineer at Neo4j; TornadoVM core maintainer and lead author of jitLLM (formerly GPULlama3.java), GPU-accelerated LLM inference in pure Java
 - **Links:** [GitHub](https://github.com/mikepapadim) · [LinkedIn](https://www.linkedin.com/in/michalis-papadimitriou/) · [Website](https://mpapadimitriou.com/)
 
 ### Konstantin Pavlov
@@ -930,7 +940,7 @@ Frequently asked questions about AI development on the JVM.
 The most popular choices are [Spring AI and LangChain4j](#frameworks). Spring AI is ideal if you’re already in the Spring ecosystem, offering portable abstractions across 20+ model providers. LangChain4j provides a standalone library with three levels of abstraction, from low-level prompts to high-level AI Services. Other options include Google ADK for Java, Embabel, Akka Agents, and Koog, which now ships idiomatic Java APIs alongside its original Kotlin DSL — each with different strengths for specific use cases.
 
 ### Can Java run LLMs locally?
-Yes. Projects like [Jlama and JLLM](#inference) run Llama, Mistral, and other models directly on the JVM. Jlama uses Java’s Vector API for SIMD-accelerated inference on CPU, while JLLM leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML.
+Yes. Projects like [Jlama and jitLLM](#inference) run Llama, Mistral, and other models directly on the JVM. Jlama uses Java’s Vector API for SIMD-accelerated inference on CPU, while jitLLM leverages TornadoVM for GPU acceleration. For production deployments, ONNX Runtime Java supports hardware-accelerated inference across CUDA, DirectML, and CoreML.
 
 ### What is MCP and how does it work with Java?
 The Model Context Protocol (MCP) is an open standard that lets AI assistants interact with external tools and data sources. The official MCP Java SDK, maintained by the Spring AI team, provides both client and server implementations with sync/async support and multiple transports (STDIO, Streamable HTTP; SSE deprecated as of 2.0). Helidon MCP and several frameworks also offer MCP support.
