@@ -111,6 +111,7 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/langchain4j/langchain4j/releases/tag/1.22.0
 - https://github.com/langchain4j/langchain4j/releases/tag/1.21.0
 - https://github.com/langchain4j/langchain4j/releases/tag/1.20.2
 - https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
@@ -130,6 +131,7 @@ Note: Order by date, newest first. Don't show news older than 3 months
 - https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.2
 - https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/
 - https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/
+- https://github.com/embabel/embabel-agent/releases/tag/v1.5.3
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.2
 - https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
 - https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/

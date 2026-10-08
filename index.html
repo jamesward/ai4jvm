@@ -298,7 +298,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-10-02",
+    "dateModified": "2026-10-08",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -599,6 +599,7 @@
       <h2 class="section-title" style="font-size:1.1rem;margin-bottom:.75rem;">Latest Java AI News</h2>
       <p class="section-subtitle" style="margin-bottom:.75rem;">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.22.0">LangChain4j 1.22.0 Released</a> &mdash; adds OpenAI Decisions API support for decision models (<code>OpenAiDecisionModel</code>), <code>BedrockBatchChatModel</code> for AWS Bedrock batch inference, and automatic prompt caching with cache TTL for the Anthropic integration</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.21.0">LangChain4j 1.21.0 Released</a> &mdash; introduces decision models, a new type that answers questions with typed responses and probabilities instead of generated text, for classification and routing</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.20.2">LangChain4j 1.20.2 Released</a> &mdash; patch release with A2A fixes</li>
         <li><a href="https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/">One Database, Two Models</a> &mdash; A N M Bazlur Rahman explores MySQL JSON Duality Views in Java: simpler document reads/writes over JDBC, optional-etag conflict handling, comparisons with JPA/Spring Data JDBC, and read-only LangChain4j tools backed by local Ollama for AI agents</li>
@@ -618,6 +619,7 @@
         <li><a href="https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.2">Quarkus Flow 1.1.2 Released</a> &mdash; patch release adding missing native-image classes, fixing OIDC-blocking and topology issues, and adding missing <code>ServiceLoader</code> registration for <code>URITemplate</code></li>
         <li><a href="https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/">Authorizing What an AI Agent May Do in Apache Camel</a> &mdash; rather than relying on prompts for security, enforces AI agent tool calls at the boundary using SPIFFE for identity and Open Policy Agent (OPA) for authorization, so a <code>camel-ai-tool</code>-exposed route can safely expose different capabilities to different callers based on verified identity</li>
         <li><a href="https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/">What's New in the September 2026 Azul Payara Release?</a> &mdash; MicroProfile 7.1 lands across Payara's product lines, Jakarta Agentic AI support expands to Payara Micro and Embedded (an agent as a CDI bean annotated with <code>@Agent</code>), and a jackson-databind security patch ships across all supported branches</li>
+        <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.5.3">Embabel Agent 1.5.3 Released</a> &mdash; adds role-based default LLM configuration, strict-mode native structured output, JDBC Blackboard persistence configuration, retrying of failed embedding batches, and moves the MCP server from SSE to Streamable HTTP</li>
         <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.5.2">Embabel Agent 1.5.2 Released</a> &mdash; adds agent process persistence with snapshot/restore functionality backed by JCache storage, improvements to LLM retry policies and structured output APIs, and a new Podman skill script execution engine</li>
         <li><a href="https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/">How I Built an AI Assistant for My Career with Java, Spring AI, and MongoDB</a> &mdash; Ricardo Mello builds "RicAI," a Spring Boot career assistant combining Spring AI's <code>VectorStore</code> (MongoDB Atlas + OpenAI embeddings) for semantic search, a <code>ChatClient</code> with MongoDB-backed conversation memory, and <code>@Tool</code>-annotated methods for structured queries and Calendly meeting scheduling</li>
         <li><a href="https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/">Can You Explain the Diff Your AI Agent Just Wrote?</a> &mdash; Viktoria Evdokimova argues passing tests prove correctness but not comprehension, and shows how JetBrains-IDE agents like Explyt surface debugger state and structured test results &mdash; with a rule of thumb: if you can't explain what an AI-generated diff breaks when reverted, you don't understand it well enough to merge it</li>
