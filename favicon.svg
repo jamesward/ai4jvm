@@ -1,21 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f1117"/>
-      <stop offset="100%" stop-color="#1e2230"/>
+      <stop offset="0%" stop-color="#111113"/>
+      <stop offset="100%" stop-color="#1f1f23"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6c63ff"/>
-      <stop offset="100%" stop-color="#38bdf8"/>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a05c"/>
+      <stop offset="50%" stop-color="#e8d5a8"/>
+      <stop offset="100%" stop-color="#c9a05c"/>
     </linearGradient>
   </defs>
 
-  <!-- Rounded square background -->
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- Rounded square background with a hairline border -->
+  <rect x="4" y="4" width="504" height="504" rx="96" fill="url(#bg)" stroke="#2a2a2e" stroke-width="8"/>
 
   <!-- "AI" text -->
-  <text x="256" y="280" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="240" font-weight="800" fill="url(#accent)" text-anchor="middle" dominant-baseline="central" letter-spacing="-12">AI</text>
+  <text x="256" y="290" font-family="'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Roboto, Arial, sans-serif" font-size="240" font-weight="800" fill="url(#accent)" text-anchor="middle" letter-spacing="-12">AI</text>
 
   <!-- "4JVM" subtitle -->
-  <text x="256" y="420" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="100" font-weight="700" fill="#8b8fa3" text-anchor="middle" letter-spacing="-2">4JVM</text>
+  <text x="256" y="420" font-family="'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Roboto, Arial, sans-serif" font-size="100" font-weight="700" fill="#87878c" text-anchor="middle" letter-spacing="-2">4JVM</text>
 </svg>
