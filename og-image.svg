@@ -1,101 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f1117"/>
-      <stop offset="100%" stop-color="#181b24"/>
+    <radialGradient id="glow" cx="50%" cy="75%" r="60%">
+      <stop offset="0%" stop-color="#c9a05c" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#c9a05c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a05c"/>
+      <stop offset="50%" stop-color="#e8d5a8"/>
+      <stop offset="100%" stop-color="#c9a05c"/>
     </linearGradient>
-    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6c63ff"/>
-      <stop offset="100%" stop-color="#38bdf8"/>
-    </linearGradient>
-    <linearGradient id="accent-grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#f472b6"/>
-    </linearGradient>
+    <filter id="blur-lg" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="blur-sm" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="#111113"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <!-- Subtle grid pattern -->
-  <g opacity="0.04" stroke="#e2e4ea" stroke-width="1">
-    <line x1="200" y1="0" x2="200" y2="630"/>
-    <line x1="400" y1="0" x2="400" y2="630"/>
-    <line x1="600" y1="0" x2="600" y2="630"/>
-    <line x1="800" y1="0" x2="800" y2="630"/>
-    <line x1="1000" y1="0" x2="1000" y2="630"/>
-    <line x1="0" y1="126" x2="1200" y2="126"/>
-    <line x1="0" y1="252" x2="1200" y2="252"/>
-    <line x1="0" y1="378" x2="1200" y2="378"/>
-    <line x1="0" y1="504" x2="1200" y2="504"/>
+  <g stroke="#2a2a2e" stroke-width="1">
+    <line x1="0" y1="64.5" x2="1200" y2="64.5"/>
+    <line x1="0" y1="565.5" x2="1200" y2="565.5"/>
   </g>
 
-  <!-- Decorative glowing orbs -->
-  <circle cx="950" cy="180" r="180" fill="#6c63ff" opacity="0.06"/>
-  <circle cx="250" cy="480" r="140" fill="#38bdf8" opacity="0.05"/>
-  <circle cx="1050" cy="500" r="100" fill="#f472b6" opacity="0.04"/>
-
-  <!-- Top accent line -->
-  <rect x="0" y="0" width="1200" height="4" fill="url(#accent-grad)"/>
-
-  <!-- Duke-inspired Java mascot (simplified) -->
-  <g transform="translate(820, 120)" opacity="0.12">
-    <!-- Coffee cup / Java logo simplified -->
-    <rect x="0" y="40" width="300" height="350" rx="30" fill="none" stroke="#6c63ff" stroke-width="3"/>
-    <path d="M60 40 Q60 0 150 0 Q240 0 240 40" fill="none" stroke="#6c63ff" stroke-width="3"/>
-    <!-- Steam lines -->
-    <path d="M100 0 Q110 -30 100 -50 Q90 -70 100 -90" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
-    <path d="M150 0 Q160 -35 150 -55 Q140 -75 150 -100" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
-    <path d="M200 0 Q210 -30 200 -50 Q190 -70 200 -90" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M0,481.2 L10,481.4 L20,481.2 L30,480.8 L40,480.2 L50,479.2 L60,478.1 L70,476.8 L80,475.3 L90,473.8 L100,472.1 L110,470.5 L120,468.7 L130,467.0 L140,465.2 L150,463.5 L160,461.7 L170,460.0 L180,458.2 L190,456.6 L200,455.0 L210,453.7 L220,452.6 L230,451.8 L240,451.4 L250,451.6 L260,452.3 L270,453.7 L280,455.8 L290,458.5 L300,461.8 L310,465.6 L320,469.9 L330,474.4 L340,479.0 L350,483.4 L360,487.6 L370,491.3 L380,494.3 L390,496.6 L400,498.0 L410,498.5 L420,498.2 L430,497.0 L440,495.1 L450,492.5 L460,489.5 L470,486.0 L480,482.4 L490,478.6 L500,474.8 L510,471.0 L520,467.3 L530,463.8 L540,460.4 L550,457.2 L560,454.1 L570,451.2 L580,448.6 L590,446.2 L600,444.2 L610,442.6 L620,441.5 L630,441.0 L640,441.3 L650,442.3 L660,444.1 L670,446.8 L680,450.3 L690,454.5 L700,459.2 L710,464.4 L720,469.9 L730,475.3 L740,480.5 L750,485.4 L760,489.6 L770,493.1 L780,495.6 L790,497.3 L800,498.0 L810,497.7 L820,496.7 L830,494.9 L840,492.5 L850,489.7 L860,486.5 L870,483.3 L880,479.9 L890,476.7 L900,473.6 L910,470.7 L920,468.1 L930,465.6 L940,463.4 L950,461.5 L960,459.7 L970,458.2 L980,456.9 L990,455.8 L1000,455.0 L1010,454.5 L1020,454.3 L1030,454.5 L1040,455.0 L1050,455.9 L1060,457.2 L1070,458.8 L1080,460.7 L1090,462.8 L1100,465.2 L1110,467.5 L1120,469.9 L1130,472.2 L1140,474.4 L1150,476.3 L1160,477.9 L1170,479.3 L1180,480.2 L1190,480.9 L1200,481.2" stroke="#c9a05c" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M0,478.1 L10,480.5 L20,482.7 L30,484.5 L40,486.0 L50,487.0 L60,487.6 L70,487.8 L80,487.6 L90,487.1 L100,486.2 L110,485.0 L120,483.6 L130,481.9 L140,479.9 L150,477.7 L160,475.2 L170,472.5 L180,469.5 L190,466.2 L200,462.6 L210,458.8 L220,454.8 L230,450.8 L240,446.9 L250,443.2 L260,440.0 L270,437.4 L280,435.5 L290,434.7 L300,435.0 L310,436.5 L320,439.3 L330,443.2 L340,448.3 L350,454.4 L360,461.2 L370,468.4 L380,475.9 L390,483.2 L400,490.1 L410,496.4 L420,501.8 L430,506.1 L440,509.4 L450,511.4 L460,512.2 L470,512.0 L480,510.8 L490,508.8 L500,506.0 L510,502.6 L520,498.8 L530,494.6 L540,490.0 L550,485.2 L560,480.0 L570,474.7 L580,469.0 L590,463.2 L600,457.2 L610,451.2 L620,445.2 L630,439.5 L640,434.3 L650,429.7 L660,426.0 L670,423.5 L680,422.2 L690,422.4 L700,424.1 L710,427.2 L720,431.8 L730,437.6 L740,444.5 L750,452.1 L760,460.2 L770,468.3 L780,476.2 L790,483.6 L800,490.1 L810,495.7 L820,500.1 L830,503.3 L840,505.3 L850,506.1 L860,505.9 L870,504.7 L880,502.8 L890,500.3 L900,497.4 L910,494.2 L920,490.8 L930,487.2 L940,483.7 L950,480.1 L960,476.5 L970,472.9 L980,469.4 L990,466.0 L1000,462.6 L1010,459.4 L1020,456.4 L1030,453.7 L1040,451.4 L1050,449.5 L1060,448.2 L1070,447.5 L1080,447.5 L1090,448.1 L1100,449.3 L1110,451.1 L1120,453.5 L1130,456.3 L1140,459.4 L1150,462.7 L1160,466.0 L1170,469.3 L1180,472.5 L1190,475.4 L1200,478.1" stroke="#c9a05c" stroke-opacity="0.45" stroke-width="18" filter="url(#blur-lg)"/>
+    <path d="M0,478.1 L10,480.5 L20,482.7 L30,484.5 L40,486.0 L50,487.0 L60,487.6 L70,487.8 L80,487.6 L90,487.1 L100,486.2 L110,485.0 L120,483.6 L130,481.9 L140,479.9 L150,477.7 L160,475.2 L170,472.5 L180,469.5 L190,466.2 L200,462.6 L210,458.8 L220,454.8 L230,450.8 L240,446.9 L250,443.2 L260,440.0 L270,437.4 L280,435.5 L290,434.7 L300,435.0 L310,436.5 L320,439.3 L330,443.2 L340,448.3 L350,454.4 L360,461.2 L370,468.4 L380,475.9 L390,483.2 L400,490.1 L410,496.4 L420,501.8 L430,506.1 L440,509.4 L450,511.4 L460,512.2 L470,512.0 L480,510.8 L490,508.8 L500,506.0 L510,502.6 L520,498.8 L530,494.6 L540,490.0 L550,485.2 L560,480.0 L570,474.7 L580,469.0 L590,463.2 L600,457.2 L610,451.2 L620,445.2 L630,439.5 L640,434.3 L650,429.7 L660,426.0 L670,423.5 L680,422.2 L690,422.4 L700,424.1 L710,427.2 L720,431.8 L730,437.6 L740,444.5 L750,452.1 L760,460.2 L770,468.3 L780,476.2 L790,483.6 L800,490.1 L810,495.7 L820,500.1 L830,503.3 L840,505.3 L850,506.1 L860,505.9 L870,504.7 L880,502.8 L890,500.3 L900,497.4 L910,494.2 L920,490.8 L930,487.2 L940,483.7 L950,480.1 L960,476.5 L970,472.9 L980,469.4 L990,466.0 L1000,462.6 L1010,459.4 L1020,456.4 L1030,453.7 L1040,451.4 L1050,449.5 L1060,448.2 L1070,447.5 L1080,447.5 L1090,448.1 L1100,449.3 L1110,451.1 L1120,453.5 L1130,456.3 L1140,459.4 L1150,462.7 L1160,466.0 L1170,469.3 L1180,472.5 L1190,475.4 L1200,478.1" stroke="#d9b77a" stroke-opacity="0.8" stroke-width="5" filter="url(#blur-sm)"/>
+    <path d="M0,478.1 L10,480.5 L20,482.7 L30,484.5 L40,486.0 L50,487.0 L60,487.6 L70,487.8 L80,487.6 L90,487.1 L100,486.2 L110,485.0 L120,483.6 L130,481.9 L140,479.9 L150,477.7 L160,475.2 L170,472.5 L180,469.5 L190,466.2 L200,462.6 L210,458.8 L220,454.8 L230,450.8 L240,446.9 L250,443.2 L260,440.0 L270,437.4 L280,435.5 L290,434.7 L300,435.0 L310,436.5 L320,439.3 L330,443.2 L340,448.3 L350,454.4 L360,461.2 L370,468.4 L380,475.9 L390,483.2 L400,490.1 L410,496.4 L420,501.8 L430,506.1 L440,509.4 L450,511.4 L460,512.2 L470,512.0 L480,510.8 L490,508.8 L500,506.0 L510,502.6 L520,498.8 L530,494.6 L540,490.0 L550,485.2 L560,480.0 L570,474.7 L580,469.0 L590,463.2 L600,457.2 L610,451.2 L620,445.2 L630,439.5 L640,434.3 L650,429.7 L660,426.0 L670,423.5 L680,422.2 L690,422.4 L700,424.1 L710,427.2 L720,431.8 L730,437.6 L740,444.5 L750,452.1 L760,460.2 L770,468.3 L780,476.2 L790,483.6 L800,490.1 L810,495.7 L820,500.1 L830,503.3 L840,505.3 L850,506.1 L860,505.9 L870,504.7 L880,502.8 L890,500.3 L900,497.4 L910,494.2 L920,490.8 L930,487.2 L940,483.7 L950,480.1 L960,476.5 L970,472.9 L980,469.4 L990,466.0 L1000,462.6 L1010,459.4 L1020,456.4 L1030,453.7 L1040,451.4 L1050,449.5 L1060,448.2 L1070,447.5 L1080,447.5 L1090,448.1 L1100,449.3 L1110,451.1 L1120,453.5 L1130,456.3 L1140,459.4 L1150,462.7 L1160,466.0 L1170,469.3 L1180,472.5 L1190,475.4 L1200,478.1" stroke="#f3e6c8" stroke-width="2"/>
   </g>
 
-  <!-- Neural network nodes -->
-  <g opacity="0.08">
-    <circle cx="900" cy="300" r="6" fill="#38bdf8"/>
-    <circle cx="960" cy="260" r="4" fill="#6c63ff"/>
-    <circle cx="1020" cy="310" r="5" fill="#f472b6"/>
-    <circle cx="980" cy="370" r="4" fill="#38bdf8"/>
-    <circle cx="1060" cy="250" r="3" fill="#6c63ff"/>
-    <circle cx="1100" cy="330" r="5" fill="#38bdf8"/>
-    <line x1="900" y1="300" x2="960" y2="260" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="960" y1="260" x2="1020" y2="310" stroke="#6c63ff" stroke-width="1"/>
-    <line x1="1020" y1="310" x2="980" y2="370" stroke="#f472b6" stroke-width="1"/>
-    <line x1="960" y1="260" x2="1060" y2="250" stroke="#6c63ff" stroke-width="1"/>
-    <line x1="1020" y1="310" x2="1100" y2="330" stroke="#38bdf8" stroke-width="1"/>
-    <line x1="900" y1="300" x2="980" y2="370" stroke="#38bdf8" stroke-width="1"/>
+  <text x="100" y="42" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#eaeaed" dominant-baseline="middle"><tspan fill="#c9a05c">AI</tspan>4JVM</text>
+  <text x="1100" y="42" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="500" fill="#87878c" text-anchor="end" dominant-baseline="middle">ai4jvm.com</text>
+
+  <text x="100" y="196" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="76" font-weight="700" fill="#eaeaed" letter-spacing="-1.5">Java meets</text>
+  <text x="100" y="282" font-family="'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="76" font-weight="700" fill="url(#title)" letter-spacing="-1.5">Artificial Intelligence</text>
+
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" letter-spacing="1">
+    <rect x="100" y="356" width="159" height="36" rx="4" fill="#7c9dd4" fill-opacity="0.12"/>
+    <text x="180" y="380" text-anchor="middle" fill="#7c9dd4">FRAMEWORKS</text>
+    <rect x="271.0" y="356" width="148" height="36" rx="4" fill="#d4a45c" fill-opacity="0.12"/>
+    <text x="345" y="380" text-anchor="middle" fill="#d4a45c">INFERENCE</text>
+    <rect x="430.5" y="356" width="159" height="36" rx="4" fill="#a98ad4" fill-opacity="0.12"/>
+    <text x="510" y="380" text-anchor="middle" fill="#a98ad4">ASSISTANTS</text>
+    <rect x="601.5" y="356" width="148" height="36" rx="4" fill="#6dba9a" fill-opacity="0.12"/>
+    <text x="675" y="380" text-anchor="middle" fill="#6dba9a">RESOURCES</text>
   </g>
 
-  <!-- Main title -->
-  <text x="100" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="88" font-weight="700" fill="#ffffff" letter-spacing="-2">AI4JVM</text>
-
-  <!-- Accent underline -->
-  <rect x="100" y="260" width="280" height="4" rx="2" fill="url(#accent-grad)"/>
-
-  <!-- Subtitle -->
-  <text x="100" y="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="36" font-weight="400" fill="#e2e4ea">Java AI Ecosystem Guide</text>
-
-  <!-- Tags -->
-  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="20" font-weight="500">
-    <!-- Tag: Frameworks -->
-    <rect x="100" y="370" width="165" height="38" rx="8" fill="#6c63ff" opacity="0.15"/>
-    <text x="120" y="395" fill="#6c63ff">Frameworks</text>
-
-    <!-- Tag: Inference -->
-    <rect x="285" y="370" width="145" height="38" rx="8" fill="#38bdf8" opacity="0.15"/>
-    <text x="305" y="395" fill="#38bdf8">Inference</text>
-
-    <!-- Tag: Tools -->
-    <rect x="450" y="370" width="100" height="38" rx="8" fill="#f472b6" opacity="0.15"/>
-    <text x="470" y="395" fill="#f472b6">Tools</text>
-
-    <!-- Tag: Resources -->
-    <rect x="570" y="370" width="155" height="38" rx="8" fill="#38bdf8" opacity="0.15"/>
-    <text x="590" y="395" fill="#38bdf8">Resources</text>
-  </g>
-
-  <!-- Domain -->
-  <text x="100" y="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="400" fill="#8b8fa3">ai4jvm.com</text>
-
-  <!-- Bottom accent line -->
-  <rect x="0" y="626" width="1200" height="4" fill="url(#accent-grad2)"/>
+  <text x="100" y="604" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="400" fill="#87878c">The curated guide to AI on the JVM</text>
 </svg>
