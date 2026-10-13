@@ -15,7 +15,7 @@ AI4JVM is a curated guide to the Java AI ecosystem — a single-page website cov
 - **Canonical URL:** `https://ai4jvm.com/`
 - Keep Open Graph and Twitter Card meta tags in sync with the title/description above
 - `<meta charset>` must appear within the first 1024 bytes of the document, so it comes first in `<head>`; the Google Analytics tag goes last, just before `</head>`
-- **Theme color:** `<meta name="theme-color" content="#0f1117">` matching the page background
+- **Theme color:** `<meta name="theme-color" content="#111113">` matching the page background
 - `<meta name="robots" content="index, follow, max-image-preview:large">` (the `max-image-preview:large` directive lets Google show the full-size `og-image.png` in search result previews instead of a small thumbnail) and `<meta name="author" content="James Ward">`
 - `og:image:type` (`image/png`) alongside the existing `og:image` dimensions/alt tags; `twitter:site` (`@_jamesward`) and `twitter:image:alt` alongside the existing Twitter Card tags
 
@@ -67,7 +67,7 @@ Questions and answers:
 - `index.html`'s `<head>` links to both via `<link rel="alternate" type="text/markdown">`
 
 ### Performance
-- No web fonts — use the system font stack only (avoids render-blocking font requests)
+- No web fonts — use the system font stack only (avoids render-blocking font requests). The stacks name Inter (body) and IBM Plex Sans (headings) first so they are used when installed locally, but never download them
 - All images (GitHub avatars) must have explicit `width`/`height`, `loading="lazy"`, and `decoding="async"`, and request a small size via GitHub's avatar sizing parameter (e.g. `?v=4&s=96`) rather than the full-resolution image
 - `<link rel="preconnect">` for third-party origins the page actually loads from (GitHub avatars, Google Tag Manager, the Google Analytics collection endpoint), with a `dns-prefetch` fallback for the avatar and analytics origins
 - The Google Analytics tag is the last thing in `<head>` so it never delays parsing of the title, meta, and inline CSS
@@ -77,31 +77,40 @@ Questions and answers:
 
 ## Site Structure
 
-- Single `index.html` file (HTML + inline CSS, no build step)
+- Single `index.html` file (HTML + inline CSS + one inline `<script>` at the end of `<body>`, no build step)
 - Dark theme with card-based layout
-- Sticky nav, hero section, then content sections separated by dividers
+- Sticky nav, full-width hero with a WebGL background, then content sections
 - Responsive: cards collapse to single column on mobile
 - Preserve the ordering in this spec
 - Any card referenced by name from FAQ copy or other section's prose must have a stable `id` (kebab-case slug of its name, e.g. `id="spring-ai"`) on its `.card` div, so it can be deep-linked with `#anchor` from elsewhere on the page
 
 ## Visual Design
 
-- Dark background (`#0f1117`), card surfaces (`#1e2230`), accent purple (`#6c63ff`), accent blue (`#38bdf8`), accent pink (`#f472b6`)
-- Cards have hover effects (border highlight, slight lift)
-- Badge types: `badge-framework` (purple), `badge-inference` (blue), `badge-assistant` (pink), `badge-resource` (green)
+- Warm dark theme: neutral near-black background (`#111113`, not blue-tinted), card surfaces (`#1f1f23`), warm gold accent (`#c9a05c`), dusty blue links (`#8aaccc`)
+- Section titles sit above a 1px rule; there are no separate dividers between sections
+- Card, people, and resource grids use a 1px-gap "spreadsheet" layout: cells share hairline borders inside one rounded outer border. Cells lighten slightly on hover
+- Badge types use muted, distinct colors: `badge-framework` (steel blue), `badge-inference` (amber), `badge-assistant` (violet), `badge-resource` (sage), `badge-video` (rose)
+- Java Champion badge uses gold-on-dark-gold styling to match the accent
 - Where possible use icons for links - for blog or other use a world / www icon. don't use text labels.
 - In a given section, use different colors for different badge types.
+- A subtle SVG noise texture overlays the page at low opacity for tactile depth
+
+### Interactivity
+- **Hero background:** a full-width WebGL "scream-wave" shader on a canvas behind the hero text at 45% opacity, recolored to the gold/amber palette and cycling calm → build → scream → collapse on a 7-second loop. It pauses when the hero is off screen or the tab is hidden, draws a single still frame under `prefers-reduced-motion`, and the page works unchanged without WebGL
+- **Scroll reveal:** cards, people, news items, FAQ items, and section headings fade and slide in as they enter the viewport (IntersectionObserver), with a short stagger between items revealed together. Disabled under `prefers-reduced-motion`; without JavaScript everything is visible
+- **Framework filters:** a search box and type chips (All / Framework / SDK / Library, matching the badge text) above the Agent Frameworks & Libraries grid filter its cards in place, with a "no matches" message when nothing matches. Active chip uses the gold accent
 
 ### Link Affordance
 - **Clickable cards:** If a card has a single primary destination (e.g. resource cards with one link), make the entire card an `<a>` tag so clicking anywhere on the card navigates. Keep secondary icon links overlaid on top.
 - **Card titles as links:** For cards with multiple links (frameworks, tools), make the card `h3` title a clickable link to the primary resource (docs or website). Style title links with an underline on hover.
 - **News links:** Underline news item links so they're visually distinct from surrounding text.
 - **Inline text links:** Any link within body text or descriptions should be underlined.
-- **Don't mislead:** Only apply hover lift/border effects to cards that are actually clickable. Non-clickable cards should still have a subtle hover border but no translateY lift.
+- **Don't mislead:** Only clickable cards (`a.card`) turn their title gold on hover. Non-clickable cards get only the subtle background change.
 
 ## Hero
 
-- Title: "Java meets **Artificial Intelligence**" (gradient text on "Artificial Intelligence")
+- Title: "Java meets **Artificial Intelligence**" — "Artificial Intelligence" in an `<em>` with a slow gold shimmer gradient (static under `prefers-reduced-motion`)
+- Left-aligned, over the WebGL background described in Interactivity
 - Subtitle: "The curated guide to AI on the JVM — compare agent frameworks, inference engines, code assistants, and find the people and resources shaping the Java AI ecosystem."
 
 ---
