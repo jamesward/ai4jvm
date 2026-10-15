@@ -111,12 +111,15 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2
+- https://github.com/google/adk-java/releases/tag/v1.12.0
 - https://github.com/langchain4j/langchain4j/releases/tag/1.22.0
 - https://github.com/langchain4j/langchain4j/releases/tag/1.21.0
 - https://github.com/langchain4j/langchain4j/releases/tag/1.20.2
 - https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
 - https://github.com/quarkiverse/quarkus-flow/releases/tag/1.1.3
 - https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/
+- https://github.com/a2aproject/a2a-java/releases/tag/v1.4.0.Final
 - https://spring.io/blog/2026/09/25/spring-ai-2-1-0-M1-available-now
 - https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.0
 - https://github.com/langchain4j/langchain4j/releases/tag/1.20.1
