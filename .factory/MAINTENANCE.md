@@ -12,7 +12,11 @@ deploy.
 
 - This is a static site with no build, so there are no SkillsJars to extract. Read the `zen-of-projects`
   Skill from `.factory/skills/zen-of-projects/SKILL.md` if that file exists (an unreleased version is
-  being tested). Otherwise fetch it from https://start.jamesward.com.
+  being tested). Otherwise get it from its repository (a fetch of https://start.jamesward.com gets
+  HTTP 403 in cloud sessions):
+  `git clone -q --depth 1 https://github.com/jamesward/skills /tmp/jamesward-skills || git -C /tmp/jamesward-skills pull -q`,
+  then read `/tmp/jamesward-skills/skills/zen-of-projects/SKILL.md`. Follow its "Maintenance Routine"
+  steps that apply to a site, including step 8 ("Improve the factory").
 - Follow its general rules: one source of truth, the rolling PR, the merge / human-review / escalation
   policy, and the "Website Projects" section. Its sbt, Maven and Gradle sections don't apply.
 - Read `AGENTS.md` (site rules, generated files, publishing) and `CONTRIBUTING.md` (the editorial policy
