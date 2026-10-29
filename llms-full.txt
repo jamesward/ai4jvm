@@ -8,6 +8,8 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
+- [LangChain4j 1.23.0 Released](https://github.com/langchain4j/langchain4j/releases/tag/1.23.0) — adds the Confidence Cascade and decision agent patterns, OllamaDecisionModel with image support, an AiServiceInvocationSummaryEvent observability event, and LLM judges and assertions in langchain4j-test
+- [Embabel Agent 1.5.4 Released](https://github.com/embabel/embabel-agent/releases/tag/v1.5.4) — adds typed decision specs with LLM-backed decision and classification services, Cloudflare Workers AI as a provider, native thinking support for Claude 5.x, GPT-6 models in the OpenAI catalog, and an upgrade to Spring Shell 4
 - [Quarkus LangChain4j 1.14.2 Released](https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2) — patch release fixing security advisory GHSA-8vpj-4r6j-h9qg by escaping metadata filter keys in `RedisFilterMapper`
 - [Google ADK for Java 1.13.0 Released](https://github.com/google/adk-java/releases/tag/v1.13.0) — adds a builder for workflow graph edges, running workflow graphs and individual nodes, and no longer requires modelName for the LangChain4j integration, plus dev server fixes for same-origin CORS and DNS-rebinding protection
 - [Google ADK for Java 1.12.0 Released](https://github.com/google/adk-java/releases/tag/v1.12.0) — adds context caching support with a Gemini context cache manager and new cache configuration options, plus experimental workflow graph types, and fixes for Vertex AI session reloads, MCP tool schemas in chat completions requests, and A2A message parts
