@@ -8,6 +8,7 @@ Complete content of https://ai4jvm.com/ in Markdown. This is the full directory;
 
 Latest news and releases from across the Java AI ecosystem — new framework versions, MCP updates, and inference engines.
 
+- [Spring AI 2.1.0-RC1 Released](https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC1) — deprecates ChatMemory in favor of a new session memory with an event log and turn-aware compaction, adds tool call confirmation, moves the OpenAI and DeepSeek chat models to message parts, and adds upsert and query-embedding search to OpenSearch
 - [LangChain4j 1.23.0 Released](https://github.com/langchain4j/langchain4j/releases/tag/1.23.0) — adds the Confidence Cascade and decision agent patterns, OllamaDecisionModel with image support, an AiServiceInvocationSummaryEvent observability event, and LLM judges and assertions in langchain4j-test
 - [Embabel Agent 1.5.4 Released](https://github.com/embabel/embabel-agent/releases/tag/v1.5.4) — adds typed decision specs with LLM-backed decision and classification services, Cloudflare Workers AI as a provider, native thinking support for Claude 5.x, GPT-6 models in the OpenAI catalog, and an upgrade to Spring Shell 4
 - [Quarkus LangChain4j 1.14.2 Released](https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2) — patch release fixing security advisory GHSA-8vpj-4r6j-h9qg by escaping metadata filter keys in `RedisFilterMapper`
