@@ -83,7 +83,8 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
   repo: `api.github.com` and `gh api` answer "GitHub access to this repository is not enabled for
   this session" for other repos, and `releases.atom` feeds get HTTP 403. Don't stop there. Use, for
   every project the News section and the frameworks list track:
-  - **Maven Central** for versions and dates: `curl -fsS https://repo.maven.apache.org/maven2/<group path>/<artifact>/maven-metadata.xml`
+  - **Maven Central** for versions and dates: `curl -fsS --retry 5 --retry-delay 10 --retry-all-errors https://repo.maven.apache.org/maven2/<group path>/<artifact>/maven-metadata.xml`
+    (Maven Central rate-limits cloud sessions with HTTP 429; the retries cover that, and one request at a time helps)
     (`<release>` and `<lastUpdated>`), with the artifact's coordinates from its README;
   - **WebFetch** of `https://github.com/<owner>/<repo>/releases` or `.../releases/tag/<tag>` for the
     release notes you describe. The list page shows dates without a year, so take the year from
