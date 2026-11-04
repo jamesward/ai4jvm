@@ -97,6 +97,15 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
   you add: remove items older than 3 months, and collapse duplicates and overlaps (one item per
   project's releases, per recurring series, per multi-part article, per story) to the newest one.
   Report what you removed and why.
+- **Dates:** every news item carries its own date, as `SPEC.md`'s News notes say: the release's or
+  article's publication date taken from the fetched page (for a GitHub release, its published
+  date; Maven Central's `<lastUpdated>` confirms the year), never the date you found it. In the
+  published files the date leads the item: `<time datetime="2026-11-04">Nov 4, 2026</time>` in
+  `index.html`, `Nov 4, 2026: ` in `llms-full.txt`. `check-site.py` checks the format, the order
+  and that `SPEC.md` and `index.html` agree. Keep the list ordered by these dates. If a page
+  shows no date you can confirm, leave the item out. The 2026-11-04 dating marked one item as
+  approximate (the foojay post "Commit Created — But It Isn't", dated Sep 9, 2026 from its
+  neighbors because the page refused the fetch); confirm or correct it.
 - Never infer page contents from a URL. Fetch every page you describe. If a page's date or version
   doesn't match what you expected, find out which is right before using it, and leave the item out if
   you can't.

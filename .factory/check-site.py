@@ -6,6 +6,7 @@
 Fails (exit 1) on errors; prints warnings for things a human or the routine should look at.
 Content quality (policy, links, descriptions) is judged by the maintenance routine, not here.
 """
+import datetime
 import json
 import re
 import sys
@@ -96,6 +97,59 @@ if html:
     for m in re.finditer(r"<!--\s*LINK CHECK:[^>]*-->", html):
         line = html.count("\n", 0, m.start()) + 1
         warnings.append(f"index.html:{line}: unresolved {m.group(0)}")
+
+def news_date(text, where):
+    """The date of a news item written as `Nov 4, 2026`, or None (with an error)."""
+    try:
+        day = datetime.datetime.strptime(text, "%b %d, %Y").date()
+    except ValueError:
+        day = None
+    if day is None or text != f"{day:%b} {day.day}, {day.year}":
+        errors.append(f"{where}: date {text!r} is not in the form 'Nov 4, 2026'")
+        return None
+    return day
+
+
+def check_news_order(items, where):
+    dates = [d for _, d in items if d]
+    if dates != sorted(dates, reverse=True):
+        errors.append(f"{where}: news items are not ordered newest first")
+    if dates and (datetime.date.today() - dates[-1]).days > 93:
+        warnings.append(f"{where}: news items older than 3 months (oldest {dates[-1]})")
+
+
+# News: every item has its own date, `Nov 4, 2026`, the same in SPEC.md and index.html, newest first.
+spec = read("SPEC.md")
+spec_news = {}
+if spec and "## News" in spec:
+    block = spec[spec.index("## News"):]
+    block = block[:block.index("\n---")] if "\n---" in block else block
+    items = []
+    for line in block.splitlines():
+        if line.startswith("- http"):
+            errors.append(f"SPEC.md News: item has no date: {line[:90]}")
+        m = re.match(r"- ([A-Z][a-z]{2} \d{1,2}, \d{4}): (https?://\S+)$", line)
+        if m:
+            day = news_date(m.group(1), "SPEC.md News")
+            items.append((m.group(2), day))
+            spec_news[m.group(2)] = m.group(1)
+    check_news_order(items, "SPEC.md News")
+if html and '<section id="news">' in html:
+    section = html[html.index('<section id="news">'):]
+    section = section[:section.index("</section>")]
+    items = []
+    for li in re.findall(r"<li>.*?</li>", section, re.S):
+        m = re.match(r'<li><time datetime="(\d{4}-\d{2}-\d{2})">([^<]+)</time> <a href="([^"]+)"', li)
+        if not m:
+            errors.append(f"index.html news: item without a leading <time datetime=...>: {li[:90]}")
+            continue
+        day = news_date(m.group(2), "index.html news")
+        if day and day.isoformat() != m.group(1):
+            errors.append(f"index.html news: datetime {m.group(1)} != {m.group(2)}")
+        if spec_news and spec_news.get(m.group(3)) != m.group(2):
+            errors.append(f"index.html news: {m.group(3)} is dated {m.group(2)}, SPEC.md says {spec_news.get(m.group(3))}")
+        items.append((m.group(3), day))
+    check_news_order(items, "index.html news")
 
 sitemap = read("sitemap.xml")
 if sitemap:
