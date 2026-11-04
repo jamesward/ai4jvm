@@ -129,50 +129,51 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   parts there are.
 - the same news from several sources (a GitHub release and its blog post, an announcement and its
   foojay or InfoQ coverage): keep the most informative source.
+Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
-- https://github.com/google/adk-java/releases/tag/v1.14.0
-- https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC1
-- https://github.com/langchain4j/langchain4j/releases/tag/1.23.0
-- https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
-- https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2
-- https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
-- https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
-- https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/
-- https://github.com/a2aproject/a2a-java/releases/tag/v1.4.0.Final
-- https://github.com/JetBrains/koog/releases/tag/1.3.0
-- https://camel.apache.org/blog/2026/09/semantic-evaluation-system-one/
-- https://camel.apache.org/blog/2026/09/camel-tui-byoa/
-- https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/
-- https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0
-- https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment
-- https://quarkus.io/blog/mcp-stateless/
-- https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/
-- https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/
-- https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
-- https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/
-- https://quarkus.io/blog/quarkus-insights-259-reshapr/
-- https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/
-- https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
-- https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/
-- https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
-- https://foojay.io/today/commit-created-but-it-isnt-why-the-agents-word-needs-external-verification-and-what-the-mistake-costs/
-- https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/
-- https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3
-- https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/
-- https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
-- https://foojay.io/today/building-an-agentic-warehouse-management-system-part-3-tools-decisions-and-actions/
-- https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
-- https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/
-- https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
-- https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.1
-- https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/
-- https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/
-- https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc
-- https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
-- https://inside.java/2026/08/12/java-mcp-migration/
-- https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
-- https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/
-- https://foojay.io/today/jakarta-agentic-ai-hits-its-first-milestone/
+- Nov 2, 2026: https://github.com/google/adk-java/releases/tag/v1.14.0
+- Oct 28, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.23.0
+- Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
+- Oct 23, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC1
+- Oct 23, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
+- Oct 15, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2
+- Sep 28, 2026: https://github.com/a2aproject/a2a-java/releases/tag/v1.4.0.Final
+- Sep 26, 2026: https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
+- Sep 25, 2026: https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/
+- Sep 24, 2026: https://github.com/JetBrains/koog/releases/tag/1.3.0
+- Sep 24, 2026: https://camel.apache.org/blog/2026/09/semantic-evaluation-system-one/
+- Sep 22, 2026: https://camel.apache.org/blog/2026/09/camel-tui-byoa/
+- Sep 22, 2026: https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/
+- Sep 22, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0
+- Sep 21, 2026: https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment
+- Sep 21, 2026: https://quarkus.io/blog/mcp-stateless/
+- Sep 17, 2026: https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/
+- Sep 16, 2026: https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/
+- Sep 15, 2026: https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
+- Sep 15, 2026: https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/
+- Sep 14, 2026: https://quarkus.io/blog/quarkus-insights-259-reshapr/
+- Sep 14, 2026: https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/
+- Sep 10, 2026: https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
+- Sep 9, 2026: https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/
+- Sep 9, 2026: https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
+- Sep 9, 2026: https://foojay.io/today/commit-created-but-it-isnt-why-the-agents-word-needs-external-verification-and-what-the-mistake-costs/
+- Sep 8, 2026: https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/
+- Sep 7, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3
+- Sep 4, 2026: https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/
+- Sep 3, 2026: https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
+- Sep 3, 2026: https://foojay.io/today/building-an-agentic-warehouse-management-system-part-3-tools-decisions-and-actions/
+- Sep 3, 2026: https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
+- Sep 1, 2026: https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/
+- Aug 24, 2026: https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
+- Aug 19, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.1
+- Aug 18, 2026: https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/
+- Aug 18, 2026: https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/
+- Aug 17, 2026: https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc
+- Aug 13, 2026: https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
+- Aug 12, 2026: https://inside.java/2026/08/12/java-mcp-migration/
+- Aug 10, 2026: https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
+- Aug 7, 2026: https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/
+- Aug 5, 2026: https://foojay.io/today/jakarta-agentic-ai-hits-its-first-milestone/
 
 ---
 
