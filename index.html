@@ -369,7 +369,7 @@
     "description": "The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.",
     "isPartOf": {"@id": "https://ai4jvm.com/#website"},
     "inLanguage": "en-US",
-    "dateModified": "2026-10-30",
+    "dateModified": "2026-11-04",
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": "https://ai4jvm.com/og-image.png",
@@ -673,10 +673,12 @@
       <h2 class="section-title">Latest Java AI News</h2>
       <p class="section-subtitle">Latest news and releases from across the Java AI ecosystem &mdash; new framework versions, MCP updates, and inference engines.</p>
       <ul>
+        <li><a href="https://github.com/google/adk-java/releases/tag/v1.14.0">Google ADK for Java 1.14.0 Released</a> &mdash; adds workflow pause and resume for user input, running a tool as a workflow node, and the DebugLoggingPlugin and SaveFilesAsArtifactsPlugin ported from adk-python, plus a Spring Boot chat app and fixes for node retry policies and timeouts</li>
         <li><a href="https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC1">Spring AI 2.1.0-RC1 Released</a> &mdash; deprecates <code>ChatMemory</code> in favor of a new session memory with an event log and turn-aware compaction, adds tool call confirmation, moves the OpenAI and DeepSeek chat models to message parts, and adds upsert and query-embedding search to OpenSearch</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.23.0">LangChain4j 1.23.0 Released</a> &mdash; adds the Confidence Cascade and decision agent patterns, <code>OllamaDecisionModel</code> with image support, an <code>AiServiceInvocationSummaryEvent</code> observability event, and LLM judges and assertions in <code>langchain4j-test</code></li>
         <li><a href="https://github.com/embabel/embabel-agent/releases/tag/v1.5.4">Embabel Agent 1.5.4 Released</a> &mdash; adds typed decision specs with LLM-backed decision and classification services, Cloudflare Workers AI as a provider, native thinking support for Claude 5.x, GPT-6 models in the OpenAI catalog, and an upgrade to Spring Shell 4</li>
         <li><a href="https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2">Quarkus LangChain4j 1.14.2 Released</a> &mdash; patch release fixing security advisory GHSA-8vpj-4r6j-h9qg by escaping metadata filter keys in <code>RedisFilterMapper</code></li>
+        <li><a href="https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0">Quarkus Flow 1.3.0 Released</a> &mdash; adds database migration extensions for schema management, input schema validation by default, a synchronous runner interface, and ends generated agentic workflows when an agent throws an error</li>
         <li><a href="https://github.com/google/adk-java/releases/tag/v1.13.0">Google ADK for Java 1.13.0 Released</a> &mdash; adds a builder for workflow graph edges, running workflow graphs and individual nodes, and no longer requires modelName for the LangChain4j integration, plus dev server fixes for same-origin CORS and DNS-rebinding protection</li>
         <li><a href="https://github.com/google/adk-java/releases/tag/v1.12.0">Google ADK for Java 1.12.0 Released</a> &mdash; adds context caching support with a Gemini context cache manager and new cache configuration options, plus experimental workflow graph types, and fixes for Vertex AI session reloads, MCP tool schemas in chat completions requests, and A2A message parts</li>
         <li><a href="https://github.com/langchain4j/langchain4j/releases/tag/1.22.0">LangChain4j 1.22.0 Released</a> &mdash; adds OpenAI Decisions API support for decision models (<code>OpenAiDecisionModel</code>), <code>BedrockBatchChatModel</code> for AWS Bedrock batch inference, and automatic prompt caching with cache TTL for the Anthropic integration</li>

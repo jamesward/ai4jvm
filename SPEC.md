@@ -120,10 +120,12 @@ Questions and answers:
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
 Note: Order by date, newest first. Don't show news older than 3 months
 
+- https://github.com/google/adk-java/releases/tag/v1.14.0
 - https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC1
 - https://github.com/langchain4j/langchain4j/releases/tag/1.23.0
 - https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
 - https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2
+- https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
 - https://github.com/google/adk-java/releases/tag/v1.13.0
 - https://github.com/google/adk-java/releases/tag/v1.12.0
 - https://github.com/langchain4j/langchain4j/releases/tag/1.22.0
