@@ -8,6 +8,11 @@ looks quick, and don't call any step optional. The report (step 7) must show the
 step. Merging to `main` publishes the site within minutes, so every merge is a production
 deploy.
 
+A step that hits a problem doesn't end the run: note the exact error, try the documented
+alternative, and go on to the next step. In particular, steps 5 and 8 run even when nothing
+changed and even when an earlier step failed. Don't send push notifications, also when the
+maintainer has to act: the routine emails its result, and the report (step 7) is where you say it.
+
 ## 1. Load guidance
 
 - This is a static site with no build, so there are no SkillsJars to extract. Read the `zen-of-projects`
@@ -74,6 +79,17 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
 
 ## 4. Update the site content
 
+- **Look up releases without the GitHub API.** A cloud session's GitHub access covers only this
+  repo: `api.github.com` and `gh api` answer "GitHub access to this repository is not enabled for
+  this session" for other repos, and `releases.atom` feeds get HTTP 403. Don't stop there. Use, for
+  every project the News section and the frameworks list track:
+  - **Maven Central** for versions and dates: `curl -fsS https://repo.maven.apache.org/maven2/<group path>/<artifact>/maven-metadata.xml`
+    (`<release>` and `<lastUpdated>`), with the artifact's coordinates from its README;
+  - **WebFetch** of `https://github.com/<owner>/<repo>/releases` or `.../releases/tag/<tag>` for the
+    release notes you describe. The list page shows dates without a year, so take the year from
+    Maven Central or the tag page.
+
+  If a source still fails, report which projects you couldn't check and why, and check the rest.
 - Search for missing, important items that meet `CONTRIBUTING.md`: news, new releases, frameworks,
   people, resources. Update or retire stale ones.
 - Never infer page contents from a URL. Fetch every page you describe. If a page's date or version
@@ -133,12 +149,19 @@ All of the site's own changes go in the single rolling maintenance PR, titled `M
 
 ## 7. Report
 
-End the run with a report, and use it as the rolling PR's description when there is one:
+Before the report, do the `zen-of-projects` Skill's step 8 ("Improve the factory"): every finding
+gets a link to the issue or PR you filed for it (`jamesward/skills`, `jamesward/projects`, or here),
+or "none" with what you reviewed.
+
+End the run with a report, and use it as the rolling PR's description when there is one. It has one
+line per step, 1 to 6 and step 8; "skipped" isn't an allowed outcome:
 
 - whether you read the Skill, and from where;
 - every open issue and PR, with the action taken;
 - content added, changed or removed;
 - `check-site.py` output;
-- isitagentready and Lighthouse results;
+- isitagentready level and failing checks, and the four Lighthouse scores (or the exact error);
+- the projects whose releases you checked, and any you couldn't;
 - anything merged, with its CI result;
-- anything that needs the maintainer.
+- anything that needs the maintainer;
+- step 8's findings, each with its link.
