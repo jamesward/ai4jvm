@@ -118,7 +118,17 @@ Questions and answers:
 ## News
 
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
-Note: Order by date, newest first. Don't show news older than 3 months
+Note: Order by date, newest first. Don't show news older than 3 months (by the item's own date).
+Note: No duplicates or overlapping items. Each of these gets at most one item, the newest:
+- a project's releases: one item for its latest release (for example one Spring AI release), whether
+  it is a GitHub release, a blog announcement or both, and whether it is a stable release, a
+  milestone or an RC. A new release replaces the older item; it isn't added next to it.
+- a recurring series: InfoQ's Java news roundups, the monthly Azul/Payara release posts, numbered
+  rounds of the same benchmark, and the like.
+- a multi-part article: one item for the series, linking the newest part and saying how many
+  parts there are.
+- the same news from several sources (a GitHub release and its blog post, an announcement and its
+  foojay or InfoQ coverage): keep the most informative source.
 
 - https://github.com/google/adk-java/releases/tag/v1.14.0
 - https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC1

@@ -93,6 +93,10 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
   If a source still fails, report which projects you couldn't check and why, and check the rest.
 - Search for missing, important items that meet `CONTRIBUTING.md`: news, new releases, frameworks,
   people, resources. Update or retire stale ones.
+- **News:** apply the News notes in `SPEC.md` to the whole list on every run, not only to the items
+  you add: remove items older than 3 months, and collapse duplicates and overlaps (one item per
+  project's releases, per recurring series, per multi-part article, per story) to the newest one.
+  Report what you removed and why.
 - Never infer page contents from a URL. Fetch every page you describe. If a page's date or version
   doesn't match what you expected, find out which is right before using it, and leave the item out if
   you can't.
