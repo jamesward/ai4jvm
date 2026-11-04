@@ -42,6 +42,7 @@ only site-specific facts. The maintenance routine is `.factory/MAINTENANCE.md`.
 
 ## Exceptions to zen-of-projects
 
-- No build tool, SkillsJars or MCP servers. The routine loads the Skill from https://start.jamesward.com.
+- No build tool, SkillsJars or MCP servers. The routine loads the Skill from a clone of `jamesward/skills`
+  (see `.factory/MAINTENANCE.md` step 1).
 - CI only runs the structural checks in `.factory/check-site.py`. Content quality is judged by the
   routine.
