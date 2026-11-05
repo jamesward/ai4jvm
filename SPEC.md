@@ -131,10 +131,10 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 5, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2
 - Nov 2, 2026: https://github.com/google/adk-java/releases/tag/v1.14.0
 - Oct 28, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.23.0
 - Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
-- Oct 23, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC1
 - Oct 23, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
 - Oct 15, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2
 - Sep 28, 2026: https://github.com/a2aproject/a2a-java/releases/tag/v1.4.0.Final
