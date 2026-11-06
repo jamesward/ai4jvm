@@ -136,7 +136,9 @@ Note: Every item starts with its own date, the release's or the article's public
 - Oct 28, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.23.0
 - Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
 - Oct 23, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
+- Oct 16, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.1.0
 - Oct 15, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.14.2
+- Oct 8, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.4
 - Sep 28, 2026: https://github.com/a2aproject/a2a-java/releases/tag/v1.4.0.Final
 - Sep 26, 2026: https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
 - Sep 25, 2026: https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/
@@ -156,16 +158,13 @@ Note: Every item starts with its own date, the release's or the article's public
 - Sep 10, 2026: https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
 - Sep 9, 2026: https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/
 - Sep 9, 2026: https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
-- Sep 9, 2026: https://foojay.io/today/commit-created-but-it-isnt-why-the-agents-word-needs-external-verification-and-what-the-mistake-costs/
 - Sep 8, 2026: https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/
-- Sep 7, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.3
 - Sep 4, 2026: https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/
 - Sep 3, 2026: https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/
 - Sep 3, 2026: https://foojay.io/today/building-an-agentic-warehouse-management-system-part-3-tools-decisions-and-actions/
 - Sep 3, 2026: https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
 - Sep 1, 2026: https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/
 - Aug 24, 2026: https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
-- Aug 19, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.0.1
 - Aug 18, 2026: https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/
 - Aug 18, 2026: https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/
 - Aug 17, 2026: https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc
@@ -173,7 +172,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Aug 12, 2026: https://inside.java/2026/08/12/java-mcp-migration/
 - Aug 10, 2026: https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
 - Aug 7, 2026: https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/
-- Aug 5, 2026: https://foojay.io/today/jakarta-agentic-ai-hits-its-first-milestone/
 
 ---
 
