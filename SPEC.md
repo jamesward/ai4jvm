@@ -171,7 +171,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Aug 13, 2026: https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
 - Aug 12, 2026: https://inside.java/2026/08/12/java-mcp-migration/
 - Aug 10, 2026: https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
-- Aug 7, 2026: https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/
 
 ---
 
