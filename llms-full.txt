@@ -48,7 +48,6 @@ Latest news and releases from across the Java AI ecosystem — new framework ver
 - Aug 13, 2026: [Building AI-Driven Java Systems with Spring AI and Java 26](https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/) — treats LLMs as first-class components with explicit responsibilities, leveraging Java 26's Virtual Threads and Structured Concurrency for efficient I/O-bound agentic workflows
 - Aug 12, 2026: [Evolving a Java MCP Server During MCP Specification Upgrades](https://inside.java/2026/08/12/java-mcp-migration/) — Ana-Maria Mihalceanu shows how to adopt the MCP 2026-07-28 spec while staying compatible with older clients, routing new stateless requests through an adapter layer alongside the legacy initialized workflow
 - Aug 10, 2026: [Introduction to Retrieval-Augmented Generation with Java and MongoDB](https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/) — tutorial building a JAX-RS/Helidon RAG service with LangChain4j and MongoDB Atlas as a combined vector store and operational database, retrieving context to answer HR policy questions before calling the LLM
-- Aug 7, 2026: [Camel Routes as AI Tools: Unified Tooling and MCP Server in Camel 4.22](https://camel.apache.org/blog/2026/08/camel-ai-tools-mcp-422/) — introduces `camel-ai-tool`, a unified tool abstraction so a route defined once works with LangChain4j, Spring AI, or OpenAI, and `camel-mcp-server`, which exposes tagged routes directly as MCP tools
 
 ## Agent Frameworks & Libraries
 
