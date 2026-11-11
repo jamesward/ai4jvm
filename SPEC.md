@@ -131,8 +131,13 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 11, 2026: https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/
+- Nov 10, 2026: https://quarkus.io/blog/ai-root-cause-analysis/
+- Nov 9, 2026: https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/
 - Nov 7, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.0
+- Nov 6, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0
 - Nov 5, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2
+- Nov 4, 2026: https://quarkus.io/blog/agentic-pr-reviewer/
 - Nov 2, 2026: https://github.com/google/adk-java/releases/tag/v1.14.0
 - Oct 28, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.23.0
 - Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
@@ -146,14 +151,12 @@ Note: Every item starts with its own date, the release's or the article's public
 - Sep 24, 2026: https://camel.apache.org/blog/2026/09/semantic-evaluation-system-one/
 - Sep 22, 2026: https://camel.apache.org/blog/2026/09/camel-tui-byoa/
 - Sep 22, 2026: https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/
-- Sep 22, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v7.0.0
 - Sep 21, 2026: https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment
 - Sep 21, 2026: https://quarkus.io/blog/mcp-stateless/
 - Sep 17, 2026: https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/
 - Sep 16, 2026: https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/
 - Sep 15, 2026: https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
 - Sep 15, 2026: https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/
-- Sep 14, 2026: https://quarkus.io/blog/quarkus-insights-259-reshapr/
 - Sep 14, 2026: https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/
 - Sep 10, 2026: https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
 - Sep 9, 2026: https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/
@@ -170,7 +173,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Aug 17, 2026: https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc
 - Aug 13, 2026: https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
 - Aug 12, 2026: https://inside.java/2026/08/12/java-mcp-migration/
-- Aug 10, 2026: https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/
 
 ---
 
