@@ -103,9 +103,7 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
   published files the date leads the item: `<time datetime="2026-11-04">Nov 4, 2026</time>` in
   `index.html`, `Nov 4, 2026: ` in `llms-full.txt`. `check-site.py` checks the format, the order
   and that `SPEC.md` and `index.html` agree. Keep the list ordered by these dates. If a page
-  shows no date you can confirm, leave the item out. The 2026-11-04 dating marked one item as
-  approximate (the foojay post "Commit Created — But It Isn't", dated Sep 9, 2026 from its
-  neighbors because the page refused the fetch); confirm or correct it.
+  shows no date you can confirm, leave the item out.
 - Never infer page contents from a URL. Fetch every page you describe. If a page's date or version
   doesn't match what you expected, find out which is right before using it, and leave the item out if
   you can't.
