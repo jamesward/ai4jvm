@@ -124,17 +124,20 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
 - **Performance:** run Lighthouse (the engine behind PageSpeed Insights; don't use the PageSpeed API,
   which returns HTTP 429 without a key) against your local working copy, so the check covers your
   changes before they're published. These commands are tested on the cloud VM's OS (Ubuntu 24.04, as
-  root):
+  root); run them as one command, so `$SERVER` is still set when it's stopped:
 
   ```bash
-  npx -y playwright@1 install-deps chromium >/dev/null 2>&1
-  npx -y playwright@1 install chromium >/dev/null 2>&1
-  CHROME="$(find ~/.cache/ms-playwright -type f -path '*chrome-linux*/chrome' | head -1)"
-  python3 -m http.server 8765 >/dev/null 2>&1 &
+  CHROME="$(readlink -f /opt/pw-browsers/chromium 2>/dev/null)"   # pre-installed in the cloud VM
+  if [ ! -x "$CHROME" ]; then
+    npx -y playwright@1 install-deps chromium >/dev/null 2>&1
+    npx -y playwright@1 install chromium >/dev/null 2>&1
+    CHROME="$(find ~/.cache/ms-playwright -type f -path '*chrome-linux*/chrome' | head -1)"
+  fi
+  python3 -m http.server 8765 >/dev/null 2>&1 & SERVER=$!
   CHROME_PATH="$CHROME" npx -y lighthouse@12 http://localhost:8765/ --chrome-path="$CHROME" \
     --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu" \
     --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=/tmp/lh.json --quiet
-  kill %1
+  kill "$SERVER"   # not pkill: the auto mode classifier denies it
   python3 -c "import json; d=json.load(open('/tmp/lh.json')); print({k: v['score'] for k, v in d['categories'].items()})"
   ```
 
