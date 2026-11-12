@@ -131,10 +131,11 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 12, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1
+- Nov 11, 2026: https://github.com/micronaut-projects/micronaut-langchain4j/releases/tag/v2.4.0
 - Nov 11, 2026: https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/
 - Nov 10, 2026: https://quarkus.io/blog/ai-root-cause-analysis/
 - Nov 9, 2026: https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/
-- Nov 7, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.0
 - Nov 6, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0
 - Nov 5, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2
 - Nov 4, 2026: https://quarkus.io/blog/agentic-pr-reviewer/
