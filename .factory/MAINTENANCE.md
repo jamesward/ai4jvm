@@ -15,15 +15,17 @@ maintainer has to act: the routine emails its result, and the report (step 7) is
 
 ## 1. Load guidance
 
-- This is a static site with no build, so there are no SkillsJars to extract. Read the `zen-of-projects`
-  Skill from `.factory/skills/zen-of-projects/SKILL.md` if that file exists (an unreleased version is
-  being tested). Otherwise get it from its repository (a fetch of https://start.jamesward.com gets
+- This is a static site with no build, so there are no SkillsJars to extract. Read the `zen-of-websites`
+  and `zen-of-projects` Skills from their repository (a fetch of https://start.jamesward.com gets
   HTTP 403 in cloud sessions):
   `git clone -q --depth 1 https://github.com/jamesward/skills /tmp/jamesward-skills || git -C /tmp/jamesward-skills pull -q`,
-  then read `/tmp/jamesward-skills/skills/zen-of-projects/SKILL.md`. Follow its "Maintenance Routine"
+  then read `/tmp/jamesward-skills/skills/zen-of-websites/SKILL.md` and
+  `/tmp/jamesward-skills/skills/zen-of-projects/SKILL.md` (or their `.factory/skills/<skill>/SKILL.md`
+  copies while an unreleased version is being tested). Follow zen-of-projects' "Maintenance Routine"
   steps that apply to a site, including step 8 ("Improve the factory").
-- Follow its general rules: one source of truth, the rolling PR, the merge / human-review / escalation
-  policy, and the "Website Projects" section. Its sbt, Maven and Gradle sections don't apply.
+- `zen-of-websites` holds everything specific to sites; this file refers to it rather than repeating
+  it. From `zen-of-projects`, follow the general rules: one source of truth, the rolling PR, the merge /
+  human-review / escalation policy. Its sbt, Maven and Gradle sections don't apply.
 - Read `AGENTS.md` (site rules, generated files, publishing) and `CONTRIBUTING.md` (the editorial policy
   every entry must meet).
 
@@ -119,29 +121,10 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
   `curl -s -X POST https://isitagentready.com/api/scan -H 'Content-Type: application/json' -d '{"url":"https://ai4jvm.com"}'`
   (pre-approved in `.claude/settings.json`; it only sends the site's public URL). Report the level and
   the failing checks, and fix what applies. Skip auth-related checks; the site is public.
-- **Performance:** run Lighthouse (the engine behind PageSpeed Insights; don't use the PageSpeed API,
-  which returns HTTP 429 without a key) against your local working copy, so the check covers your
-  changes before they're published. These commands are tested on the cloud VM's OS (Ubuntu 24.04, as
-  root); run them as one command, so `$SERVER` is still set when it's stopped:
-
-  ```bash
-  CHROME="$(readlink -f /opt/pw-browsers/chromium 2>/dev/null)"   # pre-installed in the cloud VM
-  if [ ! -x "$CHROME" ]; then
-    npx -y playwright@1 install-deps chromium >/dev/null 2>&1
-    npx -y playwright@1 install chromium >/dev/null 2>&1
-    CHROME="$(find ~/.cache/ms-playwright -type f -path '*chrome-linux*/chrome' | head -1)"
-  fi
-  python3 -m http.server 8765 >/dev/null 2>&1 & SERVER=$!
-  CHROME_PATH="$CHROME" npx -y lighthouse@12 http://localhost:8765/ --chrome-path="$CHROME" \
-    --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu" \
-    --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=/tmp/lh.json --quiet
-  kill "$SERVER"   # not pkill: the auto mode classifier denies it
-  python3 -c "import json; d=json.load(open('/tmp/lh.json')); print({k: v['score'] for k, v in d['categories'].items()})"
-  ```
-
-  Read the scores and failing audits in `/tmp/lh.json`. Fix regressions caused by this run's changes,
-  and fix cheap improvements. Report the four scores. If Lighthouse still can't run, report the exact
-  error and carry on.
+- **Performance:** run Lighthouse with the recipe in `zen-of-websites` "Checks" (the image's Chromium,
+  `lh`, the baseline on a worktree of `main`, the noise rule). Check `/`. Fix regressions
+  caused by this run's changes, and fix cheap improvements. Report the four scores for this run and the
+  baseline, and the failing audits. If Lighthouse can't run, report the exact error and carry on.
 
 ## 6. Validate and publish
 

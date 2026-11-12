@@ -2,7 +2,7 @@
 
 Single-page website (`index.html`) — HTML + inline CSS, no build step. Published at https://ai4jvm.com.
 
-Follow the `zen-of-projects` Skill (https://start.jamesward.com, "Website Projects"); this file records
+Follow the `zen-of-websites` and `zen-of-projects` Skills (in https://github.com/jamesward/skills); this file records
 only site-specific facts. The maintenance routine is `.factory/MAINTENANCE.md`.
 
 ## Spec
