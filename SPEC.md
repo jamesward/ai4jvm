@@ -136,6 +136,8 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 11, 2026: https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/
 - Nov 10, 2026: https://quarkus.io/blog/ai-root-cause-analysis/
 - Nov 9, 2026: https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/
+- Nov 9, 2026: https://github.com/a2aproject/a2a-java/releases/tag/v1.5.1.Final
+- Nov 8, 2026: https://inside.java/2026/11/08/devoxxbelgium-java-next-programming-models/
 - Nov 6, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0
 - Nov 5, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2
 - Nov 4, 2026: https://quarkus.io/blog/agentic-pr-reviewer/
@@ -145,7 +147,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Oct 23, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
 - Oct 16, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.1.0
 - Oct 8, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.4
-- Sep 28, 2026: https://github.com/a2aproject/a2a-java/releases/tag/v1.4.0.Final
 - Sep 26, 2026: https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
 - Sep 25, 2026: https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/
 - Sep 24, 2026: https://github.com/JetBrains/koog/releases/tag/1.3.0
@@ -173,7 +174,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Aug 18, 2026: https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/
 - Aug 17, 2026: https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc
 - Aug 13, 2026: https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
-- Aug 12, 2026: https://inside.java/2026/08/12/java-mcp-migration/
 
 ---
 
