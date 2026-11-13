@@ -83,16 +83,26 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
 
 - **Look up releases without the GitHub API.** A cloud session's GitHub access covers only this
   repo: `api.github.com` and `gh api` answer "GitHub access to this repository is not enabled for
-  this session" for other repos, and `releases.atom` feeds get HTTP 403. Don't stop there. Use, for
-  every project the News section and the frameworks list track:
-  - **Maven Central** for versions and dates: `curl -fsS --retry 5 --retry-delay 10 --retry-all-errors https://repo.maven.apache.org/maven2/<group path>/<artifact>/maven-metadata.xml`
-    (Maven Central rate-limits cloud sessions with HTTP 429; the retries cover that, and one request at a time helps)
-    (`<release>` and `<lastUpdated>`), with the artifact's coordinates from its README;
-  - **WebFetch** of `https://github.com/<owner>/<repo>/releases` or `.../releases/tag/<tag>` for the
+  this session" for other repos, and `releases.atom` feeds get HTTP 403. Don't stop there. Check
+  every row of the "Release sources" table in `AGENTS.md`, one request at a time, and list each
+  project you checked in the report:
+  - **javadocs.dev** for the latest version:
+    `curl -fsS --retry 5 --retry-delay 10 --retry-all-errors 'https://www.javadocs.dev/api/latest-version?groupId=<group>&artifactId=<artifact>&includePreReleases=true'`
+    (drop `includePreReleases` to get the latest stable version). It reads Maven Central's metadata, so it
+    gives the same versions as Maven Central without sending requests there. The API is described at
+    `https://www.javadocs.dev/openapi.json`.
+  - **Maven Central** for a new version's date, and as the fallback when javadocs.dev fails:
+    `curl -fsS --retry 5 --retry-delay 10 --retry-all-errors https://repo.maven.apache.org/maven2/<group path>/<artifact>/maven-metadata.xml`
+    (`<release>` and `<lastUpdated>`). Maven Central rate-limits cloud sessions with HTTP 429; the
+    retries cover that, and fetching it only for new versions keeps the request count low.
+  - **WebFetch** of `https://github.com/<repo>/releases` or `.../releases/tag/<tag>` for the
     release notes you describe. The list page shows dates without a year, so take the year from
     Maven Central or the tag page.
 
-  If a source still fails, report which projects you couldn't check and why, and check the rest.
+  If a row's coordinates return 404 or a version older than the GitHub releases page shows, the
+  project may have moved: find the current coordinates in its README or release notes and fix the
+  row (that's an `AGENTS.md` change, so it follows step 3's "Needs a human" rule). If a source still
+  fails, report which projects you couldn't check and why, and check the rest.
 - Search for missing, important items that meet `CONTRIBUTING.md`: news, new releases, frameworks,
   people, resources. Update or retire stale ones.
 - **News:** apply the News notes in `SPEC.md` to the whole list on every run, not only to the items
