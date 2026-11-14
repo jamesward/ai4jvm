@@ -131,6 +131,8 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 14, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5
+- Nov 13, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.2.0
 - Nov 12, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1
 - Nov 11, 2026: https://github.com/micronaut-projects/micronaut-langchain4j/releases/tag/v2.4.0
 - Nov 11, 2026: https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/
@@ -145,8 +147,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Oct 28, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.23.0
 - Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
 - Oct 23, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
-- Oct 16, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.1.0
-- Oct 8, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.4
 - Sep 26, 2026: https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
 - Sep 25, 2026: https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/
 - Sep 24, 2026: https://github.com/JetBrains/koog/releases/tag/1.3.0
@@ -173,7 +173,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Aug 18, 2026: https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/
 - Aug 18, 2026: https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/
 - Aug 17, 2026: https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc
-- Aug 13, 2026: https://javapro.io/2026/08/13/building-ai-driven-java-systems-with-spring-ai-and-java-26/
 
 ---
 
