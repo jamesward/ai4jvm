@@ -131,6 +131,7 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 16, 2026: https://github.com/akka/akka-sdk/releases/tag/v3.7.2
 - Nov 14, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5
 - Nov 13, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.2.0
 - Nov 12, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1
