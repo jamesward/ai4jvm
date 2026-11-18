@@ -131,6 +131,8 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 18, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.24.0
+- Nov 18, 2026: https://github.com/google/adk-java/releases/tag/v1.15.0
 - Nov 17, 2026: https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/
 - Nov 16, 2026: https://github.com/akka/akka-sdk/releases/tag/v3.7.2
 - Nov 14, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5
@@ -144,8 +146,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 6, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0
 - Nov 5, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2
 - Nov 4, 2026: https://quarkus.io/blog/agentic-pr-reviewer/
-- Nov 2, 2026: https://github.com/google/adk-java/releases/tag/v1.14.0
-- Oct 28, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.23.0
 - Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
 - Oct 23, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
 - Sep 26, 2026: https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
@@ -173,7 +173,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Aug 24, 2026: https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
 - Aug 18, 2026: https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/
 - Aug 18, 2026: https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/
-- Aug 17, 2026: https://www.linkedin.com/pulse/spring-ai-recipe-reasoning-actingreact-craig-walls-c4uvc
 
 ---
 
