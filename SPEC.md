@@ -131,6 +131,7 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 19, 2026: https://foojay.io/today/agent-tool-calls-run-twice/
 - Nov 18, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.24.0
 - Nov 18, 2026: https://github.com/google/adk-java/releases/tag/v1.15.0
 - Nov 17, 2026: https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/
@@ -171,8 +172,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Sep 3, 2026: https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
 - Sep 1, 2026: https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/
 - Aug 24, 2026: https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
-- Aug 18, 2026: https://javapro.io/2026/08/18/devops-patterns-and-java-26-for-on-premises-llm-platforms-in-safety-critical-environments/
-- Aug 18, 2026: https://foojay.io/today/vibe-coding-maven-and-the-dependencies-you-didnt-choose/
 
 ---
 
