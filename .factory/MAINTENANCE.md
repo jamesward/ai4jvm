@@ -129,9 +129,10 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
   you add: remove items older than 3 months, and collapse duplicates and overlaps (one item per
   project's releases, per recurring series, per multi-part article, per story) to the newest one.
   Report what you removed and why.
-- Every tracked project's latest release (stable, milestone or RC) gets a News item while it's
-  within 3 months, replacing that project's older item; pre-releases of a line whose stable
-  release is newer are left out.
+- Every tracked project's most recently published release (stable, milestone or RC; on the same
+  day, the stable one) gets a News item while it's within 3 months, replacing that project's
+  older item. A pre-release that was published before the project's latest stable release is
+  left out, even when its version number is higher.
 - **Dates:** every news item carries its own date, as `SPEC.md`'s News notes say: the release's or
   article's publication date taken from the fetched page (for a GitHub release, its published
   date; Maven Central's `<lastUpdated>` confirms the year), never the date you found it. In the

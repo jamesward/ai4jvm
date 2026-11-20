@@ -54,7 +54,7 @@ resolving, find the new ones in the project's README or release notes and fix th
 | A2A Java SDK | `org.a2aproject.sdk:a2a-java-sdk-client` | `a2aproject/a2a-java` | Not `io.github.a2asdk`, which stopped at 1.0.0.Alpha3 |
 | Koog (JetBrains) | `ai.koog:koog-agents-jvm` | `JetBrains/koog` | |
 | AgentScope Java | `io.agentscope:agentscope-core` | `agentscope-ai/agentscope-java` | |
-| LangGraph4j | `org.bsc.langgraph4j:langgraph4j-core` | `langgraph4j/langgraph4j` | Maintains 1.8.x and 1.9.x; GitHub's "Latest" can be the older line |
+| LangGraph4j | `org.bsc.langgraph4j:langgraph4j-core` | `langgraph4j/langgraph4j` | Maintains 1.8.x and 1.9.x; GitHub's "Latest" can be the older line. Maven Central can lag GitHub releases by days: also check the releases page, and take the year from the tag |
 | Spring AI Alibaba | `com.alibaba.cloud.ai:spring-ai-alibaba-agent-framework` | `alibaba/spring-ai-alibaba` | |
 | Semantic Kernel (Java) | `com.microsoft.semantic-kernel:semantickernel-api` | `microsoft/semantic-kernel-java` | GitHub releases lag Maven Central; tags are `java-<version>` |
 | Akka Agents | none on Maven Central | `akka/akka-sdk` | `io.akka:akka-javasdk` is only on `repo.akka.io`, which needs a token; use GitHub releases |
