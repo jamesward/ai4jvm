@@ -120,8 +120,9 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
   doesn't match what you expected, find out which is right before using it, and leave the item out if
   you can't.
 - Always change `SPEC.md` first, then regenerate `index.html`, `llms.txt`, `llms-full.txt` and
-  `sitemap.xml` from it. When content changes, set `sitemap.xml` `lastmod` and the JSON-LD
-  `dateModified` in `index.html` to today, together.
+  `sitemap.xml` from it, then run `python3 .factory/feed.py` to regenerate `feed.xml` from
+  `index.html`. When content changes, set `sitemap.xml` `lastmod` and the JSON-LD `dateModified` in
+  `index.html` to today, together.
 - Fix every `<!-- LINK CHECK: ... -->` marker that `check-site.py` warns about.
 
 ## 5. Check SEO, agent readiness and performance

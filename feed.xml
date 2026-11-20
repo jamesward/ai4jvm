@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI4JVM — Java AI Frameworks, LLM Inference &amp; JVM Tools</title>
+    <link>https://ai4jvm.com/</link>
+    <description>The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.</description>
+    <language>en-us</language>
+    <atom:link href="https://ai4jvm.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Your Agent’s Tool Calls Will Run Twice: Idempotency and Evaluation Gates in Java Services</title>
+      <link>https://foojay.io/today/agent-tool-calls-run-twice/</link>
+      <guid isPermaLink="true">https://foojay.io/today/agent-tool-calls-run-twice/</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Vishnuvardhan Reddy Kaithapuram, who builds production AI agents at Amazon Advertising, shows how timeouts and retries make agent tool calls run twice, and how Java services keyed by logical-operation idempotency keys (stored in DynamoDB) and evaluation gates for playbook and tool changes prevent it</description>
+    </item>
+    <item>
+      <title>LangChain4j 1.24.0 Released</title>
+      <link>https://github.com/langchain4j/langchain4j/releases/tag/1.24.0</link>
+      <guid isPermaLink="true">https://github.com/langchain4j/langchain4j/releases/tag/1.24.0</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds a Decision Scheduler agentic pattern, CDI support for declarative agents, token usage reporting for agentic patterns, Gemini decision models, public model mocks and AI Service call capture in &lt;code&gt;langchain4j-test&lt;/code&gt;, listener linking for nested AI Service calls, and an Infinispan chat memory store; it also removes constants for retired OpenAI models</description>
+    </item>
+    <item>
+      <title>Google ADK for Java 1.15.0 Released</title>
+      <link>https://github.com/google/adk-java/releases/tag/v1.15.0</link>
+      <guid isPermaLink="true">https://github.com/google/adk-java/releases/tag/v1.15.0</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds typed &lt;code&gt;FunctionNode&lt;/code&gt; workflow steps with build-time port checks, a &lt;code&gt;ClassifierNode&lt;/code&gt; and &lt;code&gt;LlmClassifier&lt;/code&gt; for routing, single-turn &lt;code&gt;LlmAgent&lt;/code&gt; nodes, live runs through &lt;code&gt;runLive&lt;/code&gt;, and mid-run approval and input requests, plus A2A fixes and a dev server that listens on 127.0.0.1 by default</description>
+    </item>
+    <item>
+      <title>AI Root Cause Analysis: Architecture, Testing, and Evaluation</title>
+      <link>https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/</link>
+      <guid isPermaLink="true">https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Ales Justin's follow-up to his Nov 10 introduction (two posts so far): how the open-source Quarkus app lets an LLM investigate OpenTelemetry traces, logs and metrics from a Grafana LGTM stack through LangChain4j &lt;code&gt;@RegisterAiService&lt;/code&gt; interfaces, filters telemetry to fit context limits, uses Quarkus Dev MCP for source examination and dashboards, and is evaluated with Toxiproxy chaos tests scored by an LLM-as-judge across OpenAI and Grok</description>
+    </item>
+    <item>
+      <title>Akka SDK 3.7.2 Released</title>
+      <link>https://github.com/akka/akka-sdk/releases/tag/v3.7.2</link>
+      <guid isPermaLink="true">https://github.com/akka/akka-sdk/releases/tag/v3.7.2</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds evaluator components, test cases with an expected reply for the runner to grade, evaluations started from a workflow run, a &lt;code&gt;DecisionModelClient&lt;/code&gt;, OpenAI Responses API support in the OpenAI model provider, and tool call status in ledger records, plus consumers that start from the latest event or a timestamp</description>
+    </item>
+    <item>
+      <title>AgentScope Java 2.0.5 Released</title>
+      <link>https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5</link>
+      <guid isPermaLink="true">https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+      <description>a maintenance release for the 2.0.x line: new defaults for the Anthropic and Gemini models, stricter &lt;code&gt;@Tool(strict = true)&lt;/code&gt; argument checks, and fixes for state persistence, cancellation, context compaction and sandboxes; existing PostgreSQL, H2 and MySQL tables need a manual migration</description>
+    </item>
+    <item>
+      <title>MCP Java SDK 2.2.0 Released</title>
+      <link>https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.2.0</link>
+      <guid isPermaLink="true">https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.2.0</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds a modern client and a stateless server for the MCP 2026-07-28 specification, JSpecify nullness annotations and per-prompt and resource-template completions; deprecates roots, sampling and logging, and restricts resource subscriptions</description>
+    </item>
+    <item>
+      <title>Quarkus LangChain4j 1.15.1 Released</title>
+      <link>https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1</link>
+      <guid isPermaLink="true">https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <description>&lt;code&gt;@Tool&lt;/code&gt; methods accept &lt;code&gt;Optional&lt;/code&gt; and recursive parameter types and honor &lt;code&gt;ALWAYS_VISIBLE&lt;/code&gt; search behavior, AI service results keep model response metadata, Vertex AI Gemini supports Model Armor, and the project adds an AGENTS.md and Quarkus skills for coding agents</description>
+    </item>
+    <item>
+      <title>Micronaut LangChain4j 2.4.0 Released</title>
+      <link>https://github.com/micronaut-projects/micronaut-langchain4j/releases/tag/v2.4.0</link>
+      <guid isPermaLink="true">https://github.com/micronaut-projects/micronaut-langchain4j/releases/tag/v2.4.0</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds structured outputs from Micronaut JSON Schema, async and reactive AI services, MCP client tools and agents, supervisor agents, Micrometer metrics, Google Gen AI, Milvus and Weaviate stores, JDBC and MongoDB chat memory, and native-image support for model providers</description>
+    </item>
+    <item>
+      <title>Letting a Java AI Agent Request Cancellations with MySQL REST Service</title>
+      <link>https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/</link>
+      <guid isPermaLink="true">https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <description>A N M Bazlur Rahman extends a Java order assistant so a local-LLM LangChain4j agent can list a signed-in customer's orders and create pending cancellation requests through MySQL REST Service endpoints, while a separate trusted path reviews and confirms each request</description>
+    </item>
+    <item>
+      <title>Quarkus Insights #267: Sandboxing Agents with Quarkus, for Quarkus</title>
+      <link>https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/</link>
+      <guid isPermaLink="true">https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Sanne Grinovero presents isx, a Quarkus-based tool that gives each coding agent its own disposable system container so it can work without approval prompts, with a host-side proxy injecting credentials and the agent's work reviewed through a custom Git remote</description>
+    </item>
+    <item>
+      <title>A2A Java SDK 1.5.1.Final Released</title>
+      <link>https://github.com/a2aproject/a2a-java/releases/tag/v1.5.1.Final</link>
+      <guid isPermaLink="true">https://github.com/a2aproject/a2a-java/releases/tag/v1.5.1.Final</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+      <description>patch release after 1.5.0.Final (OpenTelemetry tracing for streaming and push notifications, JPA ownership scopes): fixes REST stream completion, large SSE events in the Vert.x client and unset proto3 fields in JSON-RPC requests, and validates the requested protocol version</description>
+    </item>
+    <item>
+      <title>Java and the Next Generation of Programming Models</title>
+      <link>https://inside.java/2026/11/08/devoxxbelgium-java-next-programming-models/</link>
+      <guid isPermaLink="true">https://inside.java/2026/11/08/devoxxbelgium-java-next-programming-models/</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Ana-Maria Mihalceanu at Devoxx Belgium 2026: building inference on the Foreign Function &amp;amp; Memory API and jextract today, and expressing AI models as plain Java programs that Project Babylon&amp;rsquo;s code reflection lowers to inference engines and hardware accelerators</description>
+    </item>
+    <item>
+      <title>TornadoVM 8.1.0 Released</title>
+      <link>https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0</link>
+      <guid isPermaLink="true">https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
+      <description>binds CUDA kernel arguments to device memory owned by other libraries, adds &lt;code&gt;TaskGraph.consumeFromUnifiedMemory&lt;/code&gt; and an opt-in dynamic-shapes option, publishes the OpenCL and Metal drivers to Maven Central, and fixes copy-back and pinned-memory bugs</description>
+    </item>
+    <item>
+      <title>Spring AI 2.1.0-RC2 Released</title>
+      <link>https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2</link>
+      <guid isPermaLink="true">https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds a &lt;code&gt;DecisionModel&lt;/code&gt; API with Ollama and System One implementations and decision-based RAG post-processors, adds MCP 2026-07-28 protocol revision support to the server, and streams tool call argument deltas</description>
+    </item>
+    <item>
+      <title>Debates, Voting, and Reflection Loops: Composing an Agentic PR Reviewer That Costs Less Than a Dollar</title>
+      <link>https://quarkus.io/blog/agentic-pr-reviewer/</link>
+      <guid isPermaLink="true">https://quarkus.io/blog/agentic-pr-reviewer/</guid>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Mario Fusco builds a Quarkus LangChain4j agentic app that reviews a GitHub pull request with routing, debate, voting, reflection and human-in-the-loop patterns, producing a scored report; reviewing a 2,900-line PR cost $0.45</description>
+    </item>
+    <item>
+      <title>Embabel Agent 1.5.4 Released</title>
+      <link>https://github.com/embabel/embabel-agent/releases/tag/v1.5.4</link>
+      <guid isPermaLink="true">https://github.com/embabel/embabel-agent/releases/tag/v1.5.4</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <description>adds typed decision specs with LLM-backed decision and classification services, Cloudflare Workers AI as a provider, native thinking support for Claude 5.x, GPT-6 models in the OpenAI catalog, and an upgrade to Spring Shell 4</description>
+    </item>
+    <item>
+      <title>Quarkus Flow 1.3.0 Released</title>
+      <link>https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0</link>
+      <guid isPermaLink="true">https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+      <description>adds database migration extensions for schema management, input schema validation by default, a synchronous runner interface, and ends generated agentic workflows when an agent throws an error</description>
+    </item>
+    <item>
+      <title>One Database, Two Models</title>
+      <link>https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/</link>
+      <guid isPermaLink="true">https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/</guid>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A N M Bazlur Rahman explores MySQL JSON Duality Views in Java: simpler document reads/writes over JDBC, optional-etag conflict handling, comparisons with JPA/Spring Data JDBC, and read-only LangChain4j tools backed by local Ollama for AI agents</description>
+    </item>
+    <item>
+      <title>BoxLang AI 3.4.0: Gateways, Human-in-the-Loop, and a Full Security Stack</title>
+      <link>https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/</link>
+      <guid isPermaLink="true">https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Luis Majano details platform gateways, a restructured Human-in-the-Loop subsystem with durable decisions and batched approvals, layered prompt-injection/data-loss security controls, and expanded AWS Bedrock support</description>
+    </item>
+    <item>
+      <title>Koog 1.3.0 Released</title>
+      <link>https://github.com/JetBrains/koog/releases/tag/1.3.0</link>
+      <guid isPermaLink="true">https://github.com/JetBrains/koog/releases/tag/1.3.0</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description>adds ready-made &lt;code&gt;LLModel&lt;/code&gt; definitions for the latest Anthropic, OpenAI, Google, Bedrock, DashScope, DeepSeek, Mistral, Ollama, and OpenRouter models, and fixes Google prompt-cache token accounting and Langfuse/Gemini trace display</description>
+    </item>
+    <item>
+      <title>TypeSafe Jev Meets Apache Camel</title>
+      <link>https://camel.apache.org/blog/2026/09/semantic-evaluation-system-one/</link>
+      <guid isPermaLink="true">https://camel.apache.org/blog/2026/09/semantic-evaluation-system-one/</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description>walks through six practical examples of wiring TypeSafe's Jev semantic decision model into Camel routes for fast, structured classifications and judgments in integration workflows</description>
+    </item>
+    <item>
+      <title>B.Y.O.A.</title>
+      <link>https://camel.apache.org/blog/2026/09/camel-tui-byoa/</link>
+      <guid isPermaLink="true">https://camel.apache.org/blog/2026/09/camel-tui-byoa/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Camel 4.23 adds support for bringing your own coding agent, via the Agent Client Protocol, into Camel TUI, paired with Camel Kit to build and inspect integrations in one conversation</description>
+    </item>
+    <item>
+      <title>Camel's Local-Model Coding Benchmark, Round 2</title>
+      <link>https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/</link>
+      <guid isPermaLink="true">https://camel.apache.org/blog/2026/09/camel-local-model-benchmark-round-2/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description>follow-up to the original local-model benchmark post: 31 of 33 found issues fixed in Camel 4.23, with step-by-step accuracy improving from 81% to 92%</description>
+    </item>
+    <item>
+      <title>Spring AI and TypeSafe Jev: Fast, Cheap, Structured Decisions</title>
+      <link>https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment</link>
+      <guid isPermaLink="true">https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <description>introduces Spring AI TypeSafe 0.1.0, a Spring AI Community integration with TypeSafe AI's hosted Jev API for typed classification, scoring, judging, guardrails, RAG filtering and reranking, and tool selection without generating text</description>
+    </item>
+    <item>
+      <title>MCP Goes Stateless, and Quarkus Already Implements It</title>
+      <link>https://quarkus.io/blog/mcp-stateless/</link>
+      <guid isPermaLink="true">https://quarkus.io/blog/mcp-stateless/</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Kevin Dubois explains how the MCP 2026-07-28 spec revision removes required session state so any server instance can handle any request, and how the Quarkus MCP Server's 2.0.x line already supports it while staying backward-compatible with stateful clients</description>
+    </item>
+    <item>
+      <title>Authorizing What an AI Agent May Do in Apache Camel</title>
+      <link>https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/</link>
+      <guid isPermaLink="true">https://camel.apache.org/blog/2026/09/securing-ai-agent-tools/</guid>
+      <pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
+      <description>rather than relying on prompts for security, enforces AI agent tool calls at the boundary using SPIFFE for identity and Open Policy Agent (OPA) for authorization, so a &lt;code&gt;camel-ai-tool&lt;/code&gt;-exposed route can safely expose different capabilities to different callers based on verified identity</description>
+    </item>
+    <item>
+      <title>What's New in the September 2026 Azul Payara Release?</title>
+      <link>https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/</link>
+      <guid isPermaLink="true">https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>MicroProfile 7.1 lands across Payara's product lines, Jakarta Agentic AI support expands to Payara Micro and Embedded (an agent as a CDI bean annotated with &lt;code&gt;@Agent&lt;/code&gt;), and a jackson-databind security patch ships across all supported branches</description>
+    </item>
+    <item>
+      <title>How I Built an AI Assistant for My Career with Java, Spring AI, and MongoDB</title>
+      <link>https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/</link>
+      <guid isPermaLink="true">https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Ricardo Mello builds "RicAI," a Spring Boot career assistant combining Spring AI's &lt;code&gt;VectorStore&lt;/code&gt; (MongoDB Atlas + OpenAI embeddings) for semantic search, a &lt;code&gt;ChatClient&lt;/code&gt; with MongoDB-backed conversation memory, and &lt;code&gt;@Tool&lt;/code&gt;-annotated methods for structured queries and Calendly meeting scheduling</description>
+    </item>
+    <item>
+      <title>Can You Explain the Diff Your AI Agent Just Wrote?</title>
+      <link>https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/</link>
+      <guid isPermaLink="true">https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Viktoria Evdokimova argues passing tests prove correctness but not comprehension, and shows how JetBrains-IDE agents like Explyt surface debugger state and structured test results &amp;mdash; with a rule of thumb: if you can't explain what an AI-generated diff breaks when reverted, you don't understand it well enough to merge it</description>
+    </item>
+    <item>
+      <title>InfoQ Java News Roundup</title>
+      <link>https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/</link>
+      <guid isPermaLink="true">https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/</guid>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
+      <description>weekly Java ecosystem roundup covering the Jakarta Agentic AI 1.0 specification's M1 milestone release and new project website, Google's ADK for Kotlin reaching 1.0 GA, Jakarta CDI 5.0 GA, and point releases across TornadoVM, RefactorFirst, Groovy, and Gradle</description>
+    </item>
+    <item>
+      <title>A2A Jakarta 1.0.0.Final Released</title>
+      <link>https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/</link>
+      <guid isPermaLink="true">https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description>first stable release of Jakarta integrations for the A2A Java SDK's JSON-RPC, gRPC, and HTTP+JSON/REST transports, built on a2a-java 1.3.2.Final, with a new example demonstrating A2A agent deployment across multiple WildFly cluster nodes using JPA and Kafka for shared state</description>
+    </item>
+    <item>
+      <title>ADK for Kotlin 1.0 Announced</title>
+      <link>https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/</link>
+      <guid isPermaLink="true">https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Google's Agent Development Kit for Kotlin reaches full feature parity with ADK Core, adding on-device inference via LiteRT-LM and ML Kit, Firebase AI Logic for hybrid cloud workflows, Room/AppSearch-backed state persistence, and Kotlin Symbol Processing for compile-time tool-schema generation</description>
+    </item>
+    <item>
+      <title>One Base URL, Many Coding Agents</title>
+      <link>https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/</link>
+      <guid isPermaLink="true">https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Yurii Kostyukov shows how to probe an OpenAI-compatible AI gateway's availability from Java's &lt;code&gt;java.net.http&lt;/code&gt; client, plus token-estimate calibration and credential-refresh lessons from building a multi-agent IDE gateway</description>
+    </item>
+    <item>
+      <title>Debugging Is Invariant Discovery</title>
+      <link>https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/</link>
+      <guid isPermaLink="true">https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate>
+      <description>a Kotlin/Spring Boot/Kafka case study showing an AI agent was tactically useful (queries, log reads) but strategically passive without runtime access, and how making implicit business invariants explicit as tests helps both humans and agents spot related failures</description>
+    </item>
+    <item>
+      <title>From Spec-Driven Development to Living Specifications in Java Projects</title>
+      <link>https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/</link>
+      <guid isPermaLink="true">https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Maximillian Arruda introduces SDD4J, a workflow keeping specifications synchronized with code via architecture adapters, testable EARS requirements, and specification-to-test traceability, without forcing a single architectural style</description>
+    </item>
+    <item>
+      <title>Did Your AI Agent Run the Debugger?</title>
+      <link>https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/</link>
+      <guid isPermaLink="true">https://foojay.io/today/did-your-ai-agent-run-the-debugger-one-jvm-bug-two-agent-runs/</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>a case study comparing two Claude agent runs fixing the same JVM bug in a JetBrains plugin, showing that reproducing a failure at a breakpoint beats reasoning from stack traces alone &amp;mdash; fewer tokens, no unnecessary API changes</description>
+    </item>
+    <item>
+      <title>Building an Agentic Warehouse Management System — Part 3: Tools, Decisions, and Actions</title>
+      <link>https://foojay.io/today/building-an-agentic-warehouse-management-system-part-3-tools-decisions-and-actions/</link>
+      <guid isPermaLink="true">https://foojay.io/today/building-an-agentic-warehouse-management-system-part-3-tools-decisions-and-actions/</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Ricardo Mello shows the agent accessing operational data, retrieving business policies via semantic search, deciding on replenishment, and acting through controlled tools that create requests and draft notifications within application-defined boundaries</description>
+    </item>
+    <item>
+      <title>Google Gen AI SDK for Kotlin 1.0 Announced</title>
+      <link>https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini</link>
+      <guid isPermaLink="true">https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <description>a Kotlin Multiplatform (JVM, Android) SDK for the Gemini Developer API and Gemini Enterprise Agent Platform, with coroutines-based streaming, multi-turn chat, automatic function calling, and the Live API, published to Maven Central</description>
+    </item>
+    <item>
+      <title>Observe Your Camel AI Routes with GenAI OpenTelemetry</title>
+      <link>https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/</link>
+      <guid isPermaLink="true">https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description>introduces Camel's new GenAI observability feature, emitting OpenTelemetry spans and Micrometer metrics for LLM routes, demoed via the Camel CLI/JBang with Ollama</description>
+    </item>
+    <item>
+      <title>Micronaut Framework 5.1.2 Released</title>
+      <link>https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/</link>
+      <guid isPermaLink="true">https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/</guid>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+      <description>maintenance release with updates across Core, Cache, Test, Data, Security, Serialization, and Flyway modules</description>
+    </item>
+  </channel>
+</rss>

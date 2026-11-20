@@ -11,6 +11,8 @@ import json
 import re
 import sys
 import xml.etree.ElementTree as ET
+
+import feed
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -160,6 +162,16 @@ if sitemap:
             errors.append(f"sitemap.xml lastmod {sorted(lastmods)} != JSON-LD dateModified {sorted(date_modified)}")
     except ET.ParseError as e:
         errors.append(f"sitemap.xml is not valid XML ({e})")
+
+# feed.xml is generated from index.html's News list by .factory/feed.py and must match it exactly.
+feed_xml = read("feed.xml")
+if html and feed_xml:
+    if feed_xml != feed.build(html):
+        errors.append("feed.xml is out of date with index.html News; run python3 .factory/feed.py")
+    if len(feed.news_items(html)) != html[html.find('<section id="news">'):].split("</section>")[0].count("<li>"):
+        errors.append("feed.py could not parse every index.html news item")
+    if 'type="application/rss+xml" href="/feed.xml"' not in html:
+        errors.append('index.html <head> has no <link rel="alternate" type="application/rss+xml" href="/feed.xml">')
 
 for name in ("llms.txt", "llms-full.txt"):
     text = read(name)

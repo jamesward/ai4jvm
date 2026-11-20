@@ -65,6 +65,7 @@ Questions and answers:
 - Maintain `/llms-full.txt` as the complete site content in plain Markdown — every section, every card with its description and links, and the full FAQ. Agents that need the whole directory fetch this instead of parsing `index.html`. Regenerate it whenever site content changes.
 - Keep `llms.txt`'s section list in sync with `index.html`'s `<h2>` sections (see Heading Hierarchy above)
 - `index.html`'s `<head>` links to both via `<link rel="alternate" type="text/markdown">`
+- Publish `/feed.xml`, an RSS 2.0 feed of the News list: one item per news item with its title, link (also the `guid`), date as `pubDate`, and description. `.factory/feed.py` generates it from `index.html`'s News section; `check-site.py` fails when it is out of date. `index.html`'s `<head>` links to it via `<link rel="alternate" type="application/rss+xml" href="/feed.xml">`
 
 ### Performance
 - No web fonts — use the system font stack only (avoids render-blocking font requests). The stacks name Inter (body) and IBM Plex Sans (headings) first so they are used when installed locally, but never download them

@@ -14,6 +14,8 @@ only site-specific facts. The maintenance routine is `.factory/MAINTENANCE.md`.
    - `index.html`: the page itself
    - `llms.txt`: short index of the sections
    - `llms-full.txt`: every section and entry as Markdown
+   - `feed.xml`: RSS 2.0 feed of the News list; run `python3 .factory/feed.py` after `index.html`
+     changes (never edit it by hand)
    - `sitemap.xml`: `lastmod` equals the JSON-LD `dateModified` in `index.html`; bump both when
      content changes
 3. Run `python3 .factory/check-site.py`. CI runs it too.
