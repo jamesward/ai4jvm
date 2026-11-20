@@ -133,11 +133,19 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
 - Nov 20, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0
+- Nov 20, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.4.0
+- Nov 20, 2026: https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.12.0
+- Nov 20, 2026: https://github.com/openai/openai-java/releases/tag/v4.111.0
 - Nov 19, 2026: https://foojay.io/today/agent-tool-calls-run-twice/
 - Nov 18, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.24.0
 - Nov 18, 2026: https://github.com/google/adk-java/releases/tag/v1.15.0
+- Nov 18, 2026: https://github.com/googleapis/java-genai/releases/tag/v2.6.0
 - Nov 17, 2026: https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/
+- Nov 17, 2026: https://github.com/google/adk-kotlin/releases/tag/v1.6.0
+- Nov 17, 2026: https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.10
+- Nov 17, 2026: https://github.com/helidon-io/helidon/releases/tag/4.5.7
 - Nov 16, 2026: https://github.com/akka/akka-sdk/releases/tag/v3.7.2
+- Nov 16, 2026: https://github.com/deepjavalibrary/djl/releases/tag/v0.40.0
 - Nov 14, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5
 - Nov 13, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.2.0
 - Nov 12, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1
@@ -149,7 +157,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 6, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0
 - Nov 4, 2026: https://quarkus.io/blog/agentic-pr-reviewer/
 - Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
-- Oct 23, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
 - Sep 26, 2026: https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
 - Sep 25, 2026: https://foojay.io/today/boxlang-ai-340-gateways-hitl-security/
 - Sep 24, 2026: https://github.com/JetBrains/koog/releases/tag/1.3.0
@@ -740,6 +747,11 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 - **Badge:** Inference
 - **Description:** Modular, pure-Java AI stack from Quixotic AI (Switzerland). Its jinfer engine provides chat, vision, embeddings, and text-to-speech inference with Spring AI and LangChain4j integrations and GraalVM Native Image support. Companion libraries cover GGUF and Safetensors reading/writing, tokenizers, and quantized matrix multiplication. Apache 2.0.
 - **Links:** [Website](https://qxotic.ai/) · [GitHub](https://github.com/qxoticai/qxotic)
+
+### JUno
+- **Badge:** Inference
+- **Description:** Java Unified Neural Orchestration: pure-Java distributed LLM inference and LoRA fine-tuning for GGUF models, run standalone, as a cluster, or embedded as a JVM library. Splits models across nodes with pipeline or tensor parallelism over gRPC, uses CUDA or ROCm GPUs through the Panama FFI with a CPU fallback, and serves an OpenAI-compatible REST API. Requires JDK 25+; Apache 2.0, published to Maven Central as `cab.ml:juno-bom`.
+- **Links:** [Website](https://ml.cab/juno.html) · [GitHub](https://github.com/ml-cab/juno)
 
 ### TornadoVM
 - **Badge:** Inference

@@ -15,6 +15,27 @@
       <description>the 2.1 GA release adds async client and server API types for MCP, session recall through a &lt;code&gt;conversation_search&lt;/code&gt; tool over session logs, Couchbase and MongoDB Atlas vector store upserts, a SQL Server dialect for &lt;code&gt;JdbcSessionRepository&lt;/code&gt;, and provider-agnostic &lt;code&gt;FinishReasonCategory&lt;/code&gt; normalization</description>
     </item>
     <item>
+      <title>Quarkus Flow 1.4.0 Released</title>
+      <link>https://github.com/quarkiverse/quarkus-flow/releases/tag/1.4.0</link>
+      <guid isPermaLink="true">https://github.com/quarkiverse/quarkus-flow/releases/tag/1.4.0</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds a workflow-scoped instance discovery endpoint (per-workflow instance endpoints move under &lt;code&gt;/q/flow/instances&lt;/code&gt;), detects LangChain4j agent calls at runtime for GenAI span typing, and moves to Quarkus 3.40.1.1</description>
+    </item>
+    <item>
+      <title>Anthropic Java SDK 3.12.0 Released</title>
+      <link>https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.12.0</link>
+      <guid isPermaLink="true">https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.12.0</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds a &lt;code&gt;completionExecutor&lt;/code&gt; client option that runs async requests and their callbacks on a dedicated pool of up to 64 threads, plus the &lt;code&gt;image_dimensions_too_large&lt;/code&gt; error code; &lt;code&gt;BedrockBackend&lt;/code&gt; now sends the user profile ID in the request body</description>
+    </item>
+    <item>
+      <title>OpenAI Java SDK 4.111.0 Released</title>
+      <link>https://github.com/openai/openai-java/releases/tag/v4.111.0</link>
+      <guid isPermaLink="true">https://github.com/openai/openai-java/releases/tag/v4.111.0</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds API support for Live WebRTC standby</description>
+    </item>
+    <item>
       <title>Your Agent’s Tool Calls Will Run Twice: Idempotency and Evaluation Gates in Java Services</title>
       <link>https://foojay.io/today/agent-tool-calls-run-twice/</link>
       <guid isPermaLink="true">https://foojay.io/today/agent-tool-calls-run-twice/</guid>
@@ -36,6 +57,13 @@
       <description>adds typed &lt;code&gt;FunctionNode&lt;/code&gt; workflow steps with build-time port checks, a &lt;code&gt;ClassifierNode&lt;/code&gt; and &lt;code&gt;LlmClassifier&lt;/code&gt; for routing, single-turn &lt;code&gt;LlmAgent&lt;/code&gt; nodes, live runs through &lt;code&gt;runLive&lt;/code&gt;, and mid-run approval and input requests, plus A2A fixes and a dev server that listens on 127.0.0.1 by default</description>
     </item>
     <item>
+      <title>Google Gen AI Java SDK 2.6.0 Released</title>
+      <link>https://github.com/googleapis/java-genai/releases/tag/v2.6.0</link>
+      <guid isPermaLink="true">https://github.com/googleapis/java-genai/releases/tag/v2.6.0</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
+      <description>a maintenance release that updates the SDK&amp;rsquo;s enums</description>
+    </item>
+    <item>
       <title>AI Root Cause Analysis: Architecture, Testing, and Evaluation</title>
       <link>https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/</link>
       <guid isPermaLink="true">https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/</guid>
@@ -43,11 +71,39 @@
       <description>Ales Justin's follow-up to his Nov 10 introduction (two posts so far): how the open-source Quarkus app lets an LLM investigate OpenTelemetry traces, logs and metrics from a Grafana LGTM stack through LangChain4j &lt;code&gt;@RegisterAiService&lt;/code&gt; interfaces, filters telemetry to fit context limits, uses Quarkus Dev MCP for source examination and dashboards, and is evaluated with Toxiproxy chaos tests scored by an LLM-as-judge across OpenAI and Grok</description>
     </item>
     <item>
+      <title>ADK for Kotlin 1.6.0 Released</title>
+      <link>https://github.com/google/adk-kotlin/releases/tag/v1.6.0</link>
+      <guid isPermaLink="true">https://github.com/google/adk-kotlin/releases/tag/v1.6.0</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds live conversations (avatar configuration, non-blocking streaming tools and a &lt;code&gt;/run_live&lt;/code&gt; endpoint), credential services with PKCE sign-in, experimental classifier nodes for workflow routing, OpenTelemetry trace export, and A2A remote-agent fixes</description>
+    </item>
+    <item>
+      <title>LangGraph4j 1.9.10 Released</title>
+      <link>https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.10</link>
+      <guid isPermaLink="true">https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.10</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds input/output schemas and mapper functions to &lt;code&gt;StateGraph&lt;/code&gt; and &lt;code&gt;CompiledGraph&lt;/code&gt; and a versioned, read-only archive for &lt;code&gt;DynamoDBSaverV2&lt;/code&gt;; breaking: &lt;code&gt;MARK_FOR_REMOVAL&lt;/code&gt; no longer propagates to the parent graph automatically</description>
+    </item>
+    <item>
+      <title>Helidon 4.5.7 Released</title>
+      <link>https://github.com/helidon-io/helidon/releases/tag/4.5.7</link>
+      <guid isPermaLink="true">https://github.com/helidon-io/helidon/releases/tag/4.5.7</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+      <description>a Helidon 4 bug-fix release, recommended for all Helidon 4 users, that also ships the Helidon LangChain4j integration at 4.5.7; requires Java 21, with Java 25 recommended</description>
+    </item>
+    <item>
       <title>Akka SDK 3.7.2 Released</title>
       <link>https://github.com/akka/akka-sdk/releases/tag/v3.7.2</link>
       <guid isPermaLink="true">https://github.com/akka/akka-sdk/releases/tag/v3.7.2</guid>
       <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
       <description>adds evaluator components, test cases with an expected reply for the runner to grade, evaluations started from a workflow run, a &lt;code&gt;DecisionModelClient&lt;/code&gt;, OpenAI Responses API support in the OpenAI model provider, and tool call status in ledger records, plus consumers that start from the latest event or a timestamp</description>
+    </item>
+    <item>
+      <title>Deep Java Library 0.40.0 Released</title>
+      <link>https://github.com/deepjavalibrary/djl/releases/tag/v0.40.0</link>
+      <guid isPermaLink="true">https://github.com/deepjavalibrary/djl/releases/tag/v0.40.0</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <description>updates dependencies including Jackson, JavaCV and Spark, and changes how model artifact metadata is handled</description>
     </item>
     <item>
       <title>AgentScope Java 2.0.5 Released</title>
@@ -125,13 +181,6 @@
       <guid isPermaLink="true">https://github.com/embabel/embabel-agent/releases/tag/v1.5.4</guid>
       <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
       <description>adds typed decision specs with LLM-backed decision and classification services, Cloudflare Workers AI as a provider, native thinking support for Claude 5.x, GPT-6 models in the OpenAI catalog, and an upgrade to Spring Shell 4</description>
-    </item>
-    <item>
-      <title>Quarkus Flow 1.3.0 Released</title>
-      <link>https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0</link>
-      <guid isPermaLink="true">https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
-      <description>adds database migration extensions for schema management, input schema validation by default, a synchronous runner interface, and ends generated agentic workflows when an agent throws an error</description>
     </item>
     <item>
       <title>One Database, Two Models</title>
