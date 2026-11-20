@@ -95,14 +95,33 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
     `curl -fsS --retry 5 --retry-delay 10 --retry-all-errors https://repo.maven.apache.org/maven2/<group path>/<artifact>/maven-metadata.xml`
     (`<release>` and `<lastUpdated>`). Maven Central rate-limits cloud sessions with HTTP 429; the
     retries cover that, and fetching it only for new versions keeps the request count low.
+    Under load it can also answer 404 for metadata that exists, even after the retries; a single
+    request a minute later usually succeeds. For a new version's date,
+    `curl -fsSI https://repo.maven.apache.org/maven2/<group path>/<artifact>/<version>/<artifact>-<version>.pom`
+    (its `Last-Modified` header) works too.
   - **WebFetch** of `https://github.com/<repo>/releases` or `.../releases/tag/<tag>` for the
-    release notes you describe. The list page shows dates without a year, so take the year from
-    Maven Central or the tag page.
+    release notes you describe. GitHub leaves the year out of dates from the current year, on both
+    the list page and the tag page, so take the year from Maven Central, or from the tag in a git
+    clone for a project that isn't there (such as Akka).
+  - **A blob-less bare clone** of the project, when a release has no notes (only "Release version
+    x.y.z") and `.../compare/<prev-tag>...<tag>` says "This comparison is taking too long to
+    generate", or when a project isn't on Maven Central and you need the year. It runs in the
+    scratchpad and only reads data; never build or run anything from it:
+    ```bash
+    git clone -q --bare --filter=blob:none https://github.com/<repo> <scratchpad>/<name>.git
+    git -C <scratchpad>/<name>.git log --oneline --no-merges <prev-tag>..<tag>   # what changed
+    git -C <scratchpad>/<name>.git for-each-ref --format='%(creatordate:iso)' refs/tags/<tag>   # tag date
+    ```
+    Describe the release from that commit log. The tag date can be a day off from the published
+    release date because of time zones, so use the day and month the GitHub page shows and take
+    only the year from the tag.
 
   If a row's coordinates return 404 or a version older than the GitHub releases page shows, the
-  project may have moved: find the current coordinates in its README or release notes and fix the
-  row (that's an `AGENTS.md` change, so it follows step 3's "Needs a human" rule). If a source still
-  fails, report which projects you couldn't check and why, and check the rest.
+  project may have moved. A 404 from Maven Central alone isn't enough (see above): treat it as a
+  coordinates problem only when javadocs.dev also fails for that row and a single retry a minute
+  later still returns 404. Then find the current coordinates in its README or release notes and fix
+  the row (that's an `AGENTS.md` change, so it follows step 3's "Needs a human" rule). If a source
+  still fails, report which projects you couldn't check and why, and check the rest.
 - Search for missing, important items that meet `CONTRIBUTING.md`: news, new releases, frameworks,
   people, resources. Update or retire stale ones.
 - **News:** apply the News notes in `SPEC.md` to the whole list on every run, not only to the items
