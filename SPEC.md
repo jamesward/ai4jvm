@@ -131,6 +131,7 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 20, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0
 - Nov 19, 2026: https://foojay.io/today/agent-tool-calls-run-twice/
 - Nov 18, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.24.0
 - Nov 18, 2026: https://github.com/google/adk-java/releases/tag/v1.15.0
@@ -145,7 +146,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 9, 2026: https://github.com/a2aproject/a2a-java/releases/tag/v1.5.1.Final
 - Nov 8, 2026: https://inside.java/2026/11/08/devoxxbelgium-java-next-programming-models/
 - Nov 6, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0
-- Nov 5, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2
 - Nov 4, 2026: https://quarkus.io/blog/agentic-pr-reviewer/
 - Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
 - Oct 23, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.3.0
