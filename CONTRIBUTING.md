@@ -7,6 +7,8 @@ General AI resources are not included - only those that are specific to Java dev
 We aim to include resources that are relevent to > 10% of Java developers using or building on AI.
 The people who are included should be helping those developers learn how to use and build on AI with public projects, presentations, code examples, libraries, tools, etc.
 
+For new projects, the review uses these signals for relevance: a stable release (1.0 or later) or use by a listed framework, a Maven Central artifact, and community traction (for example GitHub stars, downloads, conference talks or articles by people other than the authors). A project with none of these gets "Needs discussion" rather than "Include".
+
 **Project activity matters.** Check that projects and resources are actively maintained (recent commits, releases, or updates). If a project is abandoned but still useful (stable, working, no viable replacement), it can be included with a clear note indicating it is no longer actively maintained. If a project is abandoned and no longer useful (outdated, superseded, or broken), it should not be included.
 
 ## Process

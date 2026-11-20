@@ -54,11 +54,12 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
 - **Policy review:** the item suggests or changes entries, and has no review from this routine since
   its last update. Post one review comment that checks each suggested item against `CONTRIBUTING.md`:
   - Is it Java/JVM-specific?
-  - Is it relevant to more than 10% of Java AI developers?
+  - Is it relevant to more than 10% of Java AI developers? For a new project, check the relevance
+    signals in `CONTRIBUTING.md` and name the ones it meets.
   - Fetch every URL and confirm it's reachable and matches the description.
   - Check project activity: last commit and release date. Abandoned projects get either the "⚠️ No longer
     actively maintained" note or a recommendation to exclude.
-  - End with a recommendation: Include / Include with changes / Exclude.
+  - End with a recommendation: Include / Include with changes / Needs discussion / Exclude.
 - **Add it:** if the review recommends Include (or Include with changes, and the changes are small and
   factual):
   - **Issue:** add the entry yourself in the rolling maintenance PR (step 4), then comment on the issue
@@ -128,6 +129,9 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
   you add: remove items older than 3 months, and collapse duplicates and overlaps (one item per
   project's releases, per recurring series, per multi-part article, per story) to the newest one.
   Report what you removed and why.
+- Every tracked project's latest release (stable, milestone or RC) gets a News item while it's
+  within 3 months, replacing that project's older item; pre-releases of a line whose stable
+  release is newer are left out.
 - **Dates:** every news item carries its own date, as `SPEC.md`'s News notes say: the release's or
   article's publication date taken from the fetched page (for a GitHub release, its published
   date; Maven Central's `<lastUpdated>` confirms the year), never the date you found it. In the
