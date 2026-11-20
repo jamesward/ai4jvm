@@ -6,7 +6,14 @@
     <description>The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.</description>
     <language>en-us</language>
     <atom:link href="https://ai4jvm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Spring AI 2.1.0 Released</title>
+      <link>https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0</link>
+      <guid isPermaLink="true">https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <description>the 2.1 GA release adds async client and server API types for MCP, session recall through a &lt;code&gt;conversation_search&lt;/code&gt; tool over session logs, Couchbase and MongoDB Atlas vector store upserts, a SQL Server dialect for &lt;code&gt;JdbcSessionRepository&lt;/code&gt;, and provider-agnostic &lt;code&gt;FinishReasonCategory&lt;/code&gt; normalization</description>
+    </item>
     <item>
       <title>Your Agent’s Tool Calls Will Run Twice: Idempotency and Evaluation Gates in Java Services</title>
       <link>https://foojay.io/today/agent-tool-calls-run-twice/</link>
@@ -104,13 +111,6 @@
       <guid isPermaLink="true">https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0</guid>
       <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
       <description>binds CUDA kernel arguments to device memory owned by other libraries, adds &lt;code&gt;TaskGraph.consumeFromUnifiedMemory&lt;/code&gt; and an opt-in dynamic-shapes option, publishes the OpenCL and Metal drivers to Maven Central, and fixes copy-back and pinned-memory bugs</description>
-    </item>
-    <item>
-      <title>Spring AI 2.1.0-RC2 Released</title>
-      <link>https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2</link>
-      <guid isPermaLink="true">https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0-RC2</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
-      <description>adds a &lt;code&gt;DecisionModel&lt;/code&gt; API with Ollama and System One implementations and decision-based RAG post-processors, adds MCP 2026-07-28 protocol revision support to the server, and streams tool call argument deltas</description>
     </item>
     <item>
       <title>Debates, Voting, and Reflection Loops: Composing an Agentic PR Reviewer That Costs Less Than a Dollar</title>
