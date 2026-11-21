@@ -6,7 +6,14 @@
     <description>The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.</description>
     <language>en-us</language>
     <atom:link href="https://ai4jvm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Quarkus LangChain4j 2.0.0.CR1 Released</title>
+      <link>https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1</link>
+      <guid isPermaLink="true">https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+      <description>first release candidate of 2.0, ported to Quarkus 4 with a Java 21 baseline: adds a context compaction extension, makes agents CDI beans, runs tools concurrently in streaming AI service methods, honors &lt;code&gt;@P(name)&lt;/code&gt; for tool parameters, and moves to LangChain4j 1.24.0</description>
+    </item>
     <item>
       <title>Spring AI 2.1.0 Released</title>
       <link>https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0</link>
@@ -92,6 +99,13 @@
       <description>a Helidon 4 bug-fix release, recommended for all Helidon 4 users, that also ships the Helidon LangChain4j integration at 4.5.7; requires Java 21, with Java 25 recommended</description>
     </item>
     <item>
+      <title>InfoQ Java News Roundup</title>
+      <link>https://www.infoq.com/news/2026/11/java-news-roundup-nov09-2026/</link>
+      <guid isPermaLink="true">https://www.infoq.com/news/2026/11/java-news-roundup-nov09-2026/</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <description>weekly Java ecosystem roundup covering Spring AI 2.1.0's second release candidate (a &lt;code&gt;DecisionModel&lt;/code&gt; API that returns outcome probabilities), TornadoVM jitLLM 3.0, Lazy Constants proposed for JDK 28, and releases of Spring for Apache Pulsar, GlassFish, Hibernate, TomEE and Seed4J</description>
+    </item>
+    <item>
       <title>Akka SDK 3.7.2 Released</title>
       <link>https://github.com/akka/akka-sdk/releases/tag/v3.7.2</link>
       <guid isPermaLink="true">https://github.com/akka/akka-sdk/releases/tag/v3.7.2</guid>
@@ -118,13 +132,6 @@
       <guid isPermaLink="true">https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.2.0</guid>
       <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
       <description>adds a modern client and a stateless server for the MCP 2026-07-28 specification, JSpecify nullness annotations and per-prompt and resource-template completions; deprecates roots, sampling and logging, and restricts resource subscriptions</description>
-    </item>
-    <item>
-      <title>Quarkus LangChain4j 1.15.1 Released</title>
-      <link>https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1</link>
-      <guid isPermaLink="true">https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1</guid>
-      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
-      <description>&lt;code&gt;@Tool&lt;/code&gt; methods accept &lt;code&gt;Optional&lt;/code&gt; and recursive parameter types and honor &lt;code&gt;ALWAYS_VISIBLE&lt;/code&gt; search behavior, AI service results keep model response metadata, Vertex AI Gemini supports Model Armor, and the project adds an AGENTS.md and Quarkus skills for coding agents</description>
     </item>
     <item>
       <title>Micronaut LangChain4j 2.4.0 Released</title>
@@ -265,13 +272,6 @@
       <guid isPermaLink="true">https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/</guid>
       <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
       <description>Viktoria Evdokimova argues passing tests prove correctness but not comprehension, and shows how JetBrains-IDE agents like Explyt surface debugger state and structured test results &amp;mdash; with a rule of thumb: if you can't explain what an AI-generated diff breaks when reverted, you don't understand it well enough to merge it</description>
-    </item>
-    <item>
-      <title>InfoQ Java News Roundup</title>
-      <link>https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/</link>
-      <guid isPermaLink="true">https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/</guid>
-      <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
-      <description>weekly Java ecosystem roundup covering the Jakarta Agentic AI 1.0 specification's M1 milestone release and new project website, Google's ADK for Kotlin reaching 1.0 GA, Jakarta CDI 5.0 GA, and point releases across TornadoVM, RefactorFirst, Groovy, and Gradle</description>
     </item>
     <item>
       <title>A2A Jakarta 1.0.0.Final Released</title>
