@@ -132,6 +132,7 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 21, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1
 - Nov 20, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0
 - Nov 20, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.4.0
 - Nov 20, 2026: https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.12.0
@@ -144,11 +145,11 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 17, 2026: https://github.com/google/adk-kotlin/releases/tag/v1.6.0
 - Nov 17, 2026: https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.10
 - Nov 17, 2026: https://github.com/helidon-io/helidon/releases/tag/4.5.7
+- Nov 16, 2026: https://www.infoq.com/news/2026/11/java-news-roundup-nov09-2026/
 - Nov 16, 2026: https://github.com/akka/akka-sdk/releases/tag/v3.7.2
 - Nov 16, 2026: https://github.com/deepjavalibrary/djl/releases/tag/v0.40.0
 - Nov 14, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5
 - Nov 13, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.2.0
-- Nov 12, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/1.15.1
 - Nov 11, 2026: https://github.com/micronaut-projects/micronaut-langchain4j/releases/tag/v2.4.0
 - Nov 11, 2026: https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/
 - Nov 9, 2026: https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/
@@ -169,7 +170,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Sep 16, 2026: https://foojay.io/today/whats-new-in-the-september-2026-azul-payara-release/
 - Sep 15, 2026: https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
 - Sep 15, 2026: https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/
-- Sep 14, 2026: https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026/
 - Sep 10, 2026: https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
 - Sep 9, 2026: https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/
 - Sep 9, 2026: https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
