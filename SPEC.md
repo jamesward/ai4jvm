@@ -148,11 +148,11 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 16, 2026: https://www.infoq.com/news/2026/11/java-news-roundup-nov09-2026/
 - Nov 16, 2026: https://github.com/akka/akka-sdk/releases/tag/v3.7.2
 - Nov 16, 2026: https://github.com/deepjavalibrary/djl/releases/tag/v0.40.0
+- Nov 16, 2026: https://quarkus.io/blog/quarkus-insights-268-secure-ai-agents-with-quarkus-langchain4j/
 - Nov 14, 2026: https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5
 - Nov 13, 2026: https://github.com/modelcontextprotocol/java-sdk/releases/tag/v2.2.0
 - Nov 11, 2026: https://github.com/micronaut-projects/micronaut-langchain4j/releases/tag/v2.4.0
 - Nov 11, 2026: https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/
-- Nov 9, 2026: https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/
 - Nov 9, 2026: https://github.com/a2aproject/a2a-java/releases/tag/v1.5.1.Final
 - Nov 8, 2026: https://inside.java/2026/11/08/devoxxbelgium-java-next-programming-models/
 - Nov 6, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0
@@ -171,7 +171,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Sep 15, 2026: https://foojay.io/today/how-i-built-an-ai-assistant-for-my-career-with-java-spring-ai-and-mongodb/
 - Sep 15, 2026: https://foojay.io/today/can-you-explain-the-diff-your-ai-agent-just-wrote/
 - Sep 10, 2026: https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/
-- Sep 9, 2026: https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/
 - Sep 9, 2026: https://foojay.io/today/one-base-url-many-coding-agents-what-an-openai-compatible-gateway-looks-like-from-java-net-http/
 - Sep 8, 2026: https://foojay.io/today/debugging-is-invariant-discovery-what-one-kafka-session-taught-us-about-ai-agents/
 - Sep 4, 2026: https://foojay.io/today/from-spec-driven-development-to-living-specifications-in-java-projects/

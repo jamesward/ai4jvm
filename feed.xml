@@ -120,6 +120,13 @@
       <description>updates dependencies including Jackson, JavaCV and Spark, and changes how model artifact metadata is handled</description>
     </item>
     <item>
+      <title>Quarkus Insights #268: Secure AI agents with Quarkus LangChain4j</title>
+      <link>https://quarkus.io/blog/quarkus-insights-268-secure-ai-agents-with-quarkus-langchain4j/</link>
+      <guid isPermaLink="true">https://quarkus.io/blog/quarkus-insights-268-secure-ai-agents-with-quarkus-langchain4j/</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Eric Deandrea, Willem Jan Glerum and Sergey Beryozkin secure Quarkus LangChain4j agents against the OWASP Top 10 for LLM Applications: input and output guardrails with canary tokens for prompt leakage, RFC 8693 token exchange instead of token passthrough to an MCP server, Keycloak step-up authentication for sensitive tools, and SPIFFE/SPIRE workload identities instead of static API keys for LLM providers</description>
+    </item>
+    <item>
       <title>AgentScope Java 2.0.5 Released</title>
       <link>https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5</link>
       <guid isPermaLink="true">https://github.com/agentscope-ai/agentscope-java/releases/tag/v2.0.5</guid>
@@ -146,13 +153,6 @@
       <guid isPermaLink="true">https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
       <description>A N M Bazlur Rahman extends a Java order assistant so a local-LLM LangChain4j agent can list a signed-in customer's orders and create pending cancellation requests through MySQL REST Service endpoints, while a separate trusted path reviews and confirms each request</description>
-    </item>
-    <item>
-      <title>Quarkus Insights #267: Sandboxing Agents with Quarkus, for Quarkus</title>
-      <link>https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/</link>
-      <guid isPermaLink="true">https://quarkus.io/blog/quarkus-insights-267-sandboxing-agents-with-quarkus-for-quarkus/</guid>
-      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
-      <description>Sanne Grinovero presents isx, a Quarkus-based tool that gives each coding agent its own disposable system container so it can work without approval prompts, with a host-side proxy injecting credentials and the agent's work reviewed through a custom Git remote</description>
     </item>
     <item>
       <title>A2A Java SDK 1.5.1.Final Released</title>
@@ -279,13 +279,6 @@
       <guid isPermaLink="true">https://www.wildfly.org/news/2026/09/10/A2A-Jakarta-1-0-0-Final-is-released/</guid>
       <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
       <description>first stable release of Jakarta integrations for the A2A Java SDK's JSON-RPC, gRPC, and HTTP+JSON/REST transports, built on a2a-java 1.3.2.Final, with a new example demonstrating A2A agent deployment across multiple WildFly cluster nodes using JPA and Kafka for shared state</description>
-    </item>
-    <item>
-      <title>ADK for Kotlin 1.0 Announced</title>
-      <link>https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/</link>
-      <guid isPermaLink="true">https://developers.googleblog.com/announcing-adk-for-kotlin-10-building-production-ready-ai-agents-in-kotlin-android-and-beyond/</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Google's Agent Development Kit for Kotlin reaches full feature parity with ADK Core, adding on-device inference via LiteRT-LM and ML Kit, Firebase AI Logic for hybrid cloud workflows, Room/AppSearch-backed state persistence, and Kotlin Symbol Processing for compile-time tool-schema generation</description>
     </item>
     <item>
       <title>One Base URL, Many Coding Agents</title>
