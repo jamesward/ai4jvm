@@ -6,7 +6,21 @@
     <description>The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.</description>
     <language>en-us</language>
     <atom:link href="https://ai4jvm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 21 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Akka SDK 3.7.3 Released</title>
+      <link>https://github.com/akka/akka-sdk/releases/tag/v3.7.3</link>
+      <guid isPermaLink="true">https://github.com/akka/akka-sdk/releases/tag/v3.7.3</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds messages to autonomous agents, an OpenAI provider for decision models, custom spans and log correlation in evaluators, workflow step names passed to the runtime, a TestKit setting to override single dependencies, and detection of duplicate component ids at compile time and startup</description>
+    </item>
+    <item>
+      <title>InfoQ Java News Roundup</title>
+      <link>https://www.infoq.com/news/2026/11/java-news-roundup-nov16-2026/</link>
+      <guid isPermaLink="true">https://www.infoq.com/news/2026/11/java-news-roundup-nov16-2026/</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+      <description>weekly Java ecosystem roundup covering LangChain4j 1.24.0 (a decision-model-based agentic pattern with &lt;code&gt;DecisionSchedulerPlanner&lt;/code&gt; and &lt;code&gt;DecisionModels&lt;/code&gt;, and resuming suspended agentic systems through &lt;code&gt;AgentMonitor&lt;/code&gt;), GA releases of Spring AI and other Spring projects, the November 2026 Oracle and BellSoft CPU releases, Lazy Constants targeted for JDK 28, and Helidon 27.0.2</description>
+    </item>
     <item>
       <title>Quarkus LangChain4j 2.0.0.CR1 Released</title>
       <link>https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1</link>
@@ -97,20 +111,6 @@
       <guid isPermaLink="true">https://github.com/helidon-io/helidon/releases/tag/4.5.7</guid>
       <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
       <description>a Helidon 4 bug-fix release, recommended for all Helidon 4 users, that also ships the Helidon LangChain4j integration at 4.5.7; requires Java 21, with Java 25 recommended</description>
-    </item>
-    <item>
-      <title>InfoQ Java News Roundup</title>
-      <link>https://www.infoq.com/news/2026/11/java-news-roundup-nov09-2026/</link>
-      <guid isPermaLink="true">https://www.infoq.com/news/2026/11/java-news-roundup-nov09-2026/</guid>
-      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
-      <description>weekly Java ecosystem roundup covering Spring AI 2.1.0's second release candidate (a &lt;code&gt;DecisionModel&lt;/code&gt; API that returns outcome probabilities), TornadoVM jitLLM 3.0, Lazy Constants proposed for JDK 28, and releases of Spring for Apache Pulsar, GlassFish, Hibernate, TomEE and Seed4J</description>
-    </item>
-    <item>
-      <title>Akka SDK 3.7.2 Released</title>
-      <link>https://github.com/akka/akka-sdk/releases/tag/v3.7.2</link>
-      <guid isPermaLink="true">https://github.com/akka/akka-sdk/releases/tag/v3.7.2</guid>
-      <pubDate>Mon, 16 Nov 2026 00:00:00 +0000</pubDate>
-      <description>adds evaluator components, test cases with an expected reply for the runner to grade, evaluations started from a workflow run, a &lt;code&gt;DecisionModelClient&lt;/code&gt;, OpenAI Responses API support in the OpenAI model provider, and tool call status in ledger records, plus consumers that start from the latest event or a timestamp</description>
     </item>
     <item>
       <title>Deep Java Library 0.40.0 Released</title>
