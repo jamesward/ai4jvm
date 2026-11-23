@@ -55,7 +55,7 @@ resolving, find the new ones in the project's README or release notes and fix th
 | Koog (JetBrains) | `ai.koog:koog-agents-jvm` | `JetBrains/koog` | |
 | AgentScope Java | `io.agentscope:agentscope-core` | `agentscope-ai/agentscope-java` | |
 | LangGraph4j | `org.bsc.langgraph4j:langgraph4j-core` | `langgraph4j/langgraph4j` | Maintains 1.8.x and 1.9.x; GitHub's "Latest" can be the older line. Maven Central can lag GitHub releases by days: also check the releases page, and take the year from the tag |
-| Spring AI Alibaba | `com.alibaba.cloud.ai:spring-ai-alibaba-agent-framework` | `alibaba/spring-ai-alibaba` | |
+| Spring AI Alibaba | `com.alibaba.cloud.ai:spring-ai-alibaba-agent-framework` | `alibaba/spring-ai-alibaba` | Maven Central has builds with no GitHub release or tag (`1.1.2.4-security-fix`, Sep 16, 2026). These get no News item. Use the newest GitHub release |
 | Semantic Kernel (Java) | `com.microsoft.semantic-kernel:semantickernel-api` | `microsoft/semantic-kernel-java` | GitHub releases lag Maven Central; tags are `java-<version>` |
 | Akka Agents | none on Maven Central | `akka/akka-sdk` | `io.akka:akka-javasdk` is only on `repo.akka.io`, which needs a token; use GitHub releases |
 | Anthropic Java SDK | `com.anthropic:anthropic-java` | `anthropics/anthropic-sdk-java` | |

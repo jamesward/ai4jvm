@@ -3081,7 +3081,7 @@
 })();
 
 /*
- * Fades content in as it scrolls into view, staggering items that appear in the same batch,
+ * Fades content in as it scrolls into view (content already on screen at load is left alone), staggering items that appear in the same batch,
  * and drives the live search box and type chips that filter the Agent Frameworks grid.
  */
 (function() {
@@ -3097,6 +3097,7 @@
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     targets.forEach(function(el) {
+      if (el.getBoundingClientRect().top < window.innerHeight) return;
       el.classList.add('reveal');
       observer.observe(el);
     });

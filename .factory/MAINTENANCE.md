@@ -128,6 +128,8 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
 - **News:** apply the News notes in `SPEC.md` to the whole list on every run, not only to the items
   you add: remove items older than 3 months, and collapse duplicates and overlaps (one item per
   project's releases, per recurring series, per multi-part article, per story) to the newest one.
+  A vendor blog post announcing a tracked project's release (for example "Announcing ADK for
+  Kotlin 1.0") counts as that project's release item.
   Report what you removed and why.
 - Every tracked project's most recently published release (stable, milestone or RC; on the same
   day, the stable one) gets a News item while it's within 3 months, replacing that project's

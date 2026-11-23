@@ -98,7 +98,7 @@ Questions and answers:
 
 ### Interactivity
 - **Hero background:** a full-width WebGL "scream-wave" shader on a canvas behind the hero text at 45% opacity, recolored to the gold/amber palette and cycling calm → build → scream → collapse on a 7-second loop. It pauses when the hero is off screen or the tab is hidden, draws a single still frame under `prefers-reduced-motion`, and the page works unchanged without WebGL
-- **Scroll reveal:** cards, people, news items, FAQ items, and section headings fade and slide in as they enter the viewport (IntersectionObserver), with a short stagger between items revealed together. Disabled under `prefers-reduced-motion`; without JavaScript everything is visible
+- **Scroll reveal:** cards, people, news items, FAQ items, and section headings fade and slide in as they enter the viewport (IntersectionObserver), with a short stagger between items revealed together. Elements already in the viewport at load are shown at once, so the fade never delays Largest Contentful Paint. Disabled under `prefers-reduced-motion`; without JavaScript everything is visible
 - **Framework filters:** a search box and type chips (All / Framework / SDK / Library, matching the badge text) above the Agent Frameworks & Libraries grid filter its cards in place, with a "no matches" message when nothing matches. Active chip uses the gold accent
 
 ### Link Affordance
@@ -125,7 +125,7 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   it is a GitHub release, a blog announcement or both, and whether it is a stable release, a
   milestone or an RC. A new release replaces the older item; it isn't added next to it.
 - a recurring series: InfoQ's Java news roundups, the monthly Azul/Payara release posts, numbered
-  rounds of the same benchmark, and the like.
+  rounds of the same benchmark, Quarkus Insights episodes, and the like.
 - a multi-part article: one item for the series, linking the newest part and saying how many
   parts there are.
 - the same news from several sources (a GitHub release and its blog post, an announcement and its
