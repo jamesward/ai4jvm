@@ -132,13 +132,16 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 24, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.2.0
+- Nov 24, 2026: https://spring.io/blog/2026/11/24/spring-ai-tool-call-confirmation-park-resume
+- Nov 24, 2026: https://foojay.io/today/evaluating-java-ai-agents-with-harness-evals/
 - Nov 23, 2026: https://github.com/akka/akka-sdk/releases/tag/v3.7.3
 - Nov 23, 2026: https://www.infoq.com/news/2026/11/java-news-roundup-nov16-2026/
+- Nov 23, 2026: https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.13.0
+- Nov 23, 2026: https://github.com/openai/openai-java/releases/tag/v4.112.0
 - Nov 21, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1
 - Nov 20, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0
 - Nov 20, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.4.0
-- Nov 20, 2026: https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.12.0
-- Nov 20, 2026: https://github.com/openai/openai-java/releases/tag/v4.111.0
 - Nov 19, 2026: https://foojay.io/today/agent-tool-calls-run-twice/
 - Nov 18, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.24.0
 - Nov 18, 2026: https://github.com/google/adk-java/releases/tag/v1.15.0
@@ -155,7 +158,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 11, 2026: https://foojay.io/today/java-ai-agent-mysql-rest-service-cancellations/
 - Nov 9, 2026: https://github.com/a2aproject/a2a-java/releases/tag/v1.5.1.Final
 - Nov 8, 2026: https://inside.java/2026/11/08/devoxxbelgium-java-next-programming-models/
-- Nov 6, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.1.0
 - Nov 4, 2026: https://quarkus.io/blog/agentic-pr-reviewer/
 - Oct 28, 2026: https://github.com/embabel/embabel-agent/releases/tag/v1.5.4
 - Sep 26, 2026: https://foojay.io/today/one-database-two-models-mysql-json-duality-views-java/
@@ -754,7 +756,7 @@ Run models, train classifiers, and do ML inference directly on the JVM — no Py
 
 ### TornadoVM
 - **Badge:** Inference
-- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, and Apple Metal at runtime, running on GPUs and multi-core CPUs. Powers jitLLM's GPU acceleration. v7.0.0 adds a TileContext API for GPU tile-based compute, a cuDF library-task provider, and improved half-precision (FP16) handling across the CUDA, OpenCL, and Metal backends. From the University of Manchester's Beehive Lab.
+- **Description:** GPU programming framework for Java — JIT-compiles Java bytecode into CUDA, OpenCL, Apple Metal and AMD HIP at runtime, running on GPUs and multi-core CPUs. Powers jitLLM's GPU acceleration. v8.2.0 adds a HIP backend for AMD GPUs and support for Eclipse OpenJ9/IBM Semeru. From the University of Manchester's Beehive Lab.
 - **Links:** [Website](https://www.tornadovm.org) · [GitHub](https://github.com/beehive-lab/TornadoVM) · [Docs](https://tornadovm.readthedocs.io/en/latest/)
 
 ### ModelJARs
