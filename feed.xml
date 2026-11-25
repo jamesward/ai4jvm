@@ -6,7 +6,14 @@
     <description>The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.</description>
     <language>en-us</language>
     <atom:link href="https://ai4jvm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Quarkus 4.0 Released</title>
+      <link>https://quarkus.io/blog/quarkus-4-0-released/</link>
+      <guid isPermaLink="true">https://quarkus.io/blog/quarkus-4-0-released/</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 +0000</pubDate>
+      <description>the new major requires Java 21 and moves to Vert.x 5, Netty 4.2, Jackson 3 and Hibernate ORM 8; Quarkus Agent MCP is now the recommended way to use AI coding agents, extensions can ship agent skills, and Quarkus LangChain4j 2.0 and Quarkus MCP Server 2.0 are available as platform members</description>
+    </item>
     <item>
       <title>TornadoVM 8.2.0 Released</title>
       <link>https://github.com/beehive-lab/TornadoVM/releases/tag/v8.2.0</link>
@@ -29,6 +36,20 @@
       <description>Geertjan Wielenga runs repeatable, scored evaluations of Spring AI and LangChain4j agents with the Apache 2.0 harness-evals framework: exposing the agent over HTTP, defining goldens and metrics, importing OpenTelemetry data, and failing CI builds on evaluation regressions</description>
     </item>
     <item>
+      <title>Anthropic Java SDK 3.14.0 Released</title>
+      <link>https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.14.0</link>
+      <guid isPermaLink="true">https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.14.0</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds a shorthand for a federation rule's service account target, Google-managed data controls for Google Cloud projects and user profiles, and support for compliance review cases, notices and items</description>
+    </item>
+    <item>
+      <title>OpenAI Java SDK 4.113.0 Released</title>
+      <link>https://github.com/openai/openai-java/releases/tag/v4.113.0</link>
+      <guid isPermaLink="true">https://github.com/openai/openai-java/releases/tag/v4.113.0</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <description>adds healthcare model IDs for the Responses API</description>
+    </item>
+    <item>
       <title>Akka SDK 3.7.3 Released</title>
       <link>https://github.com/akka/akka-sdk/releases/tag/v3.7.3</link>
       <guid isPermaLink="true">https://github.com/akka/akka-sdk/releases/tag/v3.7.3</guid>
@@ -41,20 +62,6 @@
       <guid isPermaLink="true">https://www.infoq.com/news/2026/11/java-news-roundup-nov16-2026/</guid>
       <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
       <description>weekly Java ecosystem roundup covering LangChain4j 1.24.0 (a decision-model-based agentic pattern with &lt;code&gt;DecisionSchedulerPlanner&lt;/code&gt; and &lt;code&gt;DecisionModels&lt;/code&gt;, and resuming suspended agentic systems through &lt;code&gt;AgentMonitor&lt;/code&gt;), GA releases of Spring AI and other Spring projects, the November 2026 Oracle and BellSoft CPU releases, Lazy Constants targeted for JDK 28, and Helidon 27.0.2</description>
-    </item>
-    <item>
-      <title>Anthropic Java SDK 3.13.0 Released</title>
-      <link>https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.13.0</link>
-      <guid isPermaLink="true">https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.13.0</guid>
-      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
-      <description>lets &lt;code&gt;BedrockBackend&lt;/code&gt; use a custom base URL (for example a VPC interface endpoint) through &lt;code&gt;baseUrl(...)&lt;/code&gt; or &lt;code&gt;ANTHROPIC_BEDROCK_BASE_URL&lt;/code&gt;, adds an error code to Message Batches creation and External Storage to the Admin API beta, and keeps tool input that streams without deltas</description>
-    </item>
-    <item>
-      <title>OpenAI Java SDK 4.112.0 Released</title>
-      <link>https://github.com/openai/openai-java/releases/tag/v4.112.0</link>
-      <guid isPermaLink="true">https://github.com/openai/openai-java/releases/tag/v4.112.0</guid>
-      <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
-      <description>adds an automatic tool runner for Chat Completions, vector-store polling and bulk upload helpers, a custom request helper, spending limits for agent sessions, and request IDs on service errors</description>
     </item>
     <item>
       <title>Quarkus LangChain4j 2.0.0.CR1 Released</title>
@@ -342,13 +349,6 @@
       <guid isPermaLink="true">https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/</guid>
       <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
       <description>introduces Camel's new GenAI observability feature, emitting OpenTelemetry spans and Micrometer metrics for LLM routes, demoed via the Camel CLI/JBang with Ollama</description>
-    </item>
-    <item>
-      <title>Micronaut Framework 5.1.2 Released</title>
-      <link>https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/</link>
-      <guid isPermaLink="true">https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/</guid>
-      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
-      <description>maintenance release with updates across Core, Cache, Test, Data, Security, Serialization, and Flyway modules</description>
     </item>
   </channel>
 </rss>
