@@ -132,13 +132,15 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 26, 2026: https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges
+- Nov 26, 2026: https://inside.java/podcast/76/
+- Nov 26, 2026: https://github.com/openai/openai-java/releases/tag/v4.114.0
+- Nov 24, 2026: https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.14.0
 - Nov 24, 2026: https://github.com/beehive-lab/TornadoVM/releases/tag/v8.2.0
 - Nov 24, 2026: https://spring.io/blog/2026/11/24/spring-ai-tool-call-confirmation-park-resume
 - Nov 24, 2026: https://foojay.io/today/evaluating-java-ai-agents-with-harness-evals/
 - Nov 23, 2026: https://github.com/akka/akka-sdk/releases/tag/v3.7.3
 - Nov 23, 2026: https://www.infoq.com/news/2026/11/java-news-roundup-nov16-2026/
-- Nov 23, 2026: https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.13.0
-- Nov 23, 2026: https://github.com/openai/openai-java/releases/tag/v4.112.0
 - Nov 21, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1
 - Nov 20, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0
 - Nov 20, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.4.0
@@ -180,7 +182,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Sep 3, 2026: https://foojay.io/today/building-an-agentic-warehouse-management-system-part-3-tools-decisions-and-actions/
 - Sep 3, 2026: https://cloud.google.com/blog/topics/developers-practitioners/announcing-the-google-gen-ai-sdk-for-kotlin-10-idiomatic-multiplatform-access-to-gemini
 - Sep 1, 2026: https://camel.apache.org/blog/2026/09/camel-genai-observability-jbang/
-- Aug 24, 2026: https://micronaut.io/2026/08/24/micronaut-framework-5-1-2/
 
 ---
 
