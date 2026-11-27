@@ -92,6 +92,9 @@ nothing is not an action: even "waiting on the contributor" gets recorded.
     (drop `includePreReleases` to get the latest stable version). It reads Maven Central's metadata, so it
     gives the same versions as Maven Central without sending requests there. The API is described at
     `https://www.javadocs.dev/openapi.json`.
+  - **`git ls-remote --tags --refs https://github.com/<repo>`** for the newest tags of a row whose
+    Notes say it isn't on Maven Central or that GitHub and Maven Central disagree. It needs no
+    API access and doesn't clone. Sort with `sort -V`; fetch the release page only for a new tag.
   - **Maven Central** for a new version's date, and as the fallback when javadocs.dev fails:
     `curl -fsS --retry 5 --retry-delay 10 --retry-all-errors https://repo.maven.apache.org/maven2/<group path>/<artifact>/maven-metadata.xml`
     (`<release>` and `<lastUpdated>`). Maven Central rate-limits cloud sessions with HTTP 429; the

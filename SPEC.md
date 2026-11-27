@@ -119,7 +119,7 @@ Questions and answers:
 ## News
 
 Latest headlines about the Java AI ecosystem. Each item has a link and brief description.
-Note: Order by date, newest first. Don't show news older than 3 months (by the item's own date).
+Note: Order by date, newest first. Don't show news older than 3 months (by the item's own date); an item dated exactly 3 months ago stays until the next day.
 Note: No duplicates or overlapping items. Each of these gets at most one item, the newest:
 - a project's releases: one item for its latest release (for example one Spring AI release), whether
   it is a GitHub release, a blog announcement or both, and whether it is a stable release, a

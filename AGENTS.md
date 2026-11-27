@@ -53,7 +53,7 @@ resolving, find the new ones in the project's README or release notes and fix th
 | MCP Java SDK | `io.modelcontextprotocol.sdk:mcp` | `modelcontextprotocol/java-sdk` | |
 | A2A Java SDK | `org.a2aproject.sdk:a2a-java-sdk-client` | `a2aproject/a2a-java` | Not `io.github.a2asdk`, which stopped at 1.0.0.Alpha3 |
 | Koog (JetBrains) | `ai.koog:koog-agents-jvm` | `JetBrains/koog` | |
-| AgentScope Java | `io.agentscope:agentscope-core` | `agentscope-ai/agentscope-java` | |
+| AgentScope Java | `io.agentscope:agentscope-core` | `agentscope-ai/agentscope-java` | `2.1.0-BETA1` (Oct 8, 2026) predates the stable 2.0.5, so it gets no News item; compare the stable version |
 | LangGraph4j | `org.bsc.langgraph4j:langgraph4j-core` | `langgraph4j/langgraph4j` | Maintains 1.8.x and 1.9.x; GitHub's "Latest" can be the older line. Maven Central can lag GitHub releases by days: also check the releases page, and take the year from the tag |
 | Spring AI Alibaba | `com.alibaba.cloud.ai:spring-ai-alibaba-agent-framework` | `alibaba/spring-ai-alibaba` | Maven Central has builds with no GitHub release or tag (`1.1.2.4-security-fix`, Sep 16, 2026). These get no News item. Use the newest GitHub release |
 | Semantic Kernel (Java) | `com.microsoft.semantic-kernel:semantickernel-api` | `microsoft/semantic-kernel-java` | GitHub releases lag Maven Central; tags are `java-<version>` |
