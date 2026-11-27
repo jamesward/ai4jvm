@@ -6,7 +6,28 @@
     <description>The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.</description>
     <language>en-us</language>
     <atom:link href="https://ai4jvm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 26 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Spring AI Alibaba 2.1.0.0 Released</title>
+      <link>https://github.com/alibaba/spring-ai-alibaba/releases/tag/v2.1.0.0</link>
+      <guid isPermaLink="true">https://github.com/alibaba/spring-ai-alibaba/releases/tag/v2.1.0.0</guid>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 +0000</pubDate>
+      <description>moves to Spring AI 2.1.0, Spring Boot 4.2.0 and MCP Java SDK 2.2.0, adds tool-call approval with resume from checkpoints and default per-tool and per-turn call limits in ReactAgent, and adds DashScope RAG, image, video and audio APIs to the Alibaba Cloud extensions</description>
+    </item>
+    <item>
+      <title>LangChain4j 1.24.1 Released</title>
+      <link>https://github.com/langchain4j/langchain4j/releases/tag/1.24.1</link>
+      <guid isPermaLink="true">https://github.com/langchain4j/langchain4j/releases/tag/1.24.1</guid>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 +0000</pubDate>
+      <description>a security and stability release: media given by URL is passed to the provider instead of downloaded, the Tika and PDFBox parsers cap extracted text, &lt;code&gt;SqlFilterParser&lt;/code&gt; limits filter size, nesting and parse time, and the prompt injection guardrail avoids deep regex recursion; some of these limits are breaking changes</description>
+    </item>
+    <item>
+      <title>Building Token Budgets for Spring AI: The Problems I Didn't Expect</title>
+      <link>https://foojay.io/today/building-token-budgets-for-spring-ai-the-problems-i-didnt-expect/</link>
+      <guid isPermaLink="true">https://foojay.io/today/building-token-budgets-for-spring-ai-the-problems-i-didnt-expect/</guid>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Ujjwal Tiwari presents Token Allowance, a Spring Boot starter that enforces token and dollar budgets on Spring AI &lt;code&gt;ChatClient&lt;/code&gt; calls per user, tenant and session, and explains checking budgets per model call, reserve-then-settle accounting, normalizing provider token usage and sharing state through Redis</description>
+    </item>
     <item>
       <title>Decision Models in Spring AI 2.1: Yes, No, and How Sure</title>
       <link>https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges</link>
@@ -97,13 +118,6 @@
       <guid isPermaLink="true">https://foojay.io/today/agent-tool-calls-run-twice/</guid>
       <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
       <description>Vishnuvardhan Reddy Kaithapuram, who builds production AI agents at Amazon Advertising, shows how timeouts and retries make agent tool calls run twice, and how Java services keyed by logical-operation idempotency keys (stored in DynamoDB) and evaluation gates for playbook and tool changes prevent it</description>
-    </item>
-    <item>
-      <title>LangChain4j 1.24.0 Released</title>
-      <link>https://github.com/langchain4j/langchain4j/releases/tag/1.24.0</link>
-      <guid isPermaLink="true">https://github.com/langchain4j/langchain4j/releases/tag/1.24.0</guid>
-      <pubDate>Wed, 18 Nov 2026 00:00:00 +0000</pubDate>
-      <description>adds a Decision Scheduler agentic pattern, CDI support for declarative agents, token usage reporting for agentic patterns, Gemini decision models, public model mocks and AI Service call capture in &lt;code&gt;langchain4j-test&lt;/code&gt;, listener linking for nested AI Service calls, and an Infinispan chat memory store; it also removes constants for retired OpenAI models</description>
     </item>
     <item>
       <title>Google ADK for Java 1.15.0 Released</title>

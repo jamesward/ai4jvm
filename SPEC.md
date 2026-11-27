@@ -132,6 +132,9 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 27, 2026: https://github.com/alibaba/spring-ai-alibaba/releases/tag/v2.1.0.0
+- Nov 27, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.24.1
+- Nov 27, 2026: https://foojay.io/today/building-token-budgets-for-spring-ai-the-problems-i-didnt-expect/
 - Nov 26, 2026: https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges
 - Nov 26, 2026: https://inside.java/podcast/76/
 - Nov 26, 2026: https://github.com/openai/openai-java/releases/tag/v4.114.0
@@ -145,7 +148,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 20, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0
 - Nov 20, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.4.0
 - Nov 19, 2026: https://foojay.io/today/agent-tool-calls-run-twice/
-- Nov 18, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.24.0
 - Nov 18, 2026: https://github.com/google/adk-java/releases/tag/v1.15.0
 - Nov 18, 2026: https://github.com/googleapis/java-genai/releases/tag/v2.6.0
 - Nov 17, 2026: https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/
