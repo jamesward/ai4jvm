@@ -132,8 +132,10 @@ Note: No duplicates or overlapping items. Each of these gets at most one item, t
   foojay or InfoQ coverage): keep the most informative source.
 Note: Every item starts with its own date, the release's or the article's publication date as the page itself shows it, in the form `Nov 4, 2026`, then a colon and the link. The published item shows the same date.
 
+- Nov 28, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0
 - Nov 27, 2026: https://github.com/alibaba/spring-ai-alibaba/releases/tag/v2.1.0.0
 - Nov 27, 2026: https://github.com/langchain4j/langchain4j/releases/tag/1.24.1
+- Nov 27, 2026: https://github.com/langgraph4j/langgraph4j/releases/tag/v2.0.0-beta1
 - Nov 27, 2026: https://foojay.io/today/building-token-budgets-for-spring-ai-the-problems-i-didnt-expect/
 - Nov 26, 2026: https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges
 - Nov 26, 2026: https://inside.java/podcast/76/
@@ -144,7 +146,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 24, 2026: https://foojay.io/today/evaluating-java-ai-agents-with-harness-evals/
 - Nov 23, 2026: https://github.com/akka/akka-sdk/releases/tag/v3.7.3
 - Nov 23, 2026: https://www.infoq.com/news/2026/11/java-news-roundup-nov16-2026/
-- Nov 21, 2026: https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1
 - Nov 20, 2026: https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0
 - Nov 20, 2026: https://github.com/quarkiverse/quarkus-flow/releases/tag/1.4.0
 - Nov 19, 2026: https://foojay.io/today/agent-tool-calls-run-twice/
@@ -152,7 +153,6 @@ Note: Every item starts with its own date, the release's or the article's public
 - Nov 18, 2026: https://github.com/googleapis/java-genai/releases/tag/v2.6.0
 - Nov 17, 2026: https://quarkus.io/blog/ai-root-cause-analysis-deep-dive/
 - Nov 17, 2026: https://github.com/google/adk-kotlin/releases/tag/v1.6.0
-- Nov 17, 2026: https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.10
 - Nov 17, 2026: https://github.com/helidon-io/helidon/releases/tag/4.5.7
 - Nov 16, 2026: https://github.com/deepjavalibrary/djl/releases/tag/v0.40.0
 - Nov 16, 2026: https://quarkus.io/blog/quarkus-insights-268-secure-ai-agents-with-quarkus-langchain4j/
