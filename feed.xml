@@ -6,7 +6,14 @@
     <description>The curated guide to AI on the JVM — compare Java AI agent frameworks (Spring AI, LangChain4j, Koog), run LLMs locally, and find MCP tools and resources.</description>
     <language>en-us</language>
     <atom:link href="https://ai4jvm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 27 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Quarkus LangChain4j 2.0.0 Released</title>
+      <link>https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0</link>
+      <guid isPermaLink="true">https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0</guid>
+      <pubDate>Sat, 28 Nov 2026 00:00:00 +0000</pubDate>
+      <description>the 2.0 GA release for Quarkus 4: since the release candidate, &lt;code&gt;@RegisterAiService&lt;/code&gt; classes are injectable CDI beans, Azure OpenAI v1 endpoints are supported for chat and embedding models, Ollama batches embedding segments into fewer requests, Mistral streaming reports tool calls, and Easy RAG dev mode works on Quarkus 4</description>
+    </item>
     <item>
       <title>Spring AI Alibaba 2.1.0.0 Released</title>
       <link>https://github.com/alibaba/spring-ai-alibaba/releases/tag/v2.1.0.0</link>
@@ -20,6 +27,13 @@
       <guid isPermaLink="true">https://github.com/langchain4j/langchain4j/releases/tag/1.24.1</guid>
       <pubDate>Fri, 27 Nov 2026 00:00:00 +0000</pubDate>
       <description>a security and stability release: media given by URL is passed to the provider instead of downloaded, the Tika and PDFBox parsers cap extracted text, &lt;code&gt;SqlFilterParser&lt;/code&gt; limits filter size, nesting and parse time, and the prompt injection guardrail avoids deep regex recursion; some of these limits are breaking changes</description>
+    </item>
+    <item>
+      <title>LangGraph4j 2.0.0-beta1 Released</title>
+      <link>https://github.com/langgraph4j/langgraph4j/releases/tag/v2.0.0-beta1</link>
+      <guid isPermaLink="true">https://github.com/langgraph4j/langgraph4j/releases/tag/v2.0.0-beta1</guid>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 +0000</pubDate>
+      <description>first beta of 2.0, which moves to a Java 21 baseline and async-generator 6.0.0, fixes resuming nested subgraphs, adds CORS support to the Jetty Studio, and updates to Spring AI 2.1.0 and LangChain4j 1.24.0</description>
     </item>
     <item>
       <title>Building Token Budgets for Spring AI: The Problems I Didn't Expect</title>
@@ -92,13 +106,6 @@
       <description>weekly Java ecosystem roundup covering LangChain4j 1.24.0 (a decision-model-based agentic pattern with &lt;code&gt;DecisionSchedulerPlanner&lt;/code&gt; and &lt;code&gt;DecisionModels&lt;/code&gt;, and resuming suspended agentic systems through &lt;code&gt;AgentMonitor&lt;/code&gt;), GA releases of Spring AI and other Spring projects, the November 2026 Oracle and BellSoft CPU releases, Lazy Constants targeted for JDK 28, and Helidon 27.0.2</description>
     </item>
     <item>
-      <title>Quarkus LangChain4j 2.0.0.CR1 Released</title>
-      <link>https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1</link>
-      <guid isPermaLink="true">https://github.com/quarkiverse/quarkus-langchain4j/releases/tag/2.0.0.CR1</guid>
-      <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
-      <description>first release candidate of 2.0, ported to Quarkus 4 with a Java 21 baseline: adds a context compaction extension, makes agents CDI beans, runs tools concurrently in streaming AI service methods, honors &lt;code&gt;@P(name)&lt;/code&gt; for tool parameters, and moves to LangChain4j 1.24.0</description>
-    </item>
-    <item>
       <title>Spring AI 2.1.0 Released</title>
       <link>https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0</link>
       <guid isPermaLink="true">https://github.com/spring-projects/spring-ai/releases/tag/v2.1.0</guid>
@@ -146,13 +153,6 @@
       <guid isPermaLink="true">https://github.com/google/adk-kotlin/releases/tag/v1.6.0</guid>
       <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
       <description>adds live conversations (avatar configuration, non-blocking streaming tools and a &lt;code&gt;/run_live&lt;/code&gt; endpoint), credential services with PKCE sign-in, experimental classifier nodes for workflow routing, OpenTelemetry trace export, and A2A remote-agent fixes</description>
-    </item>
-    <item>
-      <title>LangGraph4j 1.9.10 Released</title>
-      <link>https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.10</link>
-      <guid isPermaLink="true">https://github.com/langgraph4j/langgraph4j/releases/tag/v1.9.10</guid>
-      <pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
-      <description>adds input/output schemas and mapper functions to &lt;code&gt;StateGraph&lt;/code&gt; and &lt;code&gt;CompiledGraph&lt;/code&gt; and a versioned, read-only archive for &lt;code&gt;DynamoDBSaverV2&lt;/code&gt;; breaking: &lt;code&gt;MARK_FOR_REMOVAL&lt;/code&gt; no longer propagates to the parent graph automatically</description>
     </item>
     <item>
       <title>Helidon 4.5.7 Released</title>
